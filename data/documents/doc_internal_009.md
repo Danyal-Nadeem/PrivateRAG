@@ -9,4 +9,4 @@ This standard operating procedure is restricted to full-time employees, authoriz
 All systems must adhere to strict zero-trust network policies. Access keys must be rotated every 90 days, and production deploys require two peer reviews. For urgent escalations or system failures, staff must follow the internal on-call protocol.
 
 ## 3. Technical Contact and Ownership
-The designated system maintainer and process lead for this protocol is Bilal Gondal (Staff ID: EMP47170). For direct questions regarding these technical instructions, email bilal.gondal@techmatrix.net or call office extension (858) 858-8517.
+The designated system maintainer and process lead for this protocol is Ghulam Bhutto (Staff ID: EMP98585). For direct questions regarding these technical instructions, email ghulam.bhutto@techmatrix.net or call office extension (805) 858-8517.

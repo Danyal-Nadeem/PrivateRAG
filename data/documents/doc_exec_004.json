@@ -6,39 +6,39 @@
   "spans": [
     {
       "start": 523,
-      "end": 533,
+      "end": 537,
       "label": "PERSON",
-      "text": "Kelly Reed"
+      "text": "Theresa Tucker"
     },
     {
-      "start": 558,
-      "end": 567,
+      "start": 562,
+      "end": 569,
       "label": "EMP_ID",
-      "text": "EMP-28914"
+      "text": "E-98651"
     },
     {
-      "start": 673,
-      "end": 684,
+      "start": 675,
+      "end": 688,
       "label": "SALARY",
-      "text": "Rs. 380,000"
+      "text": "PKR 3,500,000"
     },
     {
-      "start": 895,
-      "end": 920,
+      "start": 899,
+      "end": 916,
       "label": "EMAIL",
-      "text": "kreed@privaterag.internal"
+      "text": "ttucker@global.pk"
     },
     {
-      "start": 963,
-      "end": 975,
+      "start": 959,
+      "end": 974,
       "label": "PHONE",
-      "text": "0301-1668752"
+      "text": "+92 320 8248238"
     },
     {
-      "start": 1084,
-      "end": 1117,
+      "start": 1083,
+      "end": 1143,
       "label": "ADDRESS",
-      "text": "4560 River Lane, Boston, MA 02108"
+      "text": "Plot 156, Block E, State Life Society Phase 1, Lahore, 54792"
     }
   ]
 }

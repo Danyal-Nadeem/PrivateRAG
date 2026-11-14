@@ -5,14 +5,14 @@
 ## 1. Confidential Employee Profile
 This document contains sensitive Personally Identifiable Information (PII) and payroll records protected under HR data policies. Unauthorized dissemination or review will result in immediate disciplinary action.
 
-- **Full Employee Name:** Adeel Wattoo
-- **Employee Identification Code:** EMP-30094
-- **Residential Domicile:** 8879 North Road, Chicago, IL 60601
-- **Primary Email:** adeel.wattoo@enterprise.org
-- **Telephone Line:** 0300-5638893
+- **Full Employee Name:** Abigail Freeman
+- **Employee Identification Code:** EMP-99056
+- **Residential Domicile:** 9117 Cypress Boulevard, Sacramento, CA 95814
+- **Primary Email:** abigail.80464@techmatrix.net
+- **Telephone Line:** +92 322 4867786
 
 ## 2. Compensation and Remuneration Details
-Following the annual departmental performance audit, the HR Compensation Committee reviewed all wage bandings. The confirmed annual base compensation for Adeel Wattoo is officially approved at $195,000 per annum, payable in monthly disbursements.
+Following the annual departmental performance audit, the HR Compensation Committee reviewed all wage bandings. The confirmed annual base compensation for Abigail Freeman is officially approved at EUR 140,000 per annum, payable in monthly disbursements.
 
 ## 3. Compliance and Sign-Off
-All tax deduction certificates, health insurance coverage, and official notices will be dispatched to 8879 North Road, Chicago, IL 60601. For any payroll disputes, contact Human Resources directly.
+All tax deduction certificates, health insurance coverage, and official notices will be dispatched to 9117 Cypress Boulevard, Sacramento, CA 95814. For any payroll disputes, contact Human Resources directly.

@@ -11,11 +11,11 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from src.data_gen.entity_pools import EntityPoolGenerator
 
-# Public figures for Public Documents (Only PERSON allowed in public docs)
+# Public figures for Public Documents (Only PERSON allowed in public docs; strictly test pool components)
 PUBLIC_FIGURES = [
-    "Dr. Arshad Khan", "Sarah Jenkins", "Dr. Ayesha Malik", "Robert Miller",
-    "Prof. Tariq Siddiqui", "Elizabeth Davis", "Muhammad Usman", "Jessica Taylor",
-    "Dr. Bilal Chaudhry", "David Anderson", "Fatima Raza", "Michael Wilson"
+    "Dr. Azhar Memon", "Julia Gibson", "Prof. Arshad Dawood", "Albert Stevens",
+    "Dr. Aleena Bhutto", "Diana Marshall", "Sarwar Junejo", "Grace Kennedy",
+    "Dr. Zarnish Palijo", "Wayne Ford", "Inaya Chandio", "Gabriel Castro"
 ]
 
 class DocumentBuilder:

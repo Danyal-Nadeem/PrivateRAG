@@ -8,49 +8,49 @@
       "start": 416,
       "end": 429,
       "label": "PERSON",
-      "text": "Judith Nelson"
+      "text": "Syeda Lakhani"
     },
     {
       "start": 466,
       "end": 475,
       "label": "EMP_ID",
-      "text": "EMP-50839"
+      "text": "EMP-86456"
     },
     {
       "start": 504,
-      "end": 538,
+      "end": 543,
       "label": "ADDRESS",
-      "text": "5167 Spring Way, Phoenix, AZ 85001"
+      "text": "5243 Riverside Way, Baltimore, MD 21201"
     },
     {
-      "start": 560,
-      "end": 577,
+      "start": 565,
+      "end": 590,
       "label": "EMAIL",
-      "text": "jnelson@global.pk"
+      "text": "syeda.80921@corp.acme.com"
     },
     {
-      "start": 600,
-      "end": 615,
+      "start": 613,
+      "end": 628,
       "label": "PHONE",
-      "text": "+92 302 3135534"
+      "text": "+92 322 7851696"
     },
     {
-      "start": 815,
-      "end": 828,
+      "start": 828,
+      "end": 841,
       "label": "PERSON",
-      "text": "Judith Nelson"
+      "text": "Syeda Lakhani"
     },
     {
-      "start": 855,
-      "end": 863,
+      "start": 868,
+      "end": 876,
       "label": "SALARY",
-      "text": "$195,000"
+      "text": "$125,000"
     },
     {
-      "start": 1042,
-      "end": 1076,
+      "start": 1055,
+      "end": 1094,
       "label": "ADDRESS",
-      "text": "5167 Spring Way, Phoenix, AZ 85001"
+      "text": "5243 Riverside Way, Baltimore, MD 21201"
     }
   ]
 }

@@ -8,49 +8,49 @@
       "start": 416,
       "end": 429,
       "label": "PERSON",
-      "text": "Babar Qureshi"
+      "text": "Washma Tabani"
     },
     {
       "start": 466,
       "end": 475,
       "label": "EMP_ID",
-      "text": "EMP-26009"
+      "text": "EMP-83276"
     },
     {
       "start": 504,
-      "end": 545,
+      "end": 543,
       "label": "ADDRESS",
-      "text": "5056 Jackson Lane, Indianapolis, IN 46204"
+      "text": "1227 Laurel Avenue, Baltimore, MD 21201"
     },
     {
-      "start": 567,
-      "end": 600,
+      "start": 565,
+      "end": 587,
       "label": "EMAIL",
-      "text": "babar.qureshi@privaterag.internal"
+      "text": "wtabani@techmatrix.net"
     },
     {
-      "start": 623,
-      "end": 637,
+      "start": 610,
+      "end": 626,
       "label": "PHONE",
-      "text": "(707) 506-2697"
+      "text": "+92-42-376075395"
     },
     {
-      "start": 837,
-      "end": 850,
+      "start": 826,
+      "end": 839,
       "label": "PERSON",
-      "text": "Babar Qureshi"
+      "text": "Washma Tabani"
     },
     {
-      "start": 877,
-      "end": 885,
+      "start": 866,
+      "end": 877,
       "label": "SALARY",
-      "text": "$310,000"
+      "text": "USD 145,000"
     },
     {
-      "start": 1064,
-      "end": 1105,
+      "start": 1056,
+      "end": 1095,
       "label": "ADDRESS",
-      "text": "5056 Jackson Lane, Indianapolis, IN 46204"
+      "text": "1227 Laurel Avenue, Baltimore, MD 21201"
     }
   ]
 }

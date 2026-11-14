@@ -8,49 +8,49 @@
       "start": 404,
       "end": 416,
       "label": "PERSON",
-      "text": "David Turner"
+      "text": "Zoha Kalhoro"
     },
     {
       "start": 453,
       "end": 462,
       "label": "EMP_ID",
-      "text": "EMP-36712"
+      "text": "EMP-85007"
     },
     {
       "start": 491,
-      "end": 523,
+      "end": 529,
       "label": "ADDRESS",
-      "text": "6481 Lake Road, Boston, MA 02108"
+      "text": "7733 Summit Drive, Nashville, TN 37201"
     },
     {
-      "start": 545,
-      "end": 576,
+      "start": 551,
+      "end": 577,
       "label": "EMAIL",
-      "text": "david.10020@privaterag.internal"
+      "text": "zoha.kalhoro@corp.acme.com"
     },
     {
-      "start": 599,
-      "end": 611,
+      "start": 600,
+      "end": 615,
       "label": "PHONE",
-      "text": "858-688-1096"
+      "text": "+1-805-988-1320"
     },
     {
-      "start": 811,
-      "end": 823,
+      "start": 815,
+      "end": 827,
       "label": "PERSON",
-      "text": "David Turner"
+      "text": "Zoha Kalhoro"
     },
     {
-      "start": 850,
-      "end": 861,
+      "start": 854,
+      "end": 862,
       "label": "SALARY",
-      "text": "Rs. 380,000"
+      "text": "$125,000"
     },
     {
-      "start": 1040,
-      "end": 1072,
+      "start": 1041,
+      "end": 1079,
       "label": "ADDRESS",
-      "text": "6481 Lake Road, Boston, MA 02108"
+      "text": "7733 Summit Drive, Nashville, TN 37201"
     }
   ]
 }

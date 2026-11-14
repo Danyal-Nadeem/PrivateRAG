@@ -6,39 +6,39 @@
   "spans": [
     {
       "start": 523,
-      "end": 538,
+      "end": 535,
       "label": "PERSON",
-      "text": "Joseph Gonzalez"
+      "text": "Julia Medina"
     },
     {
-      "start": 563,
-      "end": 571,
+      "start": 560,
+      "end": 568,
       "label": "EMP_ID",
-      "text": "EMP25387"
+      "text": "EMP87693"
     },
     {
-      "start": 677,
-      "end": 685,
+      "start": 674,
+      "end": 682,
       "label": "SALARY",
       "text": "$225,000"
     },
     {
-      "start": 896,
-      "end": 928,
+      "start": 893,
+      "end": 924,
       "label": "EMAIL",
-      "text": "joseph.10744@privaterag.internal"
+      "text": "julia.80744@privaterag.internal"
     },
     {
-      "start": 971,
-      "end": 983,
+      "start": 967,
+      "end": 979,
       "label": "PHONE",
-      "text": "0300-2661307"
+      "text": "0320-2661307"
     },
     {
-      "start": 1092,
-      "end": 1129,
+      "start": 1088,
+      "end": 1127,
       "label": "ADDRESS",
-      "text": "8950 Ridge Drive, Charlotte, NC 28202"
+      "text": "8950 Summit Drive, Sacramento, CA 95814"
     }
   ]
 }

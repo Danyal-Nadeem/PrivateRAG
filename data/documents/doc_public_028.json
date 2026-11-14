@@ -6,15 +6,15 @@
   "spans": [
     {
       "start": 324,
-      "end": 337,
+      "end": 338,
       "label": "PERSON",
-      "text": "Robert Miller"
+      "text": "Albert Stevens"
     },
     {
-      "start": 960,
-      "end": 973,
+      "start": 961,
+      "end": 975,
       "label": "PERSON",
-      "text": "Robert Miller"
+      "text": "Albert Stevens"
     }
   ]
 }

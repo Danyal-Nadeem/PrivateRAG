@@ -6,39 +6,39 @@
   "spans": [
     {
       "start": 529,
-      "end": 543,
+      "end": 538,
       "label": "PERSON",
-      "text": "Benjamin Ramos"
+      "text": "Zoha Syed"
     },
     {
-      "start": 568,
-      "end": 576,
+      "start": 563,
+      "end": 572,
       "label": "EMP_ID",
-      "text": "EMP53331"
+      "text": "EMP-89264"
     },
     {
-      "start": 682,
-      "end": 692,
+      "start": 678,
+      "end": 689,
       "label": "SALARY",
-      "text": "USD 95,000"
+      "text": "Rs. 220,000"
     },
     {
-      "start": 903,
-      "end": 932,
+      "start": 900,
+      "end": 925,
       "label": "EMAIL",
-      "text": "benjamin.ramos@enterprise.org"
+      "text": "zoha.80152@enterprise.org"
     },
     {
-      "start": 975,
-      "end": 991,
+      "start": 968,
+      "end": 982,
       "label": "PHONE",
-      "text": "+92-42-356160869"
+      "text": "(410) 273-1977"
     },
     {
-      "start": 1100,
-      "end": 1140,
+      "start": 1091,
+      "end": 1145,
       "label": "ADDRESS",
-      "text": "2541 Jackson Boulevard, Denver, CO 80201"
+      "text": "Plot 136, Block A, DHA Phase 6 Sector J, Lahore, 54792"
     }
   ]
 }

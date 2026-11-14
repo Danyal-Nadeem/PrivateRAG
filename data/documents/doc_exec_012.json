@@ -6,39 +6,39 @@
   "spans": [
     {
       "start": 523,
-      "end": 537,
+      "end": 536,
       "label": "PERSON",
-      "text": "Zunaira Masood"
+      "text": "Pervez Bhutto"
     },
     {
-      "start": 562,
-      "end": 571,
+      "start": 561,
+      "end": 570,
       "label": "EMP_ID",
-      "text": "EMP-34720"
+      "text": "EMP-87825"
     },
     {
-      "start": 677,
-      "end": 688,
+      "start": 676,
+      "end": 687,
       "label": "SALARY",
-      "text": "PKR 250,000"
+      "text": "USD 220,000"
     },
     {
-      "start": 899,
-      "end": 921,
+      "start": 898,
+      "end": 920,
       "label": "EMAIL",
-      "text": "zmasood@enterprise.org"
+      "text": "pervez.80935@global.pk"
     },
     {
-      "start": 964,
-      "end": 976,
+      "start": 963,
+      "end": 975,
       "label": "PHONE",
-      "text": "0302-8935224"
+      "text": "805-879-3492"
     },
     {
-      "start": 1085,
-      "end": 1119,
+      "start": 1084,
+      "end": 1123,
       "label": "ADDRESS",
-      "text": "9468 River Drive, Denver, CO 80201"
+      "text": "5313 Cypress Way, San Antonio, TX 78201"
     }
   ]
 }

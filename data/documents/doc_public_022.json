@@ -6,15 +6,15 @@
   "spans": [
     {
       "start": 327,
-      "end": 341,
+      "end": 337,
       "label": "PERSON",
-      "text": "David Anderson"
+      "text": "Wayne Ford"
     },
     {
-      "start": 964,
-      "end": 978,
+      "start": 960,
+      "end": 970,
       "label": "PERSON",
-      "text": "David Anderson"
+      "text": "Wayne Ford"
     }
   ]
 }

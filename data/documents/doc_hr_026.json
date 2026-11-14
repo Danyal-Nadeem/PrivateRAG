@@ -6,51 +6,51 @@
   "spans": [
     {
       "start": 404,
-      "end": 417,
+      "end": 416,
       "label": "PERSON",
-      "text": "Laura Jenkins"
+      "text": "Logan Murray"
     },
     {
-      "start": 454,
-      "end": 463,
+      "start": 453,
+      "end": 462,
       "label": "EMP_ID",
-      "text": "EMP-11130"
+      "text": "EMP-82805"
     },
     {
-      "start": 492,
-      "end": 530,
+      "start": 491,
+      "end": 527,
       "label": "ADDRESS",
-      "text": "9628 Hill Boulevard, Atlanta, GA 30301"
+      "text": "7900 Prospect Way, Detroit, MI 48201"
     },
     {
-      "start": 552,
-      "end": 573,
+      "start": 549,
+      "end": 566,
       "label": "EMAIL",
-      "text": "laura.10543@global.pk"
+      "text": "lmurray@global.pk"
     },
     {
-      "start": 596,
-      "end": 608,
+      "start": 589,
+      "end": 601,
       "label": "PHONE",
-      "text": "0302-6549757"
+      "text": "313-501-4630"
     },
     {
-      "start": 808,
-      "end": 821,
+      "start": 801,
+      "end": 813,
       "label": "PERSON",
-      "text": "Laura Jenkins"
+      "text": "Logan Murray"
     },
     {
-      "start": 848,
-      "end": 859,
+      "start": 840,
+      "end": 853,
       "label": "SALARY",
-      "text": "USD 180,000"
+      "text": "PKR 1,500,000"
     },
     {
-      "start": 1038,
-      "end": 1076,
+      "start": 1032,
+      "end": 1068,
       "label": "ADDRESS",
-      "text": "9628 Hill Boulevard, Atlanta, GA 30301"
+      "text": "7900 Prospect Way, Detroit, MI 48201"
     }
   ]
 }

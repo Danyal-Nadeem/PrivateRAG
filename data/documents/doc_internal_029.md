@@ -9,4 +9,4 @@ This standard operating procedure is restricted to full-time employees, authoriz
 All systems must adhere to strict zero-trust network policies. Access keys must be rotated every 90 days, and production deploys require two peer reviews. For urgent escalations or system failures, staff must follow the internal on-call protocol.
 
 ## 3. Technical Contact and Ownership
-The designated system maintainer and process lead for this protocol is Nida Shah (Staff ID: EMP-53891). For direct questions regarding these technical instructions, email nshah@enterprise.org or call office extension 0302-6033115.
+The designated system maintainer and process lead for this protocol is Madison Henry (Staff ID: EMP-82686). For direct questions regarding these technical instructions, email madison.80535@privaterag.internal or call office extension +92 322 4426900.

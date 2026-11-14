@@ -6,15 +6,15 @@
   "spans": [
     {
       "start": 327,
-      "end": 347,
+      "end": 344,
       "label": "PERSON",
-      "text": "Prof. Tariq Siddiqui"
+      "text": "Dr. Aleena Bhutto"
     },
     {
-      "start": 970,
-      "end": 990,
+      "start": 967,
+      "end": 984,
       "label": "PERSON",
-      "text": "Prof. Tariq Siddiqui"
+      "text": "Dr. Aleena Bhutto"
     }
   ]
 }

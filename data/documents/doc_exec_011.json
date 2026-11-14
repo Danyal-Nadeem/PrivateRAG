@@ -6,39 +6,39 @@
   "spans": [
     {
       "start": 530,
-      "end": 543,
+      "end": 544,
       "label": "PERSON",
-      "text": "Lauren Turner"
+      "text": "Abigail Tucker"
     },
     {
-      "start": 568,
-      "end": 575,
+      "start": 569,
+      "end": 577,
       "label": "EMP_ID",
-      "text": "E-32274"
+      "text": "EMP89783"
     },
     {
-      "start": 681,
+      "start": 683,
       "end": 694,
       "label": "SALARY",
-      "text": "Rs. 2,400,000"
+      "text": "GBP 110,000"
     },
     {
       "start": 905,
-      "end": 928,
+      "end": 922,
       "label": "EMAIL",
-      "text": "lauren.turner@global.pk"
+      "text": "atucker@global.pk"
     },
     {
-      "start": 971,
-      "end": 983,
+      "start": 965,
+      "end": 981,
       "label": "PHONE",
-      "text": "0300-6790218"
+      "text": "+92-42-377328534"
     },
     {
-      "start": 1092,
-      "end": 1136,
+      "start": 1090,
+      "end": 1124,
       "label": "ADDRESS",
-      "text": "Plot 145, Block E, Gulberg II, Lahore, 54660"
+      "text": "7416 Beech Lane, Detroit, MI 48201"
     }
   ]
 }

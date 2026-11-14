@@ -6,39 +6,39 @@
   "spans": [
     {
       "start": 535,
-      "end": 550,
+      "end": 546,
       "label": "PERSON",
-      "text": "Shahbaz Bukhari"
+      "text": "Zunera Syed"
     },
     {
-      "start": 575,
-      "end": 582,
+      "start": 571,
+      "end": 578,
       "label": "EMP_ID",
-      "text": "E-23055"
+      "text": "E-86527"
     },
     {
-      "start": 688,
-      "end": 699,
+      "start": 684,
+      "end": 695,
       "label": "SALARY",
       "text": "Rs. 850,000"
     },
     {
-      "start": 910,
-      "end": 940,
+      "start": 906,
+      "end": 932,
       "label": "EMAIL",
-      "text": "shahbaz.bukhari@techmatrix.net"
+      "text": "zunera.syed@techmatrix.net"
     },
     {
-      "start": 983,
-      "end": 998,
+      "start": 975,
+      "end": 989,
       "label": "PHONE",
-      "text": "+1-858-481-1132"
+      "text": "(423) 605-5497"
     },
     {
-      "start": 1107,
-      "end": 1152,
+      "start": 1098,
+      "end": 1150,
       "label": "ADDRESS",
-      "text": "Plot 293, Block C, Faisal Town, Lahore, 54770"
+      "text": "Plot 293, Block C, WAPDA Town Phase 1, Lahore, 54770"
     }
   ]
 }

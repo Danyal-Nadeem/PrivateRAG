@@ -6,51 +6,51 @@
   "spans": [
     {
       "start": 404,
-      "end": 416,
+      "end": 414,
       "label": "PERSON",
-      "text": "Henry Foster"
+      "text": "Zoha Magsi"
     },
     {
-      "start": 453,
-      "end": 462,
+      "start": 451,
+      "end": 459,
       "label": "EMP_ID",
-      "text": "EMP-16985"
+      "text": "EMP80181"
     },
     {
-      "start": 491,
-      "end": 545,
+      "start": 488,
+      "end": 525,
       "label": "ADDRESS",
-      "text": "House 266, Street 30, Township Sector B, Lahore, 54770"
+      "text": "8586 Orchard Drive, Detroit, MI 48201"
     },
     {
-      "start": 567,
-      "end": 588,
+      "start": 547,
+      "end": 571,
       "label": "EMAIL",
-      "text": "hfoster@corp.acme.com"
+      "text": "zoha.80255@corp.acme.com"
     },
     {
-      "start": 611,
-      "end": 623,
+      "start": 594,
+      "end": 606,
       "label": "PHONE",
-      "text": "0300-9910914"
+      "text": "313-667-3184"
     },
     {
-      "start": 823,
-      "end": 835,
+      "start": 806,
+      "end": 816,
       "label": "PERSON",
-      "text": "Henry Foster"
+      "text": "Zoha Magsi"
     },
     {
-      "start": 862,
-      "end": 873,
+      "start": 843,
+      "end": 851,
       "label": "SALARY",
-      "text": "USD 180,000"
+      "text": "$175,000"
     },
     {
-      "start": 1052,
-      "end": 1106,
+      "start": 1030,
+      "end": 1067,
       "label": "ADDRESS",
-      "text": "House 266, Street 30, Township Sector B, Lahore, 54770"
+      "text": "8586 Orchard Drive, Detroit, MI 48201"
     }
   ]
 }

@@ -6,51 +6,51 @@
   "spans": [
     {
       "start": 412,
-      "end": 424,
+      "end": 423,
       "label": "PERSON",
-      "text": "Nazia Bashir"
+      "text": "Azhar Mahar"
     },
     {
-      "start": 461,
-      "end": 470,
+      "start": 460,
+      "end": 469,
       "label": "EMP_ID",
-      "text": "EMP-45272"
+      "text": "EMP-89784"
     },
     {
-      "start": 499,
-      "end": 535,
+      "start": 498,
+      "end": 536,
       "label": "ADDRESS",
-      "text": "8099 Monroe Avenue, Denver, CO 80201"
+      "text": "9983 Birch Avenue, Nashville, TN 37201"
     },
     {
-      "start": 557,
+      "start": 558,
       "end": 579,
       "label": "EMAIL",
-      "text": "nbashir@techmatrix.net"
+      "text": "azhar.mahar@global.pk"
     },
     {
       "start": 602,
       "end": 614,
       "label": "PHONE",
-      "text": "0300-6639317"
+      "text": "0320-1486955"
     },
     {
       "start": 814,
-      "end": 826,
+      "end": 825,
       "label": "PERSON",
-      "text": "Nazia Bashir"
+      "text": "Azhar Mahar"
     },
     {
-      "start": 853,
-      "end": 864,
+      "start": 852,
+      "end": 865,
       "label": "SALARY",
-      "text": "EUR 115,000"
+      "text": "PKR 1,800,000"
     },
     {
-      "start": 1043,
-      "end": 1079,
+      "start": 1044,
+      "end": 1082,
       "label": "ADDRESS",
-      "text": "8099 Monroe Avenue, Denver, CO 80201"
+      "text": "9983 Birch Avenue, Nashville, TN 37201"
     }
   ]
 }

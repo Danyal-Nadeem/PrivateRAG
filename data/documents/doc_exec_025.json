@@ -6,39 +6,39 @@
   "spans": [
     {
       "start": 526,
-      "end": 539,
+      "end": 542,
       "label": "PERSON",
-      "text": "Brandon Evans"
+      "text": "Theresa McDonald"
     },
     {
-      "start": 564,
-      "end": 573,
+      "start": 567,
+      "end": 576,
       "label": "EMP_ID",
-      "text": "EMP-28333"
+      "text": "EMP-89166"
     },
     {
-      "start": 679,
-      "end": 690,
+      "start": 682,
+      "end": 693,
       "label": "SALARY",
       "text": "PKR 750,000"
     },
     {
-      "start": 901,
-      "end": 934,
+      "start": 904,
+      "end": 937,
       "label": "EMAIL",
-      "text": "brandon.10367@privaterag.internal"
+      "text": "theresa.80367@privaterag.internal"
     },
     {
-      "start": 977,
-      "end": 992,
+      "start": 980,
+      "end": 995,
       "label": "PHONE",
-      "text": "+92 302 4184459"
+      "text": "+92 322 4184459"
     },
     {
-      "start": 1101,
-      "end": 1143,
+      "start": 1104,
+      "end": 1146,
       "label": "ADDRESS",
-      "text": "Flat 2A, Johar Town Phase 1, Lahore, 54782"
+      "text": "Flat 2A, WAPDA Town Phase 1, Lahore, 54770"
     }
   ]
 }

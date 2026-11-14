@@ -6,27 +6,27 @@
   "spans": [
     {
       "start": 801,
-      "end": 813,
+      "end": 814,
       "label": "PERSON",
-      "text": "Bilal Gondal"
+      "text": "Ghulam Bhutto"
     },
     {
-      "start": 825,
-      "end": 833,
+      "start": 826,
+      "end": 834,
       "label": "EMP_ID",
-      "text": "EMP47170"
+      "text": "EMP98585"
     },
     {
-      "start": 903,
-      "end": 930,
+      "start": 904,
+      "end": 932,
       "label": "EMAIL",
-      "text": "bilal.gondal@techmatrix.net"
+      "text": "ghulam.bhutto@techmatrix.net"
     },
     {
-      "start": 956,
-      "end": 970,
+      "start": 958,
+      "end": 972,
       "label": "PHONE",
-      "text": "(858) 858-8517"
+      "text": "(805) 858-8517"
     }
   ]
 }

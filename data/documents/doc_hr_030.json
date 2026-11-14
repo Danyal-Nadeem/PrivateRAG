@@ -6,51 +6,51 @@
   "spans": [
     {
       "start": 405,
-      "end": 415,
+      "end": 420,
       "label": "PERSON",
-      "text": "Sana Sadiq"
+      "text": "Zarnish Chandio"
     },
     {
-      "start": 452,
-      "end": 461,
+      "start": 457,
+      "end": 464,
       "label": "EMP_ID",
-      "text": "EMP-51251"
+      "text": "E-88273"
     },
     {
-      "start": 490,
-      "end": 539,
+      "start": 493,
+      "end": 547,
       "label": "ADDRESS",
-      "text": "Plot 156, Block A, New Garden Town, Lahore, 54600"
+      "text": "Plot 206, Block E, DHA Phase 5 Sector G, Lahore, 54792"
     },
     {
-      "start": 561,
-      "end": 581,
+      "start": 569,
+      "end": 598,
       "label": "EMAIL",
-      "text": "sana.10610@global.pk"
+      "text": "zarnish.chandio@corp.acme.com"
     },
     {
-      "start": 604,
-      "end": 616,
+      "start": 621,
+      "end": 633,
       "label": "PHONE",
-      "text": "404-994-9561"
+      "text": "0321-6097514"
     },
     {
-      "start": 816,
-      "end": 826,
+      "start": 833,
+      "end": 848,
       "label": "PERSON",
-      "text": "Sana Sadiq"
+      "text": "Zarnish Chandio"
     },
     {
-      "start": 853,
-      "end": 861,
+      "start": 875,
+      "end": 886,
       "label": "SALARY",
-      "text": "$280,000"
+      "text": "Rs. 850,000"
     },
     {
-      "start": 1040,
-      "end": 1089,
+      "start": 1065,
+      "end": 1119,
       "label": "ADDRESS",
-      "text": "Plot 156, Block A, New Garden Town, Lahore, 54600"
+      "text": "Plot 206, Block E, DHA Phase 5 Sector G, Lahore, 54792"
     }
   ]
 }

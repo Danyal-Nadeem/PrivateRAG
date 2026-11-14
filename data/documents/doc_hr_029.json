@@ -6,51 +6,51 @@
   "spans": [
     {
       "start": 416,
-      "end": 430,
+      "end": 429,
       "label": "PERSON",
-      "text": "Carolyn Taylor"
+      "text": "Azhar Adamjee"
     },
     {
-      "start": 467,
+      "start": 466,
       "end": 475,
       "label": "EMP_ID",
-      "text": "EMP51803"
+      "text": "EMP-97502"
     },
     {
       "start": 504,
-      "end": 538,
+      "end": 540,
       "label": "ADDRESS",
-      "text": "Flat 5D, Gulberg II, Lahore, 54660"
+      "text": "2168 Poplar Way, Baltimore, MD 21201"
     },
     {
-      "start": 560,
-      "end": 589,
+      "start": 562,
+      "end": 585,
       "label": "EMAIL",
-      "text": "carolyn.taylor@techmatrix.net"
+      "text": "azhar.adamjee@global.pk"
     },
     {
-      "start": 612,
-      "end": 626,
+      "start": 608,
+      "end": 620,
       "label": "PHONE",
-      "text": "(503) 689-2869"
+      "text": "319-491-8690"
     },
     {
-      "start": 826,
-      "end": 840,
+      "start": 820,
+      "end": 833,
       "label": "PERSON",
-      "text": "Carolyn Taylor"
+      "text": "Azhar Adamjee"
     },
     {
-      "start": 867,
-      "end": 880,
+      "start": 860,
+      "end": 868,
       "label": "SALARY",
-      "text": "Rs. 1,200,000"
+      "text": "$105,000"
     },
     {
-      "start": 1059,
-      "end": 1093,
+      "start": 1047,
+      "end": 1083,
       "label": "ADDRESS",
-      "text": "Flat 5D, Gulberg II, Lahore, 54660"
+      "text": "2168 Poplar Way, Baltimore, MD 21201"
     }
   ]
 }

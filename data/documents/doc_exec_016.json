@@ -6,39 +6,39 @@
   "spans": [
     {
       "start": 530,
-      "end": 546,
+      "end": 541,
       "label": "PERSON",
-      "text": "Shehnaz Siddiqui"
+      "text": "Anaya Magsi"
     },
     {
-      "start": 571,
-      "end": 580,
+      "start": 566,
+      "end": 575,
       "label": "EMP_ID",
-      "text": "EMP-29226"
+      "text": "EMP-88001"
     },
     {
-      "start": 686,
-      "end": 699,
+      "start": 681,
+      "end": 691,
       "label": "SALARY",
-      "text": "PKR 2,800,000"
+      "text": "GBP 70,000"
     },
     {
-      "start": 910,
-      "end": 939,
+      "start": 902,
+      "end": 928,
       "label": "EMAIL",
-      "text": "ssiddiqui@privaterag.internal"
+      "text": "amagsi@privaterag.internal"
     },
     {
-      "start": 982,
-      "end": 996,
+      "start": 971,
+      "end": 985,
       "label": "PHONE",
-      "text": "(404) 709-3344"
+      "text": "(505) 709-3344"
     },
     {
-      "start": 1105,
-      "end": 1156,
+      "start": 1094,
+      "end": 1131,
       "label": "ADDRESS",
-      "text": "House 211, Street 12, Cavalry Ground, Lahore, 54810"
+      "text": "2968 Laurel Street, Detroit, MI 48201"
     }
   ]
 }

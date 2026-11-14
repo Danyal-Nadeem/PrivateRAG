@@ -6,15 +6,15 @@
   "spans": [
     {
       "start": 328,
-      "end": 339,
+      "end": 341,
       "label": "PERSON",
-      "text": "Fatima Raza"
+      "text": "Inaya Chandio"
     },
     {
-      "start": 962,
-      "end": 973,
+      "start": 964,
+      "end": 977,
       "label": "PERSON",
-      "text": "Fatima Raza"
+      "text": "Inaya Chandio"
     }
   ]
 }

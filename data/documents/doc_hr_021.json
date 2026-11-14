@@ -6,51 +6,51 @@
   "spans": [
     {
       "start": 416,
-      "end": 430,
+      "end": 427,
       "label": "PERSON",
-      "text": "Margaret Reyes"
+      "text": "Bryan Woods"
     },
     {
-      "start": 467,
-      "end": 476,
+      "start": 464,
+      "end": 473,
       "label": "EMP_ID",
-      "text": "EMP-55840"
+      "text": "EMP-88396"
     },
     {
-      "start": 505,
-      "end": 556,
+      "start": 502,
+      "end": 539,
       "label": "ADDRESS",
-      "text": "House 383, Street 8, New Garden Town, Lahore, 54600"
+      "text": "1976 Birch Road, Sacramento, CA 95814"
     },
     {
-      "start": 578,
-      "end": 612,
+      "start": 561,
+      "end": 582,
       "label": "EMAIL",
-      "text": "margaret.reyes@privaterag.internal"
+      "text": "bwoods@enterprise.org"
     },
     {
-      "start": 635,
-      "end": 649,
+      "start": 605,
+      "end": 620,
       "label": "PHONE",
-      "text": "(858) 606-4249"
+      "text": "+92 320 6233774"
     },
     {
-      "start": 849,
-      "end": 863,
+      "start": 820,
+      "end": 831,
       "label": "PERSON",
-      "text": "Margaret Reyes"
+      "text": "Bryan Woods"
     },
     {
-      "start": 890,
-      "end": 901,
+      "start": 858,
+      "end": 866,
       "label": "SALARY",
-      "text": "PKR 750,000"
+      "text": "$350,000"
     },
     {
-      "start": 1080,
-      "end": 1131,
+      "start": 1045,
+      "end": 1082,
       "label": "ADDRESS",
-      "text": "House 383, Street 8, New Garden Town, Lahore, 54600"
+      "text": "1976 Birch Road, Sacramento, CA 95814"
     }
   ]
 }

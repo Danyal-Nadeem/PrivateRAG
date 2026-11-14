@@ -6,15 +6,15 @@
   "spans": [
     {
       "start": 329,
-      "end": 343,
+      "end": 342,
       "label": "PERSON",
-      "text": "Muhammad Usman"
+      "text": "Sarwar Junejo"
     },
     {
-      "start": 966,
-      "end": 980,
+      "start": 965,
+      "end": 978,
       "label": "PERSON",
-      "text": "Muhammad Usman"
+      "text": "Sarwar Junejo"
     }
   ]
 }

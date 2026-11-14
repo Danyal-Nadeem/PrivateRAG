@@ -193,7 +193,7 @@ EMP_ID_RANGES = {
     "train": (10000, 59999),
     "val": (60000, 79999),
     "test": (80000, 99999),
-    "doc": (10000, 59999)
+    "doc": (80000, 99999)
 }
 
 
@@ -282,7 +282,7 @@ class EntityPoolGenerator:
 
     def generate_person(self, is_public_figure: bool = False) -> str:
         """Returns full name (western or pakistani mix). Titles excluded."""
-        split_key = "train" if self.split == "doc" else self.split
+        split_key = "test" if self.split == "doc" else self.split
         is_pakistani = self.rng.random() < 0.5
         
         if split_key == "train":
@@ -301,7 +301,7 @@ class EntityPoolGenerator:
 
     def generate_emp_id(self) -> str:
         """EMP_ID: 80% EMP-12345, 20% EMP12345 or E-12345."""
-        split_key = "train" if self.split == "doc" else self.split
+        split_key = "test" if self.split == "doc" else self.split
         min_id, max_id = EMP_ID_RANGES[split_key]
         num = self.rng.randint(min_id, max_id)
         
@@ -332,14 +332,14 @@ class EntityPoolGenerator:
         elif pattern_type == 2:
             return f"{first[0]}{last}@{domain}"
         else:
-            split_key = "train" if self.split == "doc" else self.split
+            split_key = "test" if self.split == "doc" else self.split
             min_id, max_id = EMP_ID_RANGES[split_key]
             num = self.rng.randint(min_id, min_id + 999)
             return f"{first}.{num}@{domain}"
 
     def generate_phone(self) -> str:
         """US and +92 formats."""
-        split_key = "train" if self.split == "doc" else self.split
+        split_key = "test" if self.split == "doc" else self.split
         is_pakistani = self.rng.random() < 0.5
         
         if is_pakistani:
@@ -364,7 +364,7 @@ class EntityPoolGenerator:
 
     def generate_address(self) -> str:
         """One-line full address as ONE entity: 70% US-style, 30% Lahore-style."""
-        split_key = "train" if self.split == "doc" else self.split
+        split_key = "test" if self.split == "doc" else self.split
         is_lahore = self.rng.random() < 0.30
         
         if is_lahore:
@@ -408,7 +408,7 @@ class EntityPoolGenerator:
     # -------------------------------------------------------------
     def generate_confuser_company(self) -> str:
         """Company name containing a surname from the SAME split's pool (e.g. 'Bukhari Textiles')."""
-        split_key = "train" if self.split == "doc" else self.split
+        split_key = "test" if self.split == "doc" else self.split
         is_pakistani = self.rng.random() < 0.5
         if split_key == "train":
             pool = PAKISTANI_LAST_TRAIN if is_pakistani else WESTERN_LAST_TRAIN
@@ -425,7 +425,7 @@ class EntityPoolGenerator:
 
     def generate_confuser_location(self) -> str:
         """Office location / area without full address, from the SAME split's pool."""
-        split_key = "train" if self.split == "doc" else self.split
+        split_key = "test" if self.split == "doc" else self.split
         is_lahore = self.rng.random() < 0.5
         if is_lahore:
             if split_key == "train":

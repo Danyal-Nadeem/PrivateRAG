@@ -5,14 +5,14 @@
 ## 1. Confidential Employee Profile
 This document contains sensitive Personally Identifiable Information (PII) and payroll records protected under HR data policies. Unauthorized dissemination or review will result in immediate disciplinary action.
 
-- **Full Employee Name:** Nazia Bashir
-- **Employee Identification Code:** EMP-45272
-- **Residential Domicile:** 8099 Monroe Avenue, Denver, CO 80201
-- **Primary Email:** nbashir@techmatrix.net
-- **Telephone Line:** 0300-6639317
+- **Full Employee Name:** Azhar Mahar
+- **Employee Identification Code:** EMP-89784
+- **Residential Domicile:** 9983 Birch Avenue, Nashville, TN 37201
+- **Primary Email:** azhar.mahar@global.pk
+- **Telephone Line:** 0320-1486955
 
 ## 2. Compensation and Remuneration Details
-Following the annual departmental performance audit, the HR Compensation Committee reviewed all wage bandings. The confirmed annual base compensation for Nazia Bashir is officially approved at EUR 115,000 per annum, payable in monthly disbursements.
+Following the annual departmental performance audit, the HR Compensation Committee reviewed all wage bandings. The confirmed annual base compensation for Azhar Mahar is officially approved at PKR 1,800,000 per annum, payable in monthly disbursements.
 
 ## 3. Compliance and Sign-Off
-All tax deduction certificates, health insurance coverage, and official notices will be dispatched to 8099 Monroe Avenue, Denver, CO 80201. For any payroll disputes, contact Human Resources directly.
+All tax deduction certificates, health insurance coverage, and official notices will be dispatched to 9983 Birch Avenue, Nashville, TN 37201. For any payroll disputes, contact Human Resources directly.

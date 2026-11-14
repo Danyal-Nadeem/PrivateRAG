@@ -12,6 +12,13 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from src.data_gen.tokenizer import tokenize_with_offsets
 from src.data_gen.ner_templates import TRAIN_TEMPLATES, VAL_TEMPLATES, TEST_TEMPLATES
+from src.data_gen.entity_pools import (
+    WESTERN_FIRST_TRAIN, WESTERN_FIRST_VAL, WESTERN_FIRST_TEST,
+    PAKISTANI_FIRST_TRAIN, PAKISTANI_FIRST_VAL, PAKISTANI_FIRST_TEST,
+    WESTERN_LAST_TRAIN, WESTERN_LAST_VAL, WESTERN_LAST_TEST,
+    PAKISTANI_LAST_TRAIN, PAKISTANI_LAST_VAL, PAKISTANI_LAST_TEST,
+    US_STREETS_TEST, LAHORE_AREAS_TEST
+)
 
 ALL_ENTITIES = ["PERSON", "EMAIL", "PHONE", "EMP_ID", "ADDRESS", "SALARY"]
 NON_SALARY_ENTITIES = ["PERSON", "EMAIL", "PHONE", "EMP_ID", "ADDRESS"]
@@ -379,6 +386,93 @@ def verify_documents():
     print("  [PASS] Public docs contain zero sensitive values except public figure names.")
     print("  [PASS] Every document sidecar exactly aligns with markdown text.")
 
+    # Check Document Isolation: Zero exact overlap with Train, Val, and Realistic Test
+    print("\nVerifying Document Entity & Component Isolation:")
+    doc_entities = {e: set() for e in NON_SALARY_ENTITIES}
+    doc_first = set()
+    doc_last = set()
+    doc_street = set()
+    doc_area = set()
+
+    test_first_pool = set(WESTERN_FIRST_TEST + PAKISTANI_FIRST_TEST)
+    test_last_pool = set(WESTERN_LAST_TEST + PAKISTANI_LAST_TEST)
+    test_street_pool = set(US_STREETS_TEST)
+    test_area_pool = {a for a, z in LAHORE_AREAS_TEST}
+
+    train_first_pool = set(WESTERN_FIRST_TRAIN + PAKISTANI_FIRST_TRAIN)
+    train_last_pool = set(WESTERN_LAST_TRAIN + PAKISTANI_LAST_TRAIN)
+    val_first_pool = set(WESTERN_FIRST_VAL + PAKISTANI_FIRST_VAL)
+    val_last_pool = set(WESTERN_LAST_VAL + PAKISTANI_LAST_VAL)
+
+    for m in meta_list:
+        sidecar_path = docs_dir / f"{m['doc_id']}.json"
+        with open(sidecar_path, "r", encoding="utf-8") as f:
+            sidecar = json.load(f)
+        for sp in sidecar["spans"]:
+            val = sp["text"].strip()
+            lbl = sp["label"]
+            if lbl in doc_entities:
+                doc_entities[lbl].add(val)
+            if lbl == "PERSON":
+                clean_name = val
+                for t in ["Dr. ", "Prof. ", "Mr. ", "Ms. "]:
+                    if clean_name.startswith(t):
+                        clean_name = clean_name[len(t):]
+                parts = clean_name.split()
+                if len(parts) >= 2:
+                    doc_first.add(parts[0])
+                    doc_last.add(parts[-1])
+                elif len(parts) == 1:
+                    doc_first.add(parts[0])
+            elif lbl == "ADDRESS":
+                if "Lahore" in val:
+                    parts = [p.strip() for p in val.split(",")]
+                    for p in parts:
+                        for a in test_area_pool:
+                            if a in p:
+                                doc_area.add(a)
+                else:
+                    parts = [p.strip() for p in val.split(",")]
+                    st_parts = parts[0].split()
+                    if len(st_parts) >= 2:
+                        doc_street.add(st_parts[1])
+
+    # Assert component origins strictly match test pool
+    print(f"  Doc first names: {len(doc_first)} (All in TEST pool: {doc_first.issubset(test_first_pool)})")
+    print(f"  Doc last names:  {len(doc_last)} (All in TEST pool: {doc_last.issubset(test_last_pool)})")
+    print(f"  Doc streets:     {len(doc_street)} (All in TEST pool: {doc_street.issubset(test_street_pool)})")
+    print(f"  Doc areas:       {len(doc_area)} (All in TEST pool: {doc_area.issubset(test_area_pool)})")
+    assert doc_first.issubset(test_first_pool), f"Doc first names leak outside test pool: {doc_first - test_first_pool}"
+    assert doc_last.issubset(test_last_pool), f"Doc last names leak outside test pool: {doc_last - test_last_pool}"
+    assert doc_street.issubset(test_street_pool), f"Doc streets leak outside test pool: {doc_street - test_street_pool}"
+    assert doc_area.issubset(test_area_pool), f"Doc areas leak outside test pool: {doc_area - test_area_pool}"
+    assert len(doc_first & train_first_pool) == 0, "Doc first names overlap with train pool!"
+    assert len(doc_first & val_first_pool) == 0, "Doc first names overlap with val pool!"
+    assert len(doc_last & train_last_pool) == 0, "Doc last names overlap with train pool!"
+    assert len(doc_last & val_last_pool) == 0, "Doc last names overlap with val pool!"
+
+    # Assert exact string zero-overlap with train.jsonl, val.jsonl, test_realistic.jsonl
+    ner_splits = {}
+    for s in ["train", "val", "test_realistic"]:
+        ner_splits[s] = {e: set() for e in NON_SALARY_ENTITIES}
+        with open(Path("data/ner") / f"{s}.jsonl", "r", encoding="utf-8") as f:
+            for line in f:
+                r = json.loads(line)
+                for ent in r["entities"]:
+                    if ent["label"] in ner_splits[s]:
+                        ner_splits[s][ent["label"]].add(ent["text"].strip())
+
+    for ent in NON_SALARY_ENTITIES:
+        ov_tr = doc_entities[ent] & ner_splits["train"][ent]
+        ov_val = doc_entities[ent] & ner_splits["val"][ent]
+        ov_real = doc_entities[ent] & ner_splits["test_realistic"][ent]
+        print(f"  {ent:<10}: Docs={len(doc_entities[ent]):<3} | vs Train={len(ov_tr)}, vs Val={len(ov_val)}, vs Realistic={len(ov_real)}")
+        assert len(ov_tr) == 0, f"Doc overlap with Train for {ent}: {ov_tr}"
+        assert len(ov_val) == 0, f"Doc overlap with Val for {ent}: {ov_val}"
+        assert len(ov_real) == 0, f"Doc overlap with Realistic for {ent}: {ov_real}"
+
+    print("  [PASS] Document entities are 100% disjoint from train, val, and realistic evaluation sets.")
+
 def verify_queries():
     print("\n=================================================================")
     print("STEP 7: VERIFYING EVALUATION QUERIES (queries.json)")
@@ -392,6 +486,19 @@ def verify_queries():
         
     print(f"Total queries in queries.json: {len(queries)} (Expected: >= 60)")
     assert len(queries) >= 60, f"Expected >= 60 queries, got {len(queries)}"
+    
+    # Assert all query texts are unique (no two queries share the same text)
+    query_texts = [q["query_text"] for q in queries]
+    duplicates = [text for text, count in Counter(query_texts).items() if count > 1]
+    assert len(duplicates) == 0, f"Found duplicate query texts: {duplicates[:5]}"
+    print("  [PASS] All evaluation queries have strictly unique query texts (zero duplicates).")
+    
+    # Assert no query text contains raw doc_id token
+    for q in queries:
+        assert not re.search(r"doc_(?:public|internal|hr|exec)_\d+", q["query_text"]), (
+            f"Query {q['query_id']} contains raw doc_id: {q['query_text']}"
+        )
+    print("  [PASS] No query text contains raw doc_id tokens.")
     
     type_counts = {}
     tier_counts = {}

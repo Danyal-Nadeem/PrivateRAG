@@ -6,27 +6,27 @@
   "spans": [
     {
       "start": 803,
-      "end": 817,
+      "end": 816,
       "label": "PERSON",
-      "text": "Victoria Smith"
+      "text": "Sarwar Soomro"
     },
     {
-      "start": 829,
+      "start": 828,
       "end": 837,
       "label": "EMP_ID",
-      "text": "EMP59729"
+      "text": "EMP-85231"
     },
     {
       "start": 907,
-      "end": 923,
+      "end": 929,
       "label": "EMAIL",
-      "text": "vsmith@global.pk"
+      "text": "ssoomro@techmatrix.net"
     },
     {
-      "start": 949,
-      "end": 964,
+      "start": 955,
+      "end": 971,
       "label": "PHONE",
-      "text": "+92 301 6647119"
+      "text": "+92-42-376647119"
     }
   ]
 }

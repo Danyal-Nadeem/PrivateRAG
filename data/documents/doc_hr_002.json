@@ -6,51 +6,51 @@
   "spans": [
     {
       "start": 417,
-      "end": 429,
+      "end": 427,
       "label": "PERSON",
-      "text": "Noor Manzoor"
+      "text": "Diana Chen"
     },
     {
-      "start": 466,
-      "end": 475,
+      "start": 464,
+      "end": 473,
       "label": "EMP_ID",
-      "text": "EMP-46256"
+      "text": "EMP-97332"
     },
     {
-      "start": 504,
-      "end": 543,
+      "start": 502,
+      "end": 563,
       "label": "ADDRESS",
-      "text": "3435 River Way, San Francisco, CA 94102"
+      "text": "House 54, Street 9, State Life Society Phase 1, Lahore, 54792"
     },
     {
-      "start": 565,
-      "end": 590,
+      "start": 585,
+      "end": 615,
       "label": "EMAIL",
-      "text": "noor.10500@techmatrix.net"
+      "text": "diana.chen@privaterag.internal"
     },
     {
-      "start": 613,
-      "end": 629,
+      "start": 638,
+      "end": 650,
       "label": "PHONE",
-      "text": "+92-42-351852264"
+      "text": "0321-4533779"
     },
     {
-      "start": 829,
-      "end": 841,
+      "start": 850,
+      "end": 860,
       "label": "PERSON",
-      "text": "Noor Manzoor"
+      "text": "Diana Chen"
     },
     {
-      "start": 868,
-      "end": 873,
+      "start": 887,
+      "end": 898,
       "label": "SALARY",
-      "text": "$140k"
+      "text": "EUR 140,000"
     },
     {
-      "start": 1052,
-      "end": 1091,
+      "start": 1077,
+      "end": 1138,
       "label": "ADDRESS",
-      "text": "3435 River Way, San Francisco, CA 94102"
+      "text": "House 54, Street 9, State Life Society Phase 1, Lahore, 54792"
     }
   ]
 }

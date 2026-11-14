@@ -9,4 +9,4 @@ This standard operating procedure is restricted to full-time employees, authoriz
 All systems must adhere to strict zero-trust network policies. Access keys must be rotated every 90 days, and production deploys require two peer reviews. For urgent escalations or system failures, staff must follow the internal on-call protocol.
 
 ## 3. Technical Contact and Ownership
-The designated system maintainer and process lead for this protocol is Kyle Long (Staff ID: EMP-25491). For direct questions regarding these technical instructions, email klong@global.pk or call office extension 0300-1983738.
+The designated system maintainer and process lead for this protocol is Elijah Gibson (Staff ID: E-83056). For direct questions regarding these technical instructions, email elijah.gibson@enterprise.org or call office extension 0320-4586084.

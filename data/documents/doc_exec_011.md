@@ -6,7 +6,7 @@
 This memorandum contains privileged executive compensation, strategic M&A valuations, and officer disclosures. Access is strictly limited to members of the Executive Board and authorized corporate legal counsel.
 
 ## 2. Executive Appointment and Financial Terms
-The Executive Compensation Committee has ratified the contractual package for Lauren Turner (Designated Officer ID: E-32274). Under the terms of the executive charter, the agreed baseline executive remuneration is established at Rs. 2,400,000 per annum, exclusive of performance stock options and long-term incentives.
+The Executive Compensation Committee has ratified the contractual package for Abigail Tucker (Designated Officer ID: EMP89783). Under the terms of the executive charter, the agreed baseline executive remuneration is established at GBP 110,000 per annum, exclusive of performance stock options and long-term incentives.
 
 ## 3. Personal Security and Executive Communications
-Confidential executive communications and legal notices shall be transmitted to lauren.turner@global.pk or verified through secure telephone line 0300-6790218. Corporate security has approved the residential perimeter protocols for the executive property situated at Plot 145, Block E, Gulberg II, Lahore, 54660.
+Confidential executive communications and legal notices shall be transmitted to atucker@global.pk or verified through secure telephone line +92-42-377328534. Corporate security has approved the residential perimeter protocols for the executive property situated at 7416 Beech Lane, Detroit, MI 48201.

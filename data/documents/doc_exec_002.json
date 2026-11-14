@@ -6,39 +6,39 @@
   "spans": [
     {
       "start": 523,
-      "end": 537,
+      "end": 538,
       "label": "PERSON",
-      "text": "Taimoor Ansari"
+      "text": "Danielle Medina"
     },
     {
-      "start": 562,
-      "end": 571,
+      "start": 563,
+      "end": 572,
       "label": "EMP_ID",
-      "text": "EMP-20258"
+      "text": "EMP-86808"
     },
     {
-      "start": 677,
-      "end": 690,
+      "start": 678,
+      "end": 682,
       "label": "SALARY",
-      "text": "PKR 4,200,000"
+      "text": "$95k"
     },
     {
-      "start": 901,
-      "end": 929,
+      "start": 893,
+      "end": 922,
       "label": "EMAIL",
-      "text": "taimoor.10289@techmatrix.net"
+      "text": "danielle.medina@corp.acme.com"
     },
     {
-      "start": 972,
-      "end": 984,
+      "start": 965,
+      "end": 977,
       "label": "PHONE",
-      "text": "214-272-4824"
+      "text": "0320-8883823"
     },
     {
-      "start": 1093,
-      "end": 1129,
+      "start": 1086,
+      "end": 1121,
       "label": "ADDRESS",
-      "text": "634 Sunset Avenue, Atlanta, GA 30301"
+      "text": "2947 Laurel Lane, Detroit, MI 48201"
     }
   ]
 }

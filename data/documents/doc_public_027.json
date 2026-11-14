@@ -6,15 +6,15 @@
   "spans": [
     {
       "start": 329,
-      "end": 345,
+      "end": 348,
       "label": "PERSON",
-      "text": "Dr. Ayesha Malik"
+      "text": "Prof. Arshad Dawood"
     },
     {
-      "start": 968,
-      "end": 984,
+      "start": 971,
+      "end": 990,
       "label": "PERSON",
-      "text": "Dr. Ayesha Malik"
+      "text": "Prof. Arshad Dawood"
     }
   ]
 }

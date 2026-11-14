@@ -6,51 +6,51 @@
   "spans": [
     {
       "start": 404,
-      "end": 418,
+      "end": 416,
       "label": "PERSON",
-      "text": "Shahbaz Bashir"
+      "text": "Meerab Jatoi"
     },
     {
-      "start": 455,
-      "end": 464,
+      "start": 453,
+      "end": 462,
       "label": "EMP_ID",
-      "text": "EMP-42125"
+      "text": "EMP-96579"
     },
     {
-      "start": 493,
-      "end": 529,
+      "start": 491,
+      "end": 532,
       "label": "ADDRESS",
-      "text": "2606 Madison Drive, Dallas, TX 75201"
+      "text": "1829 College Drive, Albuquerque, NM 87101"
     },
     {
-      "start": 551,
-      "end": 579,
+      "start": 554,
+      "end": 581,
       "label": "EMAIL",
-      "text": "shahbaz.10534@enterprise.org"
+      "text": "meerab.80912@techmatrix.net"
     },
     {
-      "start": 602,
-      "end": 614,
+      "start": 604,
+      "end": 618,
       "label": "PHONE",
-      "text": "503-830-9817"
+      "text": "(518) 356-8135"
     },
     {
-      "start": 814,
-      "end": 828,
+      "start": 818,
+      "end": 830,
       "label": "PERSON",
-      "text": "Shahbaz Bashir"
+      "text": "Meerab Jatoi"
     },
     {
-      "start": 855,
-      "end": 866,
+      "start": 857,
+      "end": 864,
       "label": "SALARY",
-      "text": "PKR 650,000"
+      "text": "$72,000"
     },
     {
-      "start": 1045,
-      "end": 1081,
+      "start": 1043,
+      "end": 1084,
       "label": "ADDRESS",
-      "text": "2606 Madison Drive, Dallas, TX 75201"
+      "text": "1829 College Drive, Albuquerque, NM 87101"
     }
   ]
 }

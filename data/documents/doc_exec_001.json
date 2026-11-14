@@ -6,39 +6,39 @@
   "spans": [
     {
       "start": 530,
-      "end": 543,
+      "end": 541,
       "label": "PERSON",
-      "text": "Nasir Bukhari"
+      "text": "Zoha Khuhro"
     },
     {
-      "start": 568,
+      "start": 566,
       "end": 575,
       "label": "EMP_ID",
-      "text": "E-48569"
+      "text": "EMP-98286"
     },
     {
       "start": 681,
-      "end": 686,
+      "end": 692,
       "label": "SALARY",
-      "text": "$220k"
+      "text": "USD 180,000"
     },
     {
-      "start": 897,
-      "end": 923,
+      "start": 903,
+      "end": 930,
       "label": "EMAIL",
-      "text": "nasir.10216@enterprise.org"
+      "text": "zkhuhro@privaterag.internal"
     },
     {
-      "start": 966,
-      "end": 981,
+      "start": 973,
+      "end": 985,
       "label": "PHONE",
-      "text": "+92 300 3634980"
+      "text": "0321-2010496"
     },
     {
-      "start": 1090,
-      "end": 1123,
+      "start": 1094,
+      "end": 1139,
       "label": "ADDRESS",
-      "text": "1725 Oak Road, San Jose, CA 95113"
+      "text": "7353 Cypress Boulevard, Albuquerque, NM 87101"
     }
   ]
 }

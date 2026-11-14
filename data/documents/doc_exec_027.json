@@ -6,39 +6,39 @@
   "spans": [
     {
       "start": 535,
-      "end": 550,
+      "end": 547,
       "label": "PERSON",
-      "text": "Ghazala Ghafoor"
+      "text": "Zunera Magsi"
     },
     {
-      "start": 575,
-      "end": 584,
+      "start": 572,
+      "end": 581,
       "label": "EMP_ID",
-      "text": "EMP-18519"
+      "text": "EMP-84259"
     },
     {
-      "start": 690,
-      "end": 698,
+      "start": 687,
+      "end": 695,
       "label": "SALARY",
       "text": "$420,000"
     },
     {
-      "start": 909,
-      "end": 939,
+      "start": 906,
+      "end": 933,
       "label": "EMAIL",
-      "text": "ghazala.ghafoor@techmatrix.net"
+      "text": "zunera.magsi@techmatrix.net"
     },
     {
-      "start": 982,
-      "end": 997,
+      "start": 976,
+      "end": 991,
       "label": "PHONE",
-      "text": "+92 300 3126655"
+      "text": "+92 320 3126655"
     },
     {
-      "start": 1106,
-      "end": 1149,
+      "start": 1100,
+      "end": 1153,
       "label": "ADDRESS",
-      "text": "Plot 68, Block B, Gulberg II, Lahore, 54660"
+      "text": "Plot 68, Block B, DHA Phase 5 Sector G, Lahore, 54792"
     }
   ]
 }

@@ -5,14 +5,14 @@
 ## 1. Confidential Employee Profile
 This document contains sensitive Personally Identifiable Information (PII) and payroll records protected under HR data policies. Unauthorized dissemination or review will result in immediate disciplinary action.
 
-- **Full Employee Name:** Humaira Khalid
-- **Employee Identification Code:** EMP-48828
-- **Residential Domicile:** 7485 Cedar Avenue, Atlanta, GA 30301
-- **Primary Email:** humaira.10624@global.pk
-- **Telephone Line:** 702-229-9098
+- **Full Employee Name:** Alan Castro
+- **Employee Identification Code:** EMP-97634
+- **Residential Domicile:** 4497 Birch Boulevard, Nashville, TN 37201
+- **Primary Email:** alan.castro@enterprise.org
+- **Telephone Line:** 0320-5091349
 
 ## 2. Compensation and Remuneration Details
-Following the annual departmental performance audit, the HR Compensation Committee reviewed all wage bandings. The confirmed annual base compensation for Humaira Khalid is officially approved at USD 320,000 per annum, payable in monthly disbursements.
+Following the annual departmental performance audit, the HR Compensation Committee reviewed all wage bandings. The confirmed annual base compensation for Alan Castro is officially approved at Rs. 380,000 per annum, payable in monthly disbursements.
 
 ## 3. Compliance and Sign-Off
-All tax deduction certificates, health insurance coverage, and official notices will be dispatched to 7485 Cedar Avenue, Atlanta, GA 30301. For any payroll disputes, contact Human Resources directly.
+All tax deduction certificates, health insurance coverage, and official notices will be dispatched to 4497 Birch Boulevard, Nashville, TN 37201. For any payroll disputes, contact Human Resources directly.
