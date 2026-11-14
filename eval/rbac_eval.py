@@ -143,13 +143,20 @@ def run_eval() -> None:
     # ------------------------------------------------------------------
     total_runs = len(rows)
 
-    def _rate(col: str, subset=None) -> float:
-        data = rows if subset is None else subset
-        if not data:
-            return 0.0
-        return sum(1 for r in data if r[col]) / len(data)
+    def _count(col: str, subset) -> int:
+        return sum(1 for r in subset if r[col])
 
-    # Per-role stats (filtered)
+    def fmt_stat(num: int, den: int) -> str:
+        if den == 0:
+            return "n/a"
+        pct = (num / den) * 100
+        return f"{num}/{den} = {pct:.1f}%"
+
+    def fmt_col(num: int, den: int, w: int = 16) -> str:
+        s = fmt_stat(num, den)
+        return f"{s:>{w}}"
+
+    # Per-role stats
     per_role: dict[str, dict] = {}
     for role in ROLES:
         role_rows   = [r for r in rows if r["role"] == role]
@@ -157,47 +164,88 @@ def run_eval() -> None:
         normal_auth = [r for r in auth_rows if r["query_type"] == "normal"]
         adv_auth    = [r for r in auth_rows if r["query_type"] == "adversarial"]
         adv_rows    = [r for r in role_rows if r["query_type"] == "adversarial"]
+
+        f_leak_c   = _count("filtered_leak", role_rows)
+        u_leak_c   = _count("unfiltered_leak", role_rows)
+        f_hit1_n_c = _count("filtered_hit@1", normal_auth)
+        f_hit3_n_c = _count("filtered_hit@3", normal_auth)
+        f_hit1_a_c = _count("filtered_hit@1", adv_auth)
+        f_hit3_a_c = _count("filtered_hit@3", adv_auth)
+        adv_leak_c = _count("filtered_leak", adv_rows)
+        u_hit1_n_c = _count("unfiltered_hit@1", normal_auth)
+        u_hit3_n_c = _count("unfiltered_hit@3", normal_auth)
+
         per_role[role] = {
-            "total_runs"              : len(role_rows),
-            "authorized_runs"         : len(auth_rows),
-            "filtered_leak_rate"      : _rate("filtered_leak", role_rows),
-            "unfiltered_leak_rate"    : _rate("unfiltered_leak", role_rows),
-            "filtered_hit@1_normal"   : _rate("filtered_hit@1", normal_auth),
-            "filtered_hit@3_normal"   : _rate("filtered_hit@3", normal_auth),
-            "filtered_hit@1_adversarial" : _rate("filtered_hit@1", adv_auth),
-            "filtered_hit@3_adversarial" : _rate("filtered_hit@3", adv_auth),
-            "adversarial_leak_rate"   : _rate("filtered_leak", adv_rows),
-            "unfiltered_hit@1_normal" : _rate("unfiltered_hit@1", normal_auth),
-            "unfiltered_hit@3_normal" : _rate("unfiltered_hit@3", normal_auth),
+            "total_runs"                 : len(role_rows),
+            "authorized_runs"            : len(auth_rows),
+            "normal_auth_count"          : len(normal_auth),
+            "adv_auth_count"             : len(adv_auth),
+            "adv_rows_count"             : len(adv_rows),
+            "filtered_leak"              : fmt_stat(f_leak_c, len(role_rows)),
+            "unfiltered_leak"            : fmt_stat(u_leak_c, len(role_rows)),
+            "filtered_hit@1_normal"      : fmt_stat(f_hit1_n_c, len(normal_auth)),
+            "filtered_hit@3_normal"      : fmt_stat(f_hit3_n_c, len(normal_auth)),
+            "filtered_hit@1_adversarial" : fmt_stat(f_hit1_a_c, len(adv_auth)),
+            "filtered_hit@3_adversarial" : fmt_stat(f_hit3_a_c, len(adv_auth)),
+            "adversarial_leak_rate"      : fmt_stat(adv_leak_c, len(adv_rows)),
+            "unfiltered_hit@1_normal"    : fmt_stat(u_hit1_n_c, len(normal_auth)),
+            "unfiltered_hit@3_normal"    : fmt_stat(u_hit3_n_c, len(normal_auth)),
+            "f_leak_c"                   : f_leak_c,
+            "u_leak_c"                   : u_leak_c,
+            "f_hit1_n_c"                 : f_hit1_n_c,
+            "f_hit3_n_c"                 : f_hit3_n_c,
+            "f_hit1_a_c"                 : f_hit1_a_c,
+            "f_hit3_a_c"                 : f_hit3_a_c,
+            "adv_leak_c"                 : adv_leak_c,
         }
 
-    overall_filtered_leak   = _rate("filtered_leak")
-    overall_unfiltered_leak = _rate("unfiltered_leak")
+    overall_f_leak_c = _count("filtered_leak", rows)
+    overall_u_leak_c = _count("unfiltered_leak", rows)
     overall_adv_rows = [r for r in rows if r["query_type"] == "adversarial"]
-    overall_adv_leak = _rate("filtered_leak", overall_adv_rows)
+    overall_adv_leak_c = _count("filtered_leak", overall_adv_rows)
 
     # ------------------------------------------------------------------
     # Print report
     # ------------------------------------------------------------------
-    print(f"\n{'ROLE':<12} {'F-LEAK%':>8} {'U-LEAK%':>8} {'HIT@1-N':>8} {'HIT@3-N':>8} {'HIT@1-A':>8} {'HIT@3-A':>8} {'ADV-LEAK%':>10}")
-    print("-" * 76)
-    for role, s in per_role.items():
+    header = (
+        f"{'ROLE':<10} "
+        f"{'F-LEAK':>16} "
+        f"{'U-LEAK':>16} "
+        f"{'HIT@1-N':>16} "
+        f"{'HIT@3-N':>16} "
+        f"{'HIT@1-A':>16} "
+        f"{'HIT@3-A':>16} "
+        f"{'ADV-LEAK':>16}"
+    )
+    sep = "-" * len(header)
+    print(f"\n{header}")
+    print(sep)
+    for role in ROLES:
+        s = per_role[role]
         print(
-            f"{role:<12} "
-            f"{s['filtered_leak_rate']*100:>7.1f}% "
-            f"{s['unfiltered_leak_rate']*100:>7.1f}% "
-            f"{s['filtered_hit@1_normal']*100:>7.1f}% "
-            f"{s['filtered_hit@3_normal']*100:>7.1f}% "
-            f"{s['filtered_hit@1_adversarial']*100:>7.1f}% "
-            f"{s['filtered_hit@3_adversarial']*100:>7.1f}% "
-            f"{s['adversarial_leak_rate']*100:>9.1f}%"
+            f"{role:<10} "
+            f"{fmt_col(s['f_leak_c'], s['total_runs'])} "
+            f"{fmt_col(s['u_leak_c'], s['total_runs'])} "
+            f"{fmt_col(s['f_hit1_n_c'], s['normal_auth_count'])} "
+            f"{fmt_col(s['f_hit3_n_c'], s['normal_auth_count'])} "
+            f"{fmt_col(s['f_hit1_a_c'], s['adv_auth_count'])} "
+            f"{fmt_col(s['f_hit3_a_c'], s['adv_auth_count'])} "
+            f"{fmt_col(s['adv_leak_c'], s['adv_rows_count'])}"
         )
-    print("-" * 76)
-    print(f"{'OVERALL':<12} {overall_filtered_leak*100:>7.1f}% {overall_unfiltered_leak*100:>7.1f}%")
-    print(f"\nOverall adversarial leak rate (filtered): {overall_adv_leak*100:.1f}%")
+    print(sep)
+    print(
+        f"{'OVERALL':<10} "
+        f"{fmt_col(overall_f_leak_c, total_runs)} "
+        f"{fmt_col(overall_u_leak_c, total_runs)}"
+    )
+    print(f"\nOverall adversarial leak rate (filtered): {fmt_stat(overall_adv_leak_c, len(overall_adv_rows))}")
     print(f"\nTarget filtered leak rate: 0%")
 
-    if overall_filtered_leak > 0:
+    overall_f_leak_str = fmt_stat(overall_f_leak_c, total_runs)
+    overall_u_leak_str = fmt_stat(overall_u_leak_c, total_runs)
+    overall_adv_leak_str = fmt_stat(overall_adv_leak_c, len(overall_adv_rows))
+
+    if overall_f_leak_c > 0:
         leaking = [r for r in rows if r["filtered_leak"]]
         print(f"\nWARNING: {len(leaking)} leak(s) detected!")
         for r in leaking[:5]:
@@ -210,9 +258,9 @@ def run_eval() -> None:
     # ------------------------------------------------------------------
     results_json = {
         "total_runs"              : total_runs,
-        "overall_filtered_leak"   : overall_filtered_leak,
-        "overall_unfiltered_leak" : overall_unfiltered_leak,
-        "overall_adversarial_leak": overall_adv_leak,
+        "overall_filtered_leak"   : overall_f_leak_str,
+        "overall_unfiltered_leak" : overall_u_leak_str,
+        "overall_adversarial_leak": overall_adv_leak_str,
         "per_role"                : per_role,
         "rows"                    : rows,
     }

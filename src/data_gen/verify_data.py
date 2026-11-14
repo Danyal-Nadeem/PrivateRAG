@@ -487,6 +487,19 @@ def verify_queries():
     print(f"Total queries in queries.json: {len(queries)} (Expected: >= 60)")
     assert len(queries) >= 60, f"Expected >= 60 queries, got {len(queries)}"
     
+    # Assert all query texts are unique (no two queries share the same text)
+    query_texts = [q["query_text"] for q in queries]
+    duplicates = [text for text, count in Counter(query_texts).items() if count > 1]
+    assert len(duplicates) == 0, f"Found duplicate query texts: {duplicates[:5]}"
+    print("  [PASS] All evaluation queries have strictly unique query texts (zero duplicates).")
+    
+    # Assert no query text contains raw doc_id token
+    for q in queries:
+        assert not re.search(r"doc_(?:public|internal|hr|exec)_\d+", q["query_text"]), (
+            f"Query {q['query_id']} contains raw doc_id: {q['query_text']}"
+        )
+    print("  [PASS] No query text contains raw doc_id tokens.")
+    
     type_counts = {}
     tier_counts = {}
     

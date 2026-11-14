@@ -67,6 +67,9 @@ def upsert_chunks(chunks: list[dict]) -> None:
     Each chunk dict must have keys: ``text``, ``doc_id``, ``access_level``,
     ``chunk_index``, ``title``.
 
+    Chunks are embedded with a context header 'Title: <title>' prepended to the
+    text, but the stored payload retains the original text without the header.
+
     Parameters
     ----------
     chunks:
@@ -75,8 +78,9 @@ def upsert_chunks(chunks: list[dict]) -> None:
     if not chunks:
         return
     client = _get_client()
-    texts = [c["text"] for c in chunks]
-    vectors: np.ndarray = _embedder.embed(texts)
+    # Prepend context header 'Title: <title>' before embedding
+    texts_to_embed = [f"Title: {c['title']}\n\n{c['text']}" for c in chunks]
+    vectors: np.ndarray = _embedder.embed(texts_to_embed)
 
     points = [
         models.PointStruct(
