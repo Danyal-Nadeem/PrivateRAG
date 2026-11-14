@@ -6,51 +6,51 @@
   "spans": [
     {
       "start": 409,
-      "end": 423,
+      "end": 420,
       "label": "PERSON",
-      "text": "Humaira Khalid"
+      "text": "Alan Castro"
     },
     {
-      "start": 460,
-      "end": 469,
+      "start": 457,
+      "end": 466,
       "label": "EMP_ID",
-      "text": "EMP-48828"
+      "text": "EMP-97634"
     },
     {
-      "start": 498,
-      "end": 534,
+      "start": 495,
+      "end": 536,
       "label": "ADDRESS",
-      "text": "7485 Cedar Avenue, Atlanta, GA 30301"
+      "text": "4497 Birch Boulevard, Nashville, TN 37201"
     },
     {
-      "start": 556,
-      "end": 579,
+      "start": 558,
+      "end": 584,
       "label": "EMAIL",
-      "text": "humaira.10624@global.pk"
+      "text": "alan.castro@enterprise.org"
     },
     {
-      "start": 602,
-      "end": 614,
+      "start": 607,
+      "end": 619,
       "label": "PHONE",
-      "text": "702-229-9098"
+      "text": "0320-5091349"
     },
     {
-      "start": 814,
-      "end": 828,
+      "start": 819,
+      "end": 830,
       "label": "PERSON",
-      "text": "Humaira Khalid"
+      "text": "Alan Castro"
     },
     {
-      "start": 855,
-      "end": 866,
+      "start": 857,
+      "end": 868,
       "label": "SALARY",
-      "text": "USD 320,000"
+      "text": "Rs. 380,000"
     },
     {
-      "start": 1045,
-      "end": 1081,
+      "start": 1047,
+      "end": 1088,
       "label": "ADDRESS",
-      "text": "7485 Cedar Avenue, Atlanta, GA 30301"
+      "text": "4497 Birch Boulevard, Nashville, TN 37201"
     }
   ]
 }

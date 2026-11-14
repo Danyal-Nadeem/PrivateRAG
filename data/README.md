@@ -84,12 +84,15 @@ Contains 60 natural-sounding sentences formatted as chatbot conversational answe
 ## 5. Document Corpus (120 Documents)
 
 Distributed equally across the 4 access tiers:
-- **`public` (30 docs):** Public whitepapers, governance reports, and press releases. Contains **NO sensitive values** except the names of public corporate figures (`Dr. Arshad Khan`, `Sarah Jenkins`, etc.).
+- **`public` (30 docs):** Public whitepapers, governance reports, and press releases. Contains **NO sensitive values** except the names of public corporate figures (`Dr. Azhar Memon`, `Julia Gibson`, etc.).
 - **`internal` (30 docs):** Standard engineering runbooks, IT setup guides, facilities policies. Contains `PERSON`, `EMP_ID`, `EMAIL`, and `PHONE` of technical leads. Contains zero salary records.
 - **`hr_restricted` (30 docs):** Performance reviews, payroll adjustments, compensation memos, offer letters. Contains all 6 entity types (`PERSON`, `EMP_ID`, `SALARY`, `ADDRESS`, `PHONE`, `EMAIL`).
 - **`exec_restricted` (30 docs):** Board minutes, C-suite executive compensation resolutions, M&A due diligence, and residential security stipends. Contains all 6 entity types.
 
-Each document has an accompanying sidecar `<doc_id>.json` specifying exact character-level entity offsets, and is cataloged in `metadata.json` with an explicit list of `sensitive_values`.
+**Leakage Protection & Pool Isolation:**
+- All document entities and public figures are strictly generated using the **TEST pool** components (and zero from train or val pools).
+- Document entities (`PERSON`, `EMAIL`, `PHONE`, `EMP_ID`, `ADDRESS`) have **zero exact string overlap** with `train.jsonl`, `val.jsonl`, and `test_realistic.jsonl`.
+- Each document has an accompanying sidecar `<doc_id>.json` specifying exact character-level entity offsets, and is cataloged in `metadata.json` with an explicit list of `sensitive_values`.
 
 ---
 

@@ -6,51 +6,51 @@
   "spans": [
     {
       "start": 418,
-      "end": 431,
+      "end": 430,
       "label": "PERSON",
-      "text": "Mehwish Zaman"
+      "text": "Albert Henry"
     },
     {
-      "start": 468,
-      "end": 477,
+      "start": 467,
+      "end": 476,
       "label": "EMP_ID",
-      "text": "EMP-26931"
+      "text": "EMP-92418"
     },
     {
-      "start": 506,
-      "end": 544,
+      "start": 505,
+      "end": 549,
       "label": "ADDRESS",
-      "text": "1502 Railroad Avenue, Denver, CO 80201"
+      "text": "3575 Laurel Boulevard, Albuquerque, NM 87101"
     },
     {
-      "start": 566,
-      "end": 582,
+      "start": 571,
+      "end": 592,
       "label": "EMAIL",
-      "text": "mzaman@global.pk"
+      "text": "ahenry@techmatrix.net"
     },
     {
-      "start": 605,
-      "end": 620,
+      "start": 615,
+      "end": 627,
       "label": "PHONE",
-      "text": "+1-404-907-8800"
+      "text": "0321-5635017"
     },
     {
-      "start": 820,
-      "end": 833,
+      "start": 827,
+      "end": 839,
       "label": "PERSON",
-      "text": "Mehwish Zaman"
+      "text": "Albert Henry"
     },
     {
-      "start": 860,
-      "end": 865,
+      "start": 866,
+      "end": 879,
       "label": "SALARY",
-      "text": "$125k"
+      "text": "Rs. 1,600,000"
     },
     {
-      "start": 1044,
-      "end": 1082,
+      "start": 1058,
+      "end": 1102,
       "label": "ADDRESS",
-      "text": "1502 Railroad Avenue, Denver, CO 80201"
+      "text": "3575 Laurel Boulevard, Albuquerque, NM 87101"
     }
   ]
 }

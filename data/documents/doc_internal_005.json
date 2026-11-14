@@ -6,27 +6,27 @@
   "spans": [
     {
       "start": 799,
-      "end": 810,
+      "end": 809,
       "label": "PERSON",
-      "text": "Bushra Abid"
+      "text": "Bruce Tran"
     },
     {
-      "start": 822,
+      "start": 821,
       "end": 830,
       "label": "EMP_ID",
-      "text": "EMP50535"
+      "text": "EMP-98089"
     },
     {
       "start": 900,
-      "end": 927,
+      "end": 925,
       "label": "EMAIL",
-      "text": "bushra.10196@techmatrix.net"
+      "text": "btran@privaterag.internal"
     },
     {
-      "start": 953,
-      "end": 965,
+      "start": 951,
+      "end": 966,
       "label": "PHONE",
-      "text": "312-877-4733"
+      "text": "+1-518-271-1750"
     }
   ]
 }

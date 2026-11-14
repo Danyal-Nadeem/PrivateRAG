@@ -6,39 +6,39 @@
   "spans": [
     {
       "start": 530,
-      "end": 542,
+      "end": 544,
       "label": "PERSON",
-      "text": "Peter Wright"
+      "text": "Natalie Castro"
     },
     {
-      "start": 567,
-      "end": 576,
+      "start": 569,
+      "end": 578,
       "label": "EMP_ID",
-      "text": "EMP-20783"
+      "text": "EMP-85391"
     },
     {
-      "start": 682,
-      "end": 693,
+      "start": 684,
+      "end": 695,
       "label": "SALARY",
       "text": "Rs. 850,000"
     },
     {
-      "start": 904,
-      "end": 925,
+      "start": 906,
+      "end": 927,
       "label": "EMAIL",
-      "text": "pwright@corp.acme.com"
+      "text": "ncastro@corp.acme.com"
     },
     {
-      "start": 968,
-      "end": 983,
+      "start": 970,
+      "end": 985,
       "label": "PHONE",
-      "text": "+1-713-972-4696"
+      "text": "+1-410-972-4696"
     },
     {
-      "start": 1092,
+      "start": 1094,
       "end": 1132,
       "label": "ADDRESS",
-      "text": "5649 Spring Road, Indianapolis, IN 46204"
+      "text": "5649 Linden Road, Sacramento, CA 95814"
     }
   ]
 }

@@ -6,39 +6,39 @@
   "spans": [
     {
       "start": 526,
-      "end": 539,
+      "end": 540,
       "label": "PERSON",
-      "text": "Diane Morales"
+      "text": "Liaquat Monnoo"
     },
     {
-      "start": 564,
-      "end": 573,
+      "start": 565,
+      "end": 572,
       "label": "EMP_ID",
-      "text": "EMP-45456"
+      "text": "E-89416"
     },
     {
-      "start": 679,
-      "end": 687,
+      "start": 678,
+      "end": 686,
       "label": "SALARY",
-      "text": "$125,000"
+      "text": "$150,000"
     },
     {
-      "start": 898,
-      "end": 923,
+      "start": 897,
+      "end": 925,
       "label": "EMAIL",
-      "text": "diane.10720@corp.acme.com"
+      "text": "liaquat.80306@enterprise.org"
     },
     {
-      "start": 966,
+      "start": 968,
       "end": 980,
       "label": "PHONE",
-      "text": "(214) 370-5906"
+      "text": "210-532-1919"
     },
     {
       "start": 1089,
-      "end": 1123,
+      "end": 1127,
       "label": "ADDRESS",
-      "text": "Flat 204, Samanabad, Lahore, 54500"
+      "text": "1746 Grove Drive, Sacramento, CA 95814"
     }
   ]
 }

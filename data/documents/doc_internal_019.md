@@ -9,4 +9,4 @@ This standard operating procedure is restricted to full-time employees, authoriz
 All systems must adhere to strict zero-trust network policies. Access keys must be rotated every 90 days, and production deploys require two peer reviews. For urgent escalations or system failures, staff must follow the internal on-call protocol.
 
 ## 3. Technical Contact and Ownership
-The designated system maintainer and process lead for this protocol is Hafsa Mushtaq (Staff ID: EMP-25080). For direct questions regarding these technical instructions, email hafsa.mushtaq@corp.acme.com or call office extension (312) 434-2104.
+The designated system maintainer and process lead for this protocol is Mumtaz Lakhani (Staff ID: EMP-87540). For direct questions regarding these technical instructions, email mumtaz.lakhani@corp.acme.com or call office extension (210) 434-2104.

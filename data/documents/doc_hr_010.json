@@ -6,51 +6,51 @@
   "spans": [
     {
       "start": 405,
-      "end": 419,
+      "end": 417,
       "label": "PERSON",
-      "text": "Afshan Mahmood"
+      "text": "Mushtaq Syed"
     },
     {
-      "start": 456,
-      "end": 465,
+      "start": 454,
+      "end": 463,
       "label": "EMP_ID",
-      "text": "EMP-54388"
+      "text": "EMP-98166"
     },
     {
-      "start": 494,
-      "end": 528,
+      "start": 492,
+      "end": 531,
       "label": "ADDRESS",
-      "text": "9077 Spring Road, Boston, MA 02108"
+      "text": "2951 Cypress Lane, Sacramento, CA 95814"
     },
     {
-      "start": 550,
-      "end": 572,
+      "start": 553,
+      "end": 578,
       "label": "EMAIL",
-      "text": "amahmood@corp.acme.com"
+      "text": "msyed@privaterag.internal"
     },
     {
-      "start": 595,
-      "end": 607,
+      "start": 601,
+      "end": 617,
       "label": "PHONE",
-      "text": "0300-6406444"
+      "text": "+92-42-371006810"
     },
     {
-      "start": 807,
-      "end": 821,
+      "start": 817,
+      "end": 829,
       "label": "PERSON",
-      "text": "Afshan Mahmood"
+      "text": "Mushtaq Syed"
     },
     {
-      "start": 848,
-      "end": 856,
+      "start": 856,
+      "end": 869,
       "label": "SALARY",
-      "text": "$420,000"
+      "text": "PKR 1,800,000"
     },
     {
-      "start": 1035,
-      "end": 1069,
+      "start": 1048,
+      "end": 1087,
       "label": "ADDRESS",
-      "text": "9077 Spring Road, Boston, MA 02108"
+      "text": "2951 Cypress Lane, Sacramento, CA 95814"
     }
   ]
 }

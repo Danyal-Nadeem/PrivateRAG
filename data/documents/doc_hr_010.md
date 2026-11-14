@@ -5,14 +5,14 @@
 ## 1. Confidential Employee Profile
 This document contains sensitive Personally Identifiable Information (PII) and payroll records protected under HR data policies. Unauthorized dissemination or review will result in immediate disciplinary action.
 
-- **Full Employee Name:** Afshan Mahmood
-- **Employee Identification Code:** EMP-54388
-- **Residential Domicile:** 9077 Spring Road, Boston, MA 02108
-- **Primary Email:** amahmood@corp.acme.com
-- **Telephone Line:** 0300-6406444
+- **Full Employee Name:** Mushtaq Syed
+- **Employee Identification Code:** EMP-98166
+- **Residential Domicile:** 2951 Cypress Lane, Sacramento, CA 95814
+- **Primary Email:** msyed@privaterag.internal
+- **Telephone Line:** +92-42-371006810
 
 ## 2. Compensation and Remuneration Details
-Following the annual departmental performance audit, the HR Compensation Committee reviewed all wage bandings. The confirmed annual base compensation for Afshan Mahmood is officially approved at $420,000 per annum, payable in monthly disbursements.
+Following the annual departmental performance audit, the HR Compensation Committee reviewed all wage bandings. The confirmed annual base compensation for Mushtaq Syed is officially approved at PKR 1,800,000 per annum, payable in monthly disbursements.
 
 ## 3. Compliance and Sign-Off
-All tax deduction certificates, health insurance coverage, and official notices will be dispatched to 9077 Spring Road, Boston, MA 02108. For any payroll disputes, contact Human Resources directly.
+All tax deduction certificates, health insurance coverage, and official notices will be dispatched to 2951 Cypress Lane, Sacramento, CA 95814. For any payroll disputes, contact Human Resources directly.

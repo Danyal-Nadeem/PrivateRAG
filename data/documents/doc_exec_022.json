@@ -6,39 +6,39 @@
   "spans": [
     {
       "start": 523,
-      "end": 535,
+      "end": 534,
       "label": "PERSON",
-      "text": "Ronald Perry"
+      "text": "Bruce Wells"
     },
     {
-      "start": 560,
-      "end": 569,
+      "start": 559,
+      "end": 568,
       "label": "EMP_ID",
-      "text": "EMP-46524"
+      "text": "EMP-91985"
     },
     {
-      "start": 675,
-      "end": 688,
+      "start": 674,
+      "end": 687,
       "label": "SALARY",
       "text": "PKR 1,100,000"
     },
     {
-      "start": 899,
-      "end": 926,
+      "start": 898,
+      "end": 924,
       "label": "EMAIL",
-      "text": "ronald.10390@techmatrix.net"
+      "text": "bruce.80390@techmatrix.net"
     },
     {
-      "start": 969,
-      "end": 981,
+      "start": 967,
+      "end": 979,
       "label": "PHONE",
-      "text": "801-310-4830"
+      "text": "703-310-4830"
     },
     {
-      "start": 1090,
-      "end": 1137,
+      "start": 1088,
+      "end": 1139,
       "label": "ADDRESS",
-      "text": "Plot 64, Block F, Cavalry Ground, Lahore, 54810"
+      "text": "Plot 64, Block F, Askari 10 Sector D, Lahore, 54810"
     }
   ]
 }

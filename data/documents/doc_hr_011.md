@@ -5,14 +5,14 @@
 ## 1. Confidential Employee Profile
 This document contains sensitive Personally Identifiable Information (PII) and payroll records protected under HR data policies. Unauthorized dissemination or review will result in immediate disciplinary action.
 
-- **Full Employee Name:** Nasir Habib
-- **Employee Identification Code:** EMP-24005
-- **Residential Domicile:** 5591 Spring Street, Phoenix, AZ 85001
-- **Primary Email:** nasir.10317@enterprise.org
-- **Telephone Line:** +92 301 3472189
+- **Full Employee Name:** Shaukat Alvi
+- **Employee Identification Code:** EMP-99004
+- **Residential Domicile:** 3601 Beech Lane, Sacramento, CA 95814
+- **Primary Email:** shaukat.80173@global.pk
+- **Telephone Line:** (615) 727-6491
 
 ## 2. Compensation and Remuneration Details
-Following the annual departmental performance audit, the HR Compensation Committee reviewed all wage bandings. The confirmed annual base compensation for Nasir Habib is officially approved at $350,000 per annum, payable in monthly disbursements.
+Following the annual departmental performance audit, the HR Compensation Committee reviewed all wage bandings. The confirmed annual base compensation for Shaukat Alvi is officially approved at PKR 250,000 per annum, payable in monthly disbursements.
 
 ## 3. Compliance and Sign-Off
-All tax deduction certificates, health insurance coverage, and official notices will be dispatched to 5591 Spring Street, Phoenix, AZ 85001. For any payroll disputes, contact Human Resources directly.
+All tax deduction certificates, health insurance coverage, and official notices will be dispatched to 3601 Beech Lane, Sacramento, CA 95814. For any payroll disputes, contact Human Resources directly.

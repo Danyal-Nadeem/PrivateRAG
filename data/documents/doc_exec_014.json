@@ -6,39 +6,39 @@
   "spans": [
     {
       "start": 523,
-      "end": 536,
+      "end": 538,
       "label": "PERSON",
-      "text": "Tariq Shabbir"
+      "text": "Zarmgheh Junejo"
     },
     {
-      "start": 561,
-      "end": 568,
+      "start": 563,
+      "end": 572,
       "label": "EMP_ID",
-      "text": "E-52911"
+      "text": "EMP-91093"
     },
     {
-      "start": 674,
-      "end": 682,
+      "start": 678,
+      "end": 691,
       "label": "SALARY",
-      "text": "$135,000"
+      "text": "PKR 1,100,000"
     },
     {
-      "start": 893,
-      "end": 915,
+      "start": 902,
+      "end": 931,
       "label": "EMAIL",
-      "text": "tshabbir@corp.acme.com"
+      "text": "zarmgheh.80735@techmatrix.net"
     },
     {
-      "start": 958,
-      "end": 973,
+      "start": 974,
+      "end": 989,
       "label": "PHONE",
-      "text": "+1-707-589-6188"
+      "text": "+1-916-754-1588"
     },
     {
-      "start": 1082,
-      "end": 1122,
+      "start": 1098,
+      "end": 1137,
       "label": "ADDRESS",
-      "text": "6612 Walnut Way, San Francisco, CA 94102"
+      "text": "8842 College Drive, Baltimore, MD 21201"
     }
   ]
 }

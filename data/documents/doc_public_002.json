@@ -6,15 +6,15 @@
   "spans": [
     {
       "start": 327,
-      "end": 340,
+      "end": 339,
       "label": "PERSON",
-      "text": "Sarah Jenkins"
+      "text": "Julia Gibson"
     },
     {
-      "start": 963,
-      "end": 976,
+      "start": 962,
+      "end": 974,
       "label": "PERSON",
-      "text": "Sarah Jenkins"
+      "text": "Julia Gibson"
     }
   ]
 }

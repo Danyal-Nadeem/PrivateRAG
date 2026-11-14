@@ -6,27 +6,27 @@
   "spans": [
     {
       "start": 809,
-      "end": 819,
+      "end": 823,
       "label": "PERSON",
-      "text": "Omer Feroz"
+      "text": "Diana McDonald"
     },
     {
-      "start": 831,
-      "end": 840,
+      "start": 835,
+      "end": 844,
       "label": "EMP_ID",
-      "text": "EMP-38249"
+      "text": "EMP-86239"
     },
     {
-      "start": 910,
-      "end": 926,
+      "start": 914,
+      "end": 933,
       "label": "EMAIL",
-      "text": "oferoz@global.pk"
+      "text": "dmcdonald@global.pk"
     },
     {
-      "start": 952,
-      "end": 966,
+      "start": 959,
+      "end": 971,
       "label": "PHONE",
-      "text": "(312) 889-2612"
+      "text": "0320-1908841"
     }
   ]
 }

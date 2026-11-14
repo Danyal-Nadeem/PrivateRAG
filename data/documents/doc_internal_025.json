@@ -6,27 +6,27 @@
   "spans": [
     {
       "start": 799,
-      "end": 814,
+      "end": 810,
       "label": "PERSON",
-      "text": "Muhammad Yousaf"
+      "text": "Randy Ellis"
     },
     {
-      "start": 826,
-      "end": 833,
+      "start": 822,
+      "end": 831,
       "label": "EMP_ID",
-      "text": "E-27380"
+      "text": "EMP-85394"
     },
     {
-      "start": 903,
-      "end": 920,
+      "start": 901,
+      "end": 917,
       "label": "EMAIL",
-      "text": "myousaf@global.pk"
+      "text": "rellis@global.pk"
     },
     {
-      "start": 946,
+      "start": 943,
       "end": 958,
       "label": "PHONE",
-      "text": "0302-9164991"
+      "text": "+1-916-492-7930"
     }
   ]
 }

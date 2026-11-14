@@ -8,13 +8,13 @@
       "start": 530,
       "end": 544,
       "label": "PERSON",
-      "text": "Nathan Collins"
+      "text": "Brittany Woods"
     },
     {
       "start": 569,
       "end": 578,
       "label": "EMP_ID",
-      "text": "EMP-16007"
+      "text": "EMP-83003"
     },
     {
       "start": 684,
@@ -26,19 +26,19 @@
       "start": 902,
       "end": 936,
       "label": "EMAIL",
-      "text": "nathan.collins@privaterag.internal"
+      "text": "brittany.woods@privaterag.internal"
     },
     {
       "start": 979,
       "end": 994,
       "label": "PHONE",
-      "text": "+1-404-536-3417"
+      "text": "+1-505-536-3417"
     },
     {
       "start": 1103,
-      "end": 1146,
+      "end": 1159,
       "label": "ADDRESS",
-      "text": "House 125, Street 9, Shadman, Lahore, 54000"
+      "text": "House 125, Street 9, Bahria Town Sector C, Lahore, 53720"
     }
   ]
 }

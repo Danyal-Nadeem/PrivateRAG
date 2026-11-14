@@ -6,51 +6,51 @@
   "spans": [
     {
       "start": 416,
-      "end": 426,
+      "end": 429,
       "label": "PERSON",
-      "text": "Saima Jutt"
+      "text": "Altaf Zardari"
     },
     {
-      "start": 463,
-      "end": 472,
+      "start": 466,
+      "end": 475,
       "label": "EMP_ID",
-      "text": "EMP-13295"
+      "text": "EMP-81647"
     },
     {
-      "start": 501,
-      "end": 532,
+      "start": 504,
+      "end": 548,
       "label": "ADDRESS",
-      "text": "Flat 4C, Shadman, Lahore, 54000"
+      "text": "Flat 4C, Bahria Town Sector C, Lahore, 53720"
     },
     {
-      "start": 554,
-      "end": 573,
+      "start": 570,
+      "end": 592,
       "label": "EMAIL",
-      "text": "sjutt@corp.acme.com"
+      "text": "azardari@corp.acme.com"
     },
     {
-      "start": 596,
-      "end": 608,
+      "start": 615,
+      "end": 627,
       "label": "PHONE",
-      "text": "0301-1873851"
+      "text": "0321-1873851"
     },
     {
-      "start": 808,
-      "end": 818,
+      "start": 827,
+      "end": 840,
       "label": "PERSON",
-      "text": "Saima Jutt"
+      "text": "Altaf Zardari"
     },
     {
-      "start": 845,
-      "end": 856,
+      "start": 867,
+      "end": 878,
       "label": "SALARY",
       "text": "PKR 250,000"
     },
     {
-      "start": 1035,
-      "end": 1066,
+      "start": 1057,
+      "end": 1101,
       "label": "ADDRESS",
-      "text": "Flat 4C, Shadman, Lahore, 54000"
+      "text": "Flat 4C, Bahria Town Sector C, Lahore, 53720"
     }
   ]
 }

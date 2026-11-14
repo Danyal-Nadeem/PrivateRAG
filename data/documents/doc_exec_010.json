@@ -6,39 +6,39 @@
   "spans": [
     {
       "start": 529,
-      "end": 540,
+      "end": 539,
       "label": "PERSON",
-      "text": "Paul Turner"
+      "text": "Judy Woods"
     },
     {
-      "start": 565,
-      "end": 572,
+      "start": 564,
+      "end": 573,
       "label": "EMP_ID",
-      "text": "E-41621"
+      "text": "EMP-98063"
     },
     {
-      "start": 678,
+      "start": 679,
       "end": 689,
       "label": "SALARY",
-      "text": "USD 320,000"
+      "text": "USD 75,000"
     },
     {
       "start": 900,
-      "end": 930,
+      "end": 920,
       "label": "EMAIL",
-      "text": "paul.10900@privaterag.internal"
+      "text": "jwoods@corp.acme.com"
     },
     {
-      "start": 973,
-      "end": 988,
+      "start": 963,
+      "end": 975,
       "label": "PHONE",
-      "text": "+92 300 5634662"
+      "text": "805-548-9318"
     },
     {
-      "start": 1097,
-      "end": 1128,
+      "start": 1084,
+      "end": 1122,
       "label": "ADDRESS",
-      "text": "3222 Elm Lane, Boston, MA 02108"
+      "text": "2336 Poplar Road, Sacramento, CA 95814"
     }
   ]
 }

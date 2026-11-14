@@ -6,15 +6,15 @@
   "spans": [
     {
       "start": 324,
-      "end": 338,
+      "end": 337,
       "label": "PERSON",
-      "text": "Jessica Taylor"
+      "text": "Grace Kennedy"
     },
     {
-      "start": 961,
-      "end": 975,
+      "start": 960,
+      "end": 973,
       "label": "PERSON",
-      "text": "Jessica Taylor"
+      "text": "Grace Kennedy"
     }
   ]
 }

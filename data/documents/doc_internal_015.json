@@ -6,27 +6,27 @@
   "spans": [
     {
       "start": 799,
-      "end": 810,
+      "end": 812,
       "label": "PERSON",
-      "text": "Julie Ortiz"
+      "text": "Wayne Kennedy"
     },
     {
-      "start": 822,
-      "end": 831,
+      "start": 824,
+      "end": 833,
       "label": "EMP_ID",
-      "text": "EMP-10037"
+      "text": "EMP-80018"
     },
     {
-      "start": 901,
-      "end": 922,
+      "start": 903,
+      "end": 926,
       "label": "EMAIL",
-      "text": "julie.ortiz@global.pk"
+      "text": "wayne.kennedy@global.pk"
     },
     {
-      "start": 948,
-      "end": 963,
+      "start": 952,
+      "end": 967,
       "label": "PHONE",
-      "text": "+92 302 6159230"
+      "text": "+92 322 6159230"
     }
   ]
 }

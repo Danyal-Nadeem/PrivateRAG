@@ -6,27 +6,27 @@
   "spans": [
     {
       "start": 813,
-      "end": 828,
+      "end": 824,
       "label": "PERSON",
-      "text": "Lauren Robinson"
+      "text": "Inaya Jatoi"
     },
     {
-      "start": 840,
-      "end": 849,
+      "start": 836,
+      "end": 844,
       "label": "EMP_ID",
-      "text": "EMP-16619"
+      "text": "EMP87628"
     },
     {
-      "start": 919,
-      "end": 941,
+      "start": 914,
+      "end": 930,
       "label": "EMAIL",
-      "text": "lauren.10854@global.pk"
+      "text": "ijatoi@global.pk"
     },
     {
-      "start": 967,
-      "end": 982,
+      "start": 956,
+      "end": 972,
       "label": "PHONE",
-      "text": "+92 302 6960453"
+      "text": "+92-42-377120868"
     }
   ]
 }

@@ -6,39 +6,39 @@
   "spans": [
     {
       "start": 529,
-      "end": 540,
+      "end": 544,
       "label": "PERSON",
-      "text": "Areeba Aziz"
+      "text": "Mahmood Lakhani"
     },
     {
-      "start": 565,
-      "end": 574,
+      "start": 569,
+      "end": 576,
       "label": "EMP_ID",
-      "text": "EMP-49982"
+      "text": "E-90748"
     },
     {
-      "start": 680,
-      "end": 688,
+      "start": 682,
+      "end": 693,
       "label": "SALARY",
-      "text": "$125,000"
+      "text": "USD 180,000"
     },
     {
-      "start": 899,
-      "end": 920,
+      "start": 904,
+      "end": 929,
       "label": "EMAIL",
-      "text": "areeba.aziz@global.pk"
+      "text": "mahmood.lakhani@global.pk"
     },
     {
-      "start": 963,
-      "end": 978,
+      "start": 972,
+      "end": 987,
       "label": "PHONE",
-      "text": "+92 300 6106390"
+      "text": "+92 320 6106390"
     },
     {
-      "start": 1087,
-      "end": 1126,
+      "start": 1096,
+      "end": 1136,
       "label": "ADDRESS",
-      "text": "5051 Willow Way, Indianapolis, IN 46204"
+      "text": "5051 Sycamore Way, Albuquerque, NM 87101"
     }
   ]
 }

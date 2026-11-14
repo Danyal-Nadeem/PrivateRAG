@@ -6,39 +6,39 @@
   "spans": [
     {
       "start": 529,
-      "end": 540,
+      "end": 542,
       "label": "PERSON",
-      "text": "Atif Ashraf"
+      "text": "Liaquat Fecto"
     },
     {
-      "start": 565,
-      "end": 574,
+      "start": 567,
+      "end": 576,
       "label": "EMP_ID",
-      "text": "EMP-12583"
+      "text": "EMP-81291"
     },
     {
-      "start": 680,
-      "end": 693,
+      "start": 682,
+      "end": 695,
       "label": "SALARY",
       "text": "PKR 3,500,000"
     },
     {
-      "start": 904,
-      "end": 925,
+      "start": 906,
+      "end": 929,
       "label": "EMAIL",
-      "text": "atif.ashraf@global.pk"
+      "text": "liaquat.fecto@global.pk"
     },
     {
-      "start": 968,
-      "end": 984,
+      "start": 972,
+      "end": 988,
       "label": "PHONE",
-      "text": "+92-42-357138070"
+      "text": "+92-42-377138070"
     },
     {
-      "start": 1093,
-      "end": 1124,
+      "start": 1097,
+      "end": 1141,
       "label": "ADDRESS",
-      "text": "Flat 2A, Shadman, Lahore, 54000"
+      "text": "Flat 2A, Bahria Town Sector C, Lahore, 53720"
     }
   ]
 }

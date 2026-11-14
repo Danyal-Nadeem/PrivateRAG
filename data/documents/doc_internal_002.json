@@ -6,27 +6,27 @@
   "spans": [
     {
       "start": 803,
-      "end": 818,
+      "end": 817,
       "label": "PERSON",
-      "text": "Mehwish Khokhar"
+      "text": "Shaukat Palijo"
     },
     {
-      "start": 830,
-      "end": 839,
+      "start": 829,
+      "end": 838,
       "label": "EMP_ID",
-      "text": "EMP-43118"
+      "text": "EMP-96559"
     },
     {
-      "start": 909,
-      "end": 944,
+      "start": 908,
+      "end": 942,
       "label": "EMAIL",
-      "text": "mehwish.khokhar@privaterag.internal"
+      "text": "shaukat.palijo@privaterag.internal"
     },
     {
-      "start": 970,
+      "start": 968,
       "end": 982,
       "label": "PHONE",
-      "text": "707-629-4611"
+      "text": "(518) 758-7873"
     }
   ]
 }

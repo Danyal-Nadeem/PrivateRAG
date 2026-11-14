@@ -6,39 +6,39 @@
   "spans": [
     {
       "start": 526,
-      "end": 536,
+      "end": 540,
       "label": "PERSON",
-      "text": "Jack Adams"
+      "text": "Theresa Castro"
     },
     {
-      "start": 561,
-      "end": 570,
+      "start": 565,
+      "end": 574,
       "label": "EMP_ID",
-      "text": "EMP-49564"
+      "text": "EMP-80847"
     },
     {
-      "start": 676,
-      "end": 684,
+      "start": 680,
+      "end": 690,
       "label": "SALARY",
-      "text": "$150,000"
+      "text": "GBP 85,000"
     },
     {
-      "start": 895,
-      "end": 919,
+      "start": 901,
+      "end": 929,
       "label": "EMAIL",
-      "text": "jack.adams@corp.acme.com"
+      "text": "theresa.castro@corp.acme.com"
     },
     {
-      "start": 962,
-      "end": 974,
+      "start": 972,
+      "end": 984,
       "label": "PHONE",
-      "text": "0302-8419378"
+      "text": "0322-8419378"
     },
     {
-      "start": 1083,
-      "end": 1126,
+      "start": 1093,
+      "end": 1133,
       "label": "ADDRESS",
-      "text": "Plot 429, Block C, Samanabad, Lahore, 54500"
+      "text": "4515 Broadway Lane, Sacramento, CA 95814"
     }
   ]
 }

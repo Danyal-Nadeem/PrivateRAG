@@ -6,51 +6,51 @@
   "spans": [
     {
       "start": 404,
-      "end": 415,
+      "end": 417,
       "label": "PERSON",
-      "text": "Rizwan Mian"
+      "text": "Bryan Freeman"
     },
     {
-      "start": 452,
-      "end": 461,
+      "start": 454,
+      "end": 463,
       "label": "EMP_ID",
-      "text": "EMP-12889"
+      "text": "EMP-88650"
     },
     {
-      "start": 490,
-      "end": 525,
+      "start": 492,
+      "end": 531,
       "label": "ADDRESS",
-      "text": "7339 Walnut Lane, Seattle, WA 98101"
+      "text": "1612 College Way, San Antonio, TX 78201"
     },
     {
-      "start": 547,
-      "end": 569,
+      "start": 553,
+      "end": 571,
       "label": "EMAIL",
-      "text": "rizwan.10009@global.pk"
+      "text": "bfreeman@global.pk"
     },
     {
-      "start": 592,
-      "end": 604,
+      "start": 594,
+      "end": 609,
       "label": "PHONE",
-      "text": "0302-3500715"
+      "text": "+92 322 3194789"
     },
     {
-      "start": 804,
-      "end": 815,
+      "start": 809,
+      "end": 822,
       "label": "PERSON",
-      "text": "Rizwan Mian"
+      "text": "Bryan Freeman"
     },
     {
-      "start": 842,
-      "end": 850,
+      "start": 849,
+      "end": 853,
       "label": "SALARY",
-      "text": "$210,000"
+      "text": "$85k"
     },
     {
-      "start": 1029,
-      "end": 1064,
+      "start": 1032,
+      "end": 1071,
       "label": "ADDRESS",
-      "text": "7339 Walnut Lane, Seattle, WA 98101"
+      "text": "1612 College Way, San Antonio, TX 78201"
     }
   ]
 }

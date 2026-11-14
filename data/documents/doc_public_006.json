@@ -6,15 +6,15 @@
   "spans": [
     {
       "start": 318,
-      "end": 333,
+      "end": 332,
       "label": "PERSON",
-      "text": "Elizabeth Davis"
+      "text": "Diana Marshall"
     },
     {
-      "start": 956,
-      "end": 971,
+      "start": 955,
+      "end": 969,
       "label": "PERSON",
-      "text": "Elizabeth Davis"
+      "text": "Diana Marshall"
     }
   ]
 }

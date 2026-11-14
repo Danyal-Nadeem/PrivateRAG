@@ -6,51 +6,51 @@
   "spans": [
     {
       "start": 413,
-      "end": 424,
+      "end": 429,
       "label": "PERSON",
-      "text": "Diane Ortiz"
+      "text": "Shaukat Bijarani"
     },
     {
-      "start": 461,
-      "end": 470,
+      "start": 466,
+      "end": 475,
       "label": "EMP_ID",
-      "text": "EMP-49111"
+      "text": "EMP-83917"
     },
     {
-      "start": 499,
-      "end": 535,
+      "start": 504,
+      "end": 564,
       "label": "ADDRESS",
-      "text": "6012 Spring Avenue, Denver, CO 80201"
+      "text": "Plot 248, Block E, State Life Society Phase 1, Lahore, 54792"
     },
     {
-      "start": 557,
-      "end": 583,
+      "start": 586,
+      "end": 615,
       "label": "EMAIL",
-      "text": "diane.ortiz@techmatrix.net"
+      "text": "sbijarani@privaterag.internal"
     },
     {
-      "start": 606,
-      "end": 620,
+      "start": 638,
+      "end": 650,
       "label": "PHONE",
-      "text": "(713) 480-1745"
+      "text": "505-503-4727"
     },
     {
-      "start": 820,
-      "end": 831,
-      "label": "PERSON",
-      "text": "Diane Ortiz"
-    },
-    {
-      "start": 858,
+      "start": 850,
       "end": 866,
-      "label": "SALARY",
-      "text": "$165,000"
+      "label": "PERSON",
+      "text": "Shaukat Bijarani"
     },
     {
-      "start": 1045,
-      "end": 1081,
+      "start": 893,
+      "end": 901,
+      "label": "SALARY",
+      "text": "$500,000"
+    },
+    {
+      "start": 1080,
+      "end": 1140,
       "label": "ADDRESS",
-      "text": "6012 Spring Avenue, Denver, CO 80201"
+      "text": "Plot 248, Block E, State Life Society Phase 1, Lahore, 54792"
     }
   ]
 }

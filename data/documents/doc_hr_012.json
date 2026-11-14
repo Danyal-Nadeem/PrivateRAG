@@ -6,51 +6,51 @@
   "spans": [
     {
       "start": 417,
-      "end": 428,
+      "end": 427,
       "label": "PERSON",
-      "text": "Sidra Javed"
+      "text": "Wayne Ford"
     },
     {
-      "start": 465,
+      "start": 464,
       "end": 473,
       "label": "EMP_ID",
-      "text": "EMP50060"
+      "text": "EMP-90171"
     },
     {
       "start": 502,
-      "end": 541,
+      "end": 547,
       "label": "ADDRESS",
-      "text": "9531 Monroe Avenue, Charlotte, NC 28202"
+      "text": "Flat 101, DHA Phase 5 Sector G, Lahore, 54792"
     },
     {
-      "start": 563,
-      "end": 579,
+      "start": 569,
+      "end": 590,
       "label": "EMAIL",
-      "text": "sjaved@global.pk"
+      "text": "wayne.80589@global.pk"
     },
     {
-      "start": 602,
-      "end": 617,
+      "start": 613,
+      "end": 625,
       "label": "PHONE",
-      "text": "+92 301 1093026"
+      "text": "0322-7442089"
     },
     {
-      "start": 817,
-      "end": 828,
+      "start": 825,
+      "end": 835,
       "label": "PERSON",
-      "text": "Sidra Javed"
+      "text": "Wayne Ford"
     },
     {
-      "start": 855,
-      "end": 863,
+      "start": 862,
+      "end": 872,
       "label": "SALARY",
-      "text": "$135,000"
+      "text": "USD 95,000"
     },
     {
-      "start": 1042,
-      "end": 1081,
+      "start": 1051,
+      "end": 1096,
       "label": "ADDRESS",
-      "text": "9531 Monroe Avenue, Charlotte, NC 28202"
+      "text": "Flat 101, DHA Phase 5 Sector G, Lahore, 54792"
     }
   ]
 }

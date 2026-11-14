@@ -6,51 +6,51 @@
   "spans": [
     {
       "start": 416,
-      "end": 427,
+      "end": 428,
       "label": "PERSON",
-      "text": "Nasir Habib"
+      "text": "Shaukat Alvi"
     },
     {
-      "start": 464,
-      "end": 473,
+      "start": 465,
+      "end": 474,
       "label": "EMP_ID",
-      "text": "EMP-24005"
+      "text": "EMP-99004"
     },
     {
-      "start": 502,
-      "end": 539,
+      "start": 503,
+      "end": 540,
       "label": "ADDRESS",
-      "text": "5591 Spring Street, Phoenix, AZ 85001"
+      "text": "3601 Beech Lane, Sacramento, CA 95814"
     },
     {
-      "start": 561,
-      "end": 587,
+      "start": 562,
+      "end": 585,
       "label": "EMAIL",
-      "text": "nasir.10317@enterprise.org"
+      "text": "shaukat.80173@global.pk"
     },
     {
-      "start": 610,
-      "end": 625,
+      "start": 608,
+      "end": 622,
       "label": "PHONE",
-      "text": "+92 301 3472189"
+      "text": "(615) 727-6491"
     },
     {
-      "start": 825,
-      "end": 836,
+      "start": 822,
+      "end": 834,
       "label": "PERSON",
-      "text": "Nasir Habib"
+      "text": "Shaukat Alvi"
     },
     {
-      "start": 863,
-      "end": 871,
+      "start": 861,
+      "end": 872,
       "label": "SALARY",
-      "text": "$350,000"
+      "text": "PKR 250,000"
     },
     {
-      "start": 1050,
-      "end": 1087,
+      "start": 1051,
+      "end": 1088,
       "label": "ADDRESS",
-      "text": "5591 Spring Street, Phoenix, AZ 85001"
+      "text": "3601 Beech Lane, Sacramento, CA 95814"
     }
   ]
 }

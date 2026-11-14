@@ -6,51 +6,51 @@
   "spans": [
     {
       "start": 413,
-      "end": 429,
+      "end": 424,
       "label": "PERSON",
-      "text": "Mudassar Rasheed"
+      "text": "Billy Ellis"
     },
     {
-      "start": 466,
-      "end": 475,
+      "start": 461,
+      "end": 470,
       "label": "EMP_ID",
-      "text": "EMP-38599"
+      "text": "EMP-83552"
     },
     {
-      "start": 504,
-      "end": 543,
+      "start": 499,
+      "end": 540,
       "label": "ADDRESS",
-      "text": "Flat 2A, New Garden Town, Lahore, 54600"
+      "text": "8479 Summit Street, Albuquerque, NM 87101"
     },
     {
-      "start": 565,
-      "end": 593,
+      "start": 562,
+      "end": 583,
       "label": "EMAIL",
-      "text": "mudassar.10947@corp.acme.com"
+      "text": "billy.80194@global.pk"
     },
     {
-      "start": 616,
-      "end": 630,
+      "start": 606,
+      "end": 618,
       "label": "PHONE",
-      "text": "(303) 572-8066"
+      "text": "0322-8315831"
     },
     {
-      "start": 830,
-      "end": 846,
+      "start": 818,
+      "end": 829,
       "label": "PERSON",
-      "text": "Mudassar Rasheed"
+      "text": "Billy Ellis"
     },
     {
-      "start": 873,
-      "end": 886,
+      "start": 856,
+      "end": 867,
       "label": "SALARY",
-      "text": "Rs. 3,200,000"
+      "text": "PKR 450,000"
     },
     {
-      "start": 1065,
-      "end": 1104,
+      "start": 1046,
+      "end": 1087,
       "label": "ADDRESS",
-      "text": "Flat 2A, New Garden Town, Lahore, 54600"
+      "text": "8479 Summit Street, Albuquerque, NM 87101"
     }
   ]
 }
