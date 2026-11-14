@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_020",
+  "filename": "doc_hr_020.md",
+  "title": "Human Resources Background Investigation Summary - Case #1020",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 405,
+      "end": 416,
+      "label": "PERSON",
+      "text": "Brian Lewis"
+    },
+    {
+      "start": 453,
+      "end": 462,
+      "label": "EMP_ID",
+      "text": "EMP-52607"
+    },
+    {
+      "start": 491,
+      "end": 525,
+      "label": "ADDRESS",
+      "text": "3366 Spruce Road, Denver, CO 80201"
+    },
+    {
+      "start": 547,
+      "end": 572,
+      "label": "EMAIL",
+      "text": "brian.10156@corp.acme.com"
+    },
+    {
+      "start": 595,
+      "end": 607,
+      "label": "PHONE",
+      "text": "0300-2919136"
+    },
+    {
+      "start": 807,
+      "end": 818,
+      "label": "PERSON",
+      "text": "Brian Lewis"
+    },
+    {
+      "start": 845,
+      "end": 853,
+      "label": "SALARY",
+      "text": "$105,000"
+    },
+    {
+      "start": 1032,
+      "end": 1066,
+      "label": "ADDRESS",
+      "text": "3366 Spruce Road, Denver, CO 80201"
+    }
+  ]
+}

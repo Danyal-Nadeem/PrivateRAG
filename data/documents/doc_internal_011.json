@@ -1,0 +1,32 @@
+{
+  "doc_id": "doc_internal_011",
+  "filename": "doc_internal_011.md",
+  "title": "IT Infrastructure Deployment and Kubernetes Cluster Runbook (Rev 2)",
+  "access_level": "internal",
+  "spans": [
+    {
+      "start": 809,
+      "end": 821,
+      "label": "PERSON",
+      "text": "Barbara Long"
+    },
+    {
+      "start": 833,
+      "end": 841,
+      "label": "EMP_ID",
+      "text": "EMP13087"
+    },
+    {
+      "start": 911,
+      "end": 939,
+      "label": "EMAIL",
+      "text": "barbara.10163@enterprise.org"
+    },
+    {
+      "start": 965,
+      "end": 977,
+      "label": "PHONE",
+      "text": "919-810-2040"
+    }
+  ]
+}

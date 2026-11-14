@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_014",
+  "filename": "doc_hr_014.md",
+  "title": "Disciplinary Investigation Report and Formal Warning - Case #1014",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 409,
+      "end": 420,
+      "label": "PERSON",
+      "text": "Scott Green"
+    },
+    {
+      "start": 457,
+      "end": 465,
+      "label": "EMP_ID",
+      "text": "EMP59496"
+    },
+    {
+      "start": 494,
+      "end": 533,
+      "label": "ADDRESS",
+      "text": "7405 Chestnut Avenue, Phoenix, AZ 85001"
+    },
+    {
+      "start": 555,
+      "end": 571,
+      "label": "EMAIL",
+      "text": "sgreen@global.pk"
+    },
+    {
+      "start": 594,
+      "end": 609,
+      "label": "PHONE",
+      "text": "+92 301 5652512"
+    },
+    {
+      "start": 809,
+      "end": 820,
+      "label": "PERSON",
+      "text": "Scott Green"
+    },
+    {
+      "start": 847,
+      "end": 860,
+      "label": "SALARY",
+      "text": "Rs. 2,400,000"
+    },
+    {
+      "start": 1039,
+      "end": 1078,
+      "label": "ADDRESS",
+      "text": "7405 Chestnut Avenue, Phoenix, AZ 85001"
+    }
+  ]
+}

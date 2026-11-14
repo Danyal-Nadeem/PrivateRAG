@@ -1,0 +1,44 @@
+{
+  "doc_id": "doc_exec_001",
+  "filename": "doc_exec_001.md",
+  "title": "Board of Directors Compensation Committee Confidential Minutes - Ref EX-201",
+  "access_level": "exec_restricted",
+  "spans": [
+    {
+      "start": 530,
+      "end": 543,
+      "label": "PERSON",
+      "text": "Nasir Bukhari"
+    },
+    {
+      "start": 568,
+      "end": 575,
+      "label": "EMP_ID",
+      "text": "E-48569"
+    },
+    {
+      "start": 681,
+      "end": 686,
+      "label": "SALARY",
+      "text": "$220k"
+    },
+    {
+      "start": 897,
+      "end": 923,
+      "label": "EMAIL",
+      "text": "nasir.10216@enterprise.org"
+    },
+    {
+      "start": 966,
+      "end": 981,
+      "label": "PHONE",
+      "text": "+92 300 3634980"
+    },
+    {
+      "start": 1090,
+      "end": 1123,
+      "label": "ADDRESS",
+      "text": "1725 Oak Road, San Jose, CA 95113"
+    }
+  ]
+}

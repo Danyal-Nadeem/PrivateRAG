@@ -1,0 +1,20 @@
+{
+  "doc_id": "doc_public_009",
+  "filename": "doc_public_009.md",
+  "title": "Investor Relations and Financial Highlights Summary (Part 1)",
+  "access_level": "public",
+  "spans": [
+    {
+      "start": 327,
+      "end": 345,
+      "label": "PERSON",
+      "text": "Dr. Bilal Chaudhry"
+    },
+    {
+      "start": 968,
+      "end": 986,
+      "label": "PERSON",
+      "text": "Dr. Bilal Chaudhry"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_006",
+  "filename": "doc_hr_006.md",
+  "title": "Departmental Payroll Batch Reconciliation Audit - Case #1006",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 404,
+      "end": 414,
+      "label": "PERSON",
+      "text": "Salma Raza"
+    },
+    {
+      "start": 451,
+      "end": 460,
+      "label": "EMP_ID",
+      "text": "EMP-40847"
+    },
+    {
+      "start": 489,
+      "end": 526,
+      "label": "ADDRESS",
+      "text": "3752 Madison Street, Denver, CO 80201"
+    },
+    {
+      "start": 548,
+      "end": 568,
+      "label": "EMAIL",
+      "text": "sraza@enterprise.org"
+    },
+    {
+      "start": 591,
+      "end": 607,
+      "label": "PHONE",
+      "text": "+92-42-352164686"
+    },
+    {
+      "start": 807,
+      "end": 817,
+      "label": "PERSON",
+      "text": "Salma Raza"
+    },
+    {
+      "start": 844,
+      "end": 855,
+      "label": "SALARY",
+      "text": "Rs. 220,000"
+    },
+    {
+      "start": 1034,
+      "end": 1071,
+      "label": "ADDRESS",
+      "text": "3752 Madison Street, Denver, CO 80201"
+    }
+  ]
+}

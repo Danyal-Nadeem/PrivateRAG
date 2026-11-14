@@ -1,0 +1,44 @@
+{
+  "doc_id": "doc_exec_014",
+  "filename": "doc_exec_014.md",
+  "title": "Senior Leadership Restructuring and Succession Strategy - Ref EX-214",
+  "access_level": "exec_restricted",
+  "spans": [
+    {
+      "start": 523,
+      "end": 536,
+      "label": "PERSON",
+      "text": "Tariq Shabbir"
+    },
+    {
+      "start": 561,
+      "end": 568,
+      "label": "EMP_ID",
+      "text": "E-52911"
+    },
+    {
+      "start": 674,
+      "end": 682,
+      "label": "SALARY",
+      "text": "$135,000"
+    },
+    {
+      "start": 893,
+      "end": 915,
+      "label": "EMAIL",
+      "text": "tshabbir@corp.acme.com"
+    },
+    {
+      "start": 958,
+      "end": 973,
+      "label": "PHONE",
+      "text": "+1-707-589-6188"
+    },
+    {
+      "start": 1082,
+      "end": 1122,
+      "label": "ADDRESS",
+      "text": "6612 Walnut Way, San Francisco, CA 94102"
+    }
+  ]
+}

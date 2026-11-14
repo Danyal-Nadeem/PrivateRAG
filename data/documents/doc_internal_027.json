@@ -1,0 +1,32 @@
+{
+  "doc_id": "doc_internal_027",
+  "filename": "doc_internal_027.md",
+  "title": "Departmental Sprint Planning and Agile Delivery Framework (Rev 3)",
+  "access_level": "internal",
+  "spans": [
+    {
+      "start": 807,
+      "end": 818,
+      "label": "PERSON",
+      "text": "Shirley Lee"
+    },
+    {
+      "start": 830,
+      "end": 837,
+      "label": "EMP_ID",
+      "text": "E-13727"
+    },
+    {
+      "start": 907,
+      "end": 932,
+      "label": "EMAIL",
+      "text": "shirley.lee@corp.acme.com"
+    },
+    {
+      "start": 958,
+      "end": 973,
+      "label": "PHONE",
+      "text": "+92 300 4946066"
+    }
+  ]
+}

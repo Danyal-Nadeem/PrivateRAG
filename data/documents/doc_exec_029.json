@@ -1,0 +1,44 @@
+{
+  "doc_id": "doc_exec_029",
+  "filename": "doc_exec_029.md",
+  "title": "Executive Domicile Security and Personal Protection Stipend - Ref EX-229",
+  "access_level": "exec_restricted",
+  "spans": [
+    {
+      "start": 527,
+      "end": 542,
+      "label": "PERSON",
+      "text": "Ayesha Siddiqui"
+    },
+    {
+      "start": 567,
+      "end": 575,
+      "label": "EMP_ID",
+      "text": "EMP41390"
+    },
+    {
+      "start": 681,
+      "end": 694,
+      "label": "SALARY",
+      "text": "PKR 2,200,000"
+    },
+    {
+      "start": 905,
+      "end": 928,
+      "label": "EMAIL",
+      "text": "asiddiqui@corp.acme.com"
+    },
+    {
+      "start": 971,
+      "end": 986,
+      "label": "PHONE",
+      "text": "+1-415-329-5505"
+    },
+    {
+      "start": 1095,
+      "end": 1137,
+      "label": "ADDRESS",
+      "text": "7367 Sunset Street, Indianapolis, IN 46204"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_011",
+  "filename": "doc_hr_011.md",
+  "title": "Confidential Compensation Review and Salary Adjustment Memo - Case #1011",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 416,
+      "end": 427,
+      "label": "PERSON",
+      "text": "Nasir Habib"
+    },
+    {
+      "start": 464,
+      "end": 473,
+      "label": "EMP_ID",
+      "text": "EMP-24005"
+    },
+    {
+      "start": 502,
+      "end": 539,
+      "label": "ADDRESS",
+      "text": "5591 Spring Street, Phoenix, AZ 85001"
+    },
+    {
+      "start": 561,
+      "end": 587,
+      "label": "EMAIL",
+      "text": "nasir.10317@enterprise.org"
+    },
+    {
+      "start": 610,
+      "end": 625,
+      "label": "PHONE",
+      "text": "+92 301 3472189"
+    },
+    {
+      "start": 825,
+      "end": 836,
+      "label": "PERSON",
+      "text": "Nasir Habib"
+    },
+    {
+      "start": 863,
+      "end": 871,
+      "label": "SALARY",
+      "text": "$350,000"
+    },
+    {
+      "start": 1050,
+      "end": 1087,
+      "label": "ADDRESS",
+      "text": "5591 Spring Street, Phoenix, AZ 85001"
+    }
+  ]
+}

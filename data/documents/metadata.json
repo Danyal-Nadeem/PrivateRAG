@@ -1,0 +1,2222 @@
+[
+  {
+    "doc_id": "doc_public_001",
+    "filename": "doc_public_001.md",
+    "title": "Corporate Annual Governance and Ethics Report (Part 1)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "Dr. Arshad Khan"
+    ]
+  },
+  {
+    "doc_id": "doc_public_002",
+    "filename": "doc_public_002.md",
+    "title": "Public Cloud Architecture and Technology Whitepaper (Part 1)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "Sarah Jenkins"
+    ]
+  },
+  {
+    "doc_id": "doc_public_003",
+    "filename": "doc_public_003.md",
+    "title": "Global Corporate Sustainability and Green Initiative (Part 1)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "Dr. Ayesha Malik"
+    ]
+  },
+  {
+    "doc_id": "doc_public_004",
+    "filename": "doc_public_004.md",
+    "title": "Open Source Software Contribution and License Policy (Part 1)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "Robert Miller"
+    ]
+  },
+  {
+    "doc_id": "doc_public_005",
+    "filename": "doc_public_005.md",
+    "title": "Executive Leadership Directory and Biographies (Part 1)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "Prof. Tariq Siddiqui"
+    ]
+  },
+  {
+    "doc_id": "doc_public_006",
+    "filename": "doc_public_006.md",
+    "title": "Enterprise Product Roadmap and Vision 2027 (Part 1)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "Elizabeth Davis"
+    ]
+  },
+  {
+    "doc_id": "doc_public_007",
+    "filename": "doc_public_007.md",
+    "title": "Public Security, Privacy, and SOC2 Compliance Summary (Part 1)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "Muhammad Usman"
+    ]
+  },
+  {
+    "doc_id": "doc_public_008",
+    "filename": "doc_public_008.md",
+    "title": "Diversity, Equity, and Inclusion Annual Overview (Part 1)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "Jessica Taylor"
+    ]
+  },
+  {
+    "doc_id": "doc_public_009",
+    "filename": "doc_public_009.md",
+    "title": "Investor Relations and Financial Highlights Summary (Part 1)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "Dr. Bilal Chaudhry"
+    ]
+  },
+  {
+    "doc_id": "doc_public_010",
+    "filename": "doc_public_010.md",
+    "title": "Customer Service Charter and Community Standards (Part 1)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "David Anderson"
+    ]
+  },
+  {
+    "doc_id": "doc_public_011",
+    "filename": "doc_public_011.md",
+    "title": "Corporate Annual Governance and Ethics Report (Part 2)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "Fatima Raza"
+    ]
+  },
+  {
+    "doc_id": "doc_public_012",
+    "filename": "doc_public_012.md",
+    "title": "Public Cloud Architecture and Technology Whitepaper (Part 2)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "Michael Wilson"
+    ]
+  },
+  {
+    "doc_id": "doc_public_013",
+    "filename": "doc_public_013.md",
+    "title": "Global Corporate Sustainability and Green Initiative (Part 2)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "Dr. Arshad Khan"
+    ]
+  },
+  {
+    "doc_id": "doc_public_014",
+    "filename": "doc_public_014.md",
+    "title": "Open Source Software Contribution and License Policy (Part 2)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "Sarah Jenkins"
+    ]
+  },
+  {
+    "doc_id": "doc_public_015",
+    "filename": "doc_public_015.md",
+    "title": "Executive Leadership Directory and Biographies (Part 2)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "Dr. Ayesha Malik"
+    ]
+  },
+  {
+    "doc_id": "doc_public_016",
+    "filename": "doc_public_016.md",
+    "title": "Enterprise Product Roadmap and Vision 2027 (Part 2)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "Robert Miller"
+    ]
+  },
+  {
+    "doc_id": "doc_public_017",
+    "filename": "doc_public_017.md",
+    "title": "Public Security, Privacy, and SOC2 Compliance Summary (Part 2)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "Prof. Tariq Siddiqui"
+    ]
+  },
+  {
+    "doc_id": "doc_public_018",
+    "filename": "doc_public_018.md",
+    "title": "Diversity, Equity, and Inclusion Annual Overview (Part 2)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "Elizabeth Davis"
+    ]
+  },
+  {
+    "doc_id": "doc_public_019",
+    "filename": "doc_public_019.md",
+    "title": "Investor Relations and Financial Highlights Summary (Part 2)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "Muhammad Usman"
+    ]
+  },
+  {
+    "doc_id": "doc_public_020",
+    "filename": "doc_public_020.md",
+    "title": "Customer Service Charter and Community Standards (Part 2)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "Jessica Taylor"
+    ]
+  },
+  {
+    "doc_id": "doc_public_021",
+    "filename": "doc_public_021.md",
+    "title": "Corporate Annual Governance and Ethics Report (Part 3)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "Dr. Bilal Chaudhry"
+    ]
+  },
+  {
+    "doc_id": "doc_public_022",
+    "filename": "doc_public_022.md",
+    "title": "Public Cloud Architecture and Technology Whitepaper (Part 3)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "David Anderson"
+    ]
+  },
+  {
+    "doc_id": "doc_public_023",
+    "filename": "doc_public_023.md",
+    "title": "Global Corporate Sustainability and Green Initiative (Part 3)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "Fatima Raza"
+    ]
+  },
+  {
+    "doc_id": "doc_public_024",
+    "filename": "doc_public_024.md",
+    "title": "Open Source Software Contribution and License Policy (Part 3)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "Michael Wilson"
+    ]
+  },
+  {
+    "doc_id": "doc_public_025",
+    "filename": "doc_public_025.md",
+    "title": "Executive Leadership Directory and Biographies (Part 3)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "Dr. Arshad Khan"
+    ]
+  },
+  {
+    "doc_id": "doc_public_026",
+    "filename": "doc_public_026.md",
+    "title": "Enterprise Product Roadmap and Vision 2027 (Part 3)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "Sarah Jenkins"
+    ]
+  },
+  {
+    "doc_id": "doc_public_027",
+    "filename": "doc_public_027.md",
+    "title": "Public Security, Privacy, and SOC2 Compliance Summary (Part 3)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "Dr. Ayesha Malik"
+    ]
+  },
+  {
+    "doc_id": "doc_public_028",
+    "filename": "doc_public_028.md",
+    "title": "Diversity, Equity, and Inclusion Annual Overview (Part 3)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "Robert Miller"
+    ]
+  },
+  {
+    "doc_id": "doc_public_029",
+    "filename": "doc_public_029.md",
+    "title": "Investor Relations and Financial Highlights Summary (Part 3)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "Prof. Tariq Siddiqui"
+    ]
+  },
+  {
+    "doc_id": "doc_public_030",
+    "filename": "doc_public_030.md",
+    "title": "Customer Service Charter and Community Standards (Part 3)",
+    "access_level": "public",
+    "entities_present": [
+      "PERSON"
+    ],
+    "sensitive_values": [
+      "Elizabeth Davis"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_001",
+    "filename": "doc_internal_001.md",
+    "title": "IT Infrastructure Deployment and Kubernetes Cluster Runbook (Rev 1)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "(707) 289-7912",
+      "EMP-28024",
+      "Patricia Patel",
+      "patricia.10104@enterprise.org"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_002",
+    "filename": "doc_internal_002.md",
+    "title": "Engineering Best Practices and Code Review Guidelines (Rev 1)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "707-629-4611",
+      "EMP-43118",
+      "Mehwish Khokhar",
+      "mehwish.khokhar@privaterag.internal"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_003",
+    "filename": "doc_internal_003.md",
+    "title": "Office IT Equipment Request and Provisioning Protocol (Rev 1)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "+92 301 6647119",
+      "EMP59729",
+      "Victoria Smith",
+      "vsmith@global.pk"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_004",
+    "filename": "doc_internal_004.md",
+    "title": "Internal Incident Escalation Matrix and On-Call Rotations (Rev 1)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "214-749-3045",
+      "EMP33526",
+      "Shoaib Abbasi",
+      "sabbasi@privaterag.internal"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_005",
+    "filename": "doc_internal_005.md",
+    "title": "Corporate VPN Setup and Secure Remote Work Policy (Rev 1)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "312-877-4733",
+      "Bushra Abid",
+      "EMP50535",
+      "bushra.10196@techmatrix.net"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_006",
+    "filename": "doc_internal_006.md",
+    "title": "Software Architecture Decision Record - Microservices Migration (Rev 1)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "+92 302 6960453",
+      "EMP-16619",
+      "Lauren Robinson",
+      "lauren.10854@global.pk"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_007",
+    "filename": "doc_internal_007.md",
+    "title": "Departmental Sprint Planning and Agile Delivery Framework (Rev 1)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "404-367-8573",
+      "Adnan Imtiaz",
+      "EMP-54796",
+      "adnan.10175@privaterag.internal"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_008",
+    "filename": "doc_internal_008.md",
+    "title": "Internal Travel Booking and Expense Reimbursement Guidelines (Rev 1)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "+92 300 6292423",
+      "EMP-46500",
+      "Mehak Idrees",
+      "mehak.idrees@techmatrix.net"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_009",
+    "filename": "doc_internal_009.md",
+    "title": "Facilities Access and Building Security Regulations (Rev 1)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "(858) 858-8517",
+      "Bilal Gondal",
+      "EMP47170",
+      "bilal.gondal@techmatrix.net"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_010",
+    "filename": "doc_internal_010.md",
+    "title": "Company-Wide Technology Stack and Deprecation Schedule (Rev 1)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "(858) 570-4593",
+      "EMP-46789",
+      "Sidra Manzoor",
+      "smanzoor@privaterag.internal"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_011",
+    "filename": "doc_internal_011.md",
+    "title": "IT Infrastructure Deployment and Kubernetes Cluster Runbook (Rev 2)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "919-810-2040",
+      "Barbara Long",
+      "EMP13087",
+      "barbara.10163@enterprise.org"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_012",
+    "filename": "doc_internal_012.md",
+    "title": "Engineering Best Practices and Code Review Guidelines (Rev 2)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "0301-5476583",
+      "E-26476",
+      "Saima Ayub",
+      "saima.10738@corp.acme.com"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_013",
+    "filename": "doc_internal_013.md",
+    "title": "Office IT Equipment Request and Provisioning Protocol (Rev 2)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "+1-503-712-3927",
+      "Amanda Anderson",
+      "EMP-29234",
+      "amanda.anderson@global.pk"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_014",
+    "filename": "doc_internal_014.md",
+    "title": "Internal Incident Escalation Matrix and On-Call Rotations (Rev 2)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "+92-42-353710343",
+      "EMP29558",
+      "Joan Watson",
+      "joan.10203@privaterag.internal"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_015",
+    "filename": "doc_internal_015.md",
+    "title": "Corporate VPN Setup and Secure Remote Work Policy (Rev 2)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "+92 302 6159230",
+      "EMP-10037",
+      "Julie Ortiz",
+      "julie.ortiz@global.pk"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_016",
+    "filename": "doc_internal_016.md",
+    "title": "Software Architecture Decision Record - Microservices Migration (Rev 2)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "(707) 984-3060",
+      "Asad Parvez",
+      "EMP-15161",
+      "asad.parvez@global.pk"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_017",
+    "filename": "doc_internal_017.md",
+    "title": "Departmental Sprint Planning and Agile Delivery Framework (Rev 2)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "+1-707-973-4295",
+      "EMP-27370",
+      "Stephen Perez",
+      "sperez@privaterag.internal"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_018",
+    "filename": "doc_internal_018.md",
+    "title": "Internal Travel Booking and Expense Reimbursement Guidelines (Rev 2)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "+92 301 2074176",
+      "Afshan Babar",
+      "EMP-34472",
+      "ababar@privaterag.internal"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_019",
+    "filename": "doc_internal_019.md",
+    "title": "Facilities Access and Building Security Regulations (Rev 2)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "(312) 434-2104",
+      "EMP-25080",
+      "Hafsa Mushtaq",
+      "hafsa.mushtaq@corp.acme.com"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_020",
+    "filename": "doc_internal_020.md",
+    "title": "Company-Wide Technology Stack and Deprecation Schedule (Rev 2)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "512-448-8749",
+      "EMP-25597",
+      "Elizabeth Rogers",
+      "elizabeth.rogers@global.pk"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_021",
+    "filename": "doc_internal_021.md",
+    "title": "IT Infrastructure Deployment and Kubernetes Cluster Runbook (Rev 3)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "(312) 889-2612",
+      "EMP-38249",
+      "Omer Feroz",
+      "oferoz@global.pk"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_022",
+    "filename": "doc_internal_022.md",
+    "title": "Engineering Best Practices and Code Review Guidelines (Rev 3)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "+92 301 5673212",
+      "EMP-17161",
+      "Faiza Wahid",
+      "faiza.10459@enterprise.org"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_023",
+    "filename": "doc_internal_023.md",
+    "title": "Office IT Equipment Request and Provisioning Protocol (Rev 3)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "0301-1247595",
+      "EMP39041",
+      "Salma Ansari",
+      "salma.ansari@privaterag.internal"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_024",
+    "filename": "doc_internal_024.md",
+    "title": "Internal Incident Escalation Matrix and On-Call Rotations (Rev 3)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "0300-1983738",
+      "EMP-25491",
+      "Kyle Long",
+      "klong@global.pk"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_025",
+    "filename": "doc_internal_025.md",
+    "title": "Corporate VPN Setup and Secure Remote Work Policy (Rev 3)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "0302-9164991",
+      "E-27380",
+      "Muhammad Yousaf",
+      "myousaf@global.pk"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_026",
+    "filename": "doc_internal_026.md",
+    "title": "Software Architecture Decision Record - Microservices Migration (Rev 3)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "+1-312-251-8811",
+      "Bushra Gondal",
+      "EMP-13832",
+      "bushra.gondal@privaterag.internal"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_027",
+    "filename": "doc_internal_027.md",
+    "title": "Departmental Sprint Planning and Agile Delivery Framework (Rev 3)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "+92 300 4946066",
+      "E-13727",
+      "Shirley Lee",
+      "shirley.lee@corp.acme.com"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_028",
+    "filename": "doc_internal_028.md",
+    "title": "Internal Travel Booking and Expense Reimbursement Guidelines (Rev 3)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "0301-9770838",
+      "EMP-47940",
+      "Umair Tareen",
+      "umair.tareen@privaterag.internal"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_029",
+    "filename": "doc_internal_029.md",
+    "title": "Facilities Access and Building Security Regulations (Rev 3)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "0302-6033115",
+      "EMP-53891",
+      "Nida Shah",
+      "nshah@enterprise.org"
+    ]
+  },
+  {
+    "doc_id": "doc_internal_030",
+    "filename": "doc_internal_030.md",
+    "title": "Company-Wide Technology Stack and Deprecation Schedule (Rev 3)",
+    "access_level": "internal",
+    "entities_present": [
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE"
+    ],
+    "sensitive_values": [
+      "+92 301 9487336",
+      "EMP-10610",
+      "Muneeb Ansari",
+      "muneeb.ansari@privaterag.internal"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_001",
+    "filename": "doc_hr_001.md",
+    "title": "Confidential Compensation Review and Salary Adjustment Memo - Case #1001",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "$310,000",
+      "(707) 506-2697",
+      "5056 Jackson Lane, Indianapolis, IN 46204",
+      "Babar Qureshi",
+      "EMP-26009",
+      "babar.qureshi@privaterag.internal"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_002",
+    "filename": "doc_hr_002.md",
+    "title": "Annual Performance Appraisal Dossier and Bonus Determination - Case #1002",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "$140k",
+      "+92-42-351852264",
+      "3435 River Way, San Francisco, CA 94102",
+      "EMP-46256",
+      "Noor Manzoor",
+      "noor.10500@techmatrix.net"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_003",
+    "filename": "doc_hr_003.md",
+    "title": "Executive Offer Letter and Employment Agreement - Case #1003",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "$210,000",
+      "0302-3500715",
+      "7339 Walnut Lane, Seattle, WA 98101",
+      "EMP-12889",
+      "Rizwan Mian",
+      "rizwan.10009@global.pk"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_004",
+    "filename": "doc_hr_004.md",
+    "title": "Disciplinary Investigation Report and Formal Warning - Case #1004",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "0301-7817881",
+      "Adam Mitchell",
+      "EMP-48175",
+      "PKR 2,800,000",
+      "Plot 187, Block B, Garden Town, Lahore, 54600",
+      "adam.10105@enterprise.org"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_005",
+    "filename": "doc_hr_005.md",
+    "title": "Employee Domicile and Comprehensive Benefits Enrollment Sheet - Case #1005",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "$420,000",
+      "+1-404-473-3608",
+      "5542 Maple Road, Seattle, WA 98101",
+      "EMP25514",
+      "Heather Martin",
+      "heather.10884@global.pk"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_006",
+    "filename": "doc_hr_006.md",
+    "title": "Departmental Payroll Batch Reconciliation Audit - Case #1006",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "+92-42-352164686",
+      "3752 Madison Street, Denver, CO 80201",
+      "EMP-40847",
+      "Rs. 220,000",
+      "Salma Raza",
+      "sraza@enterprise.org"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_007",
+    "filename": "doc_hr_007.md",
+    "title": "Severance Determination and Confidential Exit Agreement - Case #1007",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "0301-8290770",
+      "4379 Maple Avenue, Chicago, IL 60601",
+      "EMP-52040",
+      "EUR 92,000",
+      "Emily Hall",
+      "ehall@privaterag.internal"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_008",
+    "filename": "doc_hr_008.md",
+    "title": "Confidential Medical Leave and Disability Support Record - Case #1008",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "(303) 572-8066",
+      "EMP-38599",
+      "Flat 2A, New Garden Town, Lahore, 54600",
+      "Mudassar Rasheed",
+      "Rs. 3,200,000",
+      "mudassar.10947@corp.acme.com"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_009",
+    "filename": "doc_hr_009.md",
+    "title": "Talent Acquisition Offer Package and Compensation Breakdown - Case #1009",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "$195,000",
+      "+92 302 3135534",
+      "5167 Spring Way, Phoenix, AZ 85001",
+      "EMP-50839",
+      "Judith Nelson",
+      "jnelson@global.pk"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_010",
+    "filename": "doc_hr_010.md",
+    "title": "Human Resources Background Investigation Summary - Case #1010",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "$420,000",
+      "0300-6406444",
+      "9077 Spring Road, Boston, MA 02108",
+      "Afshan Mahmood",
+      "EMP-54388",
+      "amahmood@corp.acme.com"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_011",
+    "filename": "doc_hr_011.md",
+    "title": "Confidential Compensation Review and Salary Adjustment Memo - Case #1011",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "$350,000",
+      "+92 301 3472189",
+      "5591 Spring Street, Phoenix, AZ 85001",
+      "EMP-24005",
+      "Nasir Habib",
+      "nasir.10317@enterprise.org"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_012",
+    "filename": "doc_hr_012.md",
+    "title": "Annual Performance Appraisal Dossier and Bonus Determination - Case #1012",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "$135,000",
+      "+92 301 1093026",
+      "9531 Monroe Avenue, Charlotte, NC 28202",
+      "EMP50060",
+      "Sidra Javed",
+      "sjaved@global.pk"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_013",
+    "filename": "doc_hr_013.md",
+    "title": "Executive Offer Letter and Employment Agreement - Case #1013",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "0300-9910914",
+      "EMP-16985",
+      "Henry Foster",
+      "House 266, Street 30, Township Sector B, Lahore, 54770",
+      "USD 180,000",
+      "hfoster@corp.acme.com"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_014",
+    "filename": "doc_hr_014.md",
+    "title": "Disciplinary Investigation Report and Formal Warning - Case #1014",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "+92 301 5652512",
+      "7405 Chestnut Avenue, Phoenix, AZ 85001",
+      "EMP59496",
+      "Rs. 2,400,000",
+      "Scott Green",
+      "sgreen@global.pk"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_015",
+    "filename": "doc_hr_015.md",
+    "title": "Employee Domicile and Comprehensive Benefits Enrollment Sheet - Case #1015",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "0300-3563646",
+      "EMP-51074",
+      "Eric Morales",
+      "PKR 3,500,000",
+      "Plot 121, Block C, Garden Town, Lahore, 54600",
+      "eric.morales@corp.acme.com"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_016",
+    "filename": "doc_hr_016.md",
+    "title": "Departmental Payroll Batch Reconciliation Audit - Case #1016",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "6481 Lake Road, Boston, MA 02108",
+      "858-688-1096",
+      "David Turner",
+      "EMP-36712",
+      "Rs. 380,000",
+      "david.10020@privaterag.internal"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_017",
+    "filename": "doc_hr_017.md",
+    "title": "Severance Determination and Confidential Exit Agreement - Case #1017",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "0300-6639317",
+      "8099 Monroe Avenue, Denver, CO 80201",
+      "EMP-45272",
+      "EUR 115,000",
+      "Nazia Bashir",
+      "nbashir@techmatrix.net"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_018",
+    "filename": "doc_hr_018.md",
+    "title": "Confidential Medical Leave and Disability Support Record - Case #1018",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "0302-8190929",
+      "541 Meadow Drive, Phoenix, AZ 85001",
+      "Aaron Phillips",
+      "EMP-57459",
+      "Rs. 380,000",
+      "aaron.10678@privaterag.internal"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_019",
+    "filename": "doc_hr_019.md",
+    "title": "Talent Acquisition Offer Package and Compensation Breakdown - Case #1019",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "0301-1873851",
+      "EMP-13295",
+      "Flat 4C, Shadman, Lahore, 54000",
+      "PKR 250,000",
+      "Saima Jutt",
+      "sjutt@corp.acme.com"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_020",
+    "filename": "doc_hr_020.md",
+    "title": "Human Resources Background Investigation Summary - Case #1020",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "$105,000",
+      "0300-2919136",
+      "3366 Spruce Road, Denver, CO 80201",
+      "Brian Lewis",
+      "EMP-52607",
+      "brian.10156@corp.acme.com"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_021",
+    "filename": "doc_hr_021.md",
+    "title": "Confidential Compensation Review and Salary Adjustment Memo - Case #1021",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "(858) 606-4249",
+      "EMP-55840",
+      "House 383, Street 8, New Garden Town, Lahore, 54600",
+      "Margaret Reyes",
+      "PKR 750,000",
+      "margaret.reyes@privaterag.internal"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_022",
+    "filename": "doc_hr_022.md",
+    "title": "Annual Performance Appraisal Dossier and Bonus Determination - Case #1022",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "$180k",
+      "+1-801-270-9289",
+      "9372 Meadow Road, Chicago, IL 60601",
+      "Adam Watson",
+      "EMP-25915",
+      "awatson@corp.acme.com"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_023",
+    "filename": "doc_hr_023.md",
+    "title": "Executive Offer Letter and Employment Agreement - Case #1023",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "2606 Madison Drive, Dallas, TX 75201",
+      "503-830-9817",
+      "EMP-42125",
+      "PKR 650,000",
+      "Shahbaz Bashir",
+      "shahbaz.10534@enterprise.org"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_024",
+    "filename": "doc_hr_024.md",
+    "title": "Disciplinary Investigation Report and Formal Warning - Case #1024",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "702-229-9098",
+      "7485 Cedar Avenue, Atlanta, GA 30301",
+      "EMP-48828",
+      "Humaira Khalid",
+      "USD 320,000",
+      "humaira.10624@global.pk"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_025",
+    "filename": "doc_hr_025.md",
+    "title": "Employee Domicile and Comprehensive Benefits Enrollment Sheet - Case #1025",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "$125k",
+      "+1-404-907-8800",
+      "1502 Railroad Avenue, Denver, CO 80201",
+      "EMP-26931",
+      "Mehwish Zaman",
+      "mzaman@global.pk"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_026",
+    "filename": "doc_hr_026.md",
+    "title": "Departmental Payroll Batch Reconciliation Audit - Case #1026",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "0302-6549757",
+      "9628 Hill Boulevard, Atlanta, GA 30301",
+      "EMP-11130",
+      "Laura Jenkins",
+      "USD 180,000",
+      "laura.10543@global.pk"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_027",
+    "filename": "doc_hr_027.md",
+    "title": "Severance Determination and Confidential Exit Agreement - Case #1027",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "$195,000",
+      "0300-5638893",
+      "8879 North Road, Chicago, IL 60601",
+      "Adeel Wattoo",
+      "EMP-30094",
+      "adeel.wattoo@enterprise.org"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_028",
+    "filename": "doc_hr_028.md",
+    "title": "Confidential Medical Leave and Disability Support Record - Case #1028",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "$165,000",
+      "(713) 480-1745",
+      "6012 Spring Avenue, Denver, CO 80201",
+      "Diane Ortiz",
+      "EMP-49111",
+      "diane.ortiz@techmatrix.net"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_029",
+    "filename": "doc_hr_029.md",
+    "title": "Talent Acquisition Offer Package and Compensation Breakdown - Case #1029",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "(503) 689-2869",
+      "Carolyn Taylor",
+      "EMP51803",
+      "Flat 5D, Gulberg II, Lahore, 54660",
+      "Rs. 1,200,000",
+      "carolyn.taylor@techmatrix.net"
+    ]
+  },
+  {
+    "doc_id": "doc_hr_030",
+    "filename": "doc_hr_030.md",
+    "title": "Human Resources Background Investigation Summary - Case #1030",
+    "access_level": "hr_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "$280,000",
+      "404-994-9561",
+      "EMP-51251",
+      "Plot 156, Block A, New Garden Town, Lahore, 54600",
+      "Sana Sadiq",
+      "sana.10610@global.pk"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_001",
+    "filename": "doc_exec_001.md",
+    "title": "Board of Directors Compensation Committee Confidential Minutes - Ref EX-201",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "$220k",
+      "+92 300 3634980",
+      "1725 Oak Road, San Jose, CA 95113",
+      "E-48569",
+      "Nasir Bukhari",
+      "nasir.10216@enterprise.org"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_002",
+    "filename": "doc_exec_002.md",
+    "title": "C-Suite Executive Employment Agreement and Equity Grant - Ref EX-202",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "214-272-4824",
+      "634 Sunset Avenue, Atlanta, GA 30301",
+      "EMP-20258",
+      "PKR 4,200,000",
+      "Taimoor Ansari",
+      "taimoor.10289@techmatrix.net"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_003",
+    "filename": "doc_exec_003.md",
+    "title": "Confidential Mergers & Acquisitions Executive Retention Brief - Ref EX-203",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "+92-42-356160869",
+      "2541 Jackson Boulevard, Denver, CO 80201",
+      "Benjamin Ramos",
+      "EMP53331",
+      "USD 95,000",
+      "benjamin.ramos@enterprise.org"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_004",
+    "filename": "doc_exec_004.md",
+    "title": "Senior Leadership Restructuring and Succession Strategy - Ref EX-204",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "0301-1668752",
+      "4560 River Lane, Boston, MA 02108",
+      "EMP-28914",
+      "Kelly Reed",
+      "Rs. 380,000",
+      "kreed@privaterag.internal"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_005",
+    "filename": "doc_exec_005.md",
+    "title": "Strategic Enterprise Valuation and Capital Allocation Memo - Ref EX-205",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "$150,000",
+      "0302-8419378",
+      "EMP-49564",
+      "Jack Adams",
+      "Plot 429, Block C, Samanabad, Lahore, 54500",
+      "jack.adams@corp.acme.com"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_006",
+    "filename": "doc_exec_006.md",
+    "title": "Executive Bonus Pool Determination and Performance Multipliers - Ref EX-206",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "6790 Sunset Boulevard, San Francisco, CA 94102",
+      "702-621-9117",
+      "EMP-38566",
+      "Lisa Howard",
+      "Rs. 1,200,000",
+      "lisa.10107@techmatrix.net"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_007",
+    "filename": "doc_exec_007.md",
+    "title": "Chief Executive Officer Strategic Advisory and Compensation Package - Ref EX-207",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "$150,000",
+      "(707) 673-7770",
+      "6722 North Road, Chicago, IL 60601",
+      "EMP-46051",
+      "Stephanie Ross",
+      "stephanie.ross@privaterag.internal"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_008",
+    "filename": "doc_exec_008.md",
+    "title": "Confidential Intellectual Property Settlement and Officer Indemnity - Ref EX-208",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "+1-512-324-1472",
+      "9098 Lake Avenue, Atlanta, GA 30301",
+      "EMP-59574",
+      "Junaid Zafar",
+      "PKR 3,500,000",
+      "jzafar@techmatrix.net"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_009",
+    "filename": "doc_exec_009.md",
+    "title": "Executive Domicile Security and Personal Protection Stipend - Ref EX-209",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "$72,000",
+      "0302-5896624",
+      "1958 Cedar Drive, Denver, CO 80201",
+      "Donald Price",
+      "EMP-20379",
+      "donald.10852@corp.acme.com"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_010",
+    "filename": "doc_exec_010.md",
+    "title": "Senior Officer Severance Contingency and Retirement Agreement - Ref EX-210",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "+92 300 5634662",
+      "3222 Elm Lane, Boston, MA 02108",
+      "E-41621",
+      "Paul Turner",
+      "USD 320,000",
+      "paul.10900@privaterag.internal"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_011",
+    "filename": "doc_exec_011.md",
+    "title": "Board of Directors Compensation Committee Confidential Minutes - Ref EX-211",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "0300-6790218",
+      "E-32274",
+      "Lauren Turner",
+      "Plot 145, Block E, Gulberg II, Lahore, 54660",
+      "Rs. 2,400,000",
+      "lauren.turner@global.pk"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_012",
+    "filename": "doc_exec_012.md",
+    "title": "C-Suite Executive Employment Agreement and Equity Grant - Ref EX-212",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "0302-8935224",
+      "9468 River Drive, Denver, CO 80201",
+      "EMP-34720",
+      "PKR 250,000",
+      "Zunaira Masood",
+      "zmasood@enterprise.org"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_013",
+    "filename": "doc_exec_013.md",
+    "title": "Confidential Mergers & Acquisitions Executive Retention Brief - Ref EX-213",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "$280,000",
+      "214-302-9617",
+      "8329 Oak Lane, Seattle, WA 98101",
+      "E-35302",
+      "Victoria Carter",
+      "victoria.carter@techmatrix.net"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_014",
+    "filename": "doc_exec_014.md",
+    "title": "Senior Leadership Restructuring and Succession Strategy - Ref EX-214",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "$135,000",
+      "+1-707-589-6188",
+      "6612 Walnut Way, San Francisco, CA 94102",
+      "E-52911",
+      "Tariq Shabbir",
+      "tshabbir@corp.acme.com"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_015",
+    "filename": "doc_exec_015.md",
+    "title": "Strategic Enterprise Valuation and Capital Allocation Memo - Ref EX-215",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "$125,000",
+      "(214) 370-5906",
+      "Diane Morales",
+      "EMP-45456",
+      "Flat 204, Samanabad, Lahore, 54500",
+      "diane.10720@corp.acme.com"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_016",
+    "filename": "doc_exec_016.md",
+    "title": "Executive Bonus Pool Determination and Performance Multipliers - Ref EX-216",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "(404) 709-3344",
+      "EMP-29226",
+      "House 211, Street 12, Cavalry Ground, Lahore, 54810",
+      "PKR 2,800,000",
+      "Shehnaz Siddiqui",
+      "ssiddiqui@privaterag.internal"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_017",
+    "filename": "doc_exec_017.md",
+    "title": "Chief Executive Officer Strategic Advisory and Compensation Package - Ref EX-217",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "+1-602-854-7951",
+      "2688 Forest Street, Phoenix, AZ 85001",
+      "EMP-26733",
+      "Rs. 380,000",
+      "Waqas Nazir",
+      "wnazir@global.pk"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_018",
+    "filename": "doc_exec_018.md",
+    "title": "Confidential Intellectual Property Settlement and Officer Indemnity - Ref EX-218",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "+1-858-481-1132",
+      "E-23055",
+      "Plot 293, Block C, Faisal Town, Lahore, 54770",
+      "Rs. 850,000",
+      "Shahbaz Bukhari",
+      "shahbaz.bukhari@techmatrix.net"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_019",
+    "filename": "doc_exec_019.md",
+    "title": "Executive Domicile Security and Personal Protection Stipend - Ref EX-219",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "+1-503-894-3240",
+      "3870 Monroe Lane, Atlanta, GA 30301",
+      "E-13214",
+      "Julie Myers",
+      "Rs. 1,600,000",
+      "julie.myers@techmatrix.net"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_020",
+    "filename": "doc_exec_020.md",
+    "title": "Senior Officer Severance Contingency and Retirement Agreement - Ref EX-220",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "+92-42-357138070",
+      "Atif Ashraf",
+      "EMP-12583",
+      "Flat 2A, Shadman, Lahore, 54000",
+      "PKR 3,500,000",
+      "atif.ashraf@global.pk"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_021",
+    "filename": "doc_exec_021.md",
+    "title": "Board of Directors Compensation Committee Confidential Minutes - Ref EX-221",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "+1-713-972-4696",
+      "5649 Spring Road, Indianapolis, IN 46204",
+      "EMP-20783",
+      "Peter Wright",
+      "Rs. 850,000",
+      "pwright@corp.acme.com"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_022",
+    "filename": "doc_exec_022.md",
+    "title": "C-Suite Executive Employment Agreement and Equity Grant - Ref EX-222",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "801-310-4830",
+      "EMP-46524",
+      "PKR 1,100,000",
+      "Plot 64, Block F, Cavalry Ground, Lahore, 54810",
+      "Ronald Perry",
+      "ronald.10390@techmatrix.net"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_023",
+    "filename": "doc_exec_023.md",
+    "title": "Confidential Mergers & Acquisitions Executive Retention Brief - Ref EX-223",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "$125,000",
+      "+92 300 6106390",
+      "5051 Willow Way, Indianapolis, IN 46204",
+      "Areeba Aziz",
+      "EMP-49982",
+      "areeba.aziz@global.pk"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_024",
+    "filename": "doc_exec_024.md",
+    "title": "Senior Leadership Restructuring and Succession Strategy - Ref EX-224",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "$225,000",
+      "0300-2661307",
+      "8950 Ridge Drive, Charlotte, NC 28202",
+      "EMP25387",
+      "Joseph Gonzalez",
+      "joseph.10744@privaterag.internal"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_025",
+    "filename": "doc_exec_025.md",
+    "title": "Strategic Enterprise Valuation and Capital Allocation Memo - Ref EX-225",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "+92 302 4184459",
+      "Brandon Evans",
+      "EMP-28333",
+      "Flat 2A, Johar Town Phase 1, Lahore, 54782",
+      "PKR 750,000",
+      "brandon.10367@privaterag.internal"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_026",
+    "filename": "doc_exec_026.md",
+    "title": "Executive Bonus Pool Determination and Performance Multipliers - Ref EX-226",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "$85,000",
+      "+1-404-536-3417",
+      "EMP-16007",
+      "House 125, Street 9, Shadman, Lahore, 54000",
+      "Nathan Collins",
+      "nathan.collins@privaterag.internal"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_027",
+    "filename": "doc_exec_027.md",
+    "title": "Chief Executive Officer Strategic Advisory and Compensation Package - Ref EX-227",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "$420,000",
+      "+92 300 3126655",
+      "EMP-18519",
+      "Ghazala Ghafoor",
+      "Plot 68, Block B, Gulberg II, Lahore, 54660",
+      "ghazala.ghafoor@techmatrix.net"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_028",
+    "filename": "doc_exec_028.md",
+    "title": "Confidential Intellectual Property Settlement and Officer Indemnity - Ref EX-228",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "1886 Railroad Drive, San Jose, CA 95113",
+      "312-944-9543",
+      "EMP-58867",
+      "PKR 4,200,000",
+      "Shirley Anderson",
+      "shirley.anderson@privaterag.internal"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_029",
+    "filename": "doc_exec_029.md",
+    "title": "Executive Domicile Security and Personal Protection Stipend - Ref EX-229",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "+1-415-329-5505",
+      "7367 Sunset Street, Indianapolis, IN 46204",
+      "Ayesha Siddiqui",
+      "EMP41390",
+      "PKR 2,200,000",
+      "asiddiqui@corp.acme.com"
+    ]
+  },
+  {
+    "doc_id": "doc_exec_030",
+    "filename": "doc_exec_030.md",
+    "title": "Senior Officer Severance Contingency and Retirement Agreement - Ref EX-230",
+    "access_level": "exec_restricted",
+    "entities_present": [
+      "ADDRESS",
+      "EMAIL",
+      "EMP_ID",
+      "PERSON",
+      "PHONE",
+      "SALARY"
+    ],
+    "sensitive_values": [
+      "0300-4833486",
+      "EMP-31311",
+      "EUR 78,000",
+      "House 310, Street 28, Cavalry Ground, Lahore, 54810",
+      "Stephen Alvarez",
+      "stephen.10886@privaterag.internal"
+    ]
+  }
+]

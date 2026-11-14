@@ -1,0 +1,44 @@
+{
+  "doc_id": "doc_exec_006",
+  "filename": "doc_exec_006.md",
+  "title": "Executive Bonus Pool Determination and Performance Multipliers - Ref EX-206",
+  "access_level": "exec_restricted",
+  "spans": [
+    {
+      "start": 530,
+      "end": 541,
+      "label": "PERSON",
+      "text": "Lisa Howard"
+    },
+    {
+      "start": 566,
+      "end": 575,
+      "label": "EMP_ID",
+      "text": "EMP-38566"
+    },
+    {
+      "start": 681,
+      "end": 694,
+      "label": "SALARY",
+      "text": "Rs. 1,200,000"
+    },
+    {
+      "start": 905,
+      "end": 930,
+      "label": "EMAIL",
+      "text": "lisa.10107@techmatrix.net"
+    },
+    {
+      "start": 973,
+      "end": 985,
+      "label": "PHONE",
+      "text": "702-621-9117"
+    },
+    {
+      "start": 1094,
+      "end": 1140,
+      "label": "ADDRESS",
+      "text": "6790 Sunset Boulevard, San Francisco, CA 94102"
+    }
+  ]
+}

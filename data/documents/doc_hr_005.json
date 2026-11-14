@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_005",
+  "filename": "doc_hr_005.md",
+  "title": "Employee Domicile and Comprehensive Benefits Enrollment Sheet - Case #1005",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 418,
+      "end": 432,
+      "label": "PERSON",
+      "text": "Heather Martin"
+    },
+    {
+      "start": 469,
+      "end": 477,
+      "label": "EMP_ID",
+      "text": "EMP25514"
+    },
+    {
+      "start": 506,
+      "end": 540,
+      "label": "ADDRESS",
+      "text": "5542 Maple Road, Seattle, WA 98101"
+    },
+    {
+      "start": 562,
+      "end": 585,
+      "label": "EMAIL",
+      "text": "heather.10884@global.pk"
+    },
+    {
+      "start": 608,
+      "end": 623,
+      "label": "PHONE",
+      "text": "+1-404-473-3608"
+    },
+    {
+      "start": 823,
+      "end": 837,
+      "label": "PERSON",
+      "text": "Heather Martin"
+    },
+    {
+      "start": 864,
+      "end": 872,
+      "label": "SALARY",
+      "text": "$420,000"
+    },
+    {
+      "start": 1051,
+      "end": 1085,
+      "label": "ADDRESS",
+      "text": "5542 Maple Road, Seattle, WA 98101"
+    }
+  ]
+}

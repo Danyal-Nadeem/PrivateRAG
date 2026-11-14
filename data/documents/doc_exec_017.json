@@ -1,0 +1,44 @@
+{
+  "doc_id": "doc_exec_017",
+  "filename": "doc_exec_017.md",
+  "title": "Chief Executive Officer Strategic Advisory and Compensation Package - Ref EX-217",
+  "access_level": "exec_restricted",
+  "spans": [
+    {
+      "start": 535,
+      "end": 546,
+      "label": "PERSON",
+      "text": "Waqas Nazir"
+    },
+    {
+      "start": 571,
+      "end": 580,
+      "label": "EMP_ID",
+      "text": "EMP-26733"
+    },
+    {
+      "start": 686,
+      "end": 697,
+      "label": "SALARY",
+      "text": "Rs. 380,000"
+    },
+    {
+      "start": 908,
+      "end": 924,
+      "label": "EMAIL",
+      "text": "wnazir@global.pk"
+    },
+    {
+      "start": 967,
+      "end": 982,
+      "label": "PHONE",
+      "text": "+1-602-854-7951"
+    },
+    {
+      "start": 1091,
+      "end": 1128,
+      "label": "ADDRESS",
+      "text": "2688 Forest Street, Phoenix, AZ 85001"
+    }
+  ]
+}

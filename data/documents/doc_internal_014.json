@@ -1,0 +1,32 @@
+{
+  "doc_id": "doc_internal_014",
+  "filename": "doc_internal_014.md",
+  "title": "Internal Incident Escalation Matrix and On-Call Rotations (Rev 2)",
+  "access_level": "internal",
+  "spans": [
+    {
+      "start": 807,
+      "end": 818,
+      "label": "PERSON",
+      "text": "Joan Watson"
+    },
+    {
+      "start": 830,
+      "end": 838,
+      "label": "EMP_ID",
+      "text": "EMP29558"
+    },
+    {
+      "start": 908,
+      "end": 938,
+      "label": "EMAIL",
+      "text": "joan.10203@privaterag.internal"
+    },
+    {
+      "start": 964,
+      "end": 980,
+      "label": "PHONE",
+      "text": "+92-42-353710343"
+    }
+  ]
+}

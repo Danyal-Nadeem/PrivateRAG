@@ -1,0 +1,20 @@
+{
+  "doc_id": "doc_public_027",
+  "filename": "doc_public_027.md",
+  "title": "Public Security, Privacy, and SOC2 Compliance Summary (Part 3)",
+  "access_level": "public",
+  "spans": [
+    {
+      "start": 329,
+      "end": 345,
+      "label": "PERSON",
+      "text": "Dr. Ayesha Malik"
+    },
+    {
+      "start": 968,
+      "end": 984,
+      "label": "PERSON",
+      "text": "Dr. Ayesha Malik"
+    }
+  ]
+}

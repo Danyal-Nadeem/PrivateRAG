@@ -1,0 +1,32 @@
+{
+  "doc_id": "doc_internal_025",
+  "filename": "doc_internal_025.md",
+  "title": "Corporate VPN Setup and Secure Remote Work Policy (Rev 3)",
+  "access_level": "internal",
+  "spans": [
+    {
+      "start": 799,
+      "end": 814,
+      "label": "PERSON",
+      "text": "Muhammad Yousaf"
+    },
+    {
+      "start": 826,
+      "end": 833,
+      "label": "EMP_ID",
+      "text": "E-27380"
+    },
+    {
+      "start": 903,
+      "end": 920,
+      "label": "EMAIL",
+      "text": "myousaf@global.pk"
+    },
+    {
+      "start": 946,
+      "end": 958,
+      "label": "PHONE",
+      "text": "0302-9164991"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_030",
+  "filename": "doc_hr_030.md",
+  "title": "Human Resources Background Investigation Summary - Case #1030",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 405,
+      "end": 415,
+      "label": "PERSON",
+      "text": "Sana Sadiq"
+    },
+    {
+      "start": 452,
+      "end": 461,
+      "label": "EMP_ID",
+      "text": "EMP-51251"
+    },
+    {
+      "start": 490,
+      "end": 539,
+      "label": "ADDRESS",
+      "text": "Plot 156, Block A, New Garden Town, Lahore, 54600"
+    },
+    {
+      "start": 561,
+      "end": 581,
+      "label": "EMAIL",
+      "text": "sana.10610@global.pk"
+    },
+    {
+      "start": 604,
+      "end": 616,
+      "label": "PHONE",
+      "text": "404-994-9561"
+    },
+    {
+      "start": 816,
+      "end": 826,
+      "label": "PERSON",
+      "text": "Sana Sadiq"
+    },
+    {
+      "start": 853,
+      "end": 861,
+      "label": "SALARY",
+      "text": "$280,000"
+    },
+    {
+      "start": 1040,
+      "end": 1089,
+      "label": "ADDRESS",
+      "text": "Plot 156, Block A, New Garden Town, Lahore, 54600"
+    }
+  ]
+}

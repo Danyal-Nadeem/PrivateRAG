@@ -1,0 +1,44 @@
+{
+  "doc_id": "doc_exec_021",
+  "filename": "doc_exec_021.md",
+  "title": "Board of Directors Compensation Committee Confidential Minutes - Ref EX-221",
+  "access_level": "exec_restricted",
+  "spans": [
+    {
+      "start": 530,
+      "end": 542,
+      "label": "PERSON",
+      "text": "Peter Wright"
+    },
+    {
+      "start": 567,
+      "end": 576,
+      "label": "EMP_ID",
+      "text": "EMP-20783"
+    },
+    {
+      "start": 682,
+      "end": 693,
+      "label": "SALARY",
+      "text": "Rs. 850,000"
+    },
+    {
+      "start": 904,
+      "end": 925,
+      "label": "EMAIL",
+      "text": "pwright@corp.acme.com"
+    },
+    {
+      "start": 968,
+      "end": 983,
+      "label": "PHONE",
+      "text": "+1-713-972-4696"
+    },
+    {
+      "start": 1092,
+      "end": 1132,
+      "label": "ADDRESS",
+      "text": "5649 Spring Road, Indianapolis, IN 46204"
+    }
+  ]
+}

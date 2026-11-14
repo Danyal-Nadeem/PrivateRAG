@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_026",
+  "filename": "doc_hr_026.md",
+  "title": "Departmental Payroll Batch Reconciliation Audit - Case #1026",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 404,
+      "end": 417,
+      "label": "PERSON",
+      "text": "Laura Jenkins"
+    },
+    {
+      "start": 454,
+      "end": 463,
+      "label": "EMP_ID",
+      "text": "EMP-11130"
+    },
+    {
+      "start": 492,
+      "end": 530,
+      "label": "ADDRESS",
+      "text": "9628 Hill Boulevard, Atlanta, GA 30301"
+    },
+    {
+      "start": 552,
+      "end": 573,
+      "label": "EMAIL",
+      "text": "laura.10543@global.pk"
+    },
+    {
+      "start": 596,
+      "end": 608,
+      "label": "PHONE",
+      "text": "0302-6549757"
+    },
+    {
+      "start": 808,
+      "end": 821,
+      "label": "PERSON",
+      "text": "Laura Jenkins"
+    },
+    {
+      "start": 848,
+      "end": 859,
+      "label": "SALARY",
+      "text": "USD 180,000"
+    },
+    {
+      "start": 1038,
+      "end": 1076,
+      "label": "ADDRESS",
+      "text": "9628 Hill Boulevard, Atlanta, GA 30301"
+    }
+  ]
+}

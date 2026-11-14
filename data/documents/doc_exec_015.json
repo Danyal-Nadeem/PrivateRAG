@@ -1,0 +1,44 @@
+{
+  "doc_id": "doc_exec_015",
+  "filename": "doc_exec_015.md",
+  "title": "Strategic Enterprise Valuation and Capital Allocation Memo - Ref EX-215",
+  "access_level": "exec_restricted",
+  "spans": [
+    {
+      "start": 526,
+      "end": 539,
+      "label": "PERSON",
+      "text": "Diane Morales"
+    },
+    {
+      "start": 564,
+      "end": 573,
+      "label": "EMP_ID",
+      "text": "EMP-45456"
+    },
+    {
+      "start": 679,
+      "end": 687,
+      "label": "SALARY",
+      "text": "$125,000"
+    },
+    {
+      "start": 898,
+      "end": 923,
+      "label": "EMAIL",
+      "text": "diane.10720@corp.acme.com"
+    },
+    {
+      "start": 966,
+      "end": 980,
+      "label": "PHONE",
+      "text": "(214) 370-5906"
+    },
+    {
+      "start": 1089,
+      "end": 1123,
+      "label": "ADDRESS",
+      "text": "Flat 204, Samanabad, Lahore, 54500"
+    }
+  ]
+}

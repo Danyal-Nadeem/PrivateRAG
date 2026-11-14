@@ -1,0 +1,32 @@
+{
+  "doc_id": "doc_internal_006",
+  "filename": "doc_internal_006.md",
+  "title": "Software Architecture Decision Record - Microservices Migration (Rev 1)",
+  "access_level": "internal",
+  "spans": [
+    {
+      "start": 813,
+      "end": 828,
+      "label": "PERSON",
+      "text": "Lauren Robinson"
+    },
+    {
+      "start": 840,
+      "end": 849,
+      "label": "EMP_ID",
+      "text": "EMP-16619"
+    },
+    {
+      "start": 919,
+      "end": 941,
+      "label": "EMAIL",
+      "text": "lauren.10854@global.pk"
+    },
+    {
+      "start": 967,
+      "end": 982,
+      "label": "PHONE",
+      "text": "+92 302 6960453"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "doc_id": "doc_internal_022",
+  "filename": "doc_internal_022.md",
+  "title": "Engineering Best Practices and Code Review Guidelines (Rev 3)",
+  "access_level": "internal",
+  "spans": [
+    {
+      "start": 803,
+      "end": 814,
+      "label": "PERSON",
+      "text": "Faiza Wahid"
+    },
+    {
+      "start": 826,
+      "end": 835,
+      "label": "EMP_ID",
+      "text": "EMP-17161"
+    },
+    {
+      "start": 905,
+      "end": 931,
+      "label": "EMAIL",
+      "text": "faiza.10459@enterprise.org"
+    },
+    {
+      "start": 957,
+      "end": 972,
+      "label": "PHONE",
+      "text": "+92 301 5673212"
+    }
+  ]
+}

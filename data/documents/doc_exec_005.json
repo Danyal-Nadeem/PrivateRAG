@@ -1,0 +1,44 @@
+{
+  "doc_id": "doc_exec_005",
+  "filename": "doc_exec_005.md",
+  "title": "Strategic Enterprise Valuation and Capital Allocation Memo - Ref EX-205",
+  "access_level": "exec_restricted",
+  "spans": [
+    {
+      "start": 526,
+      "end": 536,
+      "label": "PERSON",
+      "text": "Jack Adams"
+    },
+    {
+      "start": 561,
+      "end": 570,
+      "label": "EMP_ID",
+      "text": "EMP-49564"
+    },
+    {
+      "start": 676,
+      "end": 684,
+      "label": "SALARY",
+      "text": "$150,000"
+    },
+    {
+      "start": 895,
+      "end": 919,
+      "label": "EMAIL",
+      "text": "jack.adams@corp.acme.com"
+    },
+    {
+      "start": 962,
+      "end": 974,
+      "label": "PHONE",
+      "text": "0302-8419378"
+    },
+    {
+      "start": 1083,
+      "end": 1126,
+      "label": "ADDRESS",
+      "text": "Plot 429, Block C, Samanabad, Lahore, 54500"
+    }
+  ]
+}

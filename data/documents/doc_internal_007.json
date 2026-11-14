@@ -1,0 +1,32 @@
+{
+  "doc_id": "doc_internal_007",
+  "filename": "doc_internal_007.md",
+  "title": "Departmental Sprint Planning and Agile Delivery Framework (Rev 1)",
+  "access_level": "internal",
+  "spans": [
+    {
+      "start": 807,
+      "end": 819,
+      "label": "PERSON",
+      "text": "Adnan Imtiaz"
+    },
+    {
+      "start": 831,
+      "end": 840,
+      "label": "EMP_ID",
+      "text": "EMP-54796"
+    },
+    {
+      "start": 910,
+      "end": 941,
+      "label": "EMAIL",
+      "text": "adnan.10175@privaterag.internal"
+    },
+    {
+      "start": 967,
+      "end": 979,
+      "label": "PHONE",
+      "text": "404-367-8573"
+    }
+  ]
+}

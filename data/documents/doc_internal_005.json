@@ -1,0 +1,32 @@
+{
+  "doc_id": "doc_internal_005",
+  "filename": "doc_internal_005.md",
+  "title": "Corporate VPN Setup and Secure Remote Work Policy (Rev 1)",
+  "access_level": "internal",
+  "spans": [
+    {
+      "start": 799,
+      "end": 810,
+      "label": "PERSON",
+      "text": "Bushra Abid"
+    },
+    {
+      "start": 822,
+      "end": 830,
+      "label": "EMP_ID",
+      "text": "EMP50535"
+    },
+    {
+      "start": 900,
+      "end": 927,
+      "label": "EMAIL",
+      "text": "bushra.10196@techmatrix.net"
+    },
+    {
+      "start": 953,
+      "end": 965,
+      "label": "PHONE",
+      "text": "312-877-4733"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_015",
+  "filename": "doc_hr_015.md",
+  "title": "Employee Domicile and Comprehensive Benefits Enrollment Sheet - Case #1015",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 418,
+      "end": 430,
+      "label": "PERSON",
+      "text": "Eric Morales"
+    },
+    {
+      "start": 467,
+      "end": 476,
+      "label": "EMP_ID",
+      "text": "EMP-51074"
+    },
+    {
+      "start": 505,
+      "end": 550,
+      "label": "ADDRESS",
+      "text": "Plot 121, Block C, Garden Town, Lahore, 54600"
+    },
+    {
+      "start": 572,
+      "end": 598,
+      "label": "EMAIL",
+      "text": "eric.morales@corp.acme.com"
+    },
+    {
+      "start": 621,
+      "end": 633,
+      "label": "PHONE",
+      "text": "0300-3563646"
+    },
+    {
+      "start": 833,
+      "end": 845,
+      "label": "PERSON",
+      "text": "Eric Morales"
+    },
+    {
+      "start": 872,
+      "end": 885,
+      "label": "SALARY",
+      "text": "PKR 3,500,000"
+    },
+    {
+      "start": 1064,
+      "end": 1109,
+      "label": "ADDRESS",
+      "text": "Plot 121, Block C, Garden Town, Lahore, 54600"
+    }
+  ]
+}

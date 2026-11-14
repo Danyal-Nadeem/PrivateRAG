@@ -1,0 +1,44 @@
+{
+  "doc_id": "doc_exec_007",
+  "filename": "doc_exec_007.md",
+  "title": "Chief Executive Officer Strategic Advisory and Compensation Package - Ref EX-207",
+  "access_level": "exec_restricted",
+  "spans": [
+    {
+      "start": 535,
+      "end": 549,
+      "label": "PERSON",
+      "text": "Stephanie Ross"
+    },
+    {
+      "start": 574,
+      "end": 583,
+      "label": "EMP_ID",
+      "text": "EMP-46051"
+    },
+    {
+      "start": 689,
+      "end": 697,
+      "label": "SALARY",
+      "text": "$150,000"
+    },
+    {
+      "start": 908,
+      "end": 942,
+      "label": "EMAIL",
+      "text": "stephanie.ross@privaterag.internal"
+    },
+    {
+      "start": 985,
+      "end": 999,
+      "label": "PHONE",
+      "text": "(707) 673-7770"
+    },
+    {
+      "start": 1108,
+      "end": 1142,
+      "label": "ADDRESS",
+      "text": "6722 North Road, Chicago, IL 60601"
+    }
+  ]
+}

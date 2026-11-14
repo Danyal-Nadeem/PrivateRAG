@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_012",
+  "filename": "doc_hr_012.md",
+  "title": "Annual Performance Appraisal Dossier and Bonus Determination - Case #1012",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 417,
+      "end": 428,
+      "label": "PERSON",
+      "text": "Sidra Javed"
+    },
+    {
+      "start": 465,
+      "end": 473,
+      "label": "EMP_ID",
+      "text": "EMP50060"
+    },
+    {
+      "start": 502,
+      "end": 541,
+      "label": "ADDRESS",
+      "text": "9531 Monroe Avenue, Charlotte, NC 28202"
+    },
+    {
+      "start": 563,
+      "end": 579,
+      "label": "EMAIL",
+      "text": "sjaved@global.pk"
+    },
+    {
+      "start": 602,
+      "end": 617,
+      "label": "PHONE",
+      "text": "+92 301 1093026"
+    },
+    {
+      "start": 817,
+      "end": 828,
+      "label": "PERSON",
+      "text": "Sidra Javed"
+    },
+    {
+      "start": 855,
+      "end": 863,
+      "label": "SALARY",
+      "text": "$135,000"
+    },
+    {
+      "start": 1042,
+      "end": 1081,
+      "label": "ADDRESS",
+      "text": "9531 Monroe Avenue, Charlotte, NC 28202"
+    }
+  ]
+}

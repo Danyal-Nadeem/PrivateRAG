@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_018",
+  "filename": "doc_hr_018.md",
+  "title": "Confidential Medical Leave and Disability Support Record - Case #1018",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 413,
+      "end": 427,
+      "label": "PERSON",
+      "text": "Aaron Phillips"
+    },
+    {
+      "start": 464,
+      "end": 473,
+      "label": "EMP_ID",
+      "text": "EMP-57459"
+    },
+    {
+      "start": 502,
+      "end": 537,
+      "label": "ADDRESS",
+      "text": "541 Meadow Drive, Phoenix, AZ 85001"
+    },
+    {
+      "start": 559,
+      "end": 590,
+      "label": "EMAIL",
+      "text": "aaron.10678@privaterag.internal"
+    },
+    {
+      "start": 613,
+      "end": 625,
+      "label": "PHONE",
+      "text": "0302-8190929"
+    },
+    {
+      "start": 825,
+      "end": 839,
+      "label": "PERSON",
+      "text": "Aaron Phillips"
+    },
+    {
+      "start": 866,
+      "end": 877,
+      "label": "SALARY",
+      "text": "Rs. 380,000"
+    },
+    {
+      "start": 1056,
+      "end": 1091,
+      "label": "ADDRESS",
+      "text": "541 Meadow Drive, Phoenix, AZ 85001"
+    }
+  ]
+}

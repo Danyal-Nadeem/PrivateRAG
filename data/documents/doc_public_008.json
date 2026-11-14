@@ -1,0 +1,20 @@
+{
+  "doc_id": "doc_public_008",
+  "filename": "doc_public_008.md",
+  "title": "Diversity, Equity, and Inclusion Annual Overview (Part 1)",
+  "access_level": "public",
+  "spans": [
+    {
+      "start": 324,
+      "end": 338,
+      "label": "PERSON",
+      "text": "Jessica Taylor"
+    },
+    {
+      "start": 961,
+      "end": 975,
+      "label": "PERSON",
+      "text": "Jessica Taylor"
+    }
+  ]
+}

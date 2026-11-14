@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_027",
+  "filename": "doc_hr_027.md",
+  "title": "Severance Determination and Confidential Exit Agreement - Case #1027",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 412,
+      "end": 424,
+      "label": "PERSON",
+      "text": "Adeel Wattoo"
+    },
+    {
+      "start": 461,
+      "end": 470,
+      "label": "EMP_ID",
+      "text": "EMP-30094"
+    },
+    {
+      "start": 499,
+      "end": 533,
+      "label": "ADDRESS",
+      "text": "8879 North Road, Chicago, IL 60601"
+    },
+    {
+      "start": 555,
+      "end": 582,
+      "label": "EMAIL",
+      "text": "adeel.wattoo@enterprise.org"
+    },
+    {
+      "start": 605,
+      "end": 617,
+      "label": "PHONE",
+      "text": "0300-5638893"
+    },
+    {
+      "start": 817,
+      "end": 829,
+      "label": "PERSON",
+      "text": "Adeel Wattoo"
+    },
+    {
+      "start": 856,
+      "end": 864,
+      "label": "SALARY",
+      "text": "$195,000"
+    },
+    {
+      "start": 1043,
+      "end": 1077,
+      "label": "ADDRESS",
+      "text": "8879 North Road, Chicago, IL 60601"
+    }
+  ]
+}

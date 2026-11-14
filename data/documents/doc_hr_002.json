@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_002",
+  "filename": "doc_hr_002.md",
+  "title": "Annual Performance Appraisal Dossier and Bonus Determination - Case #1002",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 417,
+      "end": 429,
+      "label": "PERSON",
+      "text": "Noor Manzoor"
+    },
+    {
+      "start": 466,
+      "end": 475,
+      "label": "EMP_ID",
+      "text": "EMP-46256"
+    },
+    {
+      "start": 504,
+      "end": 543,
+      "label": "ADDRESS",
+      "text": "3435 River Way, San Francisco, CA 94102"
+    },
+    {
+      "start": 565,
+      "end": 590,
+      "label": "EMAIL",
+      "text": "noor.10500@techmatrix.net"
+    },
+    {
+      "start": 613,
+      "end": 629,
+      "label": "PHONE",
+      "text": "+92-42-351852264"
+    },
+    {
+      "start": 829,
+      "end": 841,
+      "label": "PERSON",
+      "text": "Noor Manzoor"
+    },
+    {
+      "start": 868,
+      "end": 873,
+      "label": "SALARY",
+      "text": "$140k"
+    },
+    {
+      "start": 1052,
+      "end": 1091,
+      "label": "ADDRESS",
+      "text": "3435 River Way, San Francisco, CA 94102"
+    }
+  ]
+}

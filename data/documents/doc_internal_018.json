@@ -1,0 +1,32 @@
+{
+  "doc_id": "doc_internal_018",
+  "filename": "doc_internal_018.md",
+  "title": "Internal Travel Booking and Expense Reimbursement Guidelines (Rev 2)",
+  "access_level": "internal",
+  "spans": [
+    {
+      "start": 810,
+      "end": 822,
+      "label": "PERSON",
+      "text": "Afshan Babar"
+    },
+    {
+      "start": 834,
+      "end": 843,
+      "label": "EMP_ID",
+      "text": "EMP-34472"
+    },
+    {
+      "start": 913,
+      "end": 939,
+      "label": "EMAIL",
+      "text": "ababar@privaterag.internal"
+    },
+    {
+      "start": 965,
+      "end": 980,
+      "label": "PHONE",
+      "text": "+92 301 2074176"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "doc_id": "doc_internal_026",
+  "filename": "doc_internal_026.md",
+  "title": "Software Architecture Decision Record - Microservices Migration (Rev 3)",
+  "access_level": "internal",
+  "spans": [
+    {
+      "start": 813,
+      "end": 826,
+      "label": "PERSON",
+      "text": "Bushra Gondal"
+    },
+    {
+      "start": 838,
+      "end": 847,
+      "label": "EMP_ID",
+      "text": "EMP-13832"
+    },
+    {
+      "start": 917,
+      "end": 950,
+      "label": "EMAIL",
+      "text": "bushra.gondal@privaterag.internal"
+    },
+    {
+      "start": 976,
+      "end": 991,
+      "label": "PHONE",
+      "text": "+1-312-251-8811"
+    }
+  ]
+}

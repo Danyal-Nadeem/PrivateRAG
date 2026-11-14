@@ -1,0 +1,20 @@
+{
+  "doc_id": "doc_public_002",
+  "filename": "doc_public_002.md",
+  "title": "Public Cloud Architecture and Technology Whitepaper (Part 1)",
+  "access_level": "public",
+  "spans": [
+    {
+      "start": 327,
+      "end": 340,
+      "label": "PERSON",
+      "text": "Sarah Jenkins"
+    },
+    {
+      "start": 963,
+      "end": 976,
+      "label": "PERSON",
+      "text": "Sarah Jenkins"
+    }
+  ]
+}

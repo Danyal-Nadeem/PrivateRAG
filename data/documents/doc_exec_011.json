@@ -1,0 +1,44 @@
+{
+  "doc_id": "doc_exec_011",
+  "filename": "doc_exec_011.md",
+  "title": "Board of Directors Compensation Committee Confidential Minutes - Ref EX-211",
+  "access_level": "exec_restricted",
+  "spans": [
+    {
+      "start": 530,
+      "end": 543,
+      "label": "PERSON",
+      "text": "Lauren Turner"
+    },
+    {
+      "start": 568,
+      "end": 575,
+      "label": "EMP_ID",
+      "text": "E-32274"
+    },
+    {
+      "start": 681,
+      "end": 694,
+      "label": "SALARY",
+      "text": "Rs. 2,400,000"
+    },
+    {
+      "start": 905,
+      "end": 928,
+      "label": "EMAIL",
+      "text": "lauren.turner@global.pk"
+    },
+    {
+      "start": 971,
+      "end": 983,
+      "label": "PHONE",
+      "text": "0300-6790218"
+    },
+    {
+      "start": 1092,
+      "end": 1136,
+      "label": "ADDRESS",
+      "text": "Plot 145, Block E, Gulberg II, Lahore, 54660"
+    }
+  ]
+}

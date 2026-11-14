@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_010",
+  "filename": "doc_hr_010.md",
+  "title": "Human Resources Background Investigation Summary - Case #1010",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 405,
+      "end": 419,
+      "label": "PERSON",
+      "text": "Afshan Mahmood"
+    },
+    {
+      "start": 456,
+      "end": 465,
+      "label": "EMP_ID",
+      "text": "EMP-54388"
+    },
+    {
+      "start": 494,
+      "end": 528,
+      "label": "ADDRESS",
+      "text": "9077 Spring Road, Boston, MA 02108"
+    },
+    {
+      "start": 550,
+      "end": 572,
+      "label": "EMAIL",
+      "text": "amahmood@corp.acme.com"
+    },
+    {
+      "start": 595,
+      "end": 607,
+      "label": "PHONE",
+      "text": "0300-6406444"
+    },
+    {
+      "start": 807,
+      "end": 821,
+      "label": "PERSON",
+      "text": "Afshan Mahmood"
+    },
+    {
+      "start": 848,
+      "end": 856,
+      "label": "SALARY",
+      "text": "$420,000"
+    },
+    {
+      "start": 1035,
+      "end": 1069,
+      "label": "ADDRESS",
+      "text": "9077 Spring Road, Boston, MA 02108"
+    }
+  ]
+}

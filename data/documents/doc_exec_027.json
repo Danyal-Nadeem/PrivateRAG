@@ -1,0 +1,44 @@
+{
+  "doc_id": "doc_exec_027",
+  "filename": "doc_exec_027.md",
+  "title": "Chief Executive Officer Strategic Advisory and Compensation Package - Ref EX-227",
+  "access_level": "exec_restricted",
+  "spans": [
+    {
+      "start": 535,
+      "end": 550,
+      "label": "PERSON",
+      "text": "Ghazala Ghafoor"
+    },
+    {
+      "start": 575,
+      "end": 584,
+      "label": "EMP_ID",
+      "text": "EMP-18519"
+    },
+    {
+      "start": 690,
+      "end": 698,
+      "label": "SALARY",
+      "text": "$420,000"
+    },
+    {
+      "start": 909,
+      "end": 939,
+      "label": "EMAIL",
+      "text": "ghazala.ghafoor@techmatrix.net"
+    },
+    {
+      "start": 982,
+      "end": 997,
+      "label": "PHONE",
+      "text": "+92 300 3126655"
+    },
+    {
+      "start": 1106,
+      "end": 1149,
+      "label": "ADDRESS",
+      "text": "Plot 68, Block B, Gulberg II, Lahore, 54660"
+    }
+  ]
+}

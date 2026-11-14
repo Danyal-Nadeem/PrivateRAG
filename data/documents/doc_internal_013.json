@@ -1,0 +1,32 @@
+{
+  "doc_id": "doc_internal_013",
+  "filename": "doc_internal_013.md",
+  "title": "Office IT Equipment Request and Provisioning Protocol (Rev 2)",
+  "access_level": "internal",
+  "spans": [
+    {
+      "start": 803,
+      "end": 818,
+      "label": "PERSON",
+      "text": "Amanda Anderson"
+    },
+    {
+      "start": 830,
+      "end": 839,
+      "label": "EMP_ID",
+      "text": "EMP-29234"
+    },
+    {
+      "start": 909,
+      "end": 934,
+      "label": "EMAIL",
+      "text": "amanda.anderson@global.pk"
+    },
+    {
+      "start": 960,
+      "end": 975,
+      "label": "PHONE",
+      "text": "+1-503-712-3927"
+    }
+  ]
+}

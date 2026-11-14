@@ -1,0 +1,32 @@
+{
+  "doc_id": "doc_internal_021",
+  "filename": "doc_internal_021.md",
+  "title": "IT Infrastructure Deployment and Kubernetes Cluster Runbook (Rev 3)",
+  "access_level": "internal",
+  "spans": [
+    {
+      "start": 809,
+      "end": 819,
+      "label": "PERSON",
+      "text": "Omer Feroz"
+    },
+    {
+      "start": 831,
+      "end": 840,
+      "label": "EMP_ID",
+      "text": "EMP-38249"
+    },
+    {
+      "start": 910,
+      "end": 926,
+      "label": "EMAIL",
+      "text": "oferoz@global.pk"
+    },
+    {
+      "start": 952,
+      "end": 966,
+      "label": "PHONE",
+      "text": "(312) 889-2612"
+    }
+  ]
+}

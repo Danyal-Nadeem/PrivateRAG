@@ -1,0 +1,44 @@
+{
+  "doc_id": "doc_exec_003",
+  "filename": "doc_exec_003.md",
+  "title": "Confidential Mergers & Acquisitions Executive Retention Brief - Ref EX-203",
+  "access_level": "exec_restricted",
+  "spans": [
+    {
+      "start": 529,
+      "end": 543,
+      "label": "PERSON",
+      "text": "Benjamin Ramos"
+    },
+    {
+      "start": 568,
+      "end": 576,
+      "label": "EMP_ID",
+      "text": "EMP53331"
+    },
+    {
+      "start": 682,
+      "end": 692,
+      "label": "SALARY",
+      "text": "USD 95,000"
+    },
+    {
+      "start": 903,
+      "end": 932,
+      "label": "EMAIL",
+      "text": "benjamin.ramos@enterprise.org"
+    },
+    {
+      "start": 975,
+      "end": 991,
+      "label": "PHONE",
+      "text": "+92-42-356160869"
+    },
+    {
+      "start": 1100,
+      "end": 1140,
+      "label": "ADDRESS",
+      "text": "2541 Jackson Boulevard, Denver, CO 80201"
+    }
+  ]
+}

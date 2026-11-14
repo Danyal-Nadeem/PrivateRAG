@@ -1,0 +1,32 @@
+{
+  "doc_id": "doc_internal_029",
+  "filename": "doc_internal_029.md",
+  "title": "Facilities Access and Building Security Regulations (Rev 3)",
+  "access_level": "internal",
+  "spans": [
+    {
+      "start": 801,
+      "end": 810,
+      "label": "PERSON",
+      "text": "Nida Shah"
+    },
+    {
+      "start": 822,
+      "end": 831,
+      "label": "EMP_ID",
+      "text": "EMP-53891"
+    },
+    {
+      "start": 901,
+      "end": 921,
+      "label": "EMAIL",
+      "text": "nshah@enterprise.org"
+    },
+    {
+      "start": 947,
+      "end": 959,
+      "label": "PHONE",
+      "text": "0302-6033115"
+    }
+  ]
+}

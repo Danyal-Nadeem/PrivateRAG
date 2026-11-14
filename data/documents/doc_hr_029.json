@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_029",
+  "filename": "doc_hr_029.md",
+  "title": "Talent Acquisition Offer Package and Compensation Breakdown - Case #1029",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 416,
+      "end": 430,
+      "label": "PERSON",
+      "text": "Carolyn Taylor"
+    },
+    {
+      "start": 467,
+      "end": 475,
+      "label": "EMP_ID",
+      "text": "EMP51803"
+    },
+    {
+      "start": 504,
+      "end": 538,
+      "label": "ADDRESS",
+      "text": "Flat 5D, Gulberg II, Lahore, 54660"
+    },
+    {
+      "start": 560,
+      "end": 589,
+      "label": "EMAIL",
+      "text": "carolyn.taylor@techmatrix.net"
+    },
+    {
+      "start": 612,
+      "end": 626,
+      "label": "PHONE",
+      "text": "(503) 689-2869"
+    },
+    {
+      "start": 826,
+      "end": 840,
+      "label": "PERSON",
+      "text": "Carolyn Taylor"
+    },
+    {
+      "start": 867,
+      "end": 880,
+      "label": "SALARY",
+      "text": "Rs. 1,200,000"
+    },
+    {
+      "start": 1059,
+      "end": 1093,
+      "label": "ADDRESS",
+      "text": "Flat 5D, Gulberg II, Lahore, 54660"
+    }
+  ]
+}
