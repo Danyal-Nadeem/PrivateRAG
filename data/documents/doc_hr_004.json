@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_004",
+  "filename": "doc_hr_004.md",
+  "title": "Disciplinary Investigation Report and Formal Warning - Case #1004",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 409,
+      "end": 422,
+      "label": "PERSON",
+      "text": "Adam Mitchell"
+    },
+    {
+      "start": 459,
+      "end": 468,
+      "label": "EMP_ID",
+      "text": "EMP-48175"
+    },
+    {
+      "start": 497,
+      "end": 542,
+      "label": "ADDRESS",
+      "text": "Plot 187, Block B, Garden Town, Lahore, 54600"
+    },
+    {
+      "start": 564,
+      "end": 589,
+      "label": "EMAIL",
+      "text": "adam.10105@enterprise.org"
+    },
+    {
+      "start": 612,
+      "end": 624,
+      "label": "PHONE",
+      "text": "0301-7817881"
+    },
+    {
+      "start": 824,
+      "end": 837,
+      "label": "PERSON",
+      "text": "Adam Mitchell"
+    },
+    {
+      "start": 864,
+      "end": 877,
+      "label": "SALARY",
+      "text": "PKR 2,800,000"
+    },
+    {
+      "start": 1056,
+      "end": 1101,
+      "label": "ADDRESS",
+      "text": "Plot 187, Block B, Garden Town, Lahore, 54600"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "doc_id": "doc_public_003",
+  "filename": "doc_public_003.md",
+  "title": "Global Corporate Sustainability and Green Initiative (Part 1)",
+  "access_level": "public",
+  "spans": [
+    {
+      "start": 328,
+      "end": 344,
+      "label": "PERSON",
+      "text": "Dr. Ayesha Malik"
+    },
+    {
+      "start": 967,
+      "end": 983,
+      "label": "PERSON",
+      "text": "Dr. Ayesha Malik"
+    }
+  ]
+}

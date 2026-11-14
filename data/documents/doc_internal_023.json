@@ -1,0 +1,32 @@
+{
+  "doc_id": "doc_internal_023",
+  "filename": "doc_internal_023.md",
+  "title": "Office IT Equipment Request and Provisioning Protocol (Rev 3)",
+  "access_level": "internal",
+  "spans": [
+    {
+      "start": 803,
+      "end": 815,
+      "label": "PERSON",
+      "text": "Salma Ansari"
+    },
+    {
+      "start": 827,
+      "end": 835,
+      "label": "EMP_ID",
+      "text": "EMP39041"
+    },
+    {
+      "start": 905,
+      "end": 937,
+      "label": "EMAIL",
+      "text": "salma.ansari@privaterag.internal"
+    },
+    {
+      "start": 963,
+      "end": 975,
+      "label": "PHONE",
+      "text": "0301-1247595"
+    }
+  ]
+}

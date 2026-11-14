@@ -1,0 +1,32 @@
+{
+  "doc_id": "doc_internal_015",
+  "filename": "doc_internal_015.md",
+  "title": "Corporate VPN Setup and Secure Remote Work Policy (Rev 2)",
+  "access_level": "internal",
+  "spans": [
+    {
+      "start": 799,
+      "end": 810,
+      "label": "PERSON",
+      "text": "Julie Ortiz"
+    },
+    {
+      "start": 822,
+      "end": 831,
+      "label": "EMP_ID",
+      "text": "EMP-10037"
+    },
+    {
+      "start": 901,
+      "end": 922,
+      "label": "EMAIL",
+      "text": "julie.ortiz@global.pk"
+    },
+    {
+      "start": 948,
+      "end": 963,
+      "label": "PHONE",
+      "text": "+92 302 6159230"
+    }
+  ]
+}

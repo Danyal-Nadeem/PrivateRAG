@@ -1,0 +1,32 @@
+{
+  "doc_id": "doc_internal_001",
+  "filename": "doc_internal_001.md",
+  "title": "IT Infrastructure Deployment and Kubernetes Cluster Runbook (Rev 1)",
+  "access_level": "internal",
+  "spans": [
+    {
+      "start": 809,
+      "end": 823,
+      "label": "PERSON",
+      "text": "Patricia Patel"
+    },
+    {
+      "start": 835,
+      "end": 844,
+      "label": "EMP_ID",
+      "text": "EMP-28024"
+    },
+    {
+      "start": 914,
+      "end": 943,
+      "label": "EMAIL",
+      "text": "patricia.10104@enterprise.org"
+    },
+    {
+      "start": 969,
+      "end": 983,
+      "label": "PHONE",
+      "text": "(707) 289-7912"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "doc_id": "doc_internal_019",
+  "filename": "doc_internal_019.md",
+  "title": "Facilities Access and Building Security Regulations (Rev 2)",
+  "access_level": "internal",
+  "spans": [
+    {
+      "start": 801,
+      "end": 814,
+      "label": "PERSON",
+      "text": "Hafsa Mushtaq"
+    },
+    {
+      "start": 826,
+      "end": 835,
+      "label": "EMP_ID",
+      "text": "EMP-25080"
+    },
+    {
+      "start": 905,
+      "end": 932,
+      "label": "EMAIL",
+      "text": "hafsa.mushtaq@corp.acme.com"
+    },
+    {
+      "start": 958,
+      "end": 972,
+      "label": "PHONE",
+      "text": "(312) 434-2104"
+    }
+  ]
+}

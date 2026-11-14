@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_007",
+  "filename": "doc_hr_007.md",
+  "title": "Severance Determination and Confidential Exit Agreement - Case #1007",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 412,
+      "end": 422,
+      "label": "PERSON",
+      "text": "Emily Hall"
+    },
+    {
+      "start": 459,
+      "end": 468,
+      "label": "EMP_ID",
+      "text": "EMP-52040"
+    },
+    {
+      "start": 497,
+      "end": 533,
+      "label": "ADDRESS",
+      "text": "4379 Maple Avenue, Chicago, IL 60601"
+    },
+    {
+      "start": 555,
+      "end": 580,
+      "label": "EMAIL",
+      "text": "ehall@privaterag.internal"
+    },
+    {
+      "start": 603,
+      "end": 615,
+      "label": "PHONE",
+      "text": "0301-8290770"
+    },
+    {
+      "start": 815,
+      "end": 825,
+      "label": "PERSON",
+      "text": "Emily Hall"
+    },
+    {
+      "start": 852,
+      "end": 862,
+      "label": "SALARY",
+      "text": "EUR 92,000"
+    },
+    {
+      "start": 1041,
+      "end": 1077,
+      "label": "ADDRESS",
+      "text": "4379 Maple Avenue, Chicago, IL 60601"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "doc_id": "doc_exec_030",
+  "filename": "doc_exec_030.md",
+  "title": "Senior Officer Severance Contingency and Retirement Agreement - Ref EX-230",
+  "access_level": "exec_restricted",
+  "spans": [
+    {
+      "start": 529,
+      "end": 544,
+      "label": "PERSON",
+      "text": "Stephen Alvarez"
+    },
+    {
+      "start": 569,
+      "end": 578,
+      "label": "EMP_ID",
+      "text": "EMP-31311"
+    },
+    {
+      "start": 684,
+      "end": 694,
+      "label": "SALARY",
+      "text": "EUR 78,000"
+    },
+    {
+      "start": 905,
+      "end": 938,
+      "label": "EMAIL",
+      "text": "stephen.10886@privaterag.internal"
+    },
+    {
+      "start": 981,
+      "end": 993,
+      "label": "PHONE",
+      "text": "0300-4833486"
+    },
+    {
+      "start": 1102,
+      "end": 1153,
+      "label": "ADDRESS",
+      "text": "House 310, Street 28, Cavalry Ground, Lahore, 54810"
+    }
+  ]
+}

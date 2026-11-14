@@ -1,0 +1,44 @@
+{
+  "doc_id": "doc_exec_019",
+  "filename": "doc_exec_019.md",
+  "title": "Executive Domicile Security and Personal Protection Stipend - Ref EX-219",
+  "access_level": "exec_restricted",
+  "spans": [
+    {
+      "start": 527,
+      "end": 538,
+      "label": "PERSON",
+      "text": "Julie Myers"
+    },
+    {
+      "start": 563,
+      "end": 570,
+      "label": "EMP_ID",
+      "text": "E-13214"
+    },
+    {
+      "start": 676,
+      "end": 689,
+      "label": "SALARY",
+      "text": "Rs. 1,600,000"
+    },
+    {
+      "start": 900,
+      "end": 926,
+      "label": "EMAIL",
+      "text": "julie.myers@techmatrix.net"
+    },
+    {
+      "start": 969,
+      "end": 984,
+      "label": "PHONE",
+      "text": "+1-503-894-3240"
+    },
+    {
+      "start": 1093,
+      "end": 1128,
+      "label": "ADDRESS",
+      "text": "3870 Monroe Lane, Atlanta, GA 30301"
+    }
+  ]
+}

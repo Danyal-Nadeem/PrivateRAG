@@ -1,0 +1,44 @@
+{
+  "doc_id": "doc_exec_009",
+  "filename": "doc_exec_009.md",
+  "title": "Executive Domicile Security and Personal Protection Stipend - Ref EX-209",
+  "access_level": "exec_restricted",
+  "spans": [
+    {
+      "start": 527,
+      "end": 539,
+      "label": "PERSON",
+      "text": "Donald Price"
+    },
+    {
+      "start": 564,
+      "end": 573,
+      "label": "EMP_ID",
+      "text": "EMP-20379"
+    },
+    {
+      "start": 679,
+      "end": 686,
+      "label": "SALARY",
+      "text": "$72,000"
+    },
+    {
+      "start": 897,
+      "end": 923,
+      "label": "EMAIL",
+      "text": "donald.10852@corp.acme.com"
+    },
+    {
+      "start": 966,
+      "end": 978,
+      "label": "PHONE",
+      "text": "0302-5896624"
+    },
+    {
+      "start": 1087,
+      "end": 1121,
+      "label": "ADDRESS",
+      "text": "1958 Cedar Drive, Denver, CO 80201"
+    }
+  ]
+}

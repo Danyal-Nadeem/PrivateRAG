@@ -1,0 +1,44 @@
+{
+  "doc_id": "doc_exec_018",
+  "filename": "doc_exec_018.md",
+  "title": "Confidential Intellectual Property Settlement and Officer Indemnity - Ref EX-218",
+  "access_level": "exec_restricted",
+  "spans": [
+    {
+      "start": 535,
+      "end": 550,
+      "label": "PERSON",
+      "text": "Shahbaz Bukhari"
+    },
+    {
+      "start": 575,
+      "end": 582,
+      "label": "EMP_ID",
+      "text": "E-23055"
+    },
+    {
+      "start": 688,
+      "end": 699,
+      "label": "SALARY",
+      "text": "Rs. 850,000"
+    },
+    {
+      "start": 910,
+      "end": 940,
+      "label": "EMAIL",
+      "text": "shahbaz.bukhari@techmatrix.net"
+    },
+    {
+      "start": 983,
+      "end": 998,
+      "label": "PHONE",
+      "text": "+1-858-481-1132"
+    },
+    {
+      "start": 1107,
+      "end": 1152,
+      "label": "ADDRESS",
+      "text": "Plot 293, Block C, Faisal Town, Lahore, 54770"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_023",
+  "filename": "doc_hr_023.md",
+  "title": "Executive Offer Letter and Employment Agreement - Case #1023",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 404,
+      "end": 418,
+      "label": "PERSON",
+      "text": "Shahbaz Bashir"
+    },
+    {
+      "start": 455,
+      "end": 464,
+      "label": "EMP_ID",
+      "text": "EMP-42125"
+    },
+    {
+      "start": 493,
+      "end": 529,
+      "label": "ADDRESS",
+      "text": "2606 Madison Drive, Dallas, TX 75201"
+    },
+    {
+      "start": 551,
+      "end": 579,
+      "label": "EMAIL",
+      "text": "shahbaz.10534@enterprise.org"
+    },
+    {
+      "start": 602,
+      "end": 614,
+      "label": "PHONE",
+      "text": "503-830-9817"
+    },
+    {
+      "start": 814,
+      "end": 828,
+      "label": "PERSON",
+      "text": "Shahbaz Bashir"
+    },
+    {
+      "start": 855,
+      "end": 866,
+      "label": "SALARY",
+      "text": "PKR 650,000"
+    },
+    {
+      "start": 1045,
+      "end": 1081,
+      "label": "ADDRESS",
+      "text": "2606 Madison Drive, Dallas, TX 75201"
+    }
+  ]
+}

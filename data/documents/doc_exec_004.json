@@ -1,0 +1,44 @@
+{
+  "doc_id": "doc_exec_004",
+  "filename": "doc_exec_004.md",
+  "title": "Senior Leadership Restructuring and Succession Strategy - Ref EX-204",
+  "access_level": "exec_restricted",
+  "spans": [
+    {
+      "start": 523,
+      "end": 533,
+      "label": "PERSON",
+      "text": "Kelly Reed"
+    },
+    {
+      "start": 558,
+      "end": 567,
+      "label": "EMP_ID",
+      "text": "EMP-28914"
+    },
+    {
+      "start": 673,
+      "end": 684,
+      "label": "SALARY",
+      "text": "Rs. 380,000"
+    },
+    {
+      "start": 895,
+      "end": 920,
+      "label": "EMAIL",
+      "text": "kreed@privaterag.internal"
+    },
+    {
+      "start": 963,
+      "end": 975,
+      "label": "PHONE",
+      "text": "0301-1668752"
+    },
+    {
+      "start": 1084,
+      "end": 1117,
+      "label": "ADDRESS",
+      "text": "4560 River Lane, Boston, MA 02108"
+    }
+  ]
+}

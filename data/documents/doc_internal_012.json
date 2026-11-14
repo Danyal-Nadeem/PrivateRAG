@@ -1,0 +1,32 @@
+{
+  "doc_id": "doc_internal_012",
+  "filename": "doc_internal_012.md",
+  "title": "Engineering Best Practices and Code Review Guidelines (Rev 2)",
+  "access_level": "internal",
+  "spans": [
+    {
+      "start": 803,
+      "end": 813,
+      "label": "PERSON",
+      "text": "Saima Ayub"
+    },
+    {
+      "start": 825,
+      "end": 832,
+      "label": "EMP_ID",
+      "text": "E-26476"
+    },
+    {
+      "start": 902,
+      "end": 927,
+      "label": "EMAIL",
+      "text": "saima.10738@corp.acme.com"
+    },
+    {
+      "start": 953,
+      "end": 965,
+      "label": "PHONE",
+      "text": "0301-5476583"
+    }
+  ]
+}

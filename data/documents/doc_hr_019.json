@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_019",
+  "filename": "doc_hr_019.md",
+  "title": "Talent Acquisition Offer Package and Compensation Breakdown - Case #1019",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 416,
+      "end": 426,
+      "label": "PERSON",
+      "text": "Saima Jutt"
+    },
+    {
+      "start": 463,
+      "end": 472,
+      "label": "EMP_ID",
+      "text": "EMP-13295"
+    },
+    {
+      "start": 501,
+      "end": 532,
+      "label": "ADDRESS",
+      "text": "Flat 4C, Shadman, Lahore, 54000"
+    },
+    {
+      "start": 554,
+      "end": 573,
+      "label": "EMAIL",
+      "text": "sjutt@corp.acme.com"
+    },
+    {
+      "start": 596,
+      "end": 608,
+      "label": "PHONE",
+      "text": "0301-1873851"
+    },
+    {
+      "start": 808,
+      "end": 818,
+      "label": "PERSON",
+      "text": "Saima Jutt"
+    },
+    {
+      "start": 845,
+      "end": 856,
+      "label": "SALARY",
+      "text": "PKR 250,000"
+    },
+    {
+      "start": 1035,
+      "end": 1066,
+      "label": "ADDRESS",
+      "text": "Flat 4C, Shadman, Lahore, 54000"
+    }
+  ]
+}

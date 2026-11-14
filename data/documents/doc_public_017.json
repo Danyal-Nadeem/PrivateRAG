@@ -1,0 +1,20 @@
+{
+  "doc_id": "doc_public_017",
+  "filename": "doc_public_017.md",
+  "title": "Public Security, Privacy, and SOC2 Compliance Summary (Part 2)",
+  "access_level": "public",
+  "spans": [
+    {
+      "start": 329,
+      "end": 349,
+      "label": "PERSON",
+      "text": "Prof. Tariq Siddiqui"
+    },
+    {
+      "start": 972,
+      "end": 992,
+      "label": "PERSON",
+      "text": "Prof. Tariq Siddiqui"
+    }
+  ]
+}

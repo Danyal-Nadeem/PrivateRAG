@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_013",
+  "filename": "doc_hr_013.md",
+  "title": "Executive Offer Letter and Employment Agreement - Case #1013",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 404,
+      "end": 416,
+      "label": "PERSON",
+      "text": "Henry Foster"
+    },
+    {
+      "start": 453,
+      "end": 462,
+      "label": "EMP_ID",
+      "text": "EMP-16985"
+    },
+    {
+      "start": 491,
+      "end": 545,
+      "label": "ADDRESS",
+      "text": "House 266, Street 30, Township Sector B, Lahore, 54770"
+    },
+    {
+      "start": 567,
+      "end": 588,
+      "label": "EMAIL",
+      "text": "hfoster@corp.acme.com"
+    },
+    {
+      "start": 611,
+      "end": 623,
+      "label": "PHONE",
+      "text": "0300-9910914"
+    },
+    {
+      "start": 823,
+      "end": 835,
+      "label": "PERSON",
+      "text": "Henry Foster"
+    },
+    {
+      "start": 862,
+      "end": 873,
+      "label": "SALARY",
+      "text": "USD 180,000"
+    },
+    {
+      "start": 1052,
+      "end": 1106,
+      "label": "ADDRESS",
+      "text": "House 266, Street 30, Township Sector B, Lahore, 54770"
+    }
+  ]
+}

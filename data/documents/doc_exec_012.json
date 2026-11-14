@@ -1,0 +1,44 @@
+{
+  "doc_id": "doc_exec_012",
+  "filename": "doc_exec_012.md",
+  "title": "C-Suite Executive Employment Agreement and Equity Grant - Ref EX-212",
+  "access_level": "exec_restricted",
+  "spans": [
+    {
+      "start": 523,
+      "end": 537,
+      "label": "PERSON",
+      "text": "Zunaira Masood"
+    },
+    {
+      "start": 562,
+      "end": 571,
+      "label": "EMP_ID",
+      "text": "EMP-34720"
+    },
+    {
+      "start": 677,
+      "end": 688,
+      "label": "SALARY",
+      "text": "PKR 250,000"
+    },
+    {
+      "start": 899,
+      "end": 921,
+      "label": "EMAIL",
+      "text": "zmasood@enterprise.org"
+    },
+    {
+      "start": 964,
+      "end": 976,
+      "label": "PHONE",
+      "text": "0302-8935224"
+    },
+    {
+      "start": 1085,
+      "end": 1119,
+      "label": "ADDRESS",
+      "text": "9468 River Drive, Denver, CO 80201"
+    }
+  ]
+}

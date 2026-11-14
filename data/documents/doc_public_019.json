@@ -1,0 +1,20 @@
+{
+  "doc_id": "doc_public_019",
+  "filename": "doc_public_019.md",
+  "title": "Investor Relations and Financial Highlights Summary (Part 2)",
+  "access_level": "public",
+  "spans": [
+    {
+      "start": 327,
+      "end": 341,
+      "label": "PERSON",
+      "text": "Muhammad Usman"
+    },
+    {
+      "start": 964,
+      "end": 978,
+      "label": "PERSON",
+      "text": "Muhammad Usman"
+    }
+  ]
+}

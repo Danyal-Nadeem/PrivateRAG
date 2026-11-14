@@ -1,0 +1,32 @@
+{
+  "doc_id": "doc_internal_016",
+  "filename": "doc_internal_016.md",
+  "title": "Software Architecture Decision Record - Microservices Migration (Rev 2)",
+  "access_level": "internal",
+  "spans": [
+    {
+      "start": 813,
+      "end": 824,
+      "label": "PERSON",
+      "text": "Asad Parvez"
+    },
+    {
+      "start": 836,
+      "end": 845,
+      "label": "EMP_ID",
+      "text": "EMP-15161"
+    },
+    {
+      "start": 915,
+      "end": 936,
+      "label": "EMAIL",
+      "text": "asad.parvez@global.pk"
+    },
+    {
+      "start": 962,
+      "end": 976,
+      "label": "PHONE",
+      "text": "(707) 984-3060"
+    }
+  ]
+}

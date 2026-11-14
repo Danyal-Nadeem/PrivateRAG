@@ -1,0 +1,44 @@
+{
+  "doc_id": "doc_exec_023",
+  "filename": "doc_exec_023.md",
+  "title": "Confidential Mergers & Acquisitions Executive Retention Brief - Ref EX-223",
+  "access_level": "exec_restricted",
+  "spans": [
+    {
+      "start": 529,
+      "end": 540,
+      "label": "PERSON",
+      "text": "Areeba Aziz"
+    },
+    {
+      "start": 565,
+      "end": 574,
+      "label": "EMP_ID",
+      "text": "EMP-49982"
+    },
+    {
+      "start": 680,
+      "end": 688,
+      "label": "SALARY",
+      "text": "$125,000"
+    },
+    {
+      "start": 899,
+      "end": 920,
+      "label": "EMAIL",
+      "text": "areeba.aziz@global.pk"
+    },
+    {
+      "start": 963,
+      "end": 978,
+      "label": "PHONE",
+      "text": "+92 300 6106390"
+    },
+    {
+      "start": 1087,
+      "end": 1126,
+      "label": "ADDRESS",
+      "text": "5051 Willow Way, Indianapolis, IN 46204"
+    }
+  ]
+}

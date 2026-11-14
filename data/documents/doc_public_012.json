@@ -1,0 +1,20 @@
+{
+  "doc_id": "doc_public_012",
+  "filename": "doc_public_012.md",
+  "title": "Public Cloud Architecture and Technology Whitepaper (Part 2)",
+  "access_level": "public",
+  "spans": [
+    {
+      "start": 327,
+      "end": 341,
+      "label": "PERSON",
+      "text": "Michael Wilson"
+    },
+    {
+      "start": 964,
+      "end": 978,
+      "label": "PERSON",
+      "text": "Michael Wilson"
+    }
+  ]
+}

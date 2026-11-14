@@ -1,0 +1,20 @@
+{
+  "doc_id": "doc_public_004",
+  "filename": "doc_public_004.md",
+  "title": "Open Source Software Contribution and License Policy (Part 1)",
+  "access_level": "public",
+  "spans": [
+    {
+      "start": 328,
+      "end": 341,
+      "label": "PERSON",
+      "text": "Robert Miller"
+    },
+    {
+      "start": 964,
+      "end": 977,
+      "label": "PERSON",
+      "text": "Robert Miller"
+    }
+  ]
+}

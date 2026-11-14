@@ -1,0 +1,32 @@
+{
+  "doc_id": "doc_internal_009",
+  "filename": "doc_internal_009.md",
+  "title": "Facilities Access and Building Security Regulations (Rev 1)",
+  "access_level": "internal",
+  "spans": [
+    {
+      "start": 801,
+      "end": 813,
+      "label": "PERSON",
+      "text": "Bilal Gondal"
+    },
+    {
+      "start": 825,
+      "end": 833,
+      "label": "EMP_ID",
+      "text": "EMP47170"
+    },
+    {
+      "start": 903,
+      "end": 930,
+      "label": "EMAIL",
+      "text": "bilal.gondal@techmatrix.net"
+    },
+    {
+      "start": 956,
+      "end": 970,
+      "label": "PHONE",
+      "text": "(858) 858-8517"
+    }
+  ]
+}

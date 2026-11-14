@@ -1,0 +1,20 @@
+{
+  "doc_id": "doc_public_005",
+  "filename": "doc_public_005.md",
+  "title": "Executive Leadership Directory and Biographies (Part 1)",
+  "access_level": "public",
+  "spans": [
+    {
+      "start": 322,
+      "end": 342,
+      "label": "PERSON",
+      "text": "Prof. Tariq Siddiqui"
+    },
+    {
+      "start": 965,
+      "end": 985,
+      "label": "PERSON",
+      "text": "Prof. Tariq Siddiqui"
+    }
+  ]
+}

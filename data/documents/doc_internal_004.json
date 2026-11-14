@@ -1,0 +1,32 @@
+{
+  "doc_id": "doc_internal_004",
+  "filename": "doc_internal_004.md",
+  "title": "Internal Incident Escalation Matrix and On-Call Rotations (Rev 1)",
+  "access_level": "internal",
+  "spans": [
+    {
+      "start": 807,
+      "end": 820,
+      "label": "PERSON",
+      "text": "Shoaib Abbasi"
+    },
+    {
+      "start": 832,
+      "end": 840,
+      "label": "EMP_ID",
+      "text": "EMP33526"
+    },
+    {
+      "start": 910,
+      "end": 937,
+      "label": "EMAIL",
+      "text": "sabbasi@privaterag.internal"
+    },
+    {
+      "start": 963,
+      "end": 975,
+      "label": "PHONE",
+      "text": "214-749-3045"
+    }
+  ]
+}

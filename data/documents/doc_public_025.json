@@ -1,0 +1,20 @@
+{
+  "doc_id": "doc_public_025",
+  "filename": "doc_public_025.md",
+  "title": "Executive Leadership Directory and Biographies (Part 3)",
+  "access_level": "public",
+  "spans": [
+    {
+      "start": 322,
+      "end": 337,
+      "label": "PERSON",
+      "text": "Dr. Arshad Khan"
+    },
+    {
+      "start": 960,
+      "end": 975,
+      "label": "PERSON",
+      "text": "Dr. Arshad Khan"
+    }
+  ]
+}

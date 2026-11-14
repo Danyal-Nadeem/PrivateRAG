@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_003",
+  "filename": "doc_hr_003.md",
+  "title": "Executive Offer Letter and Employment Agreement - Case #1003",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 404,
+      "end": 415,
+      "label": "PERSON",
+      "text": "Rizwan Mian"
+    },
+    {
+      "start": 452,
+      "end": 461,
+      "label": "EMP_ID",
+      "text": "EMP-12889"
+    },
+    {
+      "start": 490,
+      "end": 525,
+      "label": "ADDRESS",
+      "text": "7339 Walnut Lane, Seattle, WA 98101"
+    },
+    {
+      "start": 547,
+      "end": 569,
+      "label": "EMAIL",
+      "text": "rizwan.10009@global.pk"
+    },
+    {
+      "start": 592,
+      "end": 604,
+      "label": "PHONE",
+      "text": "0302-3500715"
+    },
+    {
+      "start": 804,
+      "end": 815,
+      "label": "PERSON",
+      "text": "Rizwan Mian"
+    },
+    {
+      "start": 842,
+      "end": 850,
+      "label": "SALARY",
+      "text": "$210,000"
+    },
+    {
+      "start": 1029,
+      "end": 1064,
+      "label": "ADDRESS",
+      "text": "7339 Walnut Lane, Seattle, WA 98101"
+    }
+  ]
+}

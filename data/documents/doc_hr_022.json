@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_022",
+  "filename": "doc_hr_022.md",
+  "title": "Annual Performance Appraisal Dossier and Bonus Determination - Case #1022",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 417,
+      "end": 428,
+      "label": "PERSON",
+      "text": "Adam Watson"
+    },
+    {
+      "start": 465,
+      "end": 474,
+      "label": "EMP_ID",
+      "text": "EMP-25915"
+    },
+    {
+      "start": 503,
+      "end": 538,
+      "label": "ADDRESS",
+      "text": "9372 Meadow Road, Chicago, IL 60601"
+    },
+    {
+      "start": 560,
+      "end": 581,
+      "label": "EMAIL",
+      "text": "awatson@corp.acme.com"
+    },
+    {
+      "start": 604,
+      "end": 619,
+      "label": "PHONE",
+      "text": "+1-801-270-9289"
+    },
+    {
+      "start": 819,
+      "end": 830,
+      "label": "PERSON",
+      "text": "Adam Watson"
+    },
+    {
+      "start": 857,
+      "end": 862,
+      "label": "SALARY",
+      "text": "$180k"
+    },
+    {
+      "start": 1041,
+      "end": 1076,
+      "label": "ADDRESS",
+      "text": "9372 Meadow Road, Chicago, IL 60601"
+    }
+  ]
+}

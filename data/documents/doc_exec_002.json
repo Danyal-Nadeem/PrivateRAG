@@ -1,0 +1,44 @@
+{
+  "doc_id": "doc_exec_002",
+  "filename": "doc_exec_002.md",
+  "title": "C-Suite Executive Employment Agreement and Equity Grant - Ref EX-202",
+  "access_level": "exec_restricted",
+  "spans": [
+    {
+      "start": 523,
+      "end": 537,
+      "label": "PERSON",
+      "text": "Taimoor Ansari"
+    },
+    {
+      "start": 562,
+      "end": 571,
+      "label": "EMP_ID",
+      "text": "EMP-20258"
+    },
+    {
+      "start": 677,
+      "end": 690,
+      "label": "SALARY",
+      "text": "PKR 4,200,000"
+    },
+    {
+      "start": 901,
+      "end": 929,
+      "label": "EMAIL",
+      "text": "taimoor.10289@techmatrix.net"
+    },
+    {
+      "start": 972,
+      "end": 984,
+      "label": "PHONE",
+      "text": "214-272-4824"
+    },
+    {
+      "start": 1093,
+      "end": 1129,
+      "label": "ADDRESS",
+      "text": "634 Sunset Avenue, Atlanta, GA 30301"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_009",
+  "filename": "doc_hr_009.md",
+  "title": "Talent Acquisition Offer Package and Compensation Breakdown - Case #1009",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 416,
+      "end": 429,
+      "label": "PERSON",
+      "text": "Judith Nelson"
+    },
+    {
+      "start": 466,
+      "end": 475,
+      "label": "EMP_ID",
+      "text": "EMP-50839"
+    },
+    {
+      "start": 504,
+      "end": 538,
+      "label": "ADDRESS",
+      "text": "5167 Spring Way, Phoenix, AZ 85001"
+    },
+    {
+      "start": 560,
+      "end": 577,
+      "label": "EMAIL",
+      "text": "jnelson@global.pk"
+    },
+    {
+      "start": 600,
+      "end": 615,
+      "label": "PHONE",
+      "text": "+92 302 3135534"
+    },
+    {
+      "start": 815,
+      "end": 828,
+      "label": "PERSON",
+      "text": "Judith Nelson"
+    },
+    {
+      "start": 855,
+      "end": 863,
+      "label": "SALARY",
+      "text": "$195,000"
+    },
+    {
+      "start": 1042,
+      "end": 1076,
+      "label": "ADDRESS",
+      "text": "5167 Spring Way, Phoenix, AZ 85001"
+    }
+  ]
+}

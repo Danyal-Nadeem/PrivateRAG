@@ -1,0 +1,32 @@
+{
+  "doc_id": "doc_internal_028",
+  "filename": "doc_internal_028.md",
+  "title": "Internal Travel Booking and Expense Reimbursement Guidelines (Rev 3)",
+  "access_level": "internal",
+  "spans": [
+    {
+      "start": 810,
+      "end": 822,
+      "label": "PERSON",
+      "text": "Umair Tareen"
+    },
+    {
+      "start": 834,
+      "end": 843,
+      "label": "EMP_ID",
+      "text": "EMP-47940"
+    },
+    {
+      "start": 913,
+      "end": 945,
+      "label": "EMAIL",
+      "text": "umair.tareen@privaterag.internal"
+    },
+    {
+      "start": 971,
+      "end": 983,
+      "label": "PHONE",
+      "text": "0301-9770838"
+    }
+  ]
+}

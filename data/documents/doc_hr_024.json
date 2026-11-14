@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_024",
+  "filename": "doc_hr_024.md",
+  "title": "Disciplinary Investigation Report and Formal Warning - Case #1024",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 409,
+      "end": 423,
+      "label": "PERSON",
+      "text": "Humaira Khalid"
+    },
+    {
+      "start": 460,
+      "end": 469,
+      "label": "EMP_ID",
+      "text": "EMP-48828"
+    },
+    {
+      "start": 498,
+      "end": 534,
+      "label": "ADDRESS",
+      "text": "7485 Cedar Avenue, Atlanta, GA 30301"
+    },
+    {
+      "start": 556,
+      "end": 579,
+      "label": "EMAIL",
+      "text": "humaira.10624@global.pk"
+    },
+    {
+      "start": 602,
+      "end": 614,
+      "label": "PHONE",
+      "text": "702-229-9098"
+    },
+    {
+      "start": 814,
+      "end": 828,
+      "label": "PERSON",
+      "text": "Humaira Khalid"
+    },
+    {
+      "start": 855,
+      "end": 866,
+      "label": "SALARY",
+      "text": "USD 320,000"
+    },
+    {
+      "start": 1045,
+      "end": 1081,
+      "label": "ADDRESS",
+      "text": "7485 Cedar Avenue, Atlanta, GA 30301"
+    }
+  ]
+}

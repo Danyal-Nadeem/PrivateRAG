@@ -1,0 +1,44 @@
+{
+  "doc_id": "doc_exec_016",
+  "filename": "doc_exec_016.md",
+  "title": "Executive Bonus Pool Determination and Performance Multipliers - Ref EX-216",
+  "access_level": "exec_restricted",
+  "spans": [
+    {
+      "start": 530,
+      "end": 546,
+      "label": "PERSON",
+      "text": "Shehnaz Siddiqui"
+    },
+    {
+      "start": 571,
+      "end": 580,
+      "label": "EMP_ID",
+      "text": "EMP-29226"
+    },
+    {
+      "start": 686,
+      "end": 699,
+      "label": "SALARY",
+      "text": "PKR 2,800,000"
+    },
+    {
+      "start": 910,
+      "end": 939,
+      "label": "EMAIL",
+      "text": "ssiddiqui@privaterag.internal"
+    },
+    {
+      "start": 982,
+      "end": 996,
+      "label": "PHONE",
+      "text": "(404) 709-3344"
+    },
+    {
+      "start": 1105,
+      "end": 1156,
+      "label": "ADDRESS",
+      "text": "House 211, Street 12, Cavalry Ground, Lahore, 54810"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "doc_id": "doc_internal_002",
+  "filename": "doc_internal_002.md",
+  "title": "Engineering Best Practices and Code Review Guidelines (Rev 1)",
+  "access_level": "internal",
+  "spans": [
+    {
+      "start": 803,
+      "end": 818,
+      "label": "PERSON",
+      "text": "Mehwish Khokhar"
+    },
+    {
+      "start": 830,
+      "end": 839,
+      "label": "EMP_ID",
+      "text": "EMP-43118"
+    },
+    {
+      "start": 909,
+      "end": 944,
+      "label": "EMAIL",
+      "text": "mehwish.khokhar@privaterag.internal"
+    },
+    {
+      "start": 970,
+      "end": 982,
+      "label": "PHONE",
+      "text": "707-629-4611"
+    }
+  ]
+}

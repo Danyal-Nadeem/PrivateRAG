@@ -1,0 +1,44 @@
+{
+  "doc_id": "doc_exec_008",
+  "filename": "doc_exec_008.md",
+  "title": "Confidential Intellectual Property Settlement and Officer Indemnity - Ref EX-208",
+  "access_level": "exec_restricted",
+  "spans": [
+    {
+      "start": 535,
+      "end": 547,
+      "label": "PERSON",
+      "text": "Junaid Zafar"
+    },
+    {
+      "start": 572,
+      "end": 581,
+      "label": "EMP_ID",
+      "text": "EMP-59574"
+    },
+    {
+      "start": 687,
+      "end": 700,
+      "label": "SALARY",
+      "text": "PKR 3,500,000"
+    },
+    {
+      "start": 911,
+      "end": 932,
+      "label": "EMAIL",
+      "text": "jzafar@techmatrix.net"
+    },
+    {
+      "start": 975,
+      "end": 990,
+      "label": "PHONE",
+      "text": "+1-512-324-1472"
+    },
+    {
+      "start": 1099,
+      "end": 1134,
+      "label": "ADDRESS",
+      "text": "9098 Lake Avenue, Atlanta, GA 30301"
+    }
+  ]
+}

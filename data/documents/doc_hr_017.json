@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_017",
+  "filename": "doc_hr_017.md",
+  "title": "Severance Determination and Confidential Exit Agreement - Case #1017",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 412,
+      "end": 424,
+      "label": "PERSON",
+      "text": "Nazia Bashir"
+    },
+    {
+      "start": 461,
+      "end": 470,
+      "label": "EMP_ID",
+      "text": "EMP-45272"
+    },
+    {
+      "start": 499,
+      "end": 535,
+      "label": "ADDRESS",
+      "text": "8099 Monroe Avenue, Denver, CO 80201"
+    },
+    {
+      "start": 557,
+      "end": 579,
+      "label": "EMAIL",
+      "text": "nbashir@techmatrix.net"
+    },
+    {
+      "start": 602,
+      "end": 614,
+      "label": "PHONE",
+      "text": "0300-6639317"
+    },
+    {
+      "start": 814,
+      "end": 826,
+      "label": "PERSON",
+      "text": "Nazia Bashir"
+    },
+    {
+      "start": 853,
+      "end": 864,
+      "label": "SALARY",
+      "text": "EUR 115,000"
+    },
+    {
+      "start": 1043,
+      "end": 1079,
+      "label": "ADDRESS",
+      "text": "8099 Monroe Avenue, Denver, CO 80201"
+    }
+  ]
+}

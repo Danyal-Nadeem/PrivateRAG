@@ -1,0 +1,20 @@
+{
+  "doc_id": "doc_public_007",
+  "filename": "doc_public_007.md",
+  "title": "Public Security, Privacy, and SOC2 Compliance Summary (Part 1)",
+  "access_level": "public",
+  "spans": [
+    {
+      "start": 329,
+      "end": 343,
+      "label": "PERSON",
+      "text": "Muhammad Usman"
+    },
+    {
+      "start": 966,
+      "end": 980,
+      "label": "PERSON",
+      "text": "Muhammad Usman"
+    }
+  ]
+}

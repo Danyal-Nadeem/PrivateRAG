@@ -1,0 +1,44 @@
+{
+  "doc_id": "doc_exec_020",
+  "filename": "doc_exec_020.md",
+  "title": "Senior Officer Severance Contingency and Retirement Agreement - Ref EX-220",
+  "access_level": "exec_restricted",
+  "spans": [
+    {
+      "start": 529,
+      "end": 540,
+      "label": "PERSON",
+      "text": "Atif Ashraf"
+    },
+    {
+      "start": 565,
+      "end": 574,
+      "label": "EMP_ID",
+      "text": "EMP-12583"
+    },
+    {
+      "start": 680,
+      "end": 693,
+      "label": "SALARY",
+      "text": "PKR 3,500,000"
+    },
+    {
+      "start": 904,
+      "end": 925,
+      "label": "EMAIL",
+      "text": "atif.ashraf@global.pk"
+    },
+    {
+      "start": 968,
+      "end": 984,
+      "label": "PHONE",
+      "text": "+92-42-357138070"
+    },
+    {
+      "start": 1093,
+      "end": 1124,
+      "label": "ADDRESS",
+      "text": "Flat 2A, Shadman, Lahore, 54000"
+    }
+  ]
+}

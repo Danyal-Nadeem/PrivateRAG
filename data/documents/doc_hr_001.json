@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_001",
+  "filename": "doc_hr_001.md",
+  "title": "Confidential Compensation Review and Salary Adjustment Memo - Case #1001",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 416,
+      "end": 429,
+      "label": "PERSON",
+      "text": "Babar Qureshi"
+    },
+    {
+      "start": 466,
+      "end": 475,
+      "label": "EMP_ID",
+      "text": "EMP-26009"
+    },
+    {
+      "start": 504,
+      "end": 545,
+      "label": "ADDRESS",
+      "text": "5056 Jackson Lane, Indianapolis, IN 46204"
+    },
+    {
+      "start": 567,
+      "end": 600,
+      "label": "EMAIL",
+      "text": "babar.qureshi@privaterag.internal"
+    },
+    {
+      "start": 623,
+      "end": 637,
+      "label": "PHONE",
+      "text": "(707) 506-2697"
+    },
+    {
+      "start": 837,
+      "end": 850,
+      "label": "PERSON",
+      "text": "Babar Qureshi"
+    },
+    {
+      "start": 877,
+      "end": 885,
+      "label": "SALARY",
+      "text": "$310,000"
+    },
+    {
+      "start": 1064,
+      "end": 1105,
+      "label": "ADDRESS",
+      "text": "5056 Jackson Lane, Indianapolis, IN 46204"
+    }
+  ]
+}

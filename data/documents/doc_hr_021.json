@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_021",
+  "filename": "doc_hr_021.md",
+  "title": "Confidential Compensation Review and Salary Adjustment Memo - Case #1021",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 416,
+      "end": 430,
+      "label": "PERSON",
+      "text": "Margaret Reyes"
+    },
+    {
+      "start": 467,
+      "end": 476,
+      "label": "EMP_ID",
+      "text": "EMP-55840"
+    },
+    {
+      "start": 505,
+      "end": 556,
+      "label": "ADDRESS",
+      "text": "House 383, Street 8, New Garden Town, Lahore, 54600"
+    },
+    {
+      "start": 578,
+      "end": 612,
+      "label": "EMAIL",
+      "text": "margaret.reyes@privaterag.internal"
+    },
+    {
+      "start": 635,
+      "end": 649,
+      "label": "PHONE",
+      "text": "(858) 606-4249"
+    },
+    {
+      "start": 849,
+      "end": 863,
+      "label": "PERSON",
+      "text": "Margaret Reyes"
+    },
+    {
+      "start": 890,
+      "end": 901,
+      "label": "SALARY",
+      "text": "PKR 750,000"
+    },
+    {
+      "start": 1080,
+      "end": 1131,
+      "label": "ADDRESS",
+      "text": "House 383, Street 8, New Garden Town, Lahore, 54600"
+    }
+  ]
+}

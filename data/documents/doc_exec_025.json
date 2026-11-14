@@ -1,0 +1,44 @@
+{
+  "doc_id": "doc_exec_025",
+  "filename": "doc_exec_025.md",
+  "title": "Strategic Enterprise Valuation and Capital Allocation Memo - Ref EX-225",
+  "access_level": "exec_restricted",
+  "spans": [
+    {
+      "start": 526,
+      "end": 539,
+      "label": "PERSON",
+      "text": "Brandon Evans"
+    },
+    {
+      "start": 564,
+      "end": 573,
+      "label": "EMP_ID",
+      "text": "EMP-28333"
+    },
+    {
+      "start": 679,
+      "end": 690,
+      "label": "SALARY",
+      "text": "PKR 750,000"
+    },
+    {
+      "start": 901,
+      "end": 934,
+      "label": "EMAIL",
+      "text": "brandon.10367@privaterag.internal"
+    },
+    {
+      "start": 977,
+      "end": 992,
+      "label": "PHONE",
+      "text": "+92 302 4184459"
+    },
+    {
+      "start": 1101,
+      "end": 1143,
+      "label": "ADDRESS",
+      "text": "Flat 2A, Johar Town Phase 1, Lahore, 54782"
+    }
+  ]
+}

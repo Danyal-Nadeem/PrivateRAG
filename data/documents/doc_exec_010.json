@@ -1,0 +1,44 @@
+{
+  "doc_id": "doc_exec_010",
+  "filename": "doc_exec_010.md",
+  "title": "Senior Officer Severance Contingency and Retirement Agreement - Ref EX-210",
+  "access_level": "exec_restricted",
+  "spans": [
+    {
+      "start": 529,
+      "end": 540,
+      "label": "PERSON",
+      "text": "Paul Turner"
+    },
+    {
+      "start": 565,
+      "end": 572,
+      "label": "EMP_ID",
+      "text": "E-41621"
+    },
+    {
+      "start": 678,
+      "end": 689,
+      "label": "SALARY",
+      "text": "USD 320,000"
+    },
+    {
+      "start": 900,
+      "end": 930,
+      "label": "EMAIL",
+      "text": "paul.10900@privaterag.internal"
+    },
+    {
+      "start": 973,
+      "end": 988,
+      "label": "PHONE",
+      "text": "+92 300 5634662"
+    },
+    {
+      "start": 1097,
+      "end": 1128,
+      "label": "ADDRESS",
+      "text": "3222 Elm Lane, Boston, MA 02108"
+    }
+  ]
+}

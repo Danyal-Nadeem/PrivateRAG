@@ -1,0 +1,32 @@
+{
+  "doc_id": "doc_internal_024",
+  "filename": "doc_internal_024.md",
+  "title": "Internal Incident Escalation Matrix and On-Call Rotations (Rev 3)",
+  "access_level": "internal",
+  "spans": [
+    {
+      "start": 807,
+      "end": 816,
+      "label": "PERSON",
+      "text": "Kyle Long"
+    },
+    {
+      "start": 828,
+      "end": 837,
+      "label": "EMP_ID",
+      "text": "EMP-25491"
+    },
+    {
+      "start": 907,
+      "end": 922,
+      "label": "EMAIL",
+      "text": "klong@global.pk"
+    },
+    {
+      "start": 948,
+      "end": 960,
+      "label": "PHONE",
+      "text": "0300-1983738"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "doc_id": "doc_public_001",
+  "filename": "doc_public_001.md",
+  "title": "Corporate Annual Governance and Ethics Report (Part 1)",
+  "access_level": "public",
+  "spans": [
+    {
+      "start": 321,
+      "end": 336,
+      "label": "PERSON",
+      "text": "Dr. Arshad Khan"
+    },
+    {
+      "start": 959,
+      "end": 974,
+      "label": "PERSON",
+      "text": "Dr. Arshad Khan"
+    }
+  ]
+}

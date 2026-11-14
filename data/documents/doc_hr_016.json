@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_016",
+  "filename": "doc_hr_016.md",
+  "title": "Departmental Payroll Batch Reconciliation Audit - Case #1016",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 404,
+      "end": 416,
+      "label": "PERSON",
+      "text": "David Turner"
+    },
+    {
+      "start": 453,
+      "end": 462,
+      "label": "EMP_ID",
+      "text": "EMP-36712"
+    },
+    {
+      "start": 491,
+      "end": 523,
+      "label": "ADDRESS",
+      "text": "6481 Lake Road, Boston, MA 02108"
+    },
+    {
+      "start": 545,
+      "end": 576,
+      "label": "EMAIL",
+      "text": "david.10020@privaterag.internal"
+    },
+    {
+      "start": 599,
+      "end": 611,
+      "label": "PHONE",
+      "text": "858-688-1096"
+    },
+    {
+      "start": 811,
+      "end": 823,
+      "label": "PERSON",
+      "text": "David Turner"
+    },
+    {
+      "start": 850,
+      "end": 861,
+      "label": "SALARY",
+      "text": "Rs. 380,000"
+    },
+    {
+      "start": 1040,
+      "end": 1072,
+      "label": "ADDRESS",
+      "text": "6481 Lake Road, Boston, MA 02108"
+    }
+  ]
+}

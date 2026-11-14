@@ -1,0 +1,32 @@
+{
+  "doc_id": "doc_internal_003",
+  "filename": "doc_internal_003.md",
+  "title": "Office IT Equipment Request and Provisioning Protocol (Rev 1)",
+  "access_level": "internal",
+  "spans": [
+    {
+      "start": 803,
+      "end": 817,
+      "label": "PERSON",
+      "text": "Victoria Smith"
+    },
+    {
+      "start": 829,
+      "end": 837,
+      "label": "EMP_ID",
+      "text": "EMP59729"
+    },
+    {
+      "start": 907,
+      "end": 923,
+      "label": "EMAIL",
+      "text": "vsmith@global.pk"
+    },
+    {
+      "start": 949,
+      "end": 964,
+      "label": "PHONE",
+      "text": "+92 301 6647119"
+    }
+  ]
+}

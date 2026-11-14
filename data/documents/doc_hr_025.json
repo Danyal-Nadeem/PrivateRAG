@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_025",
+  "filename": "doc_hr_025.md",
+  "title": "Employee Domicile and Comprehensive Benefits Enrollment Sheet - Case #1025",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 418,
+      "end": 431,
+      "label": "PERSON",
+      "text": "Mehwish Zaman"
+    },
+    {
+      "start": 468,
+      "end": 477,
+      "label": "EMP_ID",
+      "text": "EMP-26931"
+    },
+    {
+      "start": 506,
+      "end": 544,
+      "label": "ADDRESS",
+      "text": "1502 Railroad Avenue, Denver, CO 80201"
+    },
+    {
+      "start": 566,
+      "end": 582,
+      "label": "EMAIL",
+      "text": "mzaman@global.pk"
+    },
+    {
+      "start": 605,
+      "end": 620,
+      "label": "PHONE",
+      "text": "+1-404-907-8800"
+    },
+    {
+      "start": 820,
+      "end": 833,
+      "label": "PERSON",
+      "text": "Mehwish Zaman"
+    },
+    {
+      "start": 860,
+      "end": 865,
+      "label": "SALARY",
+      "text": "$125k"
+    },
+    {
+      "start": 1044,
+      "end": 1082,
+      "label": "ADDRESS",
+      "text": "1502 Railroad Avenue, Denver, CO 80201"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "doc_id": "doc_hr_008",
+  "filename": "doc_hr_008.md",
+  "title": "Confidential Medical Leave and Disability Support Record - Case #1008",
+  "access_level": "hr_restricted",
+  "spans": [
+    {
+      "start": 413,
+      "end": 429,
+      "label": "PERSON",
+      "text": "Mudassar Rasheed"
+    },
+    {
+      "start": 466,
+      "end": 475,
+      "label": "EMP_ID",
+      "text": "EMP-38599"
+    },
+    {
+      "start": 504,
+      "end": 543,
+      "label": "ADDRESS",
+      "text": "Flat 2A, New Garden Town, Lahore, 54600"
+    },
+    {
+      "start": 565,
+      "end": 593,
+      "label": "EMAIL",
+      "text": "mudassar.10947@corp.acme.com"
+    },
+    {
+      "start": 616,
+      "end": 630,
+      "label": "PHONE",
+      "text": "(303) 572-8066"
+    },
+    {
+      "start": 830,
+      "end": 846,
+      "label": "PERSON",
+      "text": "Mudassar Rasheed"
+    },
+    {
+      "start": 873,
+      "end": 886,
+      "label": "SALARY",
+      "text": "Rs. 3,200,000"
+    },
+    {
+      "start": 1065,
+      "end": 1104,
+      "label": "ADDRESS",
+      "text": "Flat 2A, New Garden Town, Lahore, 54600"
+    }
+  ]
+}
