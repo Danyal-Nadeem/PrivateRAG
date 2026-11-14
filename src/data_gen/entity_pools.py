@@ -38,7 +38,7 @@ WESTERN_FIRST_TEST = [
     "Wayne", "Diana", "Elijah", "Brittany", "Randy", "Natalie"
 ]
 
-# Pakistani First Names
+# Pakistani First Names ("Amber" replaced with "Anmol" to eliminate cross-split collision with Western Test)
 PAKISTANI_FIRST_TRAIN = [
     "Muhammad", "Fatima", "Ahmad", "Ayesha", "Ali", "Zainab", "Usman", "Maryam",
     "Bilal", "Sana", "Hamza", "Hira", "Omer", "Noor", "Hassan", "Anam",
@@ -51,7 +51,7 @@ PAKISTANI_FIRST_TRAIN = [
     "Fahad", "Sumera", "Danish", "Rubab", "Shehroz", "Rida", "Taimoor", "Areeba",
     "Umair", "Komal", "Waleed", "Hafsa", "Zahid", "Nimra", "Naveed", "Sahar",
     "Atif", "Mehak", "Rashid", "Fariha", "Jamil", "Afshan", "Sohail", "Fozia",
-    "Tahir", "Asma", "Irfan", "Amber", "Qasim", "Maria", "Shakeel", "Beenish",
+    "Tahir", "Asma", "Irfan", "Anmol", "Qasim", "Maria", "Shakeel", "Beenish",
     "Muneeb", "Zunaira", "Ahsan", "Eman", "Mudassar", "Shehnaz", "Sarmad", "Nayab",
     "Moiz", "Humaira", "Talha", "Bisma", "Shahbaz", "Ghazala", "Zia", "Salma"
 ]
@@ -189,9 +189,6 @@ LAHORE_AREAS_TEST = [
 # ==========================================
 # 3. EMP_ID POOLS (Range Partitioned)
 # ==========================================
-# Train: 10000 - 59999
-# Val:   60000 - 79999
-# Test:  80000 - 99999
 EMP_ID_RANGES = {
     "train": (10000, 59999),
     "val": (60000, 79999),
@@ -219,7 +216,6 @@ PK_PHONE_PREFIXES = {
 # ==========================================
 # 5. SALARY POOLS (Amounts & Currencies)
 # ==========================================
-# Note: SALARY is exempt from zero-overlap check
 SALARY_AMOUNTS_USD = [
     "$65,000", "$72,000", "$85,000", "$92,000", "$95,000", "$105,000",
     "$115,000", "$120,000", "$125,000", "$135,000", "$140,000", "$150,000",
@@ -248,33 +244,11 @@ ALL_SALARIES = SALARY_AMOUNTS_USD + SALARY_AMOUNTS_PKR + SALARY_AMOUNTS_INTL
 
 
 # ==========================================
-# 6. HARD NEGATIVE POOLS (Non-Entity Tokens)
+# 6. HARD NEGATIVE & CONFUSER POOLS
 # ==========================================
-COMPANIES = [
-    "Acme Global Corp", "TechMatrix Industries", "Vertex Solutions", "CloudScale Inc",
-    "InnoVate Dynamics", "Nexus AI Systems", "AlphaLogix Corp", "DataVault Corp",
-    "OmniTech Global", "Synapse Software", "HyperScale Networks", "BlueWave Systems"
-]
-
 PRODUCTS = [
     "CloudCore v3.2", "DataSync Pro", "Sentinel AI", "FlowMatrix 4.0",
     "NeuralEngine v2", "CyberShield Enterprise", "OmniPlatform 5.1", "SecureTunnel 2.4"
-]
-
-STANDALONE_CITIES = [
-    "Chicago", "Seattle", "San Francisco", "Denver", "Boston", "Atlanta",
-    "Lahore", "Karachi", "Islamabad", "Austin", "New York", "Dallas"
-]
-
-REVENUE_FIGURES = [
-    "$45M in annual revenue", "$12.8M ARR", "$850,000 quarterly marketing budget",
-    "$15M Series B financing", "$4.2M operating profit", "$1.8M IT infrastructure spend",
-    "$95M annual gross merchandise value", "$28M total turnover"
-]
-
-HEADCOUNTS = [
-    "team of 45 engineers", "headcount of 1,200 employees", "staff of 85 researchers",
-    "department of 32 specialists", "organization of 3,500 workers", "team of 18 analysts"
 ]
 
 DATES = [
@@ -286,17 +260,19 @@ VERSION_NUMBERS = [
     "v2.4.1", "Release 5.0.0", "v1.8-patch3", "v3.10.4", "Build 9421", "v4.2-rc2"
 ]
 
-TICKET_IDS = [
-    "TKT-48213", "BUG-1092", "INC-9941", "TASK-7721", "REQ-3319",
-    "PR-4402", "ISSUE-5820", "TKT-19402", "INC-3819", "TASK-8901"
+NON_SALARY_BUDGETS = [
+    "$125,000", "$85,000", "$150,000", "$250,000", "$95,000", "$45,000", "$350,000",
+    "PKR 450,000", "PKR 850,000", "PKR 1,200,000", "PKR 350,000", "PKR 650,000",
+    "USD 95,000", "USD 140,000", "USD 220,000",
+    "Rs. 850,000", "Rs. 1,500,000", "Rs. 450,000",
+    "EUR 75,000", "EUR 110,000"
 ]
-
 
 # ==========================================
 # 7. GENERATOR CLASS
 # ==========================================
 class EntityPoolGenerator:
-    """Generates synthetic entities strictly isolated by split."""
+    """Generates synthetic entities and hard confusers strictly isolated by split."""
 
     def __init__(self, split: str = "train", seed: int = 42):
         if split not in ("train", "val", "test", "doc"):
@@ -427,23 +403,88 @@ class EntityPoolGenerator:
         """SALARY = currency + amount only."""
         return self.rng.choice(ALL_SALARIES)
 
+    # -------------------------------------------------------------
+    # HARD CONFUSER GENERATORS (Non-entity tokens respecting split)
+    # -------------------------------------------------------------
+    def generate_confuser_company(self) -> str:
+        """Company name containing a surname from the SAME split's pool (e.g. 'Bukhari Textiles')."""
+        split_key = "train" if self.split == "doc" else self.split
+        is_pakistani = self.rng.random() < 0.5
+        if split_key == "train":
+            pool = PAKISTANI_LAST_TRAIN if is_pakistani else WESTERN_LAST_TRAIN
+        elif split_key == "val":
+            pool = PAKISTANI_LAST_VAL if is_pakistani else WESTERN_LAST_VAL
+        else:
+            pool = PAKISTANI_LAST_TEST if is_pakistani else WESTERN_LAST_TEST
+        surname = self.rng.choice(pool)
+        suffix = self.rng.choice([
+            "Textiles", "Industries", "Logistics", "Capital Partners", "Enterprises",
+            "Consulting Group", "Technologies", "Global Trading", "Solutions Corp"
+        ])
+        return f"{surname} {suffix}"
+
+    def generate_confuser_location(self) -> str:
+        """Office location / area without full address, from the SAME split's pool."""
+        split_key = "train" if self.split == "doc" else self.split
+        is_lahore = self.rng.random() < 0.5
+        if is_lahore:
+            if split_key == "train":
+                area = self.rng.choice(["Gulberg", "Model Town", "Garden Town", "Shadman", "Faisal Town", "Johar Town", "Mall Road"])
+            elif split_key == "val":
+                area = self.rng.choice(["DHA Phase 1", "DHA Phase 2", "Muslim Town", "Allama Iqbal Town", "Cantt Sector B"])
+            else:
+                area = self.rng.choice(["DHA Phase 5", "Bahria Town", "WAPDA Town", "Askari 10", "State Life Society"])
+            desc = self.rng.choice(["branch", "office", "facility", "regional hub", "campus"])
+            return f"the {area} {desc}"
+        else:
+            if split_key == "train":
+                city = self.rng.choice(["Chicago", "Seattle", "Austin", "Denver", "Atlanta"])
+            elif split_key == "val":
+                city = self.rng.choice(["Philadelphia", "St. Louis", "Columbus", "Pittsburgh", "Minneapolis"])
+            else:
+                city = self.rng.choice(["San Antonio", "Nashville", "Baltimore", "Sacramento", "Detroit"])
+            desc = self.rng.choice(["datacenter", "office", "site", "operations center", "technology hub"])
+            return f"the {city} {desc}"
+
+    def generate_confuser_id(self) -> str:
+        """ORD-/INV-/SKU- style IDs that are NOT EMP_IDs."""
+        prefix = self.rng.choice(["ORD", "INV", "SKU", "PO", "REQ", "BATCH", "BILL", "REF"])
+        num = self.rng.randint(10000, 99999)
+        return f"{prefix}-{num}"
+
+    def generate_confuser_code(self) -> str:
+        """Extension numbers, routing codes, or 5-digit codes that are NOT phone numbers."""
+        choice = self.rng.choice([1, 2, 3, 4])
+        if choice == 1:
+            return f"ext. {self.rng.randint(1000, 9999)}"
+        elif choice == 2:
+            return f"routing code {self.rng.randint(10000, 99999)}"
+        elif choice == 3:
+            return f"cost center {self.rng.randint(10000, 99999)}"
+        else:
+            return f"dial code {self.rng.randint(1000, 9999)}"
+
+    def generate_confuser_amount(self) -> str:
+        """Salary-like amount that represents a budget, revenue, or invoice total, NOT a personal salary."""
+        return self.rng.choice(NON_SALARY_BUDGETS)
+
     def generate_hard_negative(self, neg_type: str) -> str:
-        """Returns hard negative string that looks like an entity but is NOT one."""
+        """Dispatch helper for slot replacement in zero-entity templates."""
         if neg_type == "company":
-            return self.rng.choice(COMPANIES)
+            return self.generate_confuser_company()
+        elif neg_type == "location":
+            return self.generate_confuser_location()
+        elif neg_type == "ticket" or neg_type == "order_id":
+            return self.generate_confuser_id()
+        elif neg_type == "code":
+            return self.generate_confuser_code()
+        elif neg_type == "amount":
+            return self.generate_confuser_amount()
         elif neg_type == "product":
             return self.rng.choice(PRODUCTS)
-        elif neg_type == "city":
-            return self.rng.choice(STANDALONE_CITIES)
-        elif neg_type == "revenue":
-            return self.rng.choice(REVENUE_FIGURES)
-        elif neg_type == "headcount":
-            return self.rng.choice(HEADCOUNTS)
         elif neg_type == "date":
             return self.rng.choice(DATES)
         elif neg_type == "version":
             return self.rng.choice(VERSION_NUMBERS)
-        elif neg_type == "ticket":
-            return self.rng.choice(TICKET_IDS)
         else:
             return "General System Notice"
