@@ -1,0 +1,3 @@
+# PrivateRAG
+
+See SPEC.md for the full project spec.
