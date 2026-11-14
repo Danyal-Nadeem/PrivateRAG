@@ -1,23 +1,84 @@
-# PrivateRAG: Project Spec
+# PrivateRAG: Project Spec and Status
 
-NLP term project (Fall 2026, BCS-7A). A RAG document assistant with two NLP/security layers:
-1. Input side: role-based access control (RBAC) applied BEFORE vector retrieval.
-2. Output side: a fine-tuned token-classification model (plus regex) that masks sensitive entities in generated answers.
+NLP term project (Fall 2026, BCS-7A). Team: Danyal (23L-0746), Abdul Ghani Nadeem (23L-0761), Ali Jafar (23L-0815).
+Last updated: 2026-11-14.
+
+A RAG document assistant with two NLP/security layers:
+1. **Input side:** role-based access control (RBAC) applied inside the vector query, BEFORE any document is retrieved.
+2. **Output side:** a fine-tuned token-classification model plus regex that masks sensitive entities in generated answers.
 
 The core NLP contribution is the fine-tuned entity model and its evaluation. Access control is the system layer around it.
 
-## Stack (fixed, do not substitute without asking)
-- Backend: Python 3.11, FastAPI
-- Vector DB: Qdrant (local, Docker or in-memory mode), RBAC enforced via payload filter on `access_level`
-- Embeddings: `sentence-transformers/all-MiniLM-L6-v2`
-- Generator LLM: behind a single interface `llm.generate(prompt) -> str`, provider set by env var (default: Gemini free tier; fallback: a small local HF model). Never hardcode keys.
-- NER model: `distilbert-base-cased` fine-tuned for token classification (HuggingFace Transformers, `seqeval` for metrics)
-- Frontend: React + Vite (simple chat UI with a role switcher dropdown)
-- Training runs on Colab/Kaggle. The repo only contains the training script and a notebook; do not train on the local machine.
+---
 
-## Roles and access levels
-Roles (ordered): `intern` < `employee` < `hr` < `admin`
-Document access levels: `public`, `internal`, `hr_restricted`, `exec_restricted`
+## 1. Status at a glance
+
+| Phase | What | Branch | Owner | Status |
+|---|---|---|---|---|
+| 1 | Data: synthetic docs, NER dataset, eval queries | `feat/data` | Danyal | DONE (merged, PR #1) |
+| 2 | Retrieval + RBAC: Qdrant, JWT API, LLM interface, RBAC eval | `feat/retrieval-rbac` | Danyal | DONE (merged, PR #2) |
+| 3 | NER: regex + pretrained baselines, fine-tuning, hybrid filter, masking, NER eval | `feat/ner` | TBD | NOT STARTED |
+| 4 | Integration + UI: masking wired after generation, React chat UI | `feat/ui` | TBD | NOT STARTED |
+| 5 | Final evaluation: end-to-end leak test, result tables, report material | `feat/eval` | TBD | NOT STARTED |
+
+Phase 3 depends only on Phase 1 data, so it can run in parallel with anything else. Phase 4 needs Phases 2 and 3. Phase 5 needs all of them.
+
+## 2. Results so far (real numbers from `eval/results/`)
+
+**RBAC retrieval** (64 queries x 4 roles = 256 runs, top-k = 3):
+
+| Role | Leak WITH RBAC filter | Leak WITHOUT filter (baseline) |
+|---|---|---|
+| intern | 0/64 = 0.0% | 48/64 = 75.0% |
+| employee | 0/64 = 0.0% | 32/64 = 50.0% |
+| hr | 0/64 = 0.0% | 19/64 = 29.7% |
+| admin | 0/64 = 0.0% | 0/64 = 0.0% |
+| overall | 0/256 = 0.0% | 99/256 = 38.7% |
+
+- Adversarial queries (directly name restricted content), filtered: 0/104 leaks.
+- Unit tests: 31 passing (`tests/test_rbac.py`).
+- Data checks: `python -m src.data_gen.verify_data` passes all checks.
+
+**Not measured yet:** NER quality (Phase 3) and leaks in generated answers (Phase 5).
+
+## 3. What is left
+
+### Phase 3: NER (`feat/ner`)
+Deliverables:
+- `src/ner/regex_filter.py`: regex baseline for EMAIL, PHONE (US and +92), EMP_ID, SALARY.
+- Pretrained baseline: `dslim/bert-base-NER` with an explicit mapping to our labels.
+- `src/ner/train.py` + `notebooks/train_colab.ipynb`: fine-tune `distilbert-base-cased` for token classification on Colab/Kaggle, 3 seeds, early stopping on validation entity-level F1. Weights go to `models/` (gitignored, never committed).
+- `src/ner/infer.py`: inference on raw text returning CHARACTER-offset spans.
+- `src/ner/hybrid_filter.py`: combine model and regex spans (regex wins for EMAIL, PHONE, EMP_ID, SALARY; model wins for PERSON, ADDRESS).
+- `src/ner/masking.py`: replace spans with mask tokens (right-to-left so offsets stay valid).
+- `eval/ner_eval.py`: results for the 4 systems.
+
+Done when: pytest passes without the trained model, `ner_eval.py` has real results for all 4 systems on `test.jsonl` AND `test_realistic.jsonl`, with per-entity numbers and false positives on hard negatives.
+
+### Phase 4: Integration + UI (`feat/ui`)
+- `/ask` applies the masking filter to the generated answer before returning it. The raw answer never leaves the server.
+- React + Vite chat UI with a role switcher, showing retrieved documents (id and level) and the masked answer.
+
+Done when: switching role in the UI changes which documents are retrieved, and sensitive values in answers appear as `[..._REDACTED]` tokens.
+
+### Phase 5: Evaluation and report material (`feat/eval`)
+- `eval/e2e_eval.py`: for generated answers, the fraction that still contain a ground-truth sensitive value (from `data/documents/metadata.json`) after masking, with and without the filter.
+- Final tables (NER per entity, RBAC, end-to-end) exported to `eval/results/`.
+- Short limitations section for the report (see section 8).
+
+## 4. Stack (fixed, do not substitute without asking)
+- Backend: Python 3.13 in a virtualenv, FastAPI. Exact versions are pinned in `requirements.txt`.
+- Vector DB: Qdrant in local persistent mode (`QdrantClient(path=...)`, no Docker). RBAC is a payload filter on `access_level` inside the query (no post-filtering). Chunks: 500 characters, 100 overlap.
+- Embeddings: `sentence-transformers/all-MiniLM-L6-v2`.
+- Auth: signed JWT (60 min expiry). The role always comes from the token, never from the request body or query text. `/login-role` has no password: it simulates SSO for the prototype and is not real authentication.
+- Generator LLM: single interface `llm.generate(prompt) -> str`, provider chosen by the `LLM_PROVIDER` env var: `extractive` (default, no key, returns the top retrieved chunk), `gemini` (needs `GEMINI_API_KEY` and `GEMINI_MODEL` in `.env`), `local_hf`. The gemini and local_hf adapters are written but not live-tested.
+- NER model: `distilbert-base-cased` token classification (HuggingFace Transformers, `seqeval` for metrics).
+- Frontend: React + Vite.
+- Training runs on Colab/Kaggle, not on local machines.
+
+## 5. Roles, access levels and entity labels
+
+Roles (ordered): `intern` < `employee` < `hr` < `admin`. Document levels: `public`, `internal`, `hr_restricted`, `exec_restricted`.
 
 | Role     | public | internal | hr_restricted | exec_restricted |
 |----------|--------|----------|---------------|-----------------|
@@ -26,53 +87,95 @@ Document access levels: `public`, `internal`, `hr_restricted`, `exec_restricted`
 | hr       | yes    | yes      | yes           | no              |
 | admin    | yes    | yes      | yes           | yes             |
 
-## Entity labels (BIO scheme)
-`PERSON`, `EMAIL`, `PHONE`, `EMP_ID`, `ADDRESS`, `SALARY`
-Mask tokens: `[PERSON_REDACTED]`, `[EMAIL_REDACTED]`, `[PHONE_REDACTED]`, `[EMP_ID_REDACTED]`, `[ADDRESS_REDACTED]`, `[SALARY_REDACTED]`
+Entity labels (BIO scheme): `PERSON`, `EMAIL`, `PHONE`, `EMP_ID`, `ADDRESS`, `SALARY`.
+Mask tokens: `[PERSON_REDACTED]`, `[EMAIL_REDACTED]`, `[PHONE_REDACTED]`, `[EMP_ID_REDACTED]`, `[ADDRESS_REDACTED]`, `[SALARY_REDACTED]`.
 
 Why ML on top of regex: EMAIL, PHONE and EMP_ID are pattern-based and regex handles them well. PERSON, ADDRESS and SALARY depend on context, and that is where the fine-tuned model must show a gain. The evaluation must report per-entity results to prove this.
 
-## Repo structure
+## 6. Data (built in Phase 1)
+
+| Item | Where | Size |
+|---|---|---|
+| Synthetic documents | `data/documents/*.md` (+ sidecar `.json` with entity spans) | 120 (30 per access level) |
+| Document manifest | `data/documents/metadata.json` | access level and exact `sensitive_values` per doc |
+| NER train / val / test | `data/ner/train.jsonl`, `val.jsonl`, `test.jsonl` | 2100 / 450 / 450 sentences, BIO tagged |
+| Realistic NER test | `data/ner/test_realistic.jsonl` | 60 natural-sounding sentences, evaluation only |
+| RBAC eval queries | `data/eval/queries.json` | 64 (38 normal, 26 adversarial) |
+
+Rules that protect the evaluation (details in `data/README.md`):
+- Train/val/test split by TEMPLATE (105 / 22 / 23 templates), not by random sentence.
+- Entity value pools (first names, last names, streets, areas, US city+state+zip) are disjoint across train, val and test.
+- About 15% of sentences are hard negatives (company names with surnames, budgets, ORD-/INV- IDs, extensions) with no entity.
+- The documents use the TEST pool only, so they are disjoint from train, val and `test_realistic.jsonl`.
+- `test_realistic.jsonl` is never used for training or model selection.
+- Never edit `data/ner/*` by hand. Regenerate with the generators in `src/data_gen/` and rerun `verify_data.py`.
+
+## 7. Repo structure
+
 ```
 privaterag/
-  SPEC.md
-  data/
-    documents/          # synthetic company docs (txt/md) + metadata.json
-    ner/                # train.jsonl, val.jsonl, test.jsonl (BIO tagged)
+  SPEC.md                 # this file
+  README.md               # how to run each part
+  requirements.txt        # pinned versions
+  .env.example            # placeholders only; real .env is gitignored
+  data/                   # see section 6
   src/
-    data_gen/           # synthetic docs + NER dataset generators (Faker + templates)
-    retrieval/          # ingestion, Qdrant client, RBAC filter
-    ner/                # train.py, infer.py, regex_filter.py, hybrid_filter.py
-    llm/                # llm interface + provider adapters
-    api/                # FastAPI app (/login-role, /ask, /health)
+    data_gen/             # DONE: generators, tokenizer, verify_data.py
+    retrieval/            # DONE: rbac.py, chunking.py, embedder.py, qdrant_service.py, ingest.py
+    llm/                  # DONE: base.py, extractive.py, gemini.py, local_hf.py
+    api/                  # DONE: main.py (/login-role, /ask, /health), auth.py
+    ner/                  # PHASE 3: regex_filter.py, infer.py, hybrid_filter.py, masking.py, train.py
   eval/
-    ner_eval.py         # entity-level P/R/F1 for 3 systems
-    rbac_eval.py        # leak-rate test, role x query matrix
-    e2e_eval.py         # end-to-end leak test on generated answers
-    results/            # json + csv outputs
-  frontend/
-  notebooks/train_colab.ipynb
-  README.md
+    rbac_eval.py          # DONE
+    ner_eval.py           # PHASE 3
+    e2e_eval.py           # PHASE 5
+    results/              # json + csv outputs
+  tests/                  # DONE for RBAC/API/LLM factory; add NER tests in Phase 3
+  frontend/               # PHASE 4
+  notebooks/train_colab.ipynb   # PHASE 3
 ```
 
-## Phases
-Each phase ends with a short report and waits for approval before the next one starts.
+## 8. Getting started (Windows PowerShell)
 
-1. **Data**: synthetic documents (about 120 across the 4 levels, with realistic HR/payroll/exec content containing the 6 entity types), `metadata.json` with `access_level` per doc, and a BIO-tagged NER dataset (about 3000 sentences). Split 70/15/15 by TEMPLATE, not by random sentence, so test templates are unseen (avoids leakage).
-2. **Retrieval + RBAC**: ingestion into Qdrant with `access_level` payload, retrieval function that takes a role and applies the filter, `/ask` endpoint returning answer plus retrieved doc ids.
-3. **NER**: regex baseline, pretrained baseline (`dslim/bert-base-NER`, mapped to our labels where possible), fine-tuning script, hybrid filter (model + regex, union of spans), masking function.
-4. **Integration + UI**: wire the masking filter after generation, React UI with role switcher, show retrieved docs and masked answer.
-5. **Evaluation**: run all evals, export tables and a results summary for the report.
+```powershell
+git clone https://github.com/Danyal-Nadeem/PrivateRAG.git privaterag
+cd privaterag
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt          # large: includes torch
+Copy-Item .env.example .env              # then set SECRET_KEY in .env (never commit .env)
+```
 
-## Evaluation (what the report needs)
-- NER: entity-level precision/recall/F1 (seqeval), overall and per entity, for: regex-only, pretrained NER, fine-tuned, hybrid (fine-tuned + regex).
-- RBAC: leak rate = fraction of (role, query) pairs where a document above the role's level was retrieved. Target 0 percent. Include adversarial queries that directly name restricted content.
-- End-to-end: fraction of generated answers that still contain a ground-truth sensitive entity after masking, with and without the filter.
+Useful commands (run from the repo root, venv active):
 
-## Working rules for the coding agent
+| Task | Command |
+|---|---|
+| Check data integrity | `python -m src.data_gen.verify_data` |
+| Index documents into Qdrant | `python -m src.retrieval.ingest` |
+| Run tests | `python -m pytest tests/ -v` |
+| Run RBAC evaluation | `python -m eval.rbac_eval` |
+
+The API server command and endpoint details are in `README.md`. Do not run ingestion or evaluation while the server is running (Qdrant locks its storage folder on Windows).
+
+## 9. Known limitations (for the report)
+- RBAC eval queries each contain a distinguishing fact from their target document, so 100% hit@3 on authorized queries measures a fair RBAC test, not general retrieval quality.
+- The NER data is synthetic and template-based. Scores on `test.jsonl` will be optimistic, which is why `test_realistic.jsonl` is reported separately. It has few EMAIL and PHONE mentions (11 each), so those numbers are noisy.
+- Lahore postal codes are shared across areas, so they are exempt from the value-overlap check.
+- `/login-role` is not real authentication (see section 4).
+- Gemini and local Hugging Face generation are implemented but not live-tested.
+
+## 10. Team workflow
+- One branch per phase, named as in the status table. No direct commits to `main`.
+- Open a Pull Request into `main` when a phase is done; a second teammate reviews and merges.
+- Create a new branch only after the phase it depends on is merged (`git checkout main`, `git pull`, `git checkout -b feat/<name>`).
+- Never commit `.env`, API keys, `.venv/`, `models/`, `checkpoints/` or `qdrant_storage/`.
+- Update the status table in this file when a phase is merged.
+
+## 11. Working rules for the coding agent
 - Work only inside the `privaterag/` folder. Do not touch anything outside it.
-- No git commit, no push, no installing global packages. Use a virtualenv.
+- No git commit, no push, no installing global packages. Use the project's virtualenv.
 - Before any phase: read-only investigation and a written plan. Wait for approval before writing code.
 - Never invent results. All numbers in `eval/results/` must come from actually running the eval scripts.
-- Keep secrets in `.env`, add `.env` to `.gitignore`.
+- Keep secrets in `.env`. Never print or log secrets.
 - Prefer complete, runnable code with a short README section on how to run each phase.
+- Each phase ends with a report (real command outputs, files created, `git status`) and waits for approval.
