@@ -17,8 +17,8 @@ The core NLP contribution is the fine-tuned entity model and its evaluation. Acc
 |---|---|---|---|---|
 | 1 | Data: synthetic docs, NER dataset, eval queries | `feat/data` | Danyal | DONE (merged, PR #1) |
 | 2 | Retrieval + RBAC: Qdrant, JWT API, LLM interface, RBAC eval | `feat/retrieval-rbac` | Danyal | DONE (merged, PR #2) |
-| 3 | NER: regex + pretrained baselines, fine-tuning, hybrid filter, masking, NER eval | `feat/ner` | TBD | NOT STARTED |
-| 4 | Integration + UI: masking wired after generation, React chat UI | `feat/ui` | TBD | NOT STARTED |
+| 3 | NER: regex + pretrained baselines, fine-tuning, hybrid filter, masking, NER eval | `feat/ner` | Abdul Ghani / Ali / Danyal | DONE |
+| 4 | Integration + UI: masking wired after generation, React chat UI | `feat/ui` | Danyal / Abdul Ghani / Ali | DONE |
 | 5 | Final evaluation: end-to-end leak test, result tables, report material | `feat/eval` | TBD | NOT STARTED |
 
 Phase 3 depends only on Phase 1 data, so it can run in parallel with anything else. Phase 4 needs Phases 2 and 3. Phase 5 needs all of them.
@@ -179,3 +179,4 @@ The API server command and endpoint details are in `README.md`. Do not run inges
 - Keep secrets in `.env`. Never print or log secrets.
 - Prefer complete, runnable code with a short README section on how to run each phase.
 - Each phase ends with a report (real command outputs, files created, `git status`) and waits for approval.
+
