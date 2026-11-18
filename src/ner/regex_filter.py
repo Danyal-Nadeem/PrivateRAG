@@ -29,7 +29,7 @@ EMP_ID_PATTERN = re.compile(
 # Pakistani phone patterns:
 # +92-42-376647119, +92 320 6292423, 0322-5107245, 0320 8339683, etc.
 # US phone patterns:
-# (217) 289-7912, 703-621-9117, +1-518-271-1750, 319.467.2415, 210-532-1919
+# (217) 289-7912, 703-621-9117, +1-518-271-1750, 319.467.2415, 555-123-4567
 PHONE_PATTERN = re.compile(
     r"(?:"
     # Pakistani international with +92
@@ -37,7 +37,7 @@ PHONE_PATTERN = re.compile(
     # Pakistani local mobile starting with 03xx
     r"|\b03\d{2}[- ]?\d{7}\b"
     # US standard formats: +1-xxx-xxx-xxxx, (xxx) xxx-xxxx, xxx-xxx-xxxx, xxx.xxx.xxxx
-    r"|(?:\+1[-. ])?\(?[2-9]\d{2}\)?[-. ][2-9]\d{2}[-. ]\d{4}\b"
+    r"|(?:\+1[-. ])?\(?\d{3}\)?[-. ]\d{3}[-. ]\d{4}\b"
     r")"
 )
 
