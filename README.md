@@ -279,15 +279,18 @@ Returns system status, Qdrant persistence status, vector collection counts, and 
   - [x] Fast, extensible LLM provider abstraction (Extractive, Gemini, Local HF).
   - [x] FastAPI backend with JWT SSO simulator and query-injection defense.
   - [x] Automated RBAC evaluation matrix (`rbac_eval.py`).
-- [ ] **Phase 3: Named Entity Recognition & Output Sanitization** *(Current Phase)*
-  - [ ] Regex baseline filter (`src/ner/regex_filter.py`).
-  - [ ] Pretrained `dslim/bert-base-NER` baseline.
-  - [ ] Fine-tuning `distilbert-base-cased` on Colab/Kaggle (`train.py`).
-  - [ ] Hybrid decision filter (`src/ner/hybrid_filter.py`).
-  - [ ] Non-destructive character-offset text masking (`src/ner/masking.py`).
-- [ ] **Phase 4: Full-Stack Integration & React UI**
-  - [ ] Post-generation masking middleware in `/ask`.
-  - [ ] React + Vite modern chat UI with interactive role switcher.
+- [x] **Phase 3: Named Entity Recognition & Output Sanitization**
+  - [x] Regex baseline filter (`src/ner/regex_filter.py`).
+  - [x] Pretrained `dslim/bert-base-NER` baseline.
+  - [x] Fine-tuning `distilbert-base-cased` on Colab/Kaggle (`train.py` & `notebooks/train_colab.ipynb`).
+  - [x] Hybrid decision filter (`src/ner/hybrid_filter.py`).
+  - [x] Non-destructive character-offset text masking (`src/ner/masking.py`).
+  - [x] Benchmark evaluation runner (`eval/ner_eval.py`).
+- [x] **Phase 4: Full-Stack Integration & React UI**
+  - [x] Post-generation masking middleware wired into `/ask` (raw answers never leave server).
+  - [x] CORS middleware added to FastAPI for cross-origin frontend communication.
+  - [x] React + Vite modern chat UI with interactive role switcher (`frontend/`).
+  - [x] Visual security tags for `[..._REDACTED]` tokens and retrieved document inspector.
 - [ ] **Phase 5: End-to-End Evaluation & Final Report**
   - [ ] End-to-end sensitive entity leak benchmark (`e2e_eval.py`).
   - [ ] Final paper tables, ablation studies, and submission report.

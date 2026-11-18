@@ -25,12 +25,14 @@ from contextlib import asynccontextmanager
 
 from dotenv import load_dotenv
 from fastapi import Depends, FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 load_dotenv()
 
 from src.api.auth import VALID_ROLES, create_token, get_current_role
 from src.llm import get_llm_provider
+from src.ner.masking import sanitize_text
 from src.retrieval.qdrant_service import get_collection_info, search
 
 TOP_K = 3
@@ -58,6 +60,14 @@ app = FastAPI(
     ),
     version="0.1.0",
     lifespan=lifespan,
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
@@ -131,13 +141,15 @@ def ask(body: AskRequest, role: str = Depends(get_current_role)) -> AskResponse:
     """Answer *query* using RBAC-filtered retrieval.
 
     The role is extracted exclusively from the JWT in the Authorization header.
-    Any "role" field in the request body is ignored.
+    Any "role" field in the request body is ignored. The generated answer is
+    sanitized via NER masking before being returned to the client.
     """
     hits = search(body.query, role=role, top_k=TOP_K)
 
     llm = get_llm_provider()
     context_chunks = [h["text"] for h in hits]
-    answer = llm.generate(prompt=body.query, context_chunks=context_chunks)
+    raw_answer = llm.generate(prompt=body.query, context_chunks=context_chunks)
+    masked_answer = sanitize_text(raw_answer)
 
     retrieved = [
         RetrievedDoc(
@@ -153,7 +165,7 @@ def ask(body: AskRequest, role: str = Depends(get_current_role)) -> AskResponse:
     return AskResponse(
         query=body.query,
         role=role,
-        answer=answer,
+        answer=masked_answer,
         retrieved_documents=retrieved,
     )
 
