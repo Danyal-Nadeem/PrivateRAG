@@ -1,0 +1,5 @@
+role,total_queries,raw_leaked_answers,raw_leak_rate_pct,sanitized_leaked_answers,sanitized_leak_rate_pct,leak_prevention_rate_pct
+intern,64,54,84.38,54,84.38,0.0
+employee,64,48,75.0,48,75.0,0.0
+hr,64,53,82.81,53,82.81,0.0
+admin,64,54,84.38,54,84.38,0.0

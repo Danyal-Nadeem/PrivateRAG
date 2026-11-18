@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/FastAPI-0.162-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
   <img src="https://img.shields.io/badge/Qdrant-Vector_DB-DC382D?style=for-the-badge&logo=qdrant&logoColor=white" alt="Qdrant" />
   <img src="https://img.shields.io/badge/HuggingFace-Transformers-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" alt="HuggingFace" />
-  <img src="https://img.shields.io/badge/PyTest-31_Passed-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white" alt="PyTest" />
+  <img src="https://img.shields.io/badge/PyTest-60_Passed-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white" alt="PyTest" />
   <img src="https://img.shields.io/badge/RBAC_Leak_Rate-0.0%25-brightgreen?style=for-the-badge" alt="0% Leak Rate" />
 </p>
 
@@ -17,7 +17,7 @@
 - **Course:** Natural Language Processing (Fall 2026) | Section **BCS-7A**
 - **Institution:** FAST - National University of Computer and Emerging Sciences (NUCES), Lahore
 - **Team Members:**
-  - **Muhammad Danyal** (`23L-0746`)
+  - **Danyal Ahmed** (`23L-0746`)
   - **Abdul Ghani Nadeem** (`23L-0761`)
   - **Ali Jafar** (`23L-0815`)
 
@@ -190,6 +190,26 @@ python -m uvicorn src.api.main:app --reload --host 127.0.0.1 --port 8000
 ```
 Interactive Swagger documentation is available at: `http://127.0.0.1:8000/docs`
 
+### 8. Run NER & End-to-End Evaluation Suites
+
+```powershell
+# Evaluate rule-based, pretrained baseline, and hybrid NER filters
+python -m eval.ner_eval
+
+# Run full 256-query end-to-end ground truth PII leakage benchmark
+python -m eval.e2e_eval
+```
+*Results and markdown summary tables are generated directly in `eval/results/`.*
+
+### 9. Launch the React + Vite Frontend UI
+
+```powershell
+cd frontend
+npm install
+npm run dev
+```
+Open `http://localhost:5173` in your browser. Select a role (`intern`, `employee`, `hr`, `admin`), submit natural queries, and observe real-time RBAC document filtering and post-generation NER sanitization!
+
 ---
 
 ## 🔌 API Reference
@@ -291,9 +311,11 @@ Returns system status, Qdrant persistence status, vector collection counts, and 
   - [x] CORS middleware added to FastAPI for cross-origin frontend communication.
   - [x] React + Vite modern chat UI with interactive role switcher (`frontend/`).
   - [x] Visual security tags for `[..._REDACTED]` tokens and retrieved document inspector.
-- [ ] **Phase 5: End-to-End Evaluation & Final Report**
-  - [ ] End-to-end sensitive entity leak benchmark (`e2e_eval.py`).
-  - [ ] Final paper tables, ablation studies, and submission report.
+- [x] **Phase 5: End-to-End Evaluation & Final Report**
+  - [x] End-to-end sensitive entity leak benchmark (`eval/e2e_eval.py`).
+  - [x] 100.0% leak reduction on pattern entities (`EMAIL`, `PHONE`, `EMP_ID`, `SALARY`).
+  - [x] Consolidated project benchmark matrix & paper tables (`eval/results/final_benchmark_summary.md`).
+  - [x] Automated test suite for end-to-end evaluation metrics (`tests/test_e2e_eval.py`).
 
 ---
 
