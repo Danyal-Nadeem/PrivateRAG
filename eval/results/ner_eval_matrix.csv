@@ -1,0 +1,9 @@
+dataset,system,person_f1,email_f1,phone_f1,emp_id_f1,address_f1,salary_f1,micro_precision,micro_recall,micro_f1,macro_f1,hard_negatives_fp
+test.jsonl (450 sents),1. Regex Only,0.0,100.0,100.0,100.0,0.0,88.2,95.6,59.1,73.1,64.7,34
+test.jsonl (450 sents),2. Pretrained NER,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0
+test.jsonl (450 sents),3. Fine-tuned Model,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0
+test.jsonl (450 sents),4. Hybrid (Proposed),0.0,100.0,100.0,100.0,0.0,88.2,95.6,59.1,73.1,64.7,34
+test_realistic.jsonl (60 sents),1. Regex Only,0.0,100.0,100.0,100.0,0.0,93.3,96.2,47.6,63.7,65.6,2
+test_realistic.jsonl (60 sents),2. Pretrained NER,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0
+test_realistic.jsonl (60 sents),3. Fine-tuned Model,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0
+test_realistic.jsonl (60 sents),4. Hybrid (Proposed),0.0,100.0,100.0,100.0,0.0,93.3,96.2,47.6,63.7,65.6,2

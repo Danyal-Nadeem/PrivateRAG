@@ -1,0 +1,534 @@
+{
+  "test.jsonl (450 sents)": {
+    "1. Regex Only": {
+      "system": "1. Regex Only",
+      "per_label": {
+        "PERSON": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 305,
+          "support": 305
+        },
+        "EMAIL": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 203,
+          "fp": 0,
+          "fn": 0,
+          "support": 203
+        },
+        "PHONE": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 229,
+          "fp": 0,
+          "fn": 0,
+          "support": 229
+        },
+        "EMP_ID": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 178,
+          "fp": 0,
+          "fn": 0,
+          "support": 178
+        },
+        "ADDRESS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 204,
+          "support": 204
+        },
+        "SALARY": {
+          "precision": 0.7888198757763976,
+          "recall": 1.0,
+          "f1": 0.8819444444444444,
+          "tp": 127,
+          "fp": 34,
+          "fn": 0,
+          "support": 127
+        }
+      },
+      "micro_precision": 0.9559014267185474,
+      "micro_recall": 0.5914927768860353,
+      "micro_f1": 0.7307882994546356,
+      "macro_f1": 0.6469907407407408,
+      "total_support": 1246,
+      "hard_negatives_evaluated": 68,
+      "hard_negatives_fp": 34
+    },
+    "2. Pretrained NER": {
+      "system": "2. Pretrained NER",
+      "per_label": {
+        "PERSON": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 305,
+          "support": 305
+        },
+        "EMAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 203,
+          "support": 203
+        },
+        "PHONE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 229,
+          "support": 229
+        },
+        "EMP_ID": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 178,
+          "support": 178
+        },
+        "ADDRESS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 204,
+          "support": 204
+        },
+        "SALARY": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 127,
+          "support": 127
+        }
+      },
+      "micro_precision": 0.0,
+      "micro_recall": 0.0,
+      "micro_f1": 0.0,
+      "macro_f1": 0.0,
+      "total_support": 1246,
+      "hard_negatives_evaluated": 68,
+      "hard_negatives_fp": 0
+    },
+    "3. Fine-tuned Model": {
+      "system": "3. Fine-tuned Model",
+      "per_label": {
+        "PERSON": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 305,
+          "support": 305
+        },
+        "EMAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 203,
+          "support": 203
+        },
+        "PHONE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 229,
+          "support": 229
+        },
+        "EMP_ID": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 178,
+          "support": 178
+        },
+        "ADDRESS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 204,
+          "support": 204
+        },
+        "SALARY": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 127,
+          "support": 127
+        }
+      },
+      "micro_precision": 0.0,
+      "micro_recall": 0.0,
+      "micro_f1": 0.0,
+      "macro_f1": 0.0,
+      "total_support": 1246,
+      "hard_negatives_evaluated": 68,
+      "hard_negatives_fp": 0
+    },
+    "4. Hybrid (Proposed)": {
+      "system": "4. Hybrid (Proposed)",
+      "per_label": {
+        "PERSON": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 305,
+          "support": 305
+        },
+        "EMAIL": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 203,
+          "fp": 0,
+          "fn": 0,
+          "support": 203
+        },
+        "PHONE": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 229,
+          "fp": 0,
+          "fn": 0,
+          "support": 229
+        },
+        "EMP_ID": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 178,
+          "fp": 0,
+          "fn": 0,
+          "support": 178
+        },
+        "ADDRESS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 204,
+          "support": 204
+        },
+        "SALARY": {
+          "precision": 0.7888198757763976,
+          "recall": 1.0,
+          "f1": 0.8819444444444444,
+          "tp": 127,
+          "fp": 34,
+          "fn": 0,
+          "support": 127
+        }
+      },
+      "micro_precision": 0.9559014267185474,
+      "micro_recall": 0.5914927768860353,
+      "micro_f1": 0.7307882994546356,
+      "macro_f1": 0.6469907407407408,
+      "total_support": 1246,
+      "hard_negatives_evaluated": 68,
+      "hard_negatives_fp": 34
+    }
+  },
+  "test_realistic.jsonl (60 sents)": {
+    "1. Regex Only": {
+      "system": "1. Regex Only",
+      "per_label": {
+        "PERSON": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 41,
+          "support": 41
+        },
+        "EMAIL": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 11,
+          "fp": 0,
+          "fn": 0,
+          "support": 11
+        },
+        "PHONE": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 11,
+          "fp": 0,
+          "fn": 0,
+          "support": 11
+        },
+        "EMP_ID": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 14,
+          "fp": 0,
+          "fn": 0,
+          "support": 14
+        },
+        "ADDRESS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 14,
+          "support": 14
+        },
+        "SALARY": {
+          "precision": 0.875,
+          "recall": 1.0,
+          "f1": 0.9333333333333333,
+          "tp": 14,
+          "fp": 2,
+          "fn": 0,
+          "support": 14
+        }
+      },
+      "micro_precision": 0.9615384615384616,
+      "micro_recall": 0.47619047619047616,
+      "micro_f1": 0.6369426751592356,
+      "macro_f1": 0.6555555555555556,
+      "total_support": 105,
+      "hard_negatives_evaluated": 10,
+      "hard_negatives_fp": 2
+    },
+    "2. Pretrained NER": {
+      "system": "2. Pretrained NER",
+      "per_label": {
+        "PERSON": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 41,
+          "support": 41
+        },
+        "EMAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 11,
+          "support": 11
+        },
+        "PHONE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 11,
+          "support": 11
+        },
+        "EMP_ID": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 14,
+          "support": 14
+        },
+        "ADDRESS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 14,
+          "support": 14
+        },
+        "SALARY": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 14,
+          "support": 14
+        }
+      },
+      "micro_precision": 0.0,
+      "micro_recall": 0.0,
+      "micro_f1": 0.0,
+      "macro_f1": 0.0,
+      "total_support": 105,
+      "hard_negatives_evaluated": 10,
+      "hard_negatives_fp": 0
+    },
+    "3. Fine-tuned Model": {
+      "system": "3. Fine-tuned Model",
+      "per_label": {
+        "PERSON": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 41,
+          "support": 41
+        },
+        "EMAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 11,
+          "support": 11
+        },
+        "PHONE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 11,
+          "support": 11
+        },
+        "EMP_ID": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 14,
+          "support": 14
+        },
+        "ADDRESS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 14,
+          "support": 14
+        },
+        "SALARY": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 14,
+          "support": 14
+        }
+      },
+      "micro_precision": 0.0,
+      "micro_recall": 0.0,
+      "micro_f1": 0.0,
+      "macro_f1": 0.0,
+      "total_support": 105,
+      "hard_negatives_evaluated": 10,
+      "hard_negatives_fp": 0
+    },
+    "4. Hybrid (Proposed)": {
+      "system": "4. Hybrid (Proposed)",
+      "per_label": {
+        "PERSON": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 41,
+          "support": 41
+        },
+        "EMAIL": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 11,
+          "fp": 0,
+          "fn": 0,
+          "support": 11
+        },
+        "PHONE": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 11,
+          "fp": 0,
+          "fn": 0,
+          "support": 11
+        },
+        "EMP_ID": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 14,
+          "fp": 0,
+          "fn": 0,
+          "support": 14
+        },
+        "ADDRESS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 14,
+          "support": 14
+        },
+        "SALARY": {
+          "precision": 0.875,
+          "recall": 1.0,
+          "f1": 0.9333333333333333,
+          "tp": 14,
+          "fp": 2,
+          "fn": 0,
+          "support": 14
+        }
+      },
+      "micro_precision": 0.9615384615384616,
+      "micro_recall": 0.47619047619047616,
+      "micro_f1": 0.6369426751592356,
+      "macro_f1": 0.6555555555555556,
+      "total_support": 105,
+      "hard_negatives_evaluated": 10,
+      "hard_negatives_fp": 2
+    }
+  }
+}
