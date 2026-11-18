@@ -257,7 +257,7 @@ export default function App() {
 
             {/* Quick Sample Queries */}
             <div className="sample-queries-section">
-              <div className="sample-queries-title">SAMPLE QUERIES</div>
+              <div className="sample-queries-title">✨ SUGGESTED PROMPTS</div>
               <div className="chips-scroll-row">
                 {DEMO_QUERIES.map((q, i) => (
                   <button
