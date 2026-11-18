@@ -276,6 +276,12 @@ body {
   border-bottom-left-radius: 2px;
 }
 
+.answer-text {
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.65;
+}
+
 /* Redacted entity badge styling */
 .redacted-tag {
   display: inline-flex;
