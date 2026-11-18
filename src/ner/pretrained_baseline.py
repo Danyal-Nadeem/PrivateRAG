@@ -22,10 +22,17 @@ def _get_pipeline():
     if _pipeline_failed:
         return None
     if _pipeline is None:
+        is_offline = (
+            os.getenv("HF_HUB_OFFLINE") == "1"
+            or os.getenv("TRANSFORMERS_OFFLINE") == "1"
+            or os.getenv("TESTING") == "1"
+        )
+        if is_offline:
+            _pipeline_failed = True
+            return None
+
         try:
             from transformers import pipeline
-            # Use local_files_only if offline to avoid hang
-            is_offline = os.getenv("HF_HUB_OFFLINE") == "1" or os.getenv("TRANSFORMERS_OFFLINE") == "1"
             _pipeline = pipeline(
                 "token-classification",
                 model=_MODEL_NAME,
