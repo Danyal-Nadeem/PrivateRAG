@@ -47,6 +47,17 @@ Comparison on synthetic test corpus (`test.jsonl`, 450 sentences) and natural re
 | **Regex Baseline** | **100.0%** | **100.0%** | **100.0%** | 93.3% | 63.7% | 2 |
 | **Hybrid Filter (Proposed)** | **100.0%** | **100.0%** | **100.0%** | 93.3% | 63.7% | 2 |
 
+> **Validity note (added during security hardening):** in the run that produced
+> these tables, the fine-tuned checkpoint (`models/distilbert-ner`) was **not
+> present**, so the Hybrid filter operated in regex-only fallback — its scores
+> are identical to the Regex baseline by construction, and the pretrained /
+> fine-tuned model rows in `ner_eval_results.json` recorded zero predictions
+> because those systems could not run. **These tables do not yet demonstrate an
+> ML improvement.** A valid baseline-vs-fine-tuned comparison requires training
+> the model (`notebooks/train_colab.ipynb`) and re-running `python -m eval.ner_eval`
+> (the harness now skips unavailable systems and records run metadata instead of
+> silently writing zero scores).
+
 ---
 
 ## 4. Table III: End-to-End Leak Prevention Benchmark (Phase 5)
@@ -64,6 +75,12 @@ Evaluates verbatim ground-truth leakage in generated answers before and after th
 | **`ADDRESS`** | Contextual Language | 32 | 32* | *Fine-tuned model checkpoint |
 
 *\*Note: Contextual entities (`PERSON` and `ADDRESS`) depend on local model weights (`models/distilbert-ner`) fine-tuned via `notebooks/train_colab.ipynb` on Colab/Kaggle.*
+
+> **Scope clarification:** the "100% leak reduction" headline applies **only to
+> pattern-based entities** (EMAIL, PHONE, EMP_ID, SALARY). In the same 256 runs,
+> PERSON (199) and ADDRESS (32) leaks were **not** reduced because the model
+> checkpoint was absent. Overall DLP effectiveness must not be quoted as 100%
+> until the fine-tuned model is deployed and the benchmark re-run.
 
 ---
 

@@ -60,7 +60,7 @@ All 5 project phases have been successfully implemented and verified:
 - Backend: Python 3.13 in a virtualenv, FastAPI. Exact versions are pinned in `requirements.txt`.
 - Vector DB: Qdrant in local persistent mode (`QdrantClient(path=...)`, no Docker). RBAC is a payload filter on `access_level` inside the query (no post-filtering). Chunks: 500 characters, 100 overlap.
 - Embeddings: `sentence-transformers/all-MiniLM-L6-v2`.
-- Auth: signed JWT (60 min expiry). The role always comes from the token, never from the request body or query text. `/login-role` has no password: it simulates SSO for the prototype and is not real authentication.
+- Auth: signed JWT (60 min expiry). The role always comes from the token, never from the request body or query text. `POST /login` verifies username/password against a server-side user store (`src/api/users.py`, salted PBKDF2 hashes); the role is assigned by the server from the user record. Demo accounts ship in `data/users.example.json`; a real store goes in gitignored `data/users.json`. The old passwordless `/login-role` endpoint was removed on the `implement` branch (it allowed self-granted admin access). SECRET_KEY must be random and ≥32 chars; placeholder/short keys are rejected at startup.
 - Generator LLM: single interface `llm.generate(prompt) -> str`, provider chosen by the `LLM_PROVIDER` env var: `extractive` (default, no key, returns the top retrieved chunk), `gemini` (needs `GEMINI_API_KEY` and `GEMINI_MODEL` in `.env`), `local_hf`. The gemini and local_hf adapters are written but not live-tested.
 - NER model: `distilbert-base-cased` token classification (HuggingFace Transformers, `seqeval` for metrics).
 - Frontend: React + Vite.
@@ -113,7 +113,7 @@ privaterag/
     data_gen/             # DONE: generators, tokenizer, verify_data.py
     retrieval/            # DONE: rbac.py, chunking.py, embedder.py, qdrant_service.py, ingest.py
     llm/                  # DONE: base.py, extractive.py, gemini.py, local_hf.py
-    api/                  # DONE: main.py (/login-role, /ask, /health), auth.py
+    api/                  # DONE: main.py (/login, /ask, /health), auth.py, users.py
     ner/                  # PHASE 3: regex_filter.py, infer.py, hybrid_filter.py, masking.py, train.py
   eval/
     rbac_eval.py          # DONE
@@ -155,7 +155,8 @@ The API server command and endpoint details are in `README.md`. Do not run inges
 - RBAC eval queries each contain a distinguishing fact from their target document, so 100% hit@3 on authorized queries measures a fair RBAC test, not general retrieval quality.
 - The NER data is synthetic and template-based. Scores on `test.jsonl` will be optimistic, which is why `test_realistic.jsonl` is reported separately. It has few EMAIL and PHONE mentions (11 each), so those numbers are noisy.
 - Lahore postal codes are shared across areas, so they are exempt from the value-overlap check.
-- `/login-role` is not real authentication (see section 4).
+- `/login` uses a prototype file-based user store with demo credentials, not a production identity provider.
+- Without the fine-tuned checkpoint (`models/distilbert-ner`), the DLP layer degrades to regex-only (PERSON/ADDRESS unmasked). Degradation is logged and reported in `/health` (`ner_model_loaded`); `NER_STRICT=1` fails closed.
 - Gemini and local Hugging Face generation are implemented but not live-tested.
 
 ## 10. Team workflow

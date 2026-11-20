@@ -76,6 +76,15 @@ Evaluated across **256 distinct runs** (64 realistic test queries × 4 access ro
 - **Unit Test Coverage:** `31 passed in 14.89s` (`tests/test_rbac.py`).
 - **Data Integrity:** 100% verified zero entity-overlap across splits (`src/data_gen/verify_data.py`).
 
+> **Scope of the leak-prevention claims:** the 100% end-to-end reduction applies to
+> **pattern-based entities only** (EMAIL, PHONE, EMP_ID, SALARY), which the regex
+> layer detects deterministically. Contextual entities (PERSON, ADDRESS) require the
+> fine-tuned DistilBERT checkpoint (`models/distilbert-ner/`, trained via
+> `notebooks/train_colab.ipynb`). Until that checkpoint is present, the DLP layer
+> runs in a loudly-logged regex-only fallback and PERSON/ADDRESS remain unmasked.
+> RBAC results additionally assume the credential-based login introduced on the
+> `implement` branch (roles are server-assigned, not client-selected).
+
 ---
 
 ## 🔐 Access Hierarchy & Entity Redaction
@@ -148,14 +157,33 @@ pip install -r requirements.txt
 ```powershell
 Copy-Item .env.example .env
 ```
-Edit `.env` and configure your `SECRET_KEY`:
+Edit `.env` and set a **random** `SECRET_KEY` (at least 32 characters — the server
+refuses to start with a placeholder or short key):
+```powershell
+python -c "import secrets; print(secrets.token_urlsafe(48))"
+```
 ```env
-SECRET_KEY=privaterag-super-secret-key-change-in-production
+SECRET_KEY=<paste-the-generated-random-key>
 LLM_PROVIDER=extractive
 # Optional for live Gemini API:
 # GEMINI_API_KEY=your-gemini-key
 # GEMINI_MODEL=gemini-2.0-flash
 ```
+
+**User accounts:** authentication is credential-based. Demo accounts ship as
+salted PBKDF2 hashes in `data/users.example.json` (used automatically when
+`data/users.json` is absent). For a custom store, copy the example to
+`data/users.json` (gitignored) and edit it. Demo credentials:
+
+| Username | Password | Server-assigned role |
+|:---|:---|:---|
+| `intern` | `Intern#2026` | intern |
+| `employee` | `Employee#2026` | employee |
+| `hr` | `HrSpec#2026` | hr |
+| `admin` | `Admin#2026` | admin |
+
+Roles are resolved **server-side** from the user record after password
+verification — clients can never request or self-assign a privilege level.
 
 ### 3. Verify Data Integrity
 
@@ -208,19 +236,23 @@ cd frontend
 npm install
 npm run dev
 ```
-Open `http://localhost:5173` in your browser. Select a role (`intern`, `employee`, `hr`, `admin`), submit natural queries, and observe real-time RBAC document filtering and post-generation NER sanitization!
+Open `http://localhost:5173` in your browser. Sign in with a demo account (e.g. `employee` / `Employee#2026` — see the credentials table above), submit natural queries, and observe real-time RBAC document filtering and post-generation NER sanitization. Your clearance is fixed by the server at login and cannot be switched from the UI.
 
 ---
 
 ## 🔌 API Reference
 
-### `POST /login-role`
-Simulates single sign-on (SSO) authentication for prototype evaluation and returns a 60-minute signed HS256 JWT token.
+### `POST /login`
+Authenticates username/password credentials against the server-side user store
+and returns a 60-minute signed HS256 JWT token. The role is **assigned by the
+server** from the authenticated user record — any `role` field sent by the
+client is ignored. Failed logins return a generic `401` (no user enumeration).
 
 **Request:**
 ```json
 {
-  "role": "employee"
+  "username": "employee",
+  "password": "Employee#2026"
 }
 ```
 
@@ -228,7 +260,8 @@ Simulates single sign-on (SSO) authentication for prototype evaluation and retur
 ```json
 {
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-  "role": "employee"
+  "role": "employee",
+  "username": "employee"
 }
 ```
 
@@ -272,7 +305,7 @@ Content-Type: application/json
 ---
 
 ### `GET /health`
-Returns system status, Qdrant persistence status, vector collection counts, and active LLM provider.
+Returns system status, Qdrant persistence status, vector collection counts, active LLM provider, and whether the fine-tuned DLP model is loaded.
 
 **Response (`200 OK`):**
 ```json
@@ -280,9 +313,13 @@ Returns system status, Qdrant persistence status, vector collection counts, and 
   "status": "ok",
   "qdrant_persistent": true,
   "total_chunks": 390,
-  "llm_provider": "extractive"
+  "llm_provider": "extractive",
+  "ner_model_loaded": false
 }
 ```
+*When `ner_model_loaded` is `false`, the output filter runs in regex-only
+fallback: EMAIL/PHONE/EMP_ID/SALARY are masked, but PERSON/ADDRESS are **not**.
+The server logs a `DLP DEGRADED` warning; set `NER_STRICT=1` to fail closed instead.*
 
 ---
 
