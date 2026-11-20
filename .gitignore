@@ -8,3 +8,4 @@ frontend/dist/
 models/
 checkpoints/
 qdrant_storage/
+data/users.json

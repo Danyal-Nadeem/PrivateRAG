@@ -50,13 +50,15 @@ def _get_secret() -> str:
     return key
 
 
-def create_token(role: str) -> str:
+def create_token(role: str, subject: str | None = None) -> str:
     """Create a signed JWT token encoding *role* with a 60-minute expiry.
 
     Parameters
     ----------
     role:
         One of ``intern``, ``employee``, ``hr``, ``admin``.
+    subject:
+        Optional authenticated username, stored as the ``sub`` claim.
 
     Returns
     -------
@@ -76,6 +78,8 @@ def create_token(role: str) -> str:
         "exp": now + timedelta(minutes=TOKEN_EXPIRY_MINUTES),
         "iat": now,
     }
+    if subject:
+        payload["sub"] = subject
     return jwt.encode(payload, _get_secret(), algorithm=ALGORITHM)
 
 

@@ -5,7 +5,7 @@ Tests the ask() function directly (no live HTTP server needed) plus CORS headers
 Verifies:
 1. /ask endpoint applies sanitize_text before returning — raw sensitive values never leave.
 2. CORS middleware allows cross-origin requests (checked via TestClient options call).
-3. Full login-role → ask flow with sanitized output.
+3. Full credential login → ask flow with sanitized output.
 """
 from __future__ import annotations
 
@@ -179,15 +179,17 @@ class TestCORSMiddleware:
 
 
 # ---------------------------------------------------------------------------
-# 3. Full login → ask flow
+# 3. Full login → ask flow (credential-based, server-assigned role)
 # ---------------------------------------------------------------------------
 
 class TestEndToEndLoginAsk:
 
-    def test_login_role_then_sanitized_ask(self):
-        """Login issues a valid JWT → ask uses it → sensitive answer is redacted."""
-        token = create_token("hr")
-        actual_role = get_current_role(f"Bearer {token}")
+    def test_login_then_sanitized_ask(self):
+        """Credential login issues a valid JWT → ask uses it → answer redacted."""
+        from src.api.main import login, LoginRequest
+        login_resp = login(LoginRequest(username="hr", password="HrSpec#2026"))
+        assert login_resp.role == "hr"
+        actual_role = get_current_role(f"Bearer {login_resp.token}")
         raw_ans = "Manager pay PKR 450,000. Email: hr.ops@company.com. ID: EMP-77001."
         with patch("src.api.main.search", return_value=_make_hits()), \
              patch("src.api.main.get_llm_provider", return_value=_mock_llm(raw_ans)):
@@ -199,3 +201,25 @@ class TestEndToEndLoginAsk:
         assert "PKR 450,000" not in resp.answer
         assert "hr.ops@company.com" not in resp.answer
         assert "EMP-77001" not in resp.answer
+
+    def test_login_wrong_password_returns_401(self):
+        from fastapi import HTTPException
+        from src.api.main import login, LoginRequest
+        with pytest.raises(HTTPException) as exc_info:
+            login(LoginRequest(username="admin", password="wrong-password"))
+        assert exc_info.value.status_code == 401
+
+    def test_login_cannot_self_assign_role(self):
+        """An intern account must get intern clearance even if it asks for admin."""
+        from src.api.main import login, LoginRequest
+        resp = login(LoginRequest.model_validate(
+            {"username": "intern", "password": "Intern#2026", "role": "admin"}
+        ))
+        assert resp.role == "intern"
+        assert get_current_role(f"Bearer {resp.token}") == "intern"
+
+    def test_passwordless_login_role_endpoint_removed(self):
+        """The old privilege-escalation endpoint must no longer exist."""
+        routes = {r.path for r in app.routes}
+        assert "/login-role" not in routes
+        assert "/login" in routes

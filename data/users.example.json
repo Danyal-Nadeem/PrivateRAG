@@ -1,0 +1,26 @@
+[
+  {
+    "username": "intern",
+    "role": "intern",
+    "salt": "6bd1e914c9071fd245f9b2815fc5b199",
+    "password_hash": "0bbf01461fe5f4c6df9a727263748a6800e09e1d937e80af58bbc2de149d0122"
+  },
+  {
+    "username": "employee",
+    "role": "employee",
+    "salt": "92d7fe5cf9a5175d7eee063430af34d0",
+    "password_hash": "55d420612c06a8e136edc544bd612cdcb2f8a97a22c3576d4a2bd00c4e98e95d"
+  },
+  {
+    "username": "hr",
+    "role": "hr",
+    "salt": "36702adb350a674b6de308388b1d97cb",
+    "password_hash": "f7ef0bbd52ddd14da5ad61e47b025243b41d1337824e8605b70dcc47dde64c31"
+  },
+  {
+    "username": "admin",
+    "role": "admin",
+    "salt": "cb130bf9cfe755c0b0d99c705d2a862f",
+    "password_hash": "30aee0fa6310807ca3f8b94f3941b7437fed1ada8d94baa6572a5740fdfaddcb"
+  }
+]

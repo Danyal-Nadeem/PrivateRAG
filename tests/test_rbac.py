@@ -236,8 +236,8 @@ class TestAPIEndpoints:
     """
     These tests verify auth/RBAC logic at the FastAPI layer.
     We avoid importing src.api.main (which would init QdrantClient) by
-    testing the underlying auth functions directly, plus smoke-testing
-    the /login-role endpoint via a minimal in-process app fixture.
+    testing the underlying auth functions directly, plus credential
+    verification against the user store.
     """
 
     @pytest.fixture(autouse=True)
@@ -248,8 +248,8 @@ class TestAPIEndpoints:
         yield
         os.environ.pop("TESTING", None)
 
-    def test_login_role_creates_valid_token(self):
-        """POST /login-role logic: create_token returns a JWT the auth layer can decode."""
+    def test_login_creates_valid_token(self):
+        """POST /login logic: create_token returns a JWT the auth layer can decode."""
         from src.api.auth import create_token, decode_token
         for role in ("intern", "employee", "hr", "admin"):
             token = create_token(role)
@@ -427,3 +427,73 @@ class TestLLMProviderFactory:
                 provider = llm_module.get_llm_provider()
                 assert isinstance(provider, LocalHFProvider)
         os.environ["LLM_PROVIDER"] = "extractive"
+
+
+# ---------------------------------------------------------------------------
+# 8. Credential-based authentication (roles are server-assigned)
+# ---------------------------------------------------------------------------
+
+class TestCredentialAuth:
+    """Authentication must precede authorization: no passwordless role grants."""
+
+    DEMO_PASSWORDS = {
+        "intern": "Intern#2026",
+        "employee": "Employee#2026",
+        "hr": "HrSpec#2026",
+        "admin": "Admin#2026",
+    }
+
+    def test_valid_credentials_return_server_assigned_role(self):
+        from src.api.users import authenticate
+        for username, password in self.DEMO_PASSWORDS.items():
+            user = authenticate(username, password)
+            assert user["role"] == username  # demo store: role matches account
+            assert user["username"] == username
+
+    def test_wrong_password_rejected(self):
+        from src.api.users import AuthenticationError, authenticate
+        with pytest.raises(AuthenticationError):
+            authenticate("admin", "definitely-wrong-password")
+
+    def test_unknown_user_rejected(self):
+        from src.api.users import AuthenticationError, authenticate
+        with pytest.raises(AuthenticationError):
+            authenticate("nonexistent-user", "whatever")
+
+    def test_error_message_does_not_enumerate_users(self):
+        """Unknown user and wrong password must give the identical message."""
+        from src.api.users import AuthenticationError, authenticate
+        with pytest.raises(AuthenticationError) as e1:
+            authenticate("nonexistent-user", "x")
+        with pytest.raises(AuthenticationError) as e2:
+            authenticate("admin", "x")
+        assert str(e1.value) == str(e2.value)
+
+    def test_client_supplied_role_is_ignored(self):
+        """LoginRequest must not expose a role field — privilege escalation path."""
+        from src.api.main import LoginRequest
+        req = LoginRequest.model_validate(
+            {"username": "intern", "password": "x", "role": "admin"}
+        )
+        assert not hasattr(req, "role")
+
+    def test_password_hash_roundtrip(self):
+        from src.api.users import hash_password, verify_password
+        h = hash_password("S3cure-pass!")
+        record = {"salt": h["salt"], "password_hash": h["hash"]}
+        assert verify_password("S3cure-pass!", record)
+        assert not verify_password("S3cure-pass", record)
+
+    def test_store_contains_no_plaintext_passwords(self):
+        import json
+        path = PROJECT_ROOT / "data" / "users.example.json"
+        entries = json.loads(path.read_text(encoding="utf-8"))
+        for e in entries:
+            assert "password" not in e
+            assert len(e["password_hash"]) == 64  # SHA-256 hex
+            assert e["role"] in {"intern", "employee", "hr", "admin"}
+
+    def test_username_case_insensitive(self):
+        from src.api.users import authenticate
+        user = authenticate("ADMIN", self.DEMO_PASSWORDS["admin"])
+        assert user["role"] == "admin"
