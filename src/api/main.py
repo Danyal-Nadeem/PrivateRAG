@@ -44,6 +44,11 @@ TOP_K = 3
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    # Fail fast on a missing/weak JWT signing key — a known or short key
+    # would allow anyone to forge admin tokens.
+    from src.api.auth import _get_secret
+    _get_secret()
+
     # Pre-load the embedding model so the first /ask call is not slow.
     # Skipped when TESTING=1 to keep unit tests fast.
     if os.getenv("TESTING") != "1":

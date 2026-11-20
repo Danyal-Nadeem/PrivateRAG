@@ -37,7 +37,7 @@ def metadata_index() -> dict[str, str]:
 @pytest.fixture(scope="session")
 def env_secret(monkeypatch=None):
     """Ensure SECRET_KEY is set for JWT tests."""
-    os.environ.setdefault("SECRET_KEY", "test-secret-key-for-pytest-only")
+    os.environ.setdefault("SECRET_KEY", "test-secret-key-for-pytest-only-0123456789")
     return os.environ["SECRET_KEY"]
 
 
@@ -157,7 +157,7 @@ class TestPayloadMetadataConsistency:
 
 class TestJWT:
     def _set_secret(self):
-        os.environ.setdefault("SECRET_KEY", "test-secret-key-for-pytest-only")
+        os.environ.setdefault("SECRET_KEY", "test-secret-key-for-pytest-only-0123456789")
 
     def test_create_and_decode_valid_token(self):
         self._set_secret()
@@ -207,6 +207,26 @@ class TestJWT:
             decode_token(tampered)
         assert exc_info.value.status_code == 401
 
+    def test_missing_secret_raises(self, monkeypatch):
+        monkeypatch.delenv("SECRET_KEY", raising=False)
+        from src.api.auth import _get_secret
+        with pytest.raises(RuntimeError, match="not set"):
+            _get_secret()
+
+    def test_placeholder_secret_rejected(self, monkeypatch):
+        from src.api.auth import _get_secret
+        for weak in ("your-secret-key-here",
+                     "privaterag-super-secret-key-change-in-production"):
+            monkeypatch.setenv("SECRET_KEY", weak)
+            with pytest.raises(RuntimeError, match="placeholder"):
+                _get_secret()
+
+    def test_short_secret_rejected(self, monkeypatch):
+        monkeypatch.setenv("SECRET_KEY", "too-short-key")
+        from src.api.auth import _get_secret
+        with pytest.raises(RuntimeError, match="too short"):
+            _get_secret()
+
 
 # ---------------------------------------------------------------------------
 # 5. API endpoint behaviour — tested without a live Qdrant connection
@@ -222,7 +242,7 @@ class TestAPIEndpoints:
 
     @pytest.fixture(autouse=True)
     def _setup_env(self):
-        os.environ.setdefault("SECRET_KEY", "test-secret-key-for-pytest-only")
+        os.environ.setdefault("SECRET_KEY", "test-secret-key-for-pytest-only-0123456789")
         os.environ.setdefault("LLM_PROVIDER", "extractive")
         os.environ["TESTING"] = "1"
         yield
