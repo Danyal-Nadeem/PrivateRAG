@@ -1,68 +1,37 @@
 import React from 'react';
 
-const ROLES = [
-  {
-    id: 'intern',
-    label: 'Intern',
-    badge: 'PUBLIC ONLY',
-    badgeClass: 'tag-intern',
-    desc: 'Can only retrieve public documents',
-  },
-  {
-    id: 'employee',
-    label: 'Employee',
-    badge: 'INTERNAL',
-    badgeClass: 'tag-employee',
-    desc: 'Can retrieve public and internal documents',
-  },
-  {
-    id: 'hr',
-    label: 'HR Personnel',
-    badge: 'HR RESTRICTED',
-    badgeClass: 'tag-hr',
-    desc: 'Can retrieve public, internal, and HR records',
-  },
-  {
-    id: 'admin',
-    label: 'Executive Admin',
-    badge: 'ALL TIERS',
-    badgeClass: 'tag-admin',
-    desc: 'Full access including exec_restricted',
-  },
-];
+const ROLE_INFO = {
+  intern: { label: 'Intern', badge: 'PUBLIC ONLY', badgeClass: 'tag-intern', desc: 'Can only retrieve public documents' },
+  employee: { label: 'Employee', badge: 'INTERNAL', badgeClass: 'tag-employee', desc: 'Can retrieve public and internal documents' },
+  hr: { label: 'HR Personnel', badge: 'HR RESTRICTED', badgeClass: 'tag-hr', desc: 'Can retrieve public, internal, and HR records' },
+  admin: { label: 'Executive Admin', badge: 'ALL TIERS', badgeClass: 'tag-admin', desc: 'Full access including exec_restricted' },
+};
 
-export function RoleSelector({ currentRole, onSelectRole, loading }) {
+export function SecurityPanel({ currentRole, username, onLogout, nerModelLoaded }) {
+  const info = ROLE_INFO[currentRole] || ROLE_INFO.intern;
   return (
     <div className="security-controls-panel">
-      {/* 1. Active Role Selection */}
+      {/* 1. Authenticated Account (read-only — role is server-assigned) */}
       <div>
         <div className="panel-section-title">
-          <span className="section-h2">Active Role</span>
+          <span className="section-h2">Authenticated Account</span>
           <span className={`meta-role-tag tag-${currentRole}`}>{currentRole.toUpperCase()}</span>
         </div>
         <div className="role-cards-grid">
-          {ROLES.map((r) => {
-            const isSelected = currentRole === r.id;
-            return (
-              <div
-                key={r.id}
-                className={`role-card-item ${isSelected ? 'selected' : ''}`}
-                onClick={() => !loading && onSelectRole(r.id)}
-                role="button"
-                tabIndex={0}
-              >
-                <div className="role-card-left">
-                  <div className="role-name-row">
-                    <span className="role-title">{r.label}</span>
-                    {isSelected && <span className="role-active-dot"></span>}
-                  </div>
-                  <span className="role-desc">{r.desc}</span>
-                </div>
-                <span className={`role-tier-badge ${r.badgeClass}`}>{r.badge}</span>
+          <div className="role-card-item selected">
+            <div className="role-card-left">
+              <div className="role-name-row">
+                <span className="role-title">{username || currentRole}</span>
+                <span className="role-active-dot"></span>
               </div>
-            );
-          })}
+              <span className="role-desc">{info.desc}. Clearance is assigned by the server and cannot be changed from the client.</span>
+            </div>
+            <span className={`role-tier-badge ${info.badgeClass}`}>{info.badge}</span>
+          </div>
         </div>
+        <button type="button" className="logout-btn" onClick={onLogout}>
+          Sign out
+        </button>
       </div>
 
       {/* 2. RBAC Access Matrix */}
@@ -117,6 +86,12 @@ export function RoleSelector({ currentRole, onSelectRole, loading }) {
       {/* 3. Output Redaction Engine */}
       <div className="redaction-engine-card">
         <span className="section-h2">Output Redaction Engine</span>
+        {nerModelLoaded === false && (
+          <p className="dlp-degraded-banner">
+            ⚠ DLP model checkpoint not loaded — PERSON and ADDRESS are currently
+            NOT masked (regex-only fallback). See /health and server logs.
+          </p>
+        )}
         <div className="redaction-grid">
           <div className="redaction-item-row">
             <span className="redacted-tag redacted-EMAIL">[EMAIL_REDACTED]</span>
@@ -136,11 +111,11 @@ export function RoleSelector({ currentRole, onSelectRole, loading }) {
           </div>
           <div className="redaction-item-row">
             <span className="redacted-tag redacted-PERSON">[PERSON_REDACTED]</span>
-            <span className="detector-label">Model / Pretrained</span>
+            <span className="detector-label">{nerModelLoaded ? 'Fine-tuned NER' : 'Fine-tuned NER (not loaded)'}</span>
           </div>
           <div className="redaction-item-row">
             <span className="redacted-tag redacted-ADDRESS">[ADDRESS_REDACTED]</span>
-            <span className="detector-label">Fine-tuned NER</span>
+            <span className="detector-label">{nerModelLoaded ? 'Fine-tuned NER' : 'Fine-tuned NER (not loaded)'}</span>
           </div>
         </div>
       </div>

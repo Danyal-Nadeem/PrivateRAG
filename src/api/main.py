@@ -2,13 +2,13 @@
 
 Endpoints
 ---------
-POST /login-role
-    Body: {"role": "employee"}
-    Returns: {"token": "...", "role": "employee"}
+POST /login
+    Body: {"username": "employee", "password": "..."}
+    Returns: {"token": "...", "role": "employee", "username": "employee"}
 
-    NOTE: /login-role accepts a role without a password to simulate SSO
-    for prototype purposes. This is NOT real authentication — in production
-    replace this with your identity provider.
+    Credentials are verified against the server-side user store
+    (src/api/users.py). The role is assigned by the server from the
+    user record — clients can never self-assign a privilege level.
 
 POST /ask
     Header: Authorization: Bearer <token>
@@ -16,7 +16,8 @@ POST /ask
     Returns: {"query", "role", "answer", "retrieved_documents"}
 
 GET /health
-    Returns: {"status", "qdrant_persistent", "total_chunks", "llm_provider"}
+    Returns: {"status", "qdrant_persistent", "total_chunks", "llm_provider",
+              "ner_model_loaded"}
 """
 from __future__ import annotations
 
@@ -30,7 +31,8 @@ from pydantic import BaseModel
 
 load_dotenv()
 
-from src.api.auth import VALID_ROLES, create_token, get_current_role
+from src.api.auth import create_token, get_current_role
+from src.api.users import AuthenticationError, authenticate
 from src.llm import get_llm_provider
 from src.ner.masking import sanitize_text
 from src.retrieval.qdrant_service import get_collection_info, search
@@ -44,6 +46,11 @@ TOP_K = 3
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    # Fail fast on a missing/weak JWT signing key — a known or short key
+    # would allow anyone to forge admin tokens.
+    from src.api.auth import _get_secret
+    _get_secret()
+
     # Pre-load the embedding model so the first /ask call is not slow.
     # Skipped when TESTING=1 to keep unit tests fast.
     if os.getenv("TESTING") != "1":
@@ -56,18 +63,29 @@ app = FastAPI(
     title="PrivateRAG",
     description=(
         "Role-based access controlled RAG system. "
-        "POST /login-role simulates SSO for prototype purposes — not real auth."
+        "POST /login authenticates credentials; roles are server-assigned."
     ),
     version="0.1.0",
     lifespan=lifespan,
 )
 
+# CORS: explicit frontend origins only. A wildcard ("*") combined with
+# credentials is invalid per the CORS spec and unsafe for a security product.
+# Override with CORS_ORIGINS="https://app.example.com,http://localhost:5173".
+_DEFAULT_CORS_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
+CORS_ORIGINS = [
+    o.strip() for o in os.getenv("CORS_ORIGINS", "").split(",") if o.strip()
+] or _DEFAULT_CORS_ORIGINS
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=CORS_ORIGINS,
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_headers=["Authorization", "Content-Type"],
 )
 
 
@@ -76,12 +94,17 @@ app.add_middleware(
 # ---------------------------------------------------------------------------
 
 class LoginRequest(BaseModel):
-    role: str
+    username: str
+    password: str
+    # Any "role" field sent by the client is ignored — roles are
+    # server-assigned from the user store after authentication.
+    model_config = {"extra": "ignore"}
 
 
 class LoginResponse(BaseModel):
     token: str
     role: str
+    username: str
 
 
 class AskRequest(BaseModel):
@@ -113,27 +136,30 @@ class HealthResponse(BaseModel):
     qdrant_persistent: bool
     total_chunks: int
     llm_provider: str
+    ner_model_loaded: bool
 
 
 # ---------------------------------------------------------------------------
 # Endpoints
 # ---------------------------------------------------------------------------
 
-@app.post("/login-role", response_model=LoginResponse)
-def login_role(body: LoginRequest) -> LoginResponse:
-    """Issue a JWT for *role*.
+@app.post("/login", response_model=LoginResponse)
+def login(body: LoginRequest) -> LoginResponse:
+    """Authenticate credentials and issue a JWT with the server-assigned role.
 
-    This endpoint simulates SSO for the prototype and is NOT real
-    authentication — no password is required.
+    The role comes exclusively from the user store record — never from
+    client input. Failed logins return a generic 401 (no user enumeration).
     """
-    if body.role not in VALID_ROLES:
-        from fastapi import HTTPException
+    from fastapi import HTTPException
+    try:
+        user = authenticate(body.username, body.password)
+    except AuthenticationError:
         raise HTTPException(
-            status_code=400,
-            detail=f"Unknown role {body.role!r}. Valid roles: {sorted(VALID_ROLES)}",
+            status_code=401,
+            detail="Invalid username or password.",
         )
-    token = create_token(body.role)
-    return LoginResponse(token=token, role=body.role)
+    token = create_token(user["role"], subject=user["username"])
+    return LoginResponse(token=token, role=user["role"], username=user["username"])
 
 
 @app.post("/ask", response_model=AskResponse)
@@ -181,9 +207,19 @@ def health() -> HealthResponse:
         total_chunks = -1
         qdrant_ok = False
 
+    from src.ner.infer import model_available
+    ner_loaded = model_available()
+    if not ner_loaded:
+        import logging
+        logging.getLogger("privaterag.ner").warning(
+            "/health: DLP model NOT loaded — answers are regex-sanitized only "
+            "(PERSON/ADDRESS unmasked)."
+        )
+
     return HealthResponse(
         status="ok",
         qdrant_persistent=qdrant_ok,
         total_chunks=total_chunks,
         llm_provider=os.getenv("LLM_PROVIDER", "extractive"),
+        ner_model_loaded=ner_loaded,
     )

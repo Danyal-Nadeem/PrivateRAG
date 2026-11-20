@@ -1,6 +1,8 @@
 """JWT authentication utilities for the FastAPI application.
 
 SECRET_KEY must be set via the SECRET_KEY environment variable (never hardcoded).
+The key must be at least 32 characters and must not be a known placeholder —
+a weak or publicly known signing key would allow anyone to forge admin JWTs.
 Tokens expire after 60 minutes.
 """
 from __future__ import annotations
@@ -16,23 +18,47 @@ TOKEN_EXPIRY_MINUTES = 60
 
 VALID_ROLES = frozenset({"intern", "employee", "hr", "admin"})
 
+MIN_SECRET_LENGTH = 32
+
+# Publicly known placeholder values that must never be used as signing keys.
+WEAK_SECRET_VALUES = frozenset({
+    "your-secret-key-here",
+    "privaterag-super-secret-key-change-in-production",
+    "changeme",
+    "secret",
+})
+
 
 def _get_secret() -> str:
-    key = os.getenv("SECRET_KEY")
+    key = os.getenv("SECRET_KEY", "").strip()
     if not key:
         raise RuntimeError(
-            "SECRET_KEY is not set. Add it to .env before starting the server."
+            "SECRET_KEY is not set. Add it to .env before starting the server. "
+            'Generate one with: python -c "import secrets; print(secrets.token_urlsafe(48))"'
+        )
+    if key.lower() in WEAK_SECRET_VALUES:
+        raise RuntimeError(
+            "SECRET_KEY is a known placeholder value and is NOT secure. "
+            "Anyone who knows it could forge admin tokens. "
+            'Generate a random key: python -c "import secrets; print(secrets.token_urlsafe(48))"'
+        )
+    if len(key) < MIN_SECRET_LENGTH:
+        raise RuntimeError(
+            f"SECRET_KEY is too short ({len(key)} chars). "
+            f"Use at least {MIN_SECRET_LENGTH} characters of random data."
         )
     return key
 
 
-def create_token(role: str) -> str:
+def create_token(role: str, subject: str | None = None) -> str:
     """Create a signed JWT token encoding *role* with a 60-minute expiry.
 
     Parameters
     ----------
     role:
         One of ``intern``, ``employee``, ``hr``, ``admin``.
+    subject:
+        Optional authenticated username, stored as the ``sub`` claim.
 
     Returns
     -------
@@ -52,6 +78,8 @@ def create_token(role: str) -> str:
         "exp": now + timedelta(minutes=TOKEN_EXPIRY_MINUTES),
         "iat": now,
     }
+    if subject:
+        payload["sub"] = subject
     return jwt.encode(payload, _get_secret(), algorithm=ALGORITHM)
 
 

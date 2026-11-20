@@ -6,14 +6,17 @@
 
 const API_BASE = import.meta.env.VITE_API_URL || '';
 
-export async function loginRole(role) {
-  const resp = await fetch(`${API_BASE}/login-role`, {
+export async function login(username, password) {
+  const resp = await fetch(`${API_BASE}/login`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ role }),
+    body: JSON.stringify({ username, password }),
   });
 
   if (!resp.ok) {
+    if (resp.status === 401) {
+      throw new Error('Invalid username or password.');
+    }
     const errorText = await resp.text();
     throw new Error(`Login failed (${resp.status}): ${errorText}`);
   }
@@ -21,13 +24,20 @@ export async function loginRole(role) {
   const data = await resp.json();
   localStorage.setItem('privaterag_token', data.token);
   localStorage.setItem('privaterag_role', data.role);
+  localStorage.setItem('privaterag_username', data.username);
   return data;
+}
+
+export function logout() {
+  localStorage.removeItem('privaterag_token');
+  localStorage.removeItem('privaterag_role');
+  localStorage.removeItem('privaterag_username');
 }
 
 export async function askQuery(query, token) {
   const authToken = token || localStorage.getItem('privaterag_token');
   if (!authToken) {
-    throw new Error('No authentication token found. Please select a role first.');
+    throw new Error('No authentication token found. Please log in first.');
   }
 
   const resp = await fetch(`${API_BASE}/ask`, {

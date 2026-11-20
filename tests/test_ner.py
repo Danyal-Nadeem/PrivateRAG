@@ -180,3 +180,43 @@ class TestModelInferenceSafety:
         # Point to a nonexistent directory
         spans = extract_model_entities("Hello world", model_dir="nonexistent/dir")
         assert spans == []
+
+
+# ---------------------------------------------------------------------------
+# 6. DLP degradation must be loud and observable (never silent)
+# ---------------------------------------------------------------------------
+
+class TestDlpDegradationVisibility:
+    @pytest.fixture(autouse=True)
+    def _reset_model_cache(self, monkeypatch):
+        """Reset infer module cache so each test exercises the load path."""
+        import src.ner.infer as infer_mod
+        monkeypatch.setattr(infer_mod, "_model", None)
+        monkeypatch.setattr(infer_mod, "_tokenizer", None)
+        monkeypatch.setattr(infer_mod, "_model_load_attempted", False)
+        monkeypatch.delenv("NER_STRICT", raising=False)
+        yield
+
+    def test_missing_checkpoint_logs_warning(self, caplog):
+        import logging
+        import src.ner.infer as infer_mod
+        with caplog.at_level(logging.WARNING, logger="privaterag.ner"):
+            infer_mod.extract_model_entities(
+                "John Smith lives at 12 Main Street.",
+                model_dir="nonexistent/dir",
+            )
+        assert any("DLP DEGRADED" in r.message for r in caplog.records)
+
+    def test_model_available_false_without_checkpoint(self):
+        from src.ner.infer import model_available
+        assert model_available(model_dir="nonexistent/dir") is False
+
+    def test_strict_mode_fails_closed(self, monkeypatch):
+        monkeypatch.setenv("NER_STRICT", "1")
+        from src.ner.infer import NerModelUnavailableError
+        with pytest.raises(NerModelUnavailableError):
+            extract_model_entities("John Smith", model_dir="nonexistent/dir")
+
+    def test_non_strict_mode_degrades_to_empty(self):
+        spans = extract_model_entities("John Smith", model_dir="nonexistent/dir")
+        assert spans == []
