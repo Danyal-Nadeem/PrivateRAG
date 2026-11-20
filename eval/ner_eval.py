@@ -59,6 +59,7 @@ def evaluate_system(
 
     hard_negative_fp = 0
     hard_negative_sentences = 0
+    extraction_errors = 0
 
     for r in records:
         text = r["text"]
@@ -70,7 +71,11 @@ def evaluate_system(
 
         try:
             pred_spans = extract_fn(text)
-        except Exception:
+        except Exception as exc:
+            # Never silently score a broken extractor as zero predictions.
+            extraction_errors += 1
+            if extraction_errors == 1:
+                print(f"  [ERROR] {system_name}: extraction failed: {exc}")
             pred_spans = []
 
         if is_hard_negative and pred_spans:
@@ -145,6 +150,7 @@ def evaluate_system(
         "total_support": total_sup,
         "hard_negatives_evaluated": hard_negative_sentences,
         "hard_negatives_fp": hard_negative_fp,
+        "extraction_errors": extraction_errors,
     }
 
 
@@ -199,7 +205,37 @@ def run_all_evaluations() -> None:
         "4. Hybrid (Proposed)": extract_hybrid_entities,
     }
 
+    # Honesty guards: never record all-zero rows for systems that cannot run.
+    from src.ner.infer import model_available
+    warnings: list[str] = []
+    checkpoint_ok = model_available()
+    if not checkpoint_ok:
+        msg = (
+            "Fine-tuned checkpoint NOT found (models/distilbert-ner). "
+            "Skipping '3. Fine-tuned Model'; '4. Hybrid' runs in regex-only "
+            "fallback (PERSON/ADDRESS unmasked). Train the model and re-run "
+            "for a valid baseline-vs-fine-tuned comparison."
+        )
+        print("\n" + "!" * 90 + f"\n[WARNING] {msg}\n" + "!" * 90)
+        warnings.append(msg)
+        systems.pop("3. Fine-tuned Model")
+
+    from src.ner.pretrained_baseline import pretrained_available
+    if not pretrained_available():
+        msg = (
+            "Pretrained baseline (dslim/bert-base-NER) could not be loaded "
+            "(offline mode or download failure). Skipping '2. Pretrained NER' "
+            "instead of recording misleading zero scores."
+        )
+        print(f"[WARNING] {msg}")
+        warnings.append(msg)
+        systems.pop("2. Pretrained NER")
+
     full_results = {}
+    run_metadata = {
+        "model_checkpoint_available": checkpoint_ok,
+        "warnings": warnings,
+    }
 
     for d_name, records in [("test.jsonl (450 sents)", test_records), ("test_realistic.jsonl (60 sents)", realistic_records)]:
         ds_results = {}
@@ -210,10 +246,10 @@ def run_all_evaluations() -> None:
         print_evaluation_table(ds_results, d_name)
         full_results[d_name] = ds_results
 
-    # Save to JSON
+    # Save to JSON (metadata records whether model-dependent systems could run)
     out_json = RESULTS_DIR / "ner_eval_results.json"
     with open(out_json, "w", encoding="utf-8") as f:
-        json.dump(full_results, f, indent=2)
+        json.dump({"metadata": run_metadata, "datasets": full_results}, f, indent=2)
     print(f"\nFull evaluation metrics saved to: {out_json}")
 
     # Save to CSV Matrix

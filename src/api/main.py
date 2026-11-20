@@ -129,6 +129,7 @@ class HealthResponse(BaseModel):
     qdrant_persistent: bool
     total_chunks: int
     llm_provider: str
+    ner_model_loaded: bool
 
 
 # ---------------------------------------------------------------------------
@@ -197,9 +198,19 @@ def health() -> HealthResponse:
         total_chunks = -1
         qdrant_ok = False
 
+    from src.ner.infer import model_available
+    ner_loaded = model_available()
+    if not ner_loaded:
+        import logging
+        logging.getLogger("privaterag.ner").warning(
+            "/health: DLP model NOT loaded — answers are regex-sanitized only "
+            "(PERSON/ADDRESS unmasked)."
+        )
+
     return HealthResponse(
         status="ok",
         qdrant_persistent=qdrant_ok,
         total_chunks=total_chunks,
         llm_provider=os.getenv("LLM_PROVIDER", "extractive"),
+        ner_model_loaded=ner_loaded,
     )

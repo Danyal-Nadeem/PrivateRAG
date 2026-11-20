@@ -45,6 +45,15 @@ def _get_pipeline():
     return _pipeline
 
 
+def pretrained_available() -> bool:
+    """Return True if the pretrained baseline pipeline can be loaded.
+
+    Used by evaluation harnesses to avoid silently scoring an unavailable
+    baseline as zero predictions.
+    """
+    return _get_pipeline() is not None
+
+
 def extract_pretrained_entities(text: str) -> List[Dict[str, Any]]:
     """Extract entities using dslim/bert-base-NER mapped to our label schema.
 

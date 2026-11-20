@@ -2,12 +2,20 @@
 
 Loads fine-tuned DistilBERT from models/distilbert-ner/ if present.
 Maps token-level predictions back to raw character spans using offset mapping.
+
+Security note: when the checkpoint is missing the DLP layer degrades to
+regex-only (PERSON/ADDRESS are NOT masked). This degradation is logged
+loudly and exposed via model_available() / /health. Set NER_STRICT=1 to
+fail closed (raise) instead of degrading.
 """
 from __future__ import annotations
 
+import logging
 import os
 from pathlib import Path
 from typing import Dict, List, Any
+
+logger = logging.getLogger("privaterag.ner")
 
 # Map label IDs to our entity labels
 ID2LABEL: dict[int, str] = {
@@ -36,6 +44,10 @@ _tokenizer = None
 _model_load_attempted = False
 
 
+class NerModelUnavailableError(RuntimeError):
+    """Raised in strict mode (NER_STRICT=1) when the DLP model cannot run."""
+
+
 def _load_model(model_dir: Path | str | None = None):
     global _model, _tokenizer, _model_load_attempted
     if _model_load_attempted:
@@ -44,7 +56,14 @@ def _load_model(model_dir: Path | str | None = None):
 
     target_dir = Path(model_dir) if model_dir else DEFAULT_MODEL_DIR
     if not (target_dir / "config.json").exists():
-        # Model not trained yet
+        # Model not trained yet — degrade loudly, never silently.
+        logger.warning(
+            "DLP DEGRADED: fine-tuned NER checkpoint not found at %s. "
+            "PERSON and ADDRESS entities will NOT be masked (regex-only mode). "
+            "Train via notebooks/train_colab.ipynb and place the checkpoint "
+            "in models/distilbert-ner/, or set NER_STRICT=1 to fail closed.",
+            target_dir,
+        )
         return None, None
 
     try:
@@ -54,11 +73,22 @@ def _load_model(model_dir: Path | str | None = None):
         _tokenizer = AutoTokenizer.from_pretrained(str(target_dir))
         _model = AutoModelForTokenClassification.from_pretrained(str(target_dir))
         _model.eval()
-    except Exception:
+    except Exception as exc:
         _model = None
         _tokenizer = None
+        logger.error(
+            "DLP DEGRADED: failed to load NER checkpoint from %s (%s). "
+            "PERSON and ADDRESS entities will NOT be masked.",
+            target_dir, exc,
+        )
 
     return _model, _tokenizer
+
+
+def model_available(model_dir: Path | str | None = None) -> bool:
+    """Return True if the fine-tuned DLP model is loaded and usable."""
+    model, tokenizer = _load_model(model_dir)
+    return model is not None and tokenizer is not None
 
 
 def extract_model_entities(
@@ -85,6 +115,11 @@ def extract_model_entities(
 
     model, tokenizer = _load_model(model_dir)
     if model is None or tokenizer is None:
+        if os.getenv("NER_STRICT") == "1":
+            raise NerModelUnavailableError(
+                "NER_STRICT=1: fine-tuned DLP model is unavailable. "
+                "Refusing to process text without contextual entity masking."
+            )
         return []
 
     import torch
