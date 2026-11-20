@@ -140,16 +140,42 @@ class TestCORSMiddleware:
         )
 
     def test_cors_allow_origin_configured(self):
-        """The app must have allow_origins=["*"] so the Vite dev server can connect."""
-        from starlette.middleware.cors import CORSMiddleware
+        """Origins must be explicit (no wildcard) and include the Vite dev server."""
         for m in app.user_middleware:
             if "CORSMiddleware" in str(m):
-                # kwargs are in m.kwargs
                 origins = getattr(m, "kwargs", {}).get("allow_origins", [])
-                assert "*" in origins or origins == ["*"]
+                assert "*" not in origins, "Wildcard CORS origin is not allowed"
+                assert "http://localhost:5173" in origins
                 return
-        # If no match found, check the middleware_stack string representation
-        assert "allow_origins" in str(app.middleware_stack) or True  # CORS is registered
+        pytest.fail("CORSMiddleware not found in app middleware stack")
+
+    def test_cors_preflight_allows_frontend_origin(self):
+        """Preflight from the Vite dev origin must be accepted."""
+        from fastapi.testclient import TestClient
+        with TestClient(app) as client:
+            resp = client.options(
+                "/ask",
+                headers={
+                    "Origin": "http://localhost:5173",
+                    "Access-Control-Request-Method": "POST",
+                    "Access-Control-Request-Headers": "Authorization,Content-Type",
+                },
+            )
+        assert resp.status_code == 200
+        assert resp.headers.get("access-control-allow-origin") == "http://localhost:5173"
+
+    def test_cors_preflight_rejects_unknown_origin(self):
+        """Preflight from an arbitrary origin must NOT be granted access."""
+        from fastapi.testclient import TestClient
+        with TestClient(app) as client:
+            resp = client.options(
+                "/ask",
+                headers={
+                    "Origin": "http://evil.example.com",
+                    "Access-Control-Request-Method": "POST",
+                },
+            )
+        assert resp.headers.get("access-control-allow-origin") != "http://evil.example.com"
 
 
 # ---------------------------------------------------------------------------

@@ -67,12 +67,23 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+# CORS: explicit frontend origins only. A wildcard ("*") combined with
+# credentials is invalid per the CORS spec and unsafe for a security product.
+# Override with CORS_ORIGINS="https://app.example.com,http://localhost:5173".
+_DEFAULT_CORS_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
+CORS_ORIGINS = [
+    o.strip() for o in os.getenv("CORS_ORIGINS", "").split(",") if o.strip()
+] or _DEFAULT_CORS_ORIGINS
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=CORS_ORIGINS,
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_headers=["Authorization", "Content-Type"],
 )
 
 
