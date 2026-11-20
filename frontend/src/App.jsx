@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { loginRole, askQuery, getSystemHealth } from './api';
-import { RoleSelector } from './components/RoleSelector';
+import { askQuery, getSystemHealth, logout } from './api';
+import { LoginPanel } from './components/LoginPanel';
+import { SecurityPanel } from './components/SecurityPanel';
 import { MaskedAnswer } from './components/MaskedAnswer';
 import { RetrievedDocs } from './components/RetrievedDocs';
 
@@ -13,7 +14,8 @@ const DEMO_QUERIES = [
 ];
 
 export default function App() {
-  const [role, setRole] = useState('employee');
+  const [role, setRole] = useState('');
+  const [username, setUsername] = useState('');
   const [token, setToken] = useState('');
   const [health, setHealth] = useState(null);
   const [activeTab, setActiveTab] = useState('chat'); // 'chat' or 'security'
@@ -34,7 +36,6 @@ export default function App() {
   const chatEndRef = useRef(null);
 
   useEffect(() => {
-    handleRoleChange('employee');
     fetchHealth();
     const interval = setInterval(fetchHealth, 15000);
     return () => clearInterval(interval);
@@ -51,19 +52,21 @@ export default function App() {
     if (data) setHealth(data);
   }
 
-  async function handleRoleChange(newRole) {
-    setLoading(true);
+  function handleLogin(authData) {
+    // Role comes from the server's authenticated user record — never client-chosen.
+    setRole(authData.role);
+    setUsername(authData.username);
+    setToken(authData.token);
     setError(null);
-    try {
-      const authData = await loginRole(newRole);
-      setRole(authData.role);
-      setToken(authData.token);
-    } catch (err) {
-      console.error(err);
-      setError(`Authentication error: ${err.message}`);
-    } finally {
-      setLoading(false);
-    }
+  }
+
+  function handleLogout() {
+    logout();
+    setRole('');
+    setUsername('');
+    setToken('');
+    setActiveTab('chat');
+    setMessages((prev) => prev.slice(0, 1)); // keep only the welcome message
   }
 
   async function handleSendMessage(e) {
@@ -110,6 +113,11 @@ export default function App() {
     }
   }
 
+  // Authentication gate: nothing is accessible until credentials are verified.
+  if (!token) {
+    return <LoginPanel onLogin={handleLogin} />;
+  }
+
   return (
     <div className="app-wrapper">
       {/* 1. Header (Stitch Design) */}
@@ -130,8 +138,11 @@ export default function App() {
 
           {/* Active JWT Pill */}
           <div className="active-jwt-pill">
-            <span className="jwt-label">Active JWT:</span>
+            <span className="jwt-label">{username}:</span>
             <span className="jwt-role">{role?.toUpperCase()}</span>
+            <button type="button" className="header-logout-btn" onClick={handleLogout} title="Sign out">
+              Sign out
+            </button>
           </div>
         </div>
 
@@ -151,6 +162,14 @@ export default function App() {
               <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10.5px' }}>
                 {health ? health.total_chunks : 390} chunks
               </span>
+              {health && health.ner_model_loaded === false && (
+                <>
+                  <span style={{ color: '#cbd5e1' }}>&bull;</span>
+                  <span className="dlp-status-chip" title="Fine-tuned NER checkpoint not loaded: PERSON/ADDRESS are not masked">
+                    DLP: regex-only ⚠
+                  </span>
+                </>
+              )}
             </div>
             <div className="version-pill">v1.0.4</div>
           </div>
@@ -302,13 +321,11 @@ export default function App() {
 
         {/* VIEW 2: Security Controls & RBAC Panel */}
         {activeTab === 'security' && (
-          <RoleSelector
+          <SecurityPanel
             currentRole={role}
-            onSelectRole={(r) => {
-              handleRoleChange(r);
-              // Small friendly toast/switch
-            }}
-            loading={loading}
+            username={username}
+            onLogout={handleLogout}
+            nerModelLoaded={health ? health.ner_model_loaded : null}
           />
         )}
       </main>

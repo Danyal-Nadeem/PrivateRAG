@@ -9,7 +9,7 @@ export default defineConfig({
     proxy: {
       // Proxy API calls to FastAPI backend during development
       '/ask': 'http://localhost:8000',
-      '/login-role': 'http://localhost:8000',
+      '/login': 'http://localhost:8000',
       '/health': 'http://localhost:8000',
     },
   },
