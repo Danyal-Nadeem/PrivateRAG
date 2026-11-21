@@ -49,6 +49,15 @@ export async function askQuery(query, token) {
     body: JSON.stringify({ query }),
   });
 
+  if (resp.status === 401) {
+    // Expired or invalid JWT — drop the dead session so the app returns
+    // to the sign-in screen instead of stranding the user on errors.
+    logout();
+    const err = new Error('Session expired — please sign in again.');
+    err.status = 401;
+    throw err;
+  }
+
   if (!resp.ok) {
     const errorText = await resp.text();
     throw new Error(`Query failed (${resp.status}): ${errorText}`);
