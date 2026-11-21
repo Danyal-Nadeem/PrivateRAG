@@ -223,3 +223,45 @@ class TestEndToEndLoginAsk:
         routes = {r.path for r in app.routes}
         assert "/login-role" not in routes
         assert "/login" in routes
+
+    def test_strict_dlp_unavailable_returns_503(self, monkeypatch):
+        """NER_STRICT=1 with no checkpoint → deliberate 503, never a raw answer."""
+        from fastapi import HTTPException
+        import src.ner.infer as infer
+        from src.api.main import login, LoginRequest
+
+        monkeypatch.setenv("NER_STRICT", "1")
+        # Force a fresh model-load attempt against the (absent) checkpoint.
+        monkeypatch.setattr(infer, "_model", None)
+        monkeypatch.setattr(infer, "_tokenizer", None)
+        monkeypatch.setattr(infer, "_model_load_attempted", False)
+
+        login_resp = login(LoginRequest(username="hr", password="HrSpec#2026"))
+        actual_role = get_current_role(f"Bearer {login_resp.token}")
+        raw_ans = "Manager pay PKR 450,000. Email: hr.ops@company.com."
+        with patch("src.api.main.search", return_value=_make_hits()), \
+             patch("src.api.main.get_llm_provider", return_value=_mock_llm(raw_ans)):
+            with pytest.raises(HTTPException) as exc_info:
+                ask(AskRequest(query="manager details"), role=actual_role)
+        assert exc_info.value.status_code == 503
+        assert "fail-closed" in exc_info.value.detail
+        # The unsanitized answer must never escape in the error payload.
+        assert "PKR 450,000" not in str(exc_info.value.detail)
+
+    def test_non_strict_dlp_unavailable_still_answers(self, monkeypatch):
+        """Default (non-strict) mode degrades to regex-only, still HTTP 200."""
+        import src.ner.infer as infer
+        from src.api.main import login, LoginRequest
+
+        monkeypatch.delenv("NER_STRICT", raising=False)
+        monkeypatch.setattr(infer, "_model", None)
+        monkeypatch.setattr(infer, "_tokenizer", None)
+        monkeypatch.setattr(infer, "_model_load_attempted", False)
+
+        login_resp = login(LoginRequest(username="hr", password="HrSpec#2026"))
+        actual_role = get_current_role(f"Bearer {login_resp.token}")
+        raw_ans = "Manager pay PKR 450,000."
+        with patch("src.api.main.search", return_value=_make_hits()), \
+             patch("src.api.main.get_llm_provider", return_value=_mock_llm(raw_ans)):
+            resp = ask(AskRequest(query="manager details"), role=actual_role)
+        assert "[SALARY_REDACTED]" in resp.answer

@@ -25,7 +25,7 @@ import os
 from contextlib import asynccontextmanager
 
 from dotenv import load_dotenv
-from fastapi import Depends, FastAPI
+from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
@@ -34,6 +34,7 @@ load_dotenv()
 from src.api.auth import create_token, get_current_role
 from src.api.users import AuthenticationError, authenticate
 from src.llm import get_llm_provider
+from src.ner.infer import NerModelUnavailableError
 from src.ner.masking import sanitize_text
 from src.retrieval.qdrant_service import get_collection_info, search
 
@@ -150,7 +151,6 @@ def login(body: LoginRequest) -> LoginResponse:
     The role comes exclusively from the user store record — never from
     client input. Failed logins return a generic 401 (no user enumeration).
     """
-    from fastapi import HTTPException
     try:
         user = authenticate(body.username, body.password)
     except AuthenticationError:
@@ -169,13 +169,30 @@ def ask(body: AskRequest, role: str = Depends(get_current_role)) -> AskResponse:
     The role is extracted exclusively from the JWT in the Authorization header.
     Any "role" field in the request body is ignored. The generated answer is
     sanitized via NER masking before being returned to the client.
+
+    In fail-closed mode (NER_STRICT=1) an unavailable DLP model yields a
+    deliberate 503 — never an unsanitized answer, never a generic 500.
     """
     hits = search(body.query, role=role, top_k=TOP_K)
 
     llm = get_llm_provider()
     context_chunks = [h["text"] for h in hits]
     raw_answer = llm.generate(prompt=body.query, context_chunks=context_chunks)
-    masked_answer = sanitize_text(raw_answer)
+    try:
+        masked_answer = sanitize_text(raw_answer)
+    except NerModelUnavailableError:
+        import logging
+        logging.getLogger("privaterag.ner").error(
+            "/ask: refusing to answer — DLP model unavailable in NER_STRICT mode."
+        )
+        raise HTTPException(
+            status_code=503,
+            detail=(
+                "Sanitization service unavailable (fail-closed mode). "
+                "The answer cannot be released without DLP screening. "
+                "Restore the NER model checkpoint or disable NER_STRICT."
+            ),
+        )
 
     retrieved = [
         RetrievedDoc(

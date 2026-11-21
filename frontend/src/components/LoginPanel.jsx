@@ -11,7 +11,7 @@ const DEMO_ACCOUNTS = [
   { username: 'admin', password: 'Admin#2026', tier: 'All tiers' },
 ];
 
-export function LoginPanel({ onLogin }) {
+export function LoginPanel({ onLogin, notice }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -54,6 +54,7 @@ export function LoginPanel({ onLogin }) {
         </div>
 
         <h2 className="login-heading">Sign in to continue</h2>
+        {notice && <div className="login-notice">{notice}</div>}
         <p className="login-subtext">
           Your clearance level is assigned by the server after credential
           verification — it cannot be selected or requested by the client.

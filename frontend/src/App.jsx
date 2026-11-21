@@ -18,6 +18,7 @@ export default function App() {
   const [username, setUsername] = useState('');
   const [token, setToken] = useState('');
   const [health, setHealth] = useState(null);
+  const [loginNotice, setLoginNotice] = useState('');
   const [activeTab, setActiveTab] = useState('chat'); // 'chat' or 'security'
   const [messages, setMessages] = useState([
     {
@@ -58,6 +59,7 @@ export default function App() {
     setUsername(authData.username);
     setToken(authData.token);
     setError(null);
+    setLoginNotice('');
   }
 
   function handleLogout() {
@@ -100,6 +102,12 @@ export default function App() {
       };
       setMessages((prev) => [...prev, assistantMsg]);
     } catch (err) {
+      if (err.status === 401) {
+        // JWT expired or rejected — clear the session and return to sign-in.
+        setLoginNotice('Your session expired. Please sign in again.');
+        handleLogout();
+        return;
+      }
       setError(err.message || 'An error occurred during retrieval.');
     } finally {
       setLoading(false);
@@ -115,7 +123,7 @@ export default function App() {
 
   // Authentication gate: nothing is accessible until credentials are verified.
   if (!token) {
-    return <LoginPanel onLogin={handleLogin} />;
+    return <LoginPanel onLogin={handleLogin} notice={loginNotice} />;
   }
 
   return (
