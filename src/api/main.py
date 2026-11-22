@@ -32,7 +32,12 @@ from pydantic import BaseModel
 load_dotenv()
 
 from src.api.auth import create_token, get_current_role
-from src.api.users import AuthenticationError, authenticate
+from src.api.users import (
+    AuthenticationError,
+    LoginRateLimitedError,
+    UserStoreError,
+    authenticate,
+)
 from src.llm import get_llm_provider
 from src.ner.infer import NerModelUnavailableError
 from src.ner.masking import sanitize_text
@@ -149,10 +154,22 @@ def login(body: LoginRequest) -> LoginResponse:
     """Authenticate credentials and issue a JWT with the server-assigned role.
 
     The role comes exclusively from the user store record — never from
-    client input. Failed logins return a generic 401 (no user enumeration).
+    client input. Failed logins return a generic 401 (no user enumeration);
+    repeated failures lock the username out temporarily (429); a missing
+    user store fails closed (503).
     """
     try:
         user = authenticate(body.username, body.password)
+    except LoginRateLimitedError as exc:
+        raise HTTPException(status_code=429, detail=str(exc))
+    except UserStoreError:
+        raise HTTPException(
+            status_code=503,
+            detail=(
+                "Authentication service is not configured (no user store). "
+                "Create data/users.json or set ALLOW_DEMO_ACCOUNTS=1."
+            ),
+        )
     except AuthenticationError:
         raise HTTPException(
             status_code=401,

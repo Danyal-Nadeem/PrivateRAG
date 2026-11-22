@@ -17,8 +17,14 @@ export async function login(username, password) {
     if (resp.status === 401) {
       throw new Error('Invalid username or password.');
     }
-    const errorText = await resp.text();
-    throw new Error(`Login failed (${resp.status}): ${errorText}`);
+    // Surface the server's detail message (e.g. 429 lockout, 503 no user store).
+    let detail = '';
+    try {
+      detail = (await resp.json()).detail || '';
+    } catch {
+      /* non-JSON error body */
+    }
+    throw new Error(detail || `Login failed (${resp.status}).`);
   }
 
   const data = await resp.json();

@@ -244,9 +244,10 @@ class TestAPIEndpoints:
     def _setup_env(self):
         os.environ.setdefault("SECRET_KEY", "test-secret-key-for-pytest-only-0123456789")
         os.environ.setdefault("LLM_PROVIDER", "extractive")
-        os.environ["TESTING"] = "1"
+        os.environ.setdefault("TESTING", "1")
+        # NOTE: never pop TESTING here — other test modules (e.g.
+        # test_integration's TestClient lifespan) depend on it staying set.
         yield
-        os.environ.pop("TESTING", None)
 
     def test_login_creates_valid_token(self):
         """POST /login logic: create_token returns a JWT the auth layer can decode."""
@@ -443,6 +444,16 @@ class TestCredentialAuth:
         "admin": "Admin#2026",
     }
 
+    @pytest.fixture(autouse=True)
+    def _demo_store(self, monkeypatch):
+        """Opt in to the demo store and reset throttle/cache state per test."""
+        import src.api.users as users
+        monkeypatch.setenv("ALLOW_DEMO_ACCOUNTS", "1")
+        monkeypatch.setattr(users, "_users_cache", None)
+        users.reset_login_throttle()
+        yield
+        users.reset_login_throttle()
+
     def test_valid_credentials_return_server_assigned_role(self):
         from src.api.users import authenticate
         for username, password in self.DEMO_PASSWORDS.items():
@@ -497,3 +508,99 @@ class TestCredentialAuth:
         from src.api.users import authenticate
         user = authenticate("ADMIN", self.DEMO_PASSWORDS["admin"])
         assert user["role"] == "admin"
+
+
+class TestLoginHardening:
+    """Demo-account opt-in gate and brute-force lockout behavior."""
+
+    @pytest.fixture(autouse=True)
+    def _clean_state(self, monkeypatch):
+        import src.api.users as users
+        monkeypatch.setenv("ALLOW_DEMO_ACCOUNTS", "1")
+        monkeypatch.setenv("LOGIN_MAX_FAILURES", "3")
+        monkeypatch.setenv("LOGIN_LOCKOUT_SECONDS", "60")
+        monkeypatch.setattr(users, "_users_cache", None)
+        users.reset_login_throttle()
+        yield
+        users.reset_login_throttle()
+
+    def test_lockout_after_max_failures(self):
+        from src.api.users import (
+            AuthenticationError, LoginRateLimitedError, authenticate,
+        )
+        for _ in range(3):
+            with pytest.raises(AuthenticationError):
+                authenticate("admin", "wrong-password")
+        with pytest.raises(LoginRateLimitedError) as exc_info:
+            authenticate("admin", "wrong-password")
+        assert exc_info.value.retry_after > 0
+
+    def test_lockout_blocks_correct_password_too(self):
+        """During lockout even valid credentials are refused (429 path)."""
+        from src.api.users import (
+            AuthenticationError, LoginRateLimitedError, authenticate,
+        )
+        for _ in range(3):
+            with pytest.raises(AuthenticationError):
+                authenticate("admin", "wrong-password")
+        with pytest.raises(LoginRateLimitedError):
+            authenticate("admin", "Admin#2026")
+
+    def test_successful_login_resets_counter(self):
+        from src.api.users import AuthenticationError, authenticate
+        with pytest.raises(AuthenticationError):
+            authenticate("hr", "wrong")
+        with pytest.raises(AuthenticationError):
+            authenticate("hr", "wrong")
+        assert authenticate("hr", "HrSpec#2026")["role"] == "hr"
+        # Counter reset: two more failures must NOT trigger the lockout.
+        with pytest.raises(AuthenticationError):
+            authenticate("hr", "wrong")
+        with pytest.raises(AuthenticationError):
+            authenticate("hr", "wrong")
+        assert authenticate("hr", "HrSpec#2026")["role"] == "hr"
+
+    def test_lockout_is_per_username(self):
+        from src.api.users import (
+            AuthenticationError, LoginRateLimitedError, authenticate,
+        )
+        for _ in range(4):
+            with pytest.raises((AuthenticationError, LoginRateLimitedError)):
+                authenticate("admin", "wrong")
+        # A different account is unaffected.
+        assert authenticate("employee", "Employee#2026")["role"] == "employee"
+
+    def test_demo_accounts_require_opt_in(self, monkeypatch):
+        """Without ALLOW_DEMO_ACCOUNTS=1 and no real store, login fails closed."""
+        import src.api.users as users
+        from src.api.users import UserStoreError, authenticate
+        if users.USERS_FILE.exists():
+            pytest.skip("real data/users.json present — gate not exercised")
+        monkeypatch.setenv("ALLOW_DEMO_ACCOUNTS", "0")
+        monkeypatch.setattr(users, "_users_cache", None)
+        with pytest.raises(UserStoreError):
+            authenticate("admin", "Admin#2026")
+
+    def test_login_endpoint_maps_rate_limit_to_429(self):
+        from fastapi import HTTPException
+        from src.api.main import login, LoginRequest
+        for _ in range(3):
+            with pytest.raises(HTTPException) as exc_info:
+                login(LoginRequest(username="admin", password="wrong"))
+            assert exc_info.value.status_code == 401
+        with pytest.raises(HTTPException) as exc_info:
+            login(LoginRequest(username="admin", password="wrong"))
+        assert exc_info.value.status_code == 429
+        assert "Too many failed login attempts" in exc_info.value.detail
+
+    def test_login_endpoint_maps_missing_store_to_503(self, monkeypatch):
+        import src.api.users as users
+        from fastapi import HTTPException
+        from src.api.main import login, LoginRequest
+        if users.USERS_FILE.exists():
+            pytest.skip("real data/users.json present — gate not exercised")
+        monkeypatch.setenv("ALLOW_DEMO_ACCOUNTS", "0")
+        monkeypatch.setattr(users, "_users_cache", None)
+        with pytest.raises(HTTPException) as exc_info:
+            login(LoginRequest(username="admin", password="Admin#2026"))
+        assert exc_info.value.status_code == 503

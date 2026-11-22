@@ -11,6 +11,15 @@ Store location:
 - data/users.json        — real store (gitignored, create from the example)
 - data/users.example.json — shipped DEMO accounts for the course prototype
 
+The demo store is gated: it is only used when ALLOW_DEMO_ACCOUNTS=1 is set
+explicitly. Without a real users.json and without the opt-in flag, login
+fails closed (UserStoreError) instead of silently accepting the published
+demo credentials.
+
+Brute-force defense: repeated failed attempts for a username trigger a
+temporary in-memory lockout (HTTP 429 via the API). Tunables:
+LOGIN_MAX_FAILURES (default 5) and LOGIN_LOCKOUT_SECONDS (default 300).
+
 This is still a prototype identity store, not a production IdP — but
 authentication now precedes authorization, as the IS design requires.
 """
@@ -20,7 +29,9 @@ import hashlib
 import hmac
 import json
 import logging
+import os
 import secrets
+import time
 from pathlib import Path
 from typing import Any, Dict, Optional
 
@@ -39,6 +50,25 @@ class AuthenticationError(Exception):
     The message is intentionally generic so responses do not reveal
     whether the username exists (user-enumeration defense).
     """
+
+
+class UserStoreError(RuntimeError):
+    """Raised when no usable user store is configured.
+
+    Login must fail closed in this state: without a real store (or the
+    explicit ALLOW_DEMO_ACCOUNTS=1 opt-in) the server cannot authenticate
+    anyone and must not fall back to published demo credentials.
+    """
+
+
+class LoginRateLimitedError(Exception):
+    """Raised when a username is temporarily locked after repeated failures."""
+
+    def __init__(self, retry_after: int):
+        self.retry_after = retry_after
+        super().__init__(
+            f"Too many failed login attempts. Try again in {retry_after} seconds."
+        )
 
 
 def hash_password(password: str, salt: str | None = None) -> Dict[str, str]:
@@ -73,13 +103,24 @@ def _load_users() -> Dict[str, Dict[str, Any]]:
 
     path = USERS_FILE
     if not path.exists():
+        if os.getenv("ALLOW_DEMO_ACCOUNTS", "0") != "1":
+            logger.error(
+                "No user store at %s and demo accounts are NOT enabled "
+                "(ALLOW_DEMO_ACCOUNTS != 1). Refusing to authenticate anyone.",
+                USERS_FILE,
+            )
+            raise UserStoreError(
+                "No user store configured. Create data/users.json, or set "
+                "ALLOW_DEMO_ACCOUNTS=1 to opt in to the published demo accounts."
+            )
         path = EXAMPLE_USERS_FILE
         logger.warning(
-            "data/users.json not found — using shipped DEMO accounts from %s. "
-            "Create a real store before any non-prototype use.", path,
+            "data/users.json not found — using shipped DEMO accounts from %s "
+            "(ALLOW_DEMO_ACCOUNTS=1). Demo credentials are public: create a "
+            "real store before any non-prototype use.", path,
         )
     if not path.exists():
-        raise RuntimeError(
+        raise UserStoreError(
             "No user store found. Copy data/users.example.json to data/users.json."
         )
 
@@ -99,26 +140,99 @@ def _load_users() -> Dict[str, Dict[str, Any]]:
     return users
 
 
+# ---------------------------------------------------------------------------
+# Brute-force lockout (in-memory, per username)
+#
+# Prototype scope: state lives in this process only (no Redis), so it resets
+# on restart and does not span multiple workers. It still makes online
+# password guessing against known usernames impractical.
+# ---------------------------------------------------------------------------
+
+_login_failures: Dict[str, Dict[str, float]] = {}
+
+
+def _max_failures() -> int:
+    try:
+        return max(1, int(os.getenv("LOGIN_MAX_FAILURES", "5")))
+    except ValueError:
+        return 5
+
+
+def _lockout_seconds() -> int:
+    try:
+        return max(1, int(os.getenv("LOGIN_LOCKOUT_SECONDS", "300")))
+    except ValueError:
+        return 300
+
+
+def reset_login_throttle() -> None:
+    """Clear all lockout state (used by tests)."""
+    _login_failures.clear()
+
+
+def _check_throttle(key: str) -> None:
+    entry = _login_failures.get(key)
+    if entry is None:
+        return
+    remaining = entry.get("locked_until", 0.0) - time.monotonic()
+    if remaining > 0:
+        raise LoginRateLimitedError(int(remaining) + 1)
+    if remaining <= 0 and entry.get("locked_until"):
+        # Lockout expired — start with a clean slate.
+        _login_failures.pop(key, None)
+
+
+def _record_failure(key: str) -> None:
+    entry = _login_failures.setdefault(key, {"count": 0.0, "locked_until": 0.0})
+    entry["count"] += 1
+    if entry["count"] >= _max_failures():
+        seconds = _lockout_seconds()
+        entry["locked_until"] = time.monotonic() + seconds
+        logger.warning(
+            "LOGIN LOCKOUT: username %r locked for %ss after %d failed attempts",
+            key, seconds, int(entry["count"]),
+        )
+
+
+def _clear_failures(key: str) -> None:
+    _login_failures.pop(key, None)
+
+
 def authenticate(username: str, password: str) -> Dict[str, str]:
     """Verify credentials and return {"username", "role"} from the store.
 
     The role is ALWAYS taken from the server-side user record — never
-    from client input. Raises AuthenticationError on any failure.
+    from client input.
+
+    Raises
+    ------
+    LoginRateLimitedError
+        The username is temporarily locked after repeated failed attempts.
+    UserStoreError
+        No user store is configured (login fails closed).
+    AuthenticationError
+        Credentials are invalid (generic message, no user enumeration).
     """
+    key = username.strip().lower()
+    _check_throttle(key)
+
     users = _load_users()
-    record = users.get(username.strip().lower())
+    record = users.get(key)
 
     # Verify even for unknown users (dummy hash) to keep timing uniform
     # and avoid username enumeration.
     if record is None:
         dummy = {"salt": "00" * 16, "hash": "00" * 32}
         verify_password(password, dummy)
+        _record_failure(key)
         logger.warning("LOGIN FAILED: unknown username %r", username)
         raise AuthenticationError("Invalid username or password.")
 
     if not verify_password(password, record):
+        _record_failure(key)
         logger.warning("LOGIN FAILED: bad password for user %r", record["username"])
         raise AuthenticationError("Invalid username or password.")
 
+    _clear_failures(key)
     logger.info("LOGIN OK: user=%s role=%s", record["username"], record["role"])
     return {"username": record["username"], "role": record["role"]}

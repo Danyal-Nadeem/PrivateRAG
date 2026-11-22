@@ -18,6 +18,7 @@ os.environ["TESTING"] = "1"
 os.environ["SECRET_KEY"] = "integration-test-secret-key-at-least-32-chars-long"
 os.environ["HF_HUB_OFFLINE"] = "1"
 os.environ["TRANSFORMERS_OFFLINE"] = "1"
+os.environ["ALLOW_DEMO_ACCOUNTS"] = "1"  # tests exercise the demo user store
 
 from src.api.main import ask, AskRequest, app
 from src.api.auth import create_token, get_current_role
@@ -183,6 +184,15 @@ class TestCORSMiddleware:
 # ---------------------------------------------------------------------------
 
 class TestEndToEndLoginAsk:
+
+    @pytest.fixture(autouse=True)
+    def _clean_auth_state(self, monkeypatch):
+        """Reset user-store cache and lockout state so tests never interfere."""
+        import src.api.users as users
+        monkeypatch.setattr(users, "_users_cache", None)
+        users.reset_login_throttle()
+        yield
+        users.reset_login_throttle()
 
     def test_login_then_sanitized_ask(self):
         """Credential login issues a valid JWT → ask uses it → answer redacted."""
