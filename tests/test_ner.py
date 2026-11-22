@@ -101,6 +101,29 @@ class TestRegexFilter:
         t5 = "Offer letter states $95k baseline."
         assert any(s["label"] == "SALARY" and s["text"] == "$95k" for s in extract_regex_entities(t5))
 
+    def test_phone_not_matched_inside_longer_digit_run(self):
+        """US branch must not start mid-number (e.g. invoice refs)."""
+        text = "Invoice ref 1234-567-8901 was reconciled."
+        phones = [s["text"] for s in extract_regex_entities(text) if s["label"] == "PHONE"]
+        assert "234-567-8901" not in phones
+        assert phones == []
+
+    def test_phone_still_matches_standalone_number(self):
+        """The boundary guard must not break genuine numbers."""
+        text = "Direct line 234-567-8901 after hours."
+        phones = [s["text"] for s in extract_regex_entities(text) if s["label"] == "PHONE"]
+        assert "234-567-8901" in phones
+
+    def test_salary_rs_without_dot(self):
+        t = "Stipend: Rs 45,000 per month."
+        assert any(s["label"] == "SALARY" and s["text"] == "Rs 45,000" for s in extract_regex_entities(t))
+
+    def test_salary_decimal_amount_fully_covered(self):
+        """$180,000.00 must be masked in full — no '.00' remnant."""
+        t = "Offer: $180,000.00 annual base."
+        spans = [s for s in extract_regex_entities(t) if s["label"] == "SALARY"]
+        assert any(s["text"] == "$180,000.00" for s in spans)
+
 
 # ---------------------------------------------------------------------------
 # 2. Token Masking Engine

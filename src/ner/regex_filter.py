@@ -4,7 +4,8 @@ Handles:
 - EMAIL: standard RFC email pattern
 - PHONE: US formats and Pakistani (+92 / 03xx) formats
 - EMP_ID: EMP-12345, EMP12345, E-12345
-- SALARY: Currency + amount ($125,000, USD 95,000, PKR 350,000, Rs. 1,200,000, $95k)
+- SALARY: Currency + amount ($125,000, USD 95,000, PKR 350,000, Rs. 1,200,000,
+  Rs 45,000, $180,000.00, $95k)
 
 Returns character-offset spans:
     [{"start": int, "end": int, "label": str, "text": str}]
@@ -30,6 +31,8 @@ EMP_ID_PATTERN = re.compile(
 # +92-42-376647119, +92 320 6292423, 0322-5107245, 0320 8339683, etc.
 # US phone patterns:
 # (217) 289-7912, 703-621-9117, +1-518-271-1750, 319.467.2415, 555-123-4567
+# The US branch carries a (?<![\d(]) guard so it cannot start matching in the
+# middle of a longer digit run (e.g. invoice refs like 1234-567-8901).
 PHONE_PATTERN = re.compile(
     r"(?:"
     # Pakistani international with +92
@@ -37,17 +40,18 @@ PHONE_PATTERN = re.compile(
     # Pakistani local mobile starting with 03xx
     r"|\b03\d{2}[- ]?\d{7}\b"
     # US standard formats: +1-xxx-xxx-xxxx, (xxx) xxx-xxxx, xxx-xxx-xxxx, xxx.xxx.xxxx
-    r"|(?:\+1[-. ])?\(?\d{3}\)?[-. ]\d{3}[-. ]\d{4}\b"
+    r"|(?<![\d(])(?:\+1[-. ])?\(?\d{3}\)?[-. ]\d{3}[-. ]\d{4}\b"
     r")"
 )
 
 # Salary patterns: currency symbol or code followed by formatted number
-# Currency amounts: $125,000, $95k, USD 95,000, PKR 350,000, Rs. 1,200,000, GBP 85,000
+# Currency amounts: $125,000, $95k, $180,000.00, USD 95,000, PKR 350,000,
+# Rs. 1,200,000, Rs 45,000, GBP 85,000
 SALARY_PATTERN = re.compile(
     r"(?:"
-    r"\$(?:\d{1,3}(?:,\d{3})+|\d+)(?:k|K)?\b"
-    r"|\b(?:USD|PKR|EUR|GBP)\s+(?:\d{1,3}(?:,\d{3})+|\d+)\b"
-    r"|\bRs\.\s*(?:\d{1,3}(?:,\d{3})+|\d+)\b"
+    r"\$(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d{1,2})?(?:k|K)?\b"
+    r"|\b(?:USD|PKR|EUR|GBP)\s+(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d{1,2})?\b"
+    r"|\bRs\.?\s*(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d{1,2})?\b"
     r")"
 )
 
