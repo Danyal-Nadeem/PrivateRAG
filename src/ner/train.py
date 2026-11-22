@@ -223,9 +223,16 @@ def train(
     out_path = PROJECT_ROOT / output_dir
     out_path.mkdir(parents=True, exist_ok=True)
 
+    # Support transformers >= 4.41 (eval_strategy) and legacy (< 4.41 evaluation_strategy)
+    import inspect
+    strategy_kw = (
+        {"eval_strategy": "epoch"}
+        if "eval_strategy" in inspect.signature(TrainingArguments.__init__).parameters
+        else {"evaluation_strategy": "epoch"}
+    )
+
     training_args = TrainingArguments(
         output_dir=str(out_path / "checkpoints"),
-        evaluation_strategy="epoch",
         save_strategy="epoch",
         learning_rate=lr,
         per_device_train_batch_size=batch_size,
@@ -237,6 +244,7 @@ def train(
         metric_for_best_model="f1",
         seed=seed,
         report_to="none",
+        **strategy_kw,
     )
 
     trainer = Trainer(
