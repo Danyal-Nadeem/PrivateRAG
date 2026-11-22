@@ -17,7 +17,7 @@
 - **Course:** Natural Language Processing (Fall 2026) | Section **BCS-7A**
 - **Institution:** FAST - National University of Computer and Emerging Sciences (NUCES), Lahore
 - **Team Members:**
-  - **Muhammad Danyal** (`23L-0746`)
+  - **Danyal Ahmed** (`23L-0746`)
   - **Abdul Ghani Nadeem** (`23L-0761`)
   - **Ali Jafar** (`23L-0815`)
 
