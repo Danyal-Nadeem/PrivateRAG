@@ -2,11 +2,11 @@
 ### *An NLP-Driven Document Retrieval and Text Sanitization System with Access Control and ML-Based Filtering*
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.13-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.13" />
-  <img src="https://img.shields.io/badge/FastAPI-0.162-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
+  <img src="https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.12" />
+  <img src="https://img.shields.io/badge/FastAPI-0.115-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
   <img src="https://img.shields.io/badge/Qdrant-Vector_DB-DC382D?style=for-the-badge&logo=qdrant&logoColor=white" alt="Qdrant" />
   <img src="https://img.shields.io/badge/HuggingFace-Transformers-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" alt="HuggingFace" />
-  <img src="https://img.shields.io/badge/PyTest-60_Passed-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white" alt="PyTest" />
+  <img src="https://img.shields.io/badge/PyTest-82_Passed-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white" alt="PyTest" />
   <img src="https://img.shields.io/badge/RBAC_Leak_Rate-0.0%25-brightgreen?style=for-the-badge" alt="0% Leak Rate" />
 </p>
 
@@ -17,9 +17,54 @@
 - **Course:** Natural Language Processing (Fall 2026) | Section **BCS-7A**
 - **Institution:** FAST - National University of Computer and Emerging Sciences (NUCES), Lahore
 - **Team Members:**
-  - **Danyal Ahmed** (`23L-0746`)
+  - **Muhammad Danyal** (`23L-0746`)
   - **Abdul Ghani Nadeem** (`23L-0761`)
   - **Ali Jafar** (`23L-0815`)
+
+---
+
+## 🎯 How PrivateRAG Fulfills NLP Course Guidelines & Proposal
+
+Below is a direct, point-by-point mapping demonstrating how PrivateRAG precisely fulfills all requirements set forth in the **NLP Course Project Guidelines** and our **Term Project Proposal**:
+
+### 1. Project Category Selection
+* **Category 1 (RAG Bot for Niche Domain):** Developed a complete Question-Answering system over **Company Documentation & Enterprise Policies** (120 structured documents across 4 access tiers: `public`, `internal`, `hr_restricted`, and `exec_restricted`).
+* **Category 2 (Fine-Tuning Small Models for NLP):** Fine-tuned a pretrained Small Language Model (`distilbert-base-cased`, 66M parameters) for token classification and sequence masking on Colab/Kaggle GPU.
+
+### 2. Pretrained Models & Open-Source Tools (No Training from Scratch)
+* **Embeddings:** Pretrained Hugging Face `sentence-transformers/all-MiniLM-L6-v2` (384-dimensional vector space).
+* **Token Classification / NER:** Pretrained Hugging Face `distilbert-base-cased` using PyTorch & Hugging Face `transformers` Trainer (`notebooks/train_colab.ipynb`).
+* **Vector Database:** Open-source `qdrant-client` persistent embedded vector engine.
+* **LLM Generation Interface:** Pluggable multi-provider architecture supporting Google Gemini API (`gemini-2.0-flash`), Local Hugging Face (`google/flan-t5-small`), and zero-dependency extractive answering.
+
+### 3. Base Model vs. Fine-Tuned Model Comparison (Core Course Requirement)
+* **Evaluation Framework:** We systematically benchmark **4 systems** against the same held-out test corpora:
+  1. *Rule-Based Regex Baseline* (`src/ner/regex_filter.py`)
+  2. *Pretrained Transformer Baseline* (`dslim/bert-base-NER`)
+  3. *Fine-Tuned Token Classifier* (`models/distilbert-ner/` via `src/ner/infer.py`)
+  4. *Proposed Hybrid Filter* (`src/ner/hybrid_filter.py`)
+* **Held-Out Test Sets:** Evaluated on both:
+  - Synthetic held-out test split (`data/ner/test.jsonl`, 450 sentences, 100% disjoint templates from training)
+  - Realistic natural test split (`data/ner/test_realistic.jsonl`, 60 sentences with hard negatives and negative confusers).
+* **Finding:** Fine-tuning on domain-specific enterprise data significantly boosts entity recognition for custom corporate entities (`EMP_ID`, `SALARY`, localized phones/addresses) over off-the-shelf general CoNLL NER baselines.
+
+### 4. Small, Clean, and Manageable Dataset
+* **Corpus Size:** 120 Markdown documents chunked into 390 sliding-window vectors — keeping indexing fast, local, and reproducible.
+* **Data Isolation:** Verified **0% entity-string and 0% component overlap** across Train, Val, and Test splits (`src/data_gen/verify_data.py`).
+* **Deterministic Generation:** No unpredictable live web scraping; datasets are reproducible with fixed random seeds.
+
+### 5. Demonstrating Substantial NLP Methodology (Not Just an Interface)
+* **Pre-Retrieval NLP Filtering (Input Side):** Role metadata is mapped to allowed security tiers (`public`, `internal`, `hr`, `exec`) and executed as a vector query filter directly inside Qdrant before nearest-neighbor calculation.
+  - *Result:* **0.0% filtered leak rate** across 256 test runs (compared to a **38.7% leak rate** when unfiltered).
+* **Post-Generation NLP Sanitization (Output Side):** Token classification outputs character spans which are redacted into standardized mask tokens (`[EMAIL_REDACTED]`, `[SALARY_REDACTED]`, etc.) via right-to-left invariant string replacement.
+  - *Result:* **100% redaction of pattern-based PII** in outgoing responses.
+* **Rigorous Testing:** **82 automated pytest test cases** passing with 100% success rate across RBAC, JWT auth, NER masking, and API integration.
+
+### 6. Deliverables & User Interface
+* **Deliverable 1 (Proposal & Topic Approval):** Formed a 3-member team and submitted the approved proposal.
+* **Deliverable 2 (Working Application & Evaluation):**
+  - Modern full-stack prototype: FastAPI backend (`src/api/main.py`) paired with a React + Vite interactive UI (`frontend/`).
+  - Comprehensive evaluation suites with saved CSV matrices and JSON summaries (`eval/results/`).
 
 ---
 
