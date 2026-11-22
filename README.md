@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/FastAPI-0.162-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
   <img src="https://img.shields.io/badge/Qdrant-Vector_DB-DC382D?style=for-the-badge&logo=qdrant&logoColor=white" alt="Qdrant" />
   <img src="https://img.shields.io/badge/HuggingFace-Transformers-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" alt="HuggingFace" />
-  <img src="https://img.shields.io/badge/PyTest-60_Passed-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white" alt="PyTest" />
+  <img src="https://img.shields.io/badge/PyTest-88_Passed-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white" alt="PyTest" />
   <img src="https://img.shields.io/badge/RBAC_Leak_Rate-0.0%25-brightgreen?style=for-the-badge" alt="0% Leak Rate" />
 </p>
 
@@ -73,7 +73,7 @@ Evaluated across **256 distinct runs** (64 realistic test queries × 4 access ro
 | **OVERALL** | — | **0/256 = 0.0%** 🏆 | **99/256 = 38.7%** ⚠️ | **100.0%** 🎯 |
 
 - **Adversarial Query Leak Rate (Filtered):** `0/104 = 0.0%` (Zero leaks even when queries explicitly demand confidential salaries or addresses).
-- **Unit Test Coverage:** `31 passed in 14.89s` (`tests/test_rbac.py`).
+- **Unit Test Coverage:** `88 passed, 1 skipped` (full suite: `python -m pytest tests/`).
 - **Data Integrity:** 100% verified zero entity-overlap across splits (`src/data_gen/verify_data.py`).
 
 > **Scope of the leak-prevention claims:** the 100% end-to-end reduction applies to
@@ -171,9 +171,13 @@ LLM_PROVIDER=extractive
 ```
 
 **User accounts:** authentication is credential-based. Demo accounts ship as
-salted PBKDF2 hashes in `data/users.example.json` (used automatically when
-`data/users.json` is absent). For a custom store, copy the example to
-`data/users.json` (gitignored) and edit it. Demo credentials:
+salted PBKDF2 hashes in `data/users.example.json`. Because those credentials
+are published here, the demo store is **opt-in**: it is only used when
+`data/users.json` is absent *and* `ALLOW_DEMO_ACCOUNTS=1` is set — otherwise
+login fails closed with `503`. For a custom store, copy the example to
+`data/users.json` (gitignored) and edit it. Repeated failed logins lock the
+username out temporarily (`429`; tune via `LOGIN_MAX_FAILURES` and
+`LOGIN_LOCKOUT_SECONDS`). Demo credentials:
 
 | Username | Password | Server-assigned role |
 |:---|:---|:---|
@@ -246,7 +250,9 @@ Open `http://localhost:5173` in your browser. Sign in with a demo account (e.g. 
 Authenticates username/password credentials against the server-side user store
 and returns a 60-minute signed HS256 JWT token. The role is **assigned by the
 server** from the authenticated user record — any `role` field sent by the
-client is ignored. Failed logins return a generic `401` (no user enumeration).
+client is ignored. Failed logins return a generic `401` (no user enumeration);
+repeated failures lock the username out temporarily (`429`); a missing user
+store without `ALLOW_DEMO_ACCOUNTS=1` fails closed (`503`).
 
 **Request:**
 ```json
@@ -334,7 +340,7 @@ The server logs a `DLP DEGRADED` warning; set `NER_STRICT=1` to fail closed inst
   - [x] Local persistent Qdrant with `query_points` API.
   - [x] Query-time vector payload filtering (0.0% filtered leak rate).
   - [x] Fast, extensible LLM provider abstraction (Extractive, Gemini, Local HF).
-  - [x] FastAPI backend with JWT SSO simulator and query-injection defense.
+  - [x] FastAPI backend with credential-based JWT login (server-assigned roles, brute-force lockout) and query-injection defense.
   - [x] Automated RBAC evaluation matrix (`rbac_eval.py`).
 - [x] **Phase 3: Named Entity Recognition & Output Sanitization**
   - [x] Regex baseline filter (`src/ner/regex_filter.py`).

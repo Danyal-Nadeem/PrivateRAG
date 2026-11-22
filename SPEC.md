@@ -36,12 +36,16 @@ Phase 3 depends only on Phase 1 data, so it can run in parallel with anything el
 | overall | 0/256 = 0.0% | 99/256 = 38.7% |
 
 - Adversarial queries (directly name restricted content), filtered: 0/104 leaks.
-- Unit tests: 60 passing (`pytest tests/ -v`).
+- Unit tests: 88 passing, 1 skipped (`pytest tests/ -v`).
 - Data checks: `python -m src.data_gen.verify_data` passes all checks.
 
 **NER quality (Phase 3 benchmark from `eval/results/ner_eval_results.json`):**
 - Synthetic (`test.jsonl`, 450 sentences): EMAIL F1: 100.0%, PHONE F1: 100.0%, EMP_ID F1: 100.0%, SALARY F1: 88.2%, Micro F1: 73.1%.
 - Realistic (`test_realistic.jsonl`, 60 sentences): EMAIL F1: 100.0%, PHONE F1: 100.0%, EMP_ID F1: 100.0%, SALARY F1: 93.3%, Micro F1: 63.7%.
+- NOTE: these are **regex-baseline** numbers from a legacy run (see the file's
+  `metadata.warnings`). The pretrained and fine-tuned rows in that artifact are
+  invalid (systems were unavailable); the model comparison must be re-run after
+  training the checkpoint (`python -m eval.ner_eval`).
 
 **End-to-End Leak Prevention (Phase 5 benchmark from `eval/results/e2e_eval_results.json`):**
 - Pattern-based PII reduction: 100.0% on EMAIL (66->0), PHONE (66->0), EMP_ID (72->0), and SALARY (25->0).
@@ -51,16 +55,16 @@ Phase 3 depends only on Phase 1 data, so it can run in parallel with anything el
 
 All 5 project phases have been successfully implemented and verified:
 - **Phase 1 (Data):** Synthetic documents, NER train/val/test splits, realistic test set, validation checks.
-- **Phase 2 (Retrieval + RBAC):** Qdrant vector database, JWT auth simulator, query-time payload filtering, LLM provider abstraction, RBAC eval.
+- **Phase 2 (Retrieval + RBAC):** Qdrant vector database, credential-based JWT login with server-assigned roles and brute-force lockout, query-time payload filtering, LLM provider abstraction, RBAC eval.
 - **Phase 3 (NER):** Regex baseline, pretrained BERT wrapper, Colab GPU notebook (`notebooks/train_colab.ipynb`), hybrid arbitration, right-to-left masking, NER eval.
-- **Phase 4 (Integration + UI):** Post-generation masking wired into `/ask`, CORS middleware, React + Vite chat interface with role switcher and visual entity pills.
+- **Phase 4 (Integration + UI):** Post-generation masking wired into `/ask`, CORS middleware, React + Vite chat interface with credential sign-in gate and visual entity pills.
 - **Phase 5 (Final Evaluation):** 256-run end-to-end evaluation harness (`e2e_eval.py`), consolidated paper tables (`eval/results/final_benchmark_summary.md`), report documentation.
 
 ## 4. Stack (fixed, do not substitute without asking)
-- Backend: Python 3.13 in a virtualenv, FastAPI. Exact versions are pinned in `requirements.txt`.
+- Backend: Python 3.13 (global conda env `ml`), FastAPI. Exact versions are pinned in `requirements.txt`.
 - Vector DB: Qdrant in local persistent mode (`QdrantClient(path=...)`, no Docker). RBAC is a payload filter on `access_level` inside the query (no post-filtering). Chunks: 500 characters, 100 overlap.
 - Embeddings: `sentence-transformers/all-MiniLM-L6-v2`.
-- Auth: signed JWT (60 min expiry). The role always comes from the token, never from the request body or query text. `POST /login` verifies username/password against a server-side user store (`src/api/users.py`, salted PBKDF2 hashes); the role is assigned by the server from the user record. Demo accounts ship in `data/users.example.json`; a real store goes in gitignored `data/users.json`. The old passwordless `/login-role` endpoint was removed on the `implement` branch (it allowed self-granted admin access). SECRET_KEY must be random and ≥32 chars; placeholder/short keys are rejected at startup.
+- Auth: signed JWT (60 min expiry). The role always comes from the token, never from the request body or query text. `POST /login` verifies username/password against a server-side user store (`src/api/users.py`, salted PBKDF2 hashes); the role is assigned by the server from the user record. Demo accounts ship in `data/users.example.json`; a real store goes in gitignored `data/users.json`. The demo store is opt-in: without it and without `ALLOW_DEMO_ACCOUNTS=1`, login fails closed (503). Repeated failed logins lock the username out temporarily (429, tunable via `LOGIN_MAX_FAILURES`/`LOGIN_LOCKOUT_SECONDS`). With `NER_STRICT=1` and no DLP checkpoint, `/ask` refuses to answer (503) instead of degrading to regex-only. The old passwordless `/login-role` endpoint was removed on the `implement` branch (it allowed self-granted admin access). SECRET_KEY must be random and ≥32 chars; placeholder/short keys are rejected at startup.
 - Generator LLM: single interface `llm.generate(prompt) -> str`, provider chosen by the `LLM_PROVIDER` env var: `extractive` (default, no key, returns the top retrieved chunk), `gemini` (needs `GEMINI_API_KEY` and `GEMINI_MODEL` in `.env`), `local_hf`. The gemini and local_hf adapters are written but not live-tested.
 - NER model: `distilbert-base-cased` token classification (HuggingFace Transformers, `seqeval` for metrics).
 - Frontend: React + Vite.
