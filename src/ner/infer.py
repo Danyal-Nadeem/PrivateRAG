@@ -42,19 +42,47 @@ DEFAULT_MODEL_DIR = PROJECT_ROOT / "models" / "distilbert-ner"
 _model = None
 _tokenizer = None
 _model_load_attempted = False
+_checkpoint_mtime_at_attempt: float | None = None
 
 
 class NerModelUnavailableError(RuntimeError):
     """Raised in strict mode (NER_STRICT=1) when the DLP model cannot run."""
 
 
+def reset_model_cache() -> None:
+    """Forget the cached load result so the checkpoint is re-attempted.
+
+    Useful for tests and for hot-reloading a checkpoint that is dropped
+    into models/distilbert-ner/ while the server is running.
+    """
+    global _model, _tokenizer, _model_load_attempted, _checkpoint_mtime_at_attempt
+    _model = None
+    _tokenizer = None
+    _model_load_attempted = False
+    _checkpoint_mtime_at_attempt = None
+
+
+def _checkpoint_changed(target_dir: Path) -> bool:
+    """Return True if config.json appeared/changed since the last attempt."""
+    config = target_dir / "config.json"
+    if not config.exists():
+        return False
+    mtime = config.stat().st_mtime
+    return _checkpoint_mtime_at_attempt is None or mtime != _checkpoint_mtime_at_attempt
+
+
 def _load_model(model_dir: Path | str | None = None):
-    global _model, _tokenizer, _model_load_attempted
+    global _model, _tokenizer, _model_load_attempted, _checkpoint_mtime_at_attempt
+    target_dir = Path(model_dir) if model_dir else DEFAULT_MODEL_DIR
+
+    # Once loaded successfully, keep the cached instance. If the previous
+    # attempt failed, allow a retry when the checkpoint file itself changed
+    # (e.g. it was copied in after server start) — otherwise stay failed.
     if _model_load_attempted:
-        return _model, _tokenizer
+        if _model is not None or not _checkpoint_changed(target_dir):
+            return _model, _tokenizer
     _model_load_attempted = True
 
-    target_dir = Path(model_dir) if model_dir else DEFAULT_MODEL_DIR
     if not (target_dir / "config.json").exists():
         # Model not trained yet — degrade loudly, never silently.
         logger.warning(
@@ -81,6 +109,9 @@ def _load_model(model_dir: Path | str | None = None):
             "PERSON and ADDRESS entities will NOT be masked.",
             target_dir, exc,
         )
+
+    if (target_dir / "config.json").exists():
+        _checkpoint_mtime_at_attempt = (target_dir / "config.json").stat().st_mtime
 
     return _model, _tokenizer
 

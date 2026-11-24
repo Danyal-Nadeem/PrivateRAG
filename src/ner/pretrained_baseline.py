@@ -10,15 +10,30 @@ Returns character-offset spans:
 from __future__ import annotations
 
 import os
+import time
 from typing import Dict, List, Any
 
 _MODEL_NAME = "dslim/bert-base-NER"
 _pipeline = None
 _pipeline_failed = False
+_pipeline_failed_at: float | None = None
+
+# Retry window for transient failures (network, download) — a permanent
+# offline mode (HF_HUB_OFFLINE / TESTING) still disables the baseline for good.
+_RETRY_COOLDOWN_SECONDS = 60.0
+_now = time.monotonic
+
+
+def reset_baseline_cache() -> None:
+    """Forget cached pipeline state so the baseline is re-attempted."""
+    global _pipeline, _pipeline_failed, _pipeline_failed_at
+    _pipeline = None
+    _pipeline_failed = False
+    _pipeline_failed_at = None
 
 
 def _get_pipeline():
-    global _pipeline, _pipeline_failed
+    global _pipeline, _pipeline_failed, _pipeline_failed_at
     if _pipeline_failed:
         return None
     if _pipeline is None:
@@ -31,6 +46,14 @@ def _get_pipeline():
             _pipeline_failed = True
             return None
 
+        # Bound retries of transient failures to one attempt per cooldown
+        # window, so an eval loop doesn't hammer the network on every record.
+        if (
+            _pipeline_failed_at is not None
+            and _now() - _pipeline_failed_at < _RETRY_COOLDOWN_SECONDS
+        ):
+            return None
+
         try:
             from transformers import pipeline
             _pipeline = pipeline(
@@ -40,7 +63,7 @@ def _get_pipeline():
                 device=-1,  # CPU
             )
         except Exception:
-            _pipeline_failed = True
+            _pipeline_failed_at = _now()
             return None
     return _pipeline
 

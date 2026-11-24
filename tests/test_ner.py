@@ -214,11 +214,10 @@ class TestDlpDegradationVisibility:
     def _reset_model_cache(self, monkeypatch):
         """Reset infer module cache so each test exercises the load path."""
         import src.ner.infer as infer_mod
-        monkeypatch.setattr(infer_mod, "_model", None)
-        monkeypatch.setattr(infer_mod, "_tokenizer", None)
-        monkeypatch.setattr(infer_mod, "_model_load_attempted", False)
+        infer_mod.reset_model_cache()
         monkeypatch.delenv("NER_STRICT", raising=False)
         yield
+        infer_mod.reset_model_cache()
 
     def test_missing_checkpoint_logs_warning(self, caplog):
         import logging
@@ -243,3 +242,155 @@ class TestDlpDegradationVisibility:
     def test_non_strict_mode_degrades_to_empty(self):
         spans = extract_model_entities("John Smith", model_dir="nonexistent/dir")
         assert spans == []
+
+
+# ---------------------------------------------------------------------------
+# 7. Checkpoint hot-reload (a failed load retries when the file appears)
+# ---------------------------------------------------------------------------
+
+class TestModelHotReload:
+    @pytest.fixture(autouse=True)
+    def _cleanup(self):
+        import src.ner.infer as infer_mod
+        infer_mod.reset_model_cache()
+        yield
+        infer_mod.reset_model_cache()
+
+    def test_failed_missing_checkpoint_stays_cached_without_change(self, tmp_path):
+        """No checkpoint present -> the failure is cached, no repeated probing."""
+        import src.ner.infer as infer_mod
+        model_dir = tmp_path / "distilbert-ner"
+        assert infer_mod._load_model(model_dir) == (None, None)
+        assert infer_mod._model_load_attempted is True
+        assert infer_mod._load_model(model_dir) == (None, None)
+
+    def test_checkpoint_appearing_after_failure_is_retried(self, tmp_path, monkeypatch):
+        """Dropping config.json in after a failed load triggers a reload."""
+        import src.ner.infer as infer_mod
+        model_dir = tmp_path / "distilbert-ner"
+        assert infer_mod._load_model(model_dir) == (None, None)
+
+        model_dir.mkdir()
+        (model_dir / "config.json").write_text("{}")
+
+        class FakeModel:
+            def eval(self):
+                return self
+
+        loaded = {"tokenizer": 0, "model": 0}
+
+        def fake_tok(path):
+            loaded["tokenizer"] += 1
+            return "tok"
+
+        def fake_model(path):
+            loaded["model"] += 1
+            return FakeModel()
+
+        monkeypatch.setattr("transformers.AutoTokenizer.from_pretrained", fake_tok)
+        monkeypatch.setattr(
+            "transformers.AutoModelForTokenClassification.from_pretrained", fake_model
+        )
+
+        model, tokenizer = infer_mod._load_model(model_dir)
+        assert model is not None
+        assert tokenizer == "tok"
+        assert loaded == {"tokenizer": 1, "model": 1}
+
+        # Loaded successfully -> subsequent calls reuse the cached instance.
+        model2, tokenizer2 = infer_mod._load_model(model_dir)
+        assert model2 is model and tokenizer2 is tokenizer
+        assert loaded == {"tokenizer": 1, "model": 1}
+
+
+# ---------------------------------------------------------------------------
+# 8. Pretrained baseline retry cooldown (transient failures are retryable)
+# ---------------------------------------------------------------------------
+
+class TestPretrainedBaselineRetry:
+    @pytest.fixture(autouse=True)
+    def _cleanup(self, monkeypatch):
+        import src.ner.pretrained_baseline as pb
+        pb.reset_baseline_cache()
+        # Take the module out of offline mode for these tests.
+        monkeypatch.delenv("HF_HUB_OFFLINE", raising=False)
+        monkeypatch.delenv("TRANSFORMERS_OFFLINE", raising=False)
+        monkeypatch.delenv("TESTING", raising=False)
+        yield
+        pb.reset_baseline_cache()
+
+    @staticmethod
+    def _install_fake_transformers(monkeypatch, pipeline_factory):
+        """Swap the transformers package for a stub in sys.modules.
+
+        transformers replaces itself with a lazy module wrapper at import
+        time, so patching a test-local `transformers` binding can hit a
+        stale object while `from transformers import pipeline` reads the
+        live sys.modules entry. The stub sidesteps the lazy loader entirely.
+        """
+        import sys
+        import types
+
+        fake = types.ModuleType("transformers")
+        fake.pipeline = pipeline_factory
+        monkeypatch.setitem(sys.modules, "transformers", fake)
+        return fake
+
+    def test_transient_failure_does_not_retry_within_cooldown(self, monkeypatch):
+        """A network failure must not cause a download attempt per record."""
+        import src.ner.pretrained_baseline as pb
+        attempts = {"n": 0}
+
+        def boom(*a, **k):
+            attempts["n"] += 1
+            raise RuntimeError("network down")
+
+        self._install_fake_transformers(monkeypatch, boom)
+        assert pb.extract_pretrained_entities("Alice works at Acme") == []
+        assert attempts["n"] == 1
+        # Inside the cooldown window: no second attempt.
+        assert pb.extract_pretrained_entities("Alice works at Acme") == []
+        assert attempts["n"] == 1
+
+    def test_transient_failure_retries_after_cooldown(self, monkeypatch):
+        """Once the cooldown passes, the pipeline is attempted again."""
+        import src.ner.pretrained_baseline as pb
+        attempts = {"n": 0}
+
+        def boom(*a, **k):
+            attempts["n"] += 1
+            raise RuntimeError("network down")
+
+        fake = self._install_fake_transformers(monkeypatch, boom)
+        assert pb.extract_pretrained_entities("Alice works at Acme") == []
+        assert attempts["n"] == 1
+
+        # Jump the clock past the cooldown and provide a working pipeline.
+        base = pb._now()
+        monkeypatch.setattr(pb, "_now", lambda: base + 61.0)
+
+        class _FakePipeline:
+            """pipeline() is a factory: it must return a callable object."""
+
+            def __call__(self, text):
+                return [{"entity_group": "PER", "start": 0, "end": 5}]
+
+        fake.pipeline = lambda *a, **k: _FakePipeline()
+        spans = pb.extract_pretrained_entities("Alice works at Acme")
+        assert [s["label"] for s in spans] == ["PERSON"]
+        assert attempts["n"] == 1  # boom not called again; fake pipeline used
+
+    def test_offline_mode_disables_permanently(self, monkeypatch):
+        """HF_HUB_OFFLINE remains a hard kill-switch: no retries at all."""
+        import src.ner.pretrained_baseline as pb
+        monkeypatch.setenv("HF_HUB_OFFLINE", "1")
+        attempts = {"n": 0}
+
+        def boom(*a, **k):
+            attempts["n"] += 1
+            raise RuntimeError("should not be called")
+
+        self._install_fake_transformers(monkeypatch, boom)
+        assert pb.extract_pretrained_entities("Alice works at Acme") == []
+        assert attempts["n"] == 0
+        assert pb._pipeline_failed is True
