@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/FastAPI-0.162-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
   <img src="https://img.shields.io/badge/Qdrant-Vector_DB-DC382D?style=for-the-badge&logo=qdrant&logoColor=white" alt="Qdrant" />
   <img src="https://img.shields.io/badge/HuggingFace-Transformers-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" alt="HuggingFace" />
-  <img src="https://img.shields.io/badge/PyTest-88_Passed-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white" alt="PyTest" />
+  <img src="https://img.shields.io/badge/PyTest-93_Passed-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white" alt="PyTest" />
   <img src="https://img.shields.io/badge/RBAC_Leak_Rate-0.0%25-brightgreen?style=for-the-badge" alt="0% Leak Rate" />
 </p>
 
@@ -73,7 +73,7 @@ Evaluated across **256 distinct runs** (64 realistic test queries × 4 access ro
 | **OVERALL** | — | **0/256 = 0.0%** 🏆 | **99/256 = 38.7%** ⚠️ | **100.0%** 🎯 |
 
 - **Adversarial Query Leak Rate (Filtered):** `0/104 = 0.0%` (Zero leaks even when queries explicitly demand confidential salaries or addresses).
-- **Unit Test Coverage:** `88 passed, 1 skipped` (full suite: `python -m pytest tests/`).
+- **Unit Test Coverage:** `93 passed` (full suite: `python -m pytest tests/`).
 - **Data Integrity:** 100% verified zero entity-overlap across splits (`src/data_gen/verify_data.py`).
 
 > **Scope of the leak-prevention claims:** the 100% end-to-end reduction applies to

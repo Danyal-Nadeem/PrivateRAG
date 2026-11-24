@@ -71,7 +71,7 @@ app = FastAPI(
         "Role-based access controlled RAG system. "
         "POST /login authenticates credentials; roles are server-assigned."
     ),
-    version="0.1.0",
+    version="1.0.4",  # keep in sync with the frontend version pill
     lifespan=lifespan,
 )
 

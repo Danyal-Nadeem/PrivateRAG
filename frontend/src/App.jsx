@@ -14,9 +14,11 @@ const DEMO_QUERIES = [
 ];
 
 export default function App() {
-  const [role, setRole] = useState('');
-  const [username, setUsername] = useState('');
-  const [token, setToken] = useState('');
+  // Restore a persisted session on page refresh — api.js saves the token in
+  // localStorage at login; an expired token is still caught by the 401 flow.
+  const [role, setRole] = useState(() => localStorage.getItem('privaterag_role') || '');
+  const [username, setUsername] = useState(() => localStorage.getItem('privaterag_username') || '');
+  const [token, setToken] = useState(() => localStorage.getItem('privaterag_token') || '');
   const [health, setHealth] = useState(null);
   const [loginNotice, setLoginNotice] = useState('');
   const [activeTab, setActiveTab] = useState('chat'); // 'chat' or 'security'
