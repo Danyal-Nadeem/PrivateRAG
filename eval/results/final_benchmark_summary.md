@@ -1,6 +1,7 @@
 # PrivateRAG: Final Project Benchmark Summary & Paper Tables
 
 **Course:** Natural Language Processing (Fall 2026, BCS-7A)  
+**Course (shared codebase):** Information Security CS3002 (Fall 2026, BCS-7H)  
 **Team:** Danyal Ahmed (23L-0746), Abdul Ghani Nadeem (23L-0761), Ali Jafar (23L-0815)  
 **Institution:** FAST - NUCES, Lahore  
 

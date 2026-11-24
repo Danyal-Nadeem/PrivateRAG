@@ -15,6 +15,7 @@
 ## 👥 Course & Team Information
 
 - **Course:** Natural Language Processing (Fall 2026) | Section **BCS-7A**
+- **Course (shared codebase):** Information Security **CS3002** (Fall 2026) | Section **BCS-7H**
 - **Institution:** FAST - National University of Computer and Emerging Sciences (NUCES), Lahore
 - **Team Members:**
   - **Danyal Ahmed** (`23L-0746`)
@@ -364,4 +365,4 @@ The server logs a `DLP DEGRADED` warning; set `NER_STRICT=1` to fail closed inst
 
 ## ⚖️ License & Academic Integrity
 
-Developed for academic purposes under the **Fall 2026 Natural Language Processing** course at **FAST-NUCES**. All synthetic datasets and evaluation benchmarks were generated deterministically under fixed seeds with no live web scraping or unapproved external dependencies.
+Developed for academic purposes under the **Fall 2026 Natural Language Processing** and **Information Security (CS3002)** courses at **FAST-NUCES**. All synthetic datasets and evaluation benchmarks were generated deterministically under fixed seeds with no live web scraping or unapproved external dependencies.

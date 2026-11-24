@@ -1,13 +1,13 @@
 # PrivateRAG: Project Spec and Status
 
-NLP term project (Fall 2026, BCS-7A). Team: Danyal Ahmed (23L-0746), Abdul Ghani Nadeem (23L-0761), Ali Jafar (23L-0815).
-Last updated: 2026-11-14.
+Information Security term project (CS3002, Fall 2026, BCS-7H), sharing this codebase with the NLP term project (Fall 2026, BCS-7A). Team: Danyal Ahmed (23L-0746), Abdul Ghani Nadeem (23L-0761), Ali Jafar (23L-0815).
+Last updated: 2026-11-25.
 
 A RAG document assistant with two NLP/security layers:
 1. **Input side:** role-based access control (RBAC) applied inside the vector query, BEFORE any document is retrieved.
 2. **Output side:** a fine-tuned token-classification model plus regex that masks sensitive entities in generated answers.
 
-The core NLP contribution is the fine-tuned entity model and its evaluation. Access control is the system layer around it.
+The NLP contribution is the fine-tuned entity model and its evaluation. The Information Security contribution is the defense-in-depth pipeline (RBAC payload filter + post-generation masking), its fail-closed degradation behavior, and the adversarial leak evaluations.
 
 ---
 
@@ -36,7 +36,7 @@ Phase 3 depends only on Phase 1 data, so it can run in parallel with anything el
 | overall | 0/256 = 0.0% | 99/256 = 38.7% |
 
 - Adversarial queries (directly name restricted content), filtered: 0/104 leaks.
-- Unit tests: 88 passing, 1 skipped (`pytest tests/ -v`).
+- Unit tests: 98 passing (`pytest tests/ -v`).
 - Data checks: `python -m src.data_gen.verify_data` passes all checks.
 
 **NER quality (Phase 3 benchmark from `eval/results/ner_eval_results.json`):**
